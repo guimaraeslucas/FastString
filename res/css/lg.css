@@ -1,0 +1,21 @@
+a,input,textarea,button,div {
+outline:0;
+}
+
+#lucaslogo {
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAK8AAACvABQqw0mAAAABh0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzT7MfTgAAAZ5JREFUOI2Nk01O21AUhb/rBkFEXoSEysALSMd2GLfJAtJ50zHxBrKMeN6UMYE5CyALYAMvQ6xGake0QVDJUW8H7/nZUAX1eGLdv3fu0blSpIkqHgoICBCC8iLuQ1V5VAUEEKkToaqKa9UsaJ2i1ShDUQR4E8ccjkaA8Gs+R1HPQKhnu6lRYK8aHhVjaA+GdCeTMFT8A+4LPInCXg3KW2u5n80ar7mGsGpDnlZNrLnZv+hmGZ3xZwAeFhd0J5nToCIkO1vhcPSR7iTj4XJBaVd0xmMA7vNZU8TdOBgMKFersNafzYbjPKe0q1rE1xAZszsnSFDhaDrl7ddzImPYe9cDYL9/yuP1NXu9HkfTqVsny+oJRZroXZpokSb6+/ZWVVV/nJ1pE98+vNef8y+6Xa9VVXWzuAh1cpcm+pqAFVpxzHa9BqA9GHKc53wff/o/ESNjOLm8AqC0lv1+n6flktJapEiTZwaobkPDjzOZdAzt4ZBWHFNay+PyxpmqSFNVfykirvHZUXkEu6n6vL8F53UJThIRVP0gXhpMGwFH8S/Dc7YLcB6VwQAAAABJRU5ErkJggg==') !important;
+	width: 16px !important;
+	height: 16px !important;
+	display: inline-block;
+	vertical-align: text-top;
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+	filter: gray; /* IE6-9 */
+	-webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+	margin-right: 3px;
+	margin-top:3px;
+}
+#lucaslogo:hover {
+	filter:none;
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+	-webkit-filter: grayscale(0%);
+}

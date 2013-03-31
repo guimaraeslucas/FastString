@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--
+##############################################################
+#. . . . . . . . . . LUCASGUIMARAES.COM. . . . . . . . . . . #
+#. . . . . . . . . . (C) COPYRIGHT 2013. . . . . . . . . . . #
+##############################################################
+*
+* @copyright 2012-2013 LucasGuimaraes.com
+* @link <contato@lucasguimaraes.com>
+* @link http://www.lucasguimaraes.com
+* @generator LGPowerWeb/2.0.0 LGGM/6.0.2 (4.0.0)
+*
+* The above copyright notice shall be included in all
+* copies or substantial portions of the Software.
+*
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<!-- Changed by global.js using chrome.i18n -->
+<title>LG FastString</title>
+<!--_LGGM-->
+<meta name="copyright" content="Copyright 2013 - LucasGuimaraes.com">
+<meta name="generator" content="LGPowerWeb/2.0.0 LGGM/6.0.2 (4.0.0)">
+<link rel="shortcut icon" type="image/x-icon" href="res/images/png/fs16.png">
+<link rel="favicon" type="image/x-icon" href="res/images/png/fs16.png">
+<link rel="icon" type="image/x-icon" href="res/images/png/fs16.png">
+<link rel="icon" type="image/png" href="res/images/png/fs32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="res/images/png/fs48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="res/images/png/fs64.png" sizes="64x64">
+<link rel="icon" type="image/png" href="res/images/png/fs96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="res/images/png/fs128.png" sizes="128x128">
+<link rel="icon" type="image/png" href="res/images/png/fs256.png" sizes="256x256">
+<link rel="icon" type="image/png" href="res/images/png/fs512.png" sizes="512x512">
+<meta name="google" content="notranslate">
+<meta name="referrer" content="always">
+<meta name="viewport" content="width=device-width, user-scalable=1, minimum-scale=0.1, maximum-scale=1.0">
+<!--_/LGGM-->
+<!--_CSS-->
+<link rel="stylesheet" href="res/css/lg.css">
+<link rel="stylesheet" href="res/css/bootstrap.min.css">
+<link rel="stylesheet" href="res/css/darkstrap.css">
+<style>
+@media only screen and (min-width: 1000px){
+body {padding-top: 60px;}
+}
+</style>
+<!--_/CSS-->
+<!--_SCRIPTS-->
+<!-- JQuery -->
+<script src="res/javascript/jquery-1.9.0.min.js"></script>
+<!-- UI Plugins -->
+<script src="res/javascript/bootstrap.min.js"></script>
+<!-- Encode/Decode Plugins -->
+<script src="res/javascript/jquery.base64.js"></script>
+<script src="res/javascript/md5.js"></script>
+<script src="res/javascript/sha.js"></script>
+<script src="res/javascript/rot13.js"></script>
+<script src="res/javascript/html.js"></script>
+<script src="res/javascript/mED.js"></script>
+<!-- Initiate LGApp -->
+<script src="res/javascript/global.js"></script>
+<!--_/SCRIPTS-->
+</head>
+<body>
+  <!--NAVBAR-->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+		          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#brand" id="brand">FastString</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+			<!--class="active"-->
+              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="b64">base64</span> <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                  <li><a href="#" id="b64e"></a></li>
+                  <li><a href="#" id="b64d"></a></li>
+                  <li class="divider"></li>
+                  <li class="nav-header specialitem"></li>
+                 <!-- <li><a href="#" id="b64eu"></a></li>
+                  <li><a href="#" id="b64du"></a></li>-->
+				  <li><a href="#" id="b64diu"></a></li>
+                </ul>
+			  </li>
+              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="md5">md5</span> <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                  <li><a href="#" id="md5h"></a></li>
+                  <li><a href="#" id="md564"></a></li>
+                </ul>
+			  </li>
+             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="md5">sha</span> <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                  <li><a href="#" id="sha1"></a></li>
+				  <li><a href="#" id="sha224"></a></li>
+                  <li><a href="#" id="sha256"></a></li>
+				  <li><a href="#" id="sha384"></a></li>
+				  <li><a href="#" id="sha512"></a></li>
+                </ul>
+			  </li>
+			
+			  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="url">url</span> <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                  <li><a href="#" id="urle"></a></li>
+                  <li><a href="#" id="urld"></a></li>
+                </ul>
+			  </li>
+			  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="html">html</span> <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                  <li><a href="#" id="htmle"></a></li>
+                  <li><a href="#" id="htmld"></a></li>
+                </ul>
+			  </li>
+			  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="others">others</span> <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+				  <li><a href="#" id="reve"></a></li>
+				  <li><a href="#" id="rot13">rot13</a></li>
+                  <li><a href="#" id="emED"></a></li>
+                  <li><a href="#" id="dmED"></a></li>
+                </ul>
+			  </li>
+			  <li><a href="#modalabout" data-toggle="modal"><span id="about">Info</span> </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div><!--/NAVBAR-->
+
+    <!--CONTAINER--><div class="container-fluid">
+	<!--ROW-FLUID-->
+	<div class="row-fluid">
+    <div class="span12">
+    <!--HERO-->
+    <div class="hero-unit" id="hero">
+    <h1 id="welcomemsg"></h1>
+	<h3 id="selectoption"></h3>
+	</div>
+	<!--/HERO-->
+	
+	 <!--NRF-->
+	<div class="row-fluid">
+	<div id="dyn" style="display:none;">
+          <div class="span6">
+<form>
+  <fieldset>
+    <legend id="action"></legend>
+    <textarea style="width:100%;min-height:150px;" id="eandd"></textarea> <br>
+    <button class="btn btn-inverse" id="doit"></button>
+  </fieldset>
+</form>
+
+		  </div>
+		  <div class="span6">
+		    <fieldset>
+			    <legend id="result"></legend>
+		  <pre class="pre-scrollable" style="width:100%;min-height:143px;" id="freturn"></pre>
+		  <button class="btn btn-inverse" id="copy">Copy</button>
+		  </fieldset>
+		  </div>
+        </div><!--/NRF-->
+		 </div><!--/DYN-->
+		 
+		<div>
+    <!--NRF-->
+	<div class="row-fluid">
+          <div class="span6">
+		  <p class="muted"><a href="http://lucasguimaraes.com" class="muted">
+		  <span id="lucaslogo"></span><small>© 2013 LucasGuimaraes.com</small></a>
+		  </p>
+		  </div>
+        </div><!--/NRF-->
+  </div>
+
+ </div><!--/SPAN12-->
+ </div><!--/ROW-FLUID-->
+	
+    </div><!--/CONTAINER-->
+	
+	<!--MODALS-->
+  <!--MODALABOUT-->
+  <div id="modalabout" class="modal hide fade" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3 id="modalabout_title" class="muted"></h3>
+  </div>
+  <div class="modal-body">
+    
+    <p id="modalabout_license" class="muted">© 2013 LucasGuimaraes.com</p>
+	<p>EID: <span id="modalabout_eid">?</span></p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" id="modalabout_close" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+  </div>
+  <!--/MODALABOUT-->
+	<!--/MODALS-->
+
+	
+</body>
+</html>

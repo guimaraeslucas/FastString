@@ -1,0 +1,114 @@
+{
+   "appdescription": {
+      "message": "Codifica y decodifica strings en Base64, rot13, html, url y otros formatos. Trabaja offline."
+   },
+   "appname": {
+      "message": "FastString por .LG"
+   },
+   "shortappname": {
+      "message": "FastString"
+   },
+      "specialitem": {
+      "message": "Especial"
+   },
+   "copy": {
+      "message": "Copiar"
+   },
+  "b64e": {
+      "message": "codificar Base64"
+   },
+      "b64d": {
+      "message": "decodificar Base64"
+   },
+      "b64eu": {
+      "message": "codificar Base64 url amigable"
+   },
+      "b64du": {
+      "message": "decodificar Base64 url amigable"
+   },
+      "b64diu": {
+      "message": "Mostrar imagen em Base64"
+   },
+      "urle": {
+      "message": "codificar url"
+   },
+      "urld": {
+      "message": "decodificar url"
+   },
+      "htmle": {
+      "message": "codificar html"
+   },
+      "htmld": {
+      "message": "decodificar html"
+   },
+      "about": {
+      "message": "acerca de este app"
+   },
+         "md5": {
+      "message": "md5"
+   },
+            "md5h": {
+      "message": "md5 Hex"
+   },
+            "md564": {
+      "message": "md5 Base64"
+   },
+         "sha": {
+      "message": "sha"
+   },
+            "sha1": {
+      "message": "sha-1"
+   },
+            "sha224": {
+      "message": "sha-224"
+   },
+            "sha256": {
+      "message": "sha-256"
+   },
+            "sha384": {
+      "message": "sha-384"
+   },
+            "sha512": {
+      "message": "sha-512"
+   },
+   
+         "rot13": {
+      "message": "rot13"
+   },
+         "mED": {
+      "message": "mED"
+   },
+            "reve": {
+      "message": "Invertir string"
+   },
+            "emED": {
+      "message": "Codificar mED"
+   },
+            "dmED": {
+      "message": "Decodificar mED"
+   },
+   "welcome": {
+      "message": "Bienvenido a"
+   },
+   "selectoption": {
+      "message": "Elija una opción para comenzar"
+   },
+      "result": {
+      "message": "Resultado"
+   },
+      "doit": {
+      "message": "Hazlo!"
+   },
+      "modalabout_title": {
+      "message": "acerca de este software"
+   },
+      "modalabout_license": {
+      "message": "Versión del App: 0.2 <br> Copyright © 2013 Lucas Guimarães<br>(lucas@lucasguimaraes.com)</p><p>Código fuente disponible utilizando licencia Eclipse.</p><p>http://lucasguimaraes.com"
+   },
+      "modalabout_close": {
+      "message": "Close"
+   },
+      "others": {
+      "message": "otras acciones"
+   }
+}
