@@ -37,6 +37,8 @@ This App is licensed under the Eclipse license terms.
 
 About
 ---
-Designed by Lucas Guimarães
-Web-site: http://lucasguimaraes.com
+Designed by Lucas Guimarães.
+
+Web-site: http://lucasguimaraes.com.
+
 Please report bugs at ChromeStore
