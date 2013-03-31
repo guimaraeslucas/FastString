@@ -41,7 +41,7 @@
 <link rel="stylesheet" href="res/css/bootstrap.min.css">
 <link rel="stylesheet" href="res/css/darkstrap.css">
 <style>
-@media only screen and (min-width: 1000px){
+@media only screen and (min-width: 980px){
 body {padding-top: 60px;}
 }
 </style>
@@ -55,9 +55,10 @@ body {padding-top: 60px;}
 <script src="res/javascript/jquery.base64.js"></script>
 <script src="res/javascript/md5.js"></script>
 <script src="res/javascript/sha.js"></script>
-<script src="res/javascript/rot13.js"></script>
+<script src="res/javascript/stringsopt.js"></script>
 <script src="res/javascript/html.js"></script>
 <script src="res/javascript/mED.js"></script>
+<script src="res/javascript/crc32.js"></script>
 <!-- Initiate LGApp -->
 <script src="res/javascript/global.js"></script>
 <!--_/SCRIPTS-->
@@ -82,19 +83,18 @@ body {padding-top: 60px;}
                   <li><a href="#" id="b64d"></a></li>
                   <li class="divider"></li>
                   <li class="nav-header specialitem"></li>
-                 <!-- <li><a href="#" id="b64eu"></a></li>
-                  <li><a href="#" id="b64du"></a></li>-->
+                 <li><a href="#" id="b64eu"></a></li>
+                  <li><a href="#" id="b64du"></a></li>
 				  <li><a href="#" id="b64diu"></a></li>
                 </ul>
 			  </li>
-              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="md5">md5</span> <b class="caret"></b></a>
+             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="hashs">hashs</span> <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                  <li><a href="#" id="md5h"></a></li>
+				  <li><a href="#" id="crc32"></a></li>
+				  <li class="divider"></li>
+				  <li><a href="#" id="md5h"></a></li>
                   <li><a href="#" id="md564"></a></li>
-                </ul>
-			  </li>
-             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="md5">sha</span> <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
+				  <li class="divider"></li>
                   <li><a href="#" id="sha1"></a></li>
 				  <li><a href="#" id="sha224"></a></li>
                   <li><a href="#" id="sha256"></a></li>
@@ -117,10 +117,16 @@ body {padding-top: 60px;}
 			  </li>
 			  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="others">others</span> <b class="caret"></b></a>
                   <ul class="dropdown-menu">
+				  <li><a href="#" id="emED"></a></li>
+                  <li><a href="#" id="dmED"></a></li>		
+				  
+                  <li class="divider"></li>
+                  <li class="nav-header" id="sopt"></li>	
+                  <li><a href="#" id="c2d"></a></li>					  
 				  <li><a href="#" id="reve"></a></li>
-				  <li><a href="#" id="rot13">rot13</a></li>
-                  <li><a href="#" id="emED"></a></li>
-                  <li><a href="#" id="dmED"></a></li>
+				  <li><a href="#" id="rot13"></a></li>
+				  <li><a href="#" id="stgs"></a></li>
+				 
                 </ul>
 			  </li>
 			  <li><a href="#modalabout" data-toggle="modal"><span id="about">Info</span> </a></li>
@@ -135,7 +141,7 @@ body {padding-top: 60px;}
 	<div class="row-fluid">
     <div class="span12">
     <!--HERO-->
-    <div class="hero-unit" id="hero">
+    <div class="hero-unit textoback" id="hero">
     <h1 id="welcomemsg"></h1>
 	<h3 id="selectoption"></h3>
 	</div>
@@ -148,8 +154,8 @@ body {padding-top: 60px;}
 <form>
   <fieldset>
     <legend id="action"></legend>
-    <textarea style="width:100%;min-height:150px;" id="eandd"></textarea> <br>
-    <button class="btn btn-inverse" id="doit"></button>
+    <textarea style="width:100%;min-height:129px;" id="eandd" class="span6 ucode"></textarea> <br>
+    <button class="btn btn-inverse" id="doit" type="button"></button> <button class="btn btn-inverse" id="paste"></button>
   </fieldset>
 </form>
 
@@ -157,8 +163,8 @@ body {padding-top: 60px;}
 		  <div class="span6">
 		    <fieldset>
 			    <legend id="result"></legend>
-		  <pre class="pre-scrollable" style="width:100%;min-height:143px;" id="freturn"></pre>
-		  <button class="btn btn-inverse" id="copy">Copy</button>
+		  <pre class="pre-scrollable" style="min-height:113px;" class="span6" id="freturn"></pre>
+		  <button class="btn btn-inverse" id="copy" style="margin-top:-2px;"></button>
 		  </fieldset>
 		  </div>
         </div><!--/NRF-->

@@ -36,38 +36,48 @@ function lgloadapp(){
  var lgshortappname = lgt("shortappname");
  lgte("#brand",lgshortappname+' <img src="res/images/png/fs16.png">');
 
- //Sets submenus
+ //Set errormessages
+ invalid = lgt('invalid');
+ 
+ //Set submenus
  //B64
-  lgtt(".specialitem","special");
-  lgtt("#b64e","b64e");
-  lgtt("#b64d","b64d");
-  //lgtt("#b64eu","b64eu");
-  //lgtt("#b64du","b64du");
-  lgtt("#b64diu","b64diu");
- //md5
-  lgtt("#md5h","md5h");
-  lgtt("#md564","md564");
- //SHA
-  lgtt("#sha1","sha1");
-  lgtt("#sha224","sha224");
-  lgtt("#sha256","sha256");
-  lgtt("#sha384","sha384");
-  lgtt("#sha512","sha512");
+ lgtt(".specialitem","special");
+ lgtt("#b64e","b64e");
+ lgtt("#b64d","b64d");
+ lgtt("#b64eu","b64eu");
+ lgtt("#b64du","b64du");
+ lgtt("#b64diu","b64diu");
+ 
+ //HASHS
+ lgtt("#hashs","hashs");//menu title
+ lgtt("#crc32","crc32");
+ lgtt("#md5h","md5h");
+ lgtt("#md564","md564");
+ lgtt("#sha1","sha1");
+ lgtt("#sha224","sha224");
+ lgtt("#sha256","sha256");
+ lgtt("#sha384","sha384");
+ lgtt("#sha512","sha512");
   
  //URL
-  lgtt("#urle","urle");
-  lgtt("#urld","urld");
+ lgtt("#urle","urle");
+ lgtt("#urld","urld");
  //HTML
-  lgtt("#htmle","htmle");
-  lgtt("#htmld","htmld");
-  //mED
-  lgtt("#others","others");
-  lgtt("#emED","emED");
-  lgtt("#dmED","dmED");
-  lgtt("#reve","reve");
+ lgtt("#htmle","htmle");
+ lgtt("#htmld","htmld");
+  
+ //Others
+ lgtt("#others","others");
+ lgtt("#emED","emED");
+ lgtt("#dmED","dmED");
+ lgtt("#c2d","c2d");
+ lgtt("#sopt","sopt");
+ lgtt("#reve","reve"); 
+ lgtt("#rot13","rot13"); 
+ lgtt("#stgs","stgs"); 
   
  //ABOUT
-  lgtt("#about","about");
+ lgtt("#about","about");
   
  //Sets Welcome message
  lgte("#welcomemsg",lgt("welcome")+' <strong id="appname">'+lgshortappname+'</strong>'); 
@@ -77,6 +87,7 @@ function lgloadapp(){
  lgtt("#doit","doit");
  lgtt("#result","result");
  lgtt("#copy","copy");
+ lgtt("#paste","paste");
  
  //Sets Modal
  lgtt("#modalabout_title","modalabout_title");
@@ -85,15 +96,29 @@ function lgloadapp(){
  lgtt("#modalabout_close","modalabout_close");
  
  //BUTTONS ACTIONS
- //Brand
+
+//PASTE BUTTON
+ $("#paste").click(function() {
+ $("#eandd").text(pasteTextFromClipboard());
+ }); 
+ 
+ 
+//COPY BUTTON
+ $("#copy").click(function() {
+ var freturn=$("#freturn").text();
+ copyTextToClipboard(freturn);
+ }); 
+ 
+
+//BRAND
  $("#brand").click(function() { 
   $("#hero").fadeIn(900);
    $("#dyn").hide();
    $("#eandd").val('');
    $("#freturn").text('');
 }); 
-
- //B64E
+ 
+//B64E
 $("#b64e").click(function() {
   hero_hide();
   //Defines action name
@@ -101,7 +126,10 @@ $("#b64e").click(function() {
   //Defines click action
   $("#doit").click(function() {
    var eandd = $("#eandd").val();
-   $("#freturn").text($.base64.encode(eandd));
+   var enc=$.base64.encode(eandd);
+   if(enc){
+   $("#freturn").text(enc);
+   }
     return false;
   }); 
   //Show Dyn
@@ -109,7 +137,7 @@ $("#b64e").click(function() {
  
 }); 
 
- //B64D
+//B64D
 $("#b64d").click(function() {
   hero_hide();
   //Defines action name
@@ -117,14 +145,53 @@ $("#b64d").click(function() {
   //Defines click action
   $("#doit").click(function() {
    var eandd = $("#eandd").val();
-   $("#freturn").text($.base64.decode(eandd));
+   try{
+   var dec=$.base64.decode(eandd);
+   }catch(err){var dec=invalid;};   
+   $("#freturn").text(dec);   
     return false;
   }); 
   //Show Dyn
   $("#dyn").fadeIn(900); 
 }); 
 
- //B64DIU
+
+//B64EU
+$("#b64eu").click(function() {
+  hero_hide();
+  //Defines action name
+  lgtt("#action","b64eu");
+  //Defines click action
+  $("#doit").click(function() {
+   var eandd = $("#eandd").val();
+   var ec=$.base64.encode(eandd);
+   $("#freturn").text(hide64(ec));
+    return false;
+  }); 
+  //Show Dyn
+  $("#dyn").fadeIn(900); 
+}); 
+
+//B64EU
+$("#b64du").click(function() {
+  hero_hide();
+  //Defines action name
+  lgtt("#action","b64du");
+  //Defines click action
+  $("#doit").click(function() {
+   var eandd = $("#eandd").val();
+   try{
+   var dec=show64(eandd);
+   var dec2 = $.base64.decode(dec);
+   }catch(err){var dec=invalid;}; 
+   $("#freturn").text(dec2);
+    return false;
+  }); 
+  //Show Dyn
+  $("#dyn").fadeIn(900); 
+}); 
+
+//B64DIU
 $("#b64diu").click(function() {
   hero_hide();
   //Defines action name
@@ -139,7 +206,22 @@ $("#b64diu").click(function() {
   $("#dyn").fadeIn(900); 
 }); 
 
-  //MD5H
+//CRC32
+$("#crc32").click(function() {
+  hero_hide();
+  //Defines action name
+  lgtt("#action","crc32");
+  //Defines click action
+  $("#doit").click(function() {
+   var eandd = $("#eandd").val();
+   $("#freturn").text(fcrc32(eandd));
+    return false;
+  }); 
+  //Show Dyn
+  $("#dyn").fadeIn(900); 
+}); 
+
+//MD5H
 $("#md5h").click(function() {
   hero_hide();
   //Defines action name
@@ -154,7 +236,7 @@ $("#md5h").click(function() {
   $("#dyn").fadeIn(900); 
 }); 
 
-  //MD564
+//MD564
 $("#md564").click(function() {
   hero_hide();
   //Defines action name
@@ -169,7 +251,7 @@ $("#md564").click(function() {
   $("#dyn").fadeIn(900); 
 }); 
 
-  //SHA-1
+//SHA-1
 $("#sha1").click(function() {
   hero_hide();
   //Defines action name
@@ -187,7 +269,7 @@ $("#sha1").click(function() {
   $("#dyn").fadeIn(900); 
 }); 
 
-  //SHA-224
+//SHA-224
 $("#sha224").click(function() {
   hero_hide();
   //Defines action name
@@ -204,7 +286,7 @@ $("#sha224").click(function() {
   $("#dyn").fadeIn(900); 
 }); 
 
-  //SHA-256
+//SHA-256
 $("#sha256").click(function() {
   hero_hide();
   //Defines action name
@@ -221,7 +303,7 @@ $("#sha256").click(function() {
   $("#dyn").fadeIn(900); 
 }); 
 
-   //SHA-384
+//SHA-384
 $("#sha384").click(function() {
   hero_hide();
   //Defines action name
@@ -239,7 +321,7 @@ $("#sha384").click(function() {
 }); 
 
 
-   //SHA-512
+//SHA-512
 $("#sha512").click(function() {
   hero_hide();
   //Defines action name
@@ -256,24 +338,7 @@ $("#sha512").click(function() {
   $("#dyn").fadeIn(900); 
 }); 
 
-
-  //ROT13
-$("#rot13").click(function() {
-  hero_hide();
-  //Defines action name
-  lgtt("#action","rot13");
-  //Defines click action
-  $("#doit").click(function() {
-   var eandd = $("#eandd").val();
-   $("#freturn").text(rot13(eandd));
-    return false;
-  }); 
-  //Show Dyn
-  $("#dyn").fadeIn(900); 
-}); 
- 
- 
-   //URLE
+//URLE
 $("#urle").click(function() {
   hero_hide();
   //Defines action name
@@ -288,7 +353,7 @@ $("#urle").click(function() {
   $("#dyn").fadeIn(900); 
 }); 
 
-   //URLD
+//URLD
 $("#urld").click(function() {
   hero_hide();
   //Defines action name
@@ -303,8 +368,7 @@ $("#urld").click(function() {
   $("#dyn").fadeIn(900); 
 }); 
 
-
-   //htmle
+//HTMLE
 $("#htmle").click(function() {
   hero_hide();
   //Defines action name
@@ -319,8 +383,7 @@ $("#htmle").click(function() {
   $("#dyn").fadeIn(900); 
 }); 
 
-
-   //htmld
+//HTMLD
 $("#htmld").click(function() {
   hero_hide();
   //Defines action name
@@ -335,26 +398,7 @@ $("#htmld").click(function() {
   $("#dyn").fadeIn(900); 
 }); 
  
- 
- 
-    //reve
-$("#reve").click(function() {
-  hero_hide();
-  //Defines action name
-  lgtt("#action","reve");
-  //Defines click action
-  $("#doit").click(function() {
-   var eandd = $("#eandd").val();
-   $("#freturn").text(strrev(eandd));
-    return false;
-  }); 
-  //Show Dyn
-  $("#dyn").fadeIn(900); 
-}); 
- 
- 
- 
-     //reve
+//EMED
 $("#emED").click(function() {
   hero_hide();
   //Defines action name
@@ -369,6 +413,7 @@ $("#emED").click(function() {
   $("#dyn").fadeIn(900); 
 }); 
 
+//DEMED
 $("#dmED").click(function() {
   hero_hide();
   //Defines action name
@@ -382,15 +427,71 @@ $("#dmED").click(function() {
   //Show Dyn
   $("#dyn").fadeIn(900); 
 }); 
+
+//ROT13
+$("#rot13").click(function() {
+  hero_hide();
+  //Defines action name
+  lgtt("#action","rot13");
+  //Defines click action
+  $("#doit").click(function() {
+   var eandd = $("#eandd").val();
+   $("#freturn").text(rot13(eandd));
+    return false;
+  }); 
+  //Show Dyn
+  $("#dyn").fadeIn(900); 
+}); 
+
+//REVE
+$("#reve").click(function() {
+  hero_hide();
+  //Defines action name
+  lgtt("#action","reve");
+  //Defines click action
+  $("#doit").click(function() {
+   var eandd = $("#eandd").val();
+   $("#freturn").text(strrev(eandd));
+    return false;
+  }); 
+  //Show Dyn
+  $("#dyn").fadeIn(900); 
+}); 
  
- $("#copy").click(function() {
- var freturn=$("#freturn").text();
- copyTextToClipboard(freturn);
- }); 
+//C2D
+$("#c2d").click(function() {
+  hero_hide();
+  //Defines action name
+  lgtt("#action","c2d");
+  //Defines click action
+  $("#doit").click(function() {
+   var eandd = $("#eandd").val();
+   $("#freturn").text(lgcomma2dot(eandd));
+    return false;
+  }); 
+  //Show Dyn
+  $("#dyn").fadeIn(900); 
+}); 
+
+//STGE
+$("#stgs").click(function() {
+  hero_hide();
+  //Defines action name
+  lgtt("#action","stgs");
+  //Defines click action
+  $("#doit").click(function() {
+   var eandd = $("#eandd").val();
+   $("#freturn").text(strip_tags(eandd,''));
+    return false;
+  }); 
+  //Show Dyn
+  $("#dyn").fadeIn(900); 
+}); 
  
- }
+}//END LOAD
  
 // Copy provided text to the clipboard.
+//From: 
 function copyTextToClipboard(text) {
     var copyFrom = $('<textarea/>');
     copyFrom.text(text);
@@ -400,10 +501,22 @@ function copyTextToClipboard(text) {
     copyFrom.remove();
 }
 
-// Usage example
+//Paste text from clipboard
+//Modified from:
+//http://stackoverflow.com/questions/7144702/the-proper-use-of-execcommandpaste-in-a-chrome-extension
+function pasteTextFromClipboard() {
+    var result = '';
+    var sandbox = $('<textarea/>');
+		$('body').append(sandbox);    
+	sandbox.select();
+	    if (document.execCommand('paste')) {
+        result = sandbox.val();
+    }
+    sandbox.val('');
+	sandbox.remove();
+    return result;
+}
 
-
- 
 //Starts app 
 $(document).ready(function() {
 lgloadapp();

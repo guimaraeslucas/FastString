@@ -14,6 +14,9 @@
    "copy": {
       "message": "Copiar"
    },
+    "paste": {
+      "message": "Colar"
+   },
    "b64e": {
       "message": "codificar Base64"
    },
@@ -103,12 +106,30 @@
       "message": "Sobre este software"
    },
       "modalabout_license": {
-      "message": "Versão do App: 0.2 <br> Copyright © 2013 Lucas Guimarães<br>(lucas@lucasguimaraes.com)</p><p>Código fonte disponível utilizando a licença Eclipse.</p><p>http://lucasguimaraes.com"
+      "message": "Versão do App: 0.8 <br> Copyright © 2013 Lucas Guimarães<br>(lucas@lucasguimaraes.com)</p><p>Código fonte disponível utilizando a licença Eclipse em https://github.com/guimaraeslucas/FastString.git.</p><p>http://lucasguimaraes.com"
    },
       "modalabout_close": {
       "message": "Fechar"
    },
       "others": {
       "message": "outras ações"
+   },
+   "sopt": {
+      "message": "operações com strings"
+   },
+      "c2d": {
+      "message": "vírgulas para pontos"
+   },
+      "invalid": {
+      "message": "valor inválido ou não suportado"
+   },
+      "crc32": {
+      "message": "CRC32"
+   },
+      "hashs": {
+      "message": "hashs"
+   },
+      "stgs": {
+      "message": "apagar tags"
    }
 }
