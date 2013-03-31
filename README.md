@@ -26,7 +26,7 @@ The .LG FastString is a powerful offline string Encoder and Decoder that allows 
  - Change commas to dots
  - Remove tags
 
- The app also has some features like:
+The app also has some features like:
  - Flexible layout that adapts it to small window sizes and resolutions
  - Touch compatible UI
  - A beautiful black interface so you can keep programming even in the dark
