@@ -1,6 +1,6 @@
 .LG FastString
-(C) Copyright 2013 - Lucas Guimarães 
 ==========
+(C) Copyright 2013 - Lucas Guimarães 
 
 .LG FastString is an Offline Chrome App that using only javascript code can encode and decode various formats 
 and can perform strings operations like striptags and rot13.
