@@ -17,9 +17,11 @@
 *
 */
 /*This should be safe to use with URLs*/
-function hide64(str){
-return str.replace("=","_").replace("/",",,,");
-}
+
+function hide64(str) {
+ return str.replace(/=/g, "_").replace(/\//g,",").replace(/\+/g,"-");
+};
+
 function show64(str){
-return str.replace("_","=").replace(",,,","/");
+ return str.replace(/_/g, "=").replace(/,/g,"/").replace(/-/g,"+");
 }

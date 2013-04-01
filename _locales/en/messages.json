@@ -1,6 +1,6 @@
 {
    "appdescription": {
-      "message": "Encodes and decodes strings in base64, rot13, html, url and others formats. Works offline."
+      "message": "Encodes and decodes strings in base64, html, url, generates MD5 ans SHA hashs, strip tags and others features. Works offline."
    },
    "appname": {
       "message": "FastString by .LG"
@@ -106,7 +106,7 @@
       "message": "About this software"
    },
       "modalabout_license": {
-      "message": "App Version: 0.8 <br> Copyright © 2013 Lucas Guimarães<br>(lucas@lucasguimaraes.com)</p><p>Source code available under Eclipse license at https://github.com/guimaraeslucas/FastString.git</p><p>http://lucasguimaraes.com"
+      "message": "Copyright © 2013 Lucas Guimarães<br>(lucas@lucasguimaraes.com)</p><p>Source code available under Eclipse license at https://github.com/guimaraeslucas/FastString.git</p><p>http://lucasguimaraes.com"
    },
       "modalabout_close": {
       "message": "Close"
@@ -131,5 +131,8 @@
    },
       "stgs": {
       "message": "strip tags"
+   },
+      "view": {
+      "message": "raw HTML"
    }
 }

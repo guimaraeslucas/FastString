@@ -26,3 +26,12 @@ background-image: url('../images/png/textofundo.png')!important;
 background-repeat:no-repeat!important;
 background-position:right center!important; 
 }
+
+#sound{
+width:1px;
+height:1px;
+background-color:transparent;
+position:absolute;
+top:0px;
+left:0px;
+}

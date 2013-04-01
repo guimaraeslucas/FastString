@@ -22,9 +22,10 @@
 <!--_LGGM-->
 <meta name="copyright" content="Copyright 2013 - LucasGuimaraes.com">
 <meta name="generator" content="LGPowerWeb/2.0.0 LGGM/6.0.2 (4.0.0)">
-<link rel="shortcut icon" type="image/x-icon" href="res/images/png/fs16.png">
-<link rel="favicon" type="image/x-icon" href="res/images/png/fs16.png">
-<link rel="icon" type="image/x-icon" href="res/images/png/fs16.png">
+<link rel="shortcut icon" type="image/png" href="res/images/png/fs16.png">
+<link rel="favicon" type="image/png" href="res/images/png/fs16.png">
+<link rel="icon" type="image/png" href="res/images/png/fs16.png">
+<link rel="icon" type="image/png" href="res/images/png/fs24.png" sizes="24x24">
 <link rel="icon" type="image/png" href="res/images/png/fs32.png" sizes="32x32">
 <link rel="icon" type="image/png" href="res/images/png/fs48.png" sizes="48x48">
 <link rel="icon" type="image/png" href="res/images/png/fs64.png" sizes="64x64">
@@ -164,7 +165,8 @@ body {padding-top: 60px;}
 		    <fieldset>
 			    <legend id="result"></legend>
 		  <pre class="pre-scrollable" style="min-height:113px;" class="span6" id="freturn"></pre>
-		  <button class="btn btn-inverse" id="copy" style="margin-top:-2px;"></button>
+		  <button class="btn btn-inverse" id="copy" style="margin-top:-2px;" type="button"></button> <button class="btn btn-inverse" id="view" style="margin-top:-2px;" type="button"></button>
+		  
 		  </fieldset>
 		  </div>
         </div><!--/NRF-->
@@ -176,6 +178,7 @@ body {padding-top: 60px;}
           <div class="span6">
 		  <p class="muted"><a href="http://lucasguimaraes.com" class="muted">
 		  <span id="lucaslogo"></span><small>© 2013 LucasGuimaraes.com</small></a>
+		  <div id="sound"></div>
 		  </p>
 		  </div>
         </div><!--/NRF-->
@@ -196,15 +199,33 @@ body {padding-top: 60px;}
   <div class="modal-body">
     
     <p id="modalabout_license" class="muted">© 2013 LucasGuimaraes.com</p>
-	<p>EID: <span id="modalabout_eid">?</span></p>
+	<p>EID: <span id="modalabout_eid"></span></p>
   </div>
   <div class="modal-footer">
-    <button class="btn" id="modalabout_close" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn" id="modalabout_close" data-dismiss="modal" aria-hidden="true"></button>
   </div>
   </div>
   <!--/MODALABOUT-->
-	<!--/MODALS-->
-
+  
+  
+  <!--MODALABOUT-->
+  <div id="modalhtml" class="modal hide fade" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3 id="modalhtml_title" class="muted">Viewer</h3>
+  </div>
+  <div class="modal-body">
+    
+    <p id="modalhtmlcontent">
 	
+	</p>
+	
+  </div>
+  <div class="modal-footer">
+    <button class="btn" id="modalhtml_close" data-dismiss="modal" aria-hidden="true"></button>
+  </div>
+  </div>
+  <!--/MODALABOUT-->
+<!--/MODALS-->
 </body>
 </html>

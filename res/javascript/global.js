@@ -25,7 +25,12 @@ function lgte(elementId, txt) {
 }
 
 function hero_hide(){
+ $('#doit').unbind('click');
  $("#hero").fadeOut(100);
+}
+
+function soundalert(){
+$("#sound").html('<audio autoplay="autoplay" preload="auto" src="res/sounds/mp3/timtum.mp3"></audio>');
 }
 
 function lgloadapp(){
@@ -88,6 +93,7 @@ function lgloadapp(){
  lgtt("#result","result");
  lgtt("#copy","copy");
  lgtt("#paste","paste");
+ lgtt("#view","view");
  
  //Sets Modal
  lgtt("#modalabout_title","modalabout_title");
@@ -95,19 +101,31 @@ function lgloadapp(){
  lgtt("#modalabout_eid","@@extension_id");
  lgtt("#modalabout_close","modalabout_close");
  
+ 
+ lgtt("#modalhtml_close","modalabout_close");
+ 
  //BUTTONS ACTIONS
 
 //PASTE BUTTON
  $("#paste").click(function() {
- $("#eandd").text(pasteTextFromClipboard());
+ $("#eandd").val(pasteTextFromClipboard());
+ return false; //Should be here as if we set type=button chrome ignores it
  }); 
  
  
 //COPY BUTTON
  $("#copy").click(function() {
  var freturn=$("#freturn").text();
- copyTextToClipboard(freturn);
+ copyTextToClipboard(freturn); 
  }); 
+ 
+ 
+ //VIEW BUTTON
+ $("#view").click(function() {
+ var freturn=$("#freturn").html();
+ $("#modalhtmlcontent").html(htmlUnescape(freturn)); 
+ $('#modalhtml').modal('show');
+ });
  
 
 //BRAND
@@ -147,7 +165,9 @@ $("#b64d").click(function() {
    var eandd = $("#eandd").val();
    try{
    var dec=$.base64.decode(eandd);
-   }catch(err){var dec=invalid;};   
+   }catch(err){var dec=invalid;
+   soundalert();
+   };   
    $("#freturn").text(dec);   
     return false;
   }); 
@@ -172,7 +192,7 @@ $("#b64eu").click(function() {
   $("#dyn").fadeIn(900); 
 }); 
 
-//B64EU
+//B64DU
 $("#b64du").click(function() {
   hero_hide();
   //Defines action name
@@ -183,7 +203,10 @@ $("#b64du").click(function() {
    try{
    var dec=show64(eandd);
    var dec2 = $.base64.decode(dec);
-   }catch(err){var dec=invalid;}; 
+   }catch(err){
+   var dec2=invalid;
+   soundalert();
+   }; 
    $("#freturn").text(dec2);
     return false;
   }); 
@@ -466,7 +489,12 @@ $("#c2d").click(function() {
   //Defines click action
   $("#doit").click(function() {
    var eandd = $("#eandd").val();
-   $("#freturn").text(lgcomma2dot(eandd));
+   var check =lgcomma2dot(eandd);
+   if (check==0){
+   check=invalid;
+   soundalert();
+   }   
+   $("#freturn").text(check);
     return false;
   }); 
   //Show Dyn
@@ -515,7 +543,7 @@ function pasteTextFromClipboard() {
     sandbox.val('');
 	sandbox.remove();
     return result;
-}
+	}
 
 //Starts app 
 $(document).ready(function() {

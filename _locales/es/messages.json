@@ -1,6 +1,6 @@
 {
    "appdescription": {
-      "message": "Codifica y decodifica strings en Base64, rot13, html, url y otros formatos. Trabaja offline."
+      "message": "Codifica y decodifica strings en base64, html, url, y realiza operaciones con string como MD5 y SHA. Trabaja offline."
    },
    "appname": {
       "message": "FastString por .LG"
@@ -30,7 +30,7 @@
       "message": "decodificar Base64 url amigable"
    },
       "b64diu": {
-      "message": "Mostrar imagen em Base64"
+      "message": "mostrar imagen em Base64"
    },
       "urle": {
       "message": "codificar url"
@@ -82,13 +82,13 @@
       "message": "mED"
    },
             "reve": {
-      "message": "Invertir string"
+      "message": "invertir string"
    },
             "emED": {
-      "message": "Codificar mED"
+      "message": "codificar mED"
    },
             "dmED": {
-      "message": "Decodificar mED"
+      "message": "decodificar mED"
    },
    "welcome": {
       "message": "Bienvenido a"
@@ -103,10 +103,10 @@
       "message": "Hazlo!"
    },
       "modalabout_title": {
-      "message": "acerca de este software"
+      "message": "Acerca de este software"
    },
       "modalabout_license": {
-      "message": "Versión del App: 0.8 <br> Copyright © 2013 Lucas Guimarães<br>(lucas@lucasguimaraes.com)</p><p>Código fuente disponible utilizando licencia Eclipse en https://github.com/guimaraeslucas/FastString.git.</p><p>http://lucasguimaraes.com"
+      "message": "Copyright © 2013 Lucas Guimarães<br>(lucas@lucasguimaraes.com)</p><p>Código fuente disponible utilizando licencia Eclipse en https://github.com/guimaraeslucas/FastString.git.</p><p>http://lucasguimaraes.com"
    },
       "modalabout_close": {
       "message": "Close"
@@ -130,6 +130,9 @@
       "message": "hashs"
    },
       "stgs": {
-      "message": "excluir tags"
+      "message": "eliminar tags"
+   },
+      "view": {
+      "message": "HTML bruto"
    }
 }
