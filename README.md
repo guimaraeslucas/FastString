@@ -27,7 +27,7 @@ The .LG FastString is a powerful offline string Encoder and Decoder that allows 
  - Remove tags
 
 The app also has some features like:
- - Flexible layout that adapts it to small window sizes and resolutions
+ - Flexible layout that adapts itself to small window sizes and resolutions
  - Touch compatible UI
  - A beautiful black interface so you can keep programming even in the dark
 
