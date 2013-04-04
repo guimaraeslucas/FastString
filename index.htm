@@ -78,15 +78,18 @@ body {padding-top: 60px;}
           <div class="nav-collapse collapse">
             <ul class="nav">
 			<!--class="active"-->
-              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="b64">base64</span> <b class="caret"></b></a>
+              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="convert">convert</span> <b class="caret"></b></a>
                   <ul class="dropdown-menu">
+				  <li class="nav-header">Base64</li>	
                   <li><a href="#" id="b64e"></a></li>
                   <li><a href="#" id="b64d"></a></li>
-                  <li class="divider"></li>
-                  <li class="nav-header specialitem"></li>
-                 <li><a href="#" id="b64eu"></a></li>
+                  <li><a href="#" id="b64eu"></a></li>
                   <li><a href="#" id="b64du"></a></li>
 				  <li><a href="#" id="b64diu"></a></li>
+				  <li class="divider"></li>
+				  <li class="nav-header">mED</li>	
+				  <li><a href="#" id="emED"></a></li>
+                  <li><a href="#" id="dmED"></a></li>	
                 </ul>
 			  </li>
              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="hashs">hashs</span> <b class="caret"></b></a>
@@ -103,34 +106,37 @@ body {padding-top: 60px;}
 				  <li><a href="#" id="sha512"></a></li>
                 </ul>
 			  </li>
-			
-			  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="url">url</span> <b class="caret"></b></a>
+
+			  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="html">web</span> <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                  <li><a href="#" id="urle"></a></li>
+				  <li><a href="#" id="urle"></a></li>
                   <li><a href="#" id="urld"></a></li>
-                </ul>
-			  </li>
-			  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="html">html</span> <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
+				  <li class="divider"></li>
                   <li><a href="#" id="htmle"></a></li>
                   <li><a href="#" id="htmld"></a></li>
+				  <li><a href="#modalcolors" data-toggle="modal" id="htmlcolors"></a></li>
+				  <li><a href="#modalenti" data-toggle="modal" id="enti"></a></li>
                 </ul>
-			  </li>
+			  </li>			  			
 			  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="others">others</span> <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-				  <li><a href="#" id="emED"></a></li>
-                  <li><a href="#" id="dmED"></a></li>		
-				  
-                  <li class="divider"></li>
-                  <li class="nav-header" id="sopt"></li>	
-                  <li><a href="#" id="c2d"></a></li>					  
+                  <li><a href="#" id="c2d"></a></li>		
+				  <li><a href="#" id="strlen"></a></li>				  
 				  <li><a href="#" id="reve"></a></li>
 				  <li><a href="#" id="rot13"></a></li>
 				  <li><a href="#" id="stgs"></a></li>
-				 
+				  <li><a href="#" id="addslashes"></a></li>
+				  <li><a href="#" id="stripslashes"></a></li>
+				  <li><a href="#" id="strtolower"></a></li>
+				  <li><a href="#" id="strtoupper"></a></li>
+				  <li><a href="#" id="ucwords"></a></li>
+				  <li><a href="#" id="str_shuffle"></a></li>
                 </ul>
 			  </li>
+			 
 			  <li><a href="#modalabout" data-toggle="modal"><span id="about">Info</span> </a></li>
+			  
+			  
             </ul>
           </div>
         </div>
@@ -156,6 +162,9 @@ body {padding-top: 60px;}
   <fieldset>
     <legend id="action"></legend>
     <textarea style="width:100%;min-height:129px;" id="eandd" class="span6 ucode"></textarea> <br>
+	<!--<input style="width:98%;" type="text" id="parameters" name="parameters">-->
+	<select style="width:100%; display:none;" id="shaopt"><option value="HEX">Hex</option><option value="B64">Base64</option></select>
+	
     <button class="btn btn-inverse" id="doit" type="button"></button> <button class="btn btn-inverse" id="paste"></button>
   </fieldset>
 </form>
@@ -208,7 +217,7 @@ body {padding-top: 60px;}
   <!--/MODALABOUT-->
   
   
-  <!--MODALABOUT-->
+  <!--MODALHTML-->
   <div id="modalhtml" class="modal hide fade" tabindex="-1" role="dialog">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal">×</button>
@@ -225,7 +234,1475 @@ body {padding-top: 60px;}
     <button class="btn" id="modalhtml_close" data-dismiss="modal" aria-hidden="true"></button>
   </div>
   </div>
-  <!--/MODALABOUT-->
+  <!--/MODALHTML-->
+  
+  
+  
+    <!--MODALENTI-->
+  <div id="modalenti" class="modal hide fade" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3 id="modalenti_title" class="muted"></h3>
+  </div>
+  <div class="modal-body">
+    
+    <p id="modalenticontent">
+	<table class="table table-condensed table-hover">
+  <tr>
+    <th id="modalenti_character">Character</th>
+    <th id="modalenti_enumber">Entity Number</th>
+    <th id="modalenti_ename">Entity Name</th>
+  </tr>
+  <tr>
+    <td>&#8704;</td>
+    <td>&amp;#8704;</td>
+    <td>&amp;forall;</td>
+  </tr>
+  <tr>
+    <td>&#8706;</td>
+    <td>&amp;#8706;</td>
+    <td>&amp;part;</td>
+  </tr>
+  <tr>
+    <td>&#8707;</td>
+    <td>&amp;#8707;</td>
+    <td>&amp;exist;</td>
+  </tr>
+  <tr>
+    <td>&#8709;</td>
+    <td>&amp;#8709;</td>
+    <td>&amp;empty;</td>
+  </tr>
+  <tr>
+    <td>&#8711;</td>
+    <td>&amp;#8711;</td>
+    <td>&amp;nabla;</td>
+  </tr>
+  <tr>
+    <td>&#8712;</td>
+    <td>&amp;#8712;</td>
+    <td>&amp;isin;</td>
+  </tr>
+  <tr>
+    <td>&#8713;</td>
+    <td>&amp;#8713;</td>
+    <td>&amp;notin;</td>
+  </tr>
+  <tr>
+    <td>&#8715;</td>
+    <td>&amp;#8715;</td>
+    <td>&amp;ni;</td>
+  </tr>
+  <tr>
+    <td>&#8719;</td>
+    <td>&amp;#8719;</td>
+    <td>&amp;prod;</td>
+  </tr>
+  <tr>
+    <td>&#8721;</td>
+    <td>&amp;#8721;</td>
+    <td>&amp;sum;</td>
+  </tr>
+  <tr>
+    <td>&#8722;</td>
+    <td>&amp;#8722;</td>
+    <td>&amp;minus;</td>
+  </tr>
+  <tr>
+    <td>&#8727;</td>
+    <td>&amp;#8727;</td>
+    <td>&amp;lowast;</td>
+  </tr>
+  <tr>
+    <td>&#8730;</td>
+    <td>&amp;#8730;</td>
+    <td>&amp;radic;</td>
+  </tr>
+  <tr>
+    <td>&#8733;</td>
+    <td>&amp;#8733;</td>
+    <td>&amp;prop;</td>
+  </tr>
+  <tr>
+    <td>&#8734;</td>
+    <td>&amp;#8734;</td>
+    <td>&amp;infin;</td>
+  </tr>
+  <tr>
+    <td>&#8736;</td>
+    <td>&amp;#8736;</td>
+    <td>&amp;ang;</td>
+  </tr>
+  <tr>
+    <td>&#8743;</td>
+    <td>&amp;#8743;</td>
+    <td>&amp;and;</td>
+  </tr>
+  <tr>
+    <td>&#8744;</td>
+    <td>&amp;#8744;</td>
+    <td>&amp;or;</td>
+  </tr>
+  <tr>
+    <td>&#8745;</td>
+    <td>&amp;#8745;</td>
+    <td>&amp;cap;</td>
+  </tr>
+  <tr>
+    <td>&#8746;</td>
+    <td>&amp;#8746;</td>
+    <td>&amp;cup;</td>
+  </tr>
+  <tr>
+    <td>&#8747;</td>
+    <td>&amp;#8747;</td>
+    <td>&amp;int;</td>
+  </tr>
+  <tr>
+    <td>&#8756;</td>
+    <td>&amp;#8756;</td>
+    <td>&amp;there4;</td>
+  </tr>
+  <tr>
+    <td>&#8764;</td>
+    <td>&amp;#8764;</td>
+    <td>&amp;sim;</td>
+  </tr>
+  <tr>
+    <td>&#8773;</td>
+    <td>&amp;#8773;</td>
+    <td>&amp;cong;</td>
+  </tr>
+  <tr>
+    <td>&#8776;</td>
+    <td>&amp;#8776;</td>
+    <td>&amp;asymp;</td>
+  </tr>
+  <tr>
+    <td>&#8800;</td>
+    <td>&amp;#8800;</td>
+    <td>&amp;ne;</td>
+  </tr>
+  <tr>
+    <td>&#8801;</td>
+    <td>&amp;#8801;</td>
+    <td>&amp;equiv;</td>
+  </tr>
+  <tr>
+    <td>&#8804;</td>
+    <td>&amp;#8804;</td>
+    <td>&amp;le;</td>
+  </tr>
+  <tr>
+    <td>&#8805;</td>
+    <td>&amp;#8805;</td>
+    <td>&amp;ge;</td>
+  </tr>
+  <tr>
+    <td>&#8834;</td>
+    <td>&amp;#8834;</td>
+    <td>&amp;sub;</td>
+  </tr>
+  <tr>
+    <td>&#8835;</td>
+    <td>&amp;#8835;</td>
+    <td>&amp;sup;</td>
+  </tr>
+  <tr>
+    <td>&#8836;</td>
+    <td>&amp;#8836;</td>
+    <td>&amp;nsub;</td>
+  </tr>
+  <tr>
+    <td>&#8838;</td>
+    <td>&amp;#8838;</td>
+    <td>&amp;sube;</td>
+  </tr>
+  <tr>
+    <td>&#8839;</td>
+    <td>&amp;#8839;</td>
+    <td>&amp;supe;</td>
+  </tr>
+  <tr>
+    <td>&#8853;</td>
+    <td>&amp;#8853;</td>
+    <td>&amp;oplus;</td>
+  </tr>
+  <tr>
+    <td>&#8855;</td>
+    <td>&amp;#8855;</td>
+    <td>&amp;otimes;</td>
+  </tr>
+  <tr>
+    <td>&#8869;</td>
+    <td>&amp;#8869;</td>
+    <td>&amp;perp;</td>
+  </tr>
+  <tr>
+    <td>&#8901;</td>
+    <td>&amp;#8901;</td>
+    <td>&amp;sdot;</td>
+  </tr>
+  <tr>
+    <td>&#913;</td>
+    <td>&amp;#913;</td>
+    <td>&amp;Alpha;</td>
+  </tr>
+  <tr>
+    <td>&#914;</td>
+    <td>&amp;#914;</td>
+    <td>&amp;Beta;</td>
+  </tr>
+  <tr>
+    <td>&#915;</td>
+    <td>&amp;#915;</td>
+    <td>&amp;Gamma;</td>
+  </tr>
+  <tr>
+    <td>&#916;</td>
+    <td>&amp;#916;</td>
+    <td>&amp;Delta;</td>
+  </tr>
+  <tr>
+    <td>&#917;</td>
+    <td>&amp;#917;</td>
+    <td>&amp;Epsilon;</td>
+  </tr>
+  <tr>
+    <td>&#918;</td>
+    <td>&amp;#918;</td>
+    <td>&amp;Zeta;</td>
+  </tr>
+  <tr>
+    <td>&#919;</td>
+    <td>&amp;#919;</td>
+    <td>&amp;Eta;</td>
+  </tr>
+  <tr>
+    <td>&#920;</td>
+    <td>&amp;#920;</td>
+    <td>&amp;Theta;</td>
+  </tr>
+  <tr>
+    <td>&#921;</td>
+    <td>&amp;#921;</td>
+    <td>&amp;Iota;</td>
+  </tr>
+  <tr>
+    <td>&#922;</td>
+    <td>&amp;#922;</td>
+    <td>&amp;Kappa;</td>
+  </tr>
+  <tr>
+    <td>&#923;</td>
+    <td>&amp;#923;</td>
+    <td>&amp;Lambda;</td>
+  </tr>
+  <tr>
+    <td>&#924;</td>
+    <td>&amp;#924;</td>
+    <td>&amp;Mu;</td>
+  </tr>
+  <tr>
+    <td>&#925;</td>
+    <td>&amp;#925;</td>
+    <td>&amp;Nu;</td>
+  </tr>
+  <tr>
+    <td>&#926;</td>
+    <td>&amp;#926;</td>
+    <td>&amp;Xi;</td>
+  </tr>
+  <tr>
+    <td>&#927;</td>
+    <td>&amp;#927;</td>
+    <td>&amp;Omicron;</td>
+  </tr>
+  <tr>
+    <td>&#928;</td>
+    <td>&amp;#928;</td>
+    <td>&amp;Pi;</td>
+  </tr>
+  <tr>
+    <td>&#929;</td>
+    <td>&amp;#929;</td>
+    <td>&amp;Rho;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>undefined</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&#931;</td>
+    <td>&amp;#931;</td>
+    <td>&amp;Sigma;</td>
+  </tr>
+  <tr>
+    <td>&#932;</td>
+    <td>&amp;#932;</td>
+    <td>&amp;Tau;</td>
+  </tr>
+  <tr>
+    <td>&#933;</td>
+    <td>&amp;#933;</td>
+    <td>&amp;Upsilon;</td>
+  </tr>
+  <tr>
+    <td>&#934;</td>
+    <td>&amp;#934;</td>
+    <td>&amp;Phi;</td>
+  </tr>
+  <tr>
+    <td>&#935;</td>
+    <td>&amp;#935;</td>
+    <td>&amp;Chi;</td>
+  </tr>
+  <tr>
+    <td>&#936;</td>
+    <td>&amp;#936;</td>
+    <td>&amp;Psi;</td>
+  </tr>
+  <tr>
+    <td>&#937;</td>
+    <td>&amp;#937;</td>
+    <td>&amp;Omega;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&#945;</td>
+    <td>&amp;#945;</td>
+    <td>&amp;alpha;</td>
+  </tr>
+  <tr>
+    <td>&#946;</td>
+    <td>&amp;#946;</td>
+    <td>&amp;beta;</td>
+  </tr>
+  <tr>
+    <td>&#947;</td>
+    <td>&amp;#947;</td>
+    <td>&amp;gamma;</td>
+  </tr>
+  <tr>
+    <td>&#948;</td>
+    <td>&amp;#948;</td>
+    <td>&amp;delta;</td>
+  </tr>
+  <tr>
+    <td>&#949;</td>
+    <td>&amp;#949;</td>
+    <td>&amp;epsilon;</td>
+  </tr>
+  <tr>
+    <td>&#950;</td>
+    <td>&amp;#950;</td>
+    <td>&amp;zeta;</td>
+  </tr>
+  <tr>
+    <td>&#951;</td>
+    <td>&amp;#951;</td>
+    <td>&amp;eta;</td>
+  </tr>
+  <tr>
+    <td>&#952;</td>
+    <td>&amp;#952;</td>
+    <td>&amp;theta;</td>
+  </tr>
+  <tr>
+    <td>&#953;</td>
+    <td>&amp;#953;</td>
+    <td>&amp;iota;</td>
+  </tr>
+  <tr>
+    <td>&#954;</td>
+    <td>&amp;#954;</td>
+    <td>&amp;kappa;</td>
+  </tr>
+  <tr>
+    <td>&#955;</td>
+    <td>&amp;#955;</td>
+    <td>&amp;lambda;</td>
+  </tr>
+  <tr>
+    <td>&#956;</td>
+    <td>&amp;#956;</td>
+    <td>&amp;mu;</td>
+  </tr>
+  <tr>
+    <td>&#957;</td>
+    <td>&amp;#957;</td>
+    <td>&amp;nu;</td>
+  </tr>
+  <tr>
+    <td>&#958;</td>
+    <td>&amp;#958;</td>
+    <td>&amp;xi;</td>
+  </tr>
+  <tr>
+    <td>&#959;</td>
+    <td>&amp;#959;</td>
+    <td>&amp;omicron;</td>
+  </tr>
+  <tr>
+    <td>&#960;</td>
+    <td>&amp;#960;</td>
+    <td>&amp;pi;</td>
+  </tr>
+  <tr>
+    <td>&#961;</td>
+    <td>&amp;#961;</td>
+    <td>&amp;rho;</td>
+  </tr>
+  <tr>
+    <td>&#962;</td>
+    <td>&amp;#962;</td>
+    <td>&amp;sigmaf;</td>
+  </tr>
+  <tr>
+    <td>&#963;</td>
+    <td>&amp;#963;</td>
+    <td>&amp;sigma;</td>
+  </tr>
+  <tr>
+    <td>&#964;</td>
+    <td>&amp;#964;</td>
+    <td>&amp;tau;</td>
+  </tr>
+  <tr>
+    <td>&#965;</td>
+    <td>&amp;#965;</td>
+    <td>&amp;upsilon;</td>
+  </tr>
+  <tr>
+    <td>&#966;</td>
+    <td>&amp;#966;</td>
+    <td>&amp;phi;</td>
+  </tr>
+  <tr>
+    <td>&#967;</td>
+    <td>&amp;#967;</td>
+    <td>&amp;chi;</td>
+  </tr>
+  <tr>
+    <td>&#968;</td>
+    <td>&amp;#968;</td>
+    <td>&amp;psi;</td>
+  </tr>
+  <tr>
+    <td>&#969;</td>
+    <td>&amp;#969;</td>
+    <td>&amp;omega;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&#977;</td>
+    <td>&amp;#977;</td>
+    <td>&amp;thetasym;</td>
+  </tr>
+  <tr>
+    <td>&#978;</td>
+    <td>&amp;#978;</td>
+    <td>&amp;upsih;</td>
+  </tr>
+  <tr>
+    <td>&#982;</td>
+    <td>&amp;#982;</td>
+    <td>&amp;piv;</td>
+  </tr>
+  <tr>
+    <td>&#338;</td>
+    <td>&amp;#338;</td>
+    <td>&amp;OElig;</td>
+  </tr>
+  <tr>
+    <td>&#339;</td>
+    <td>&amp;#339;</td>
+    <td>&amp;oelig;</td>
+  </tr>
+  <tr>
+    <td>&#352;</td>
+    <td>&amp;#352;</td>
+    <td>&amp;Scaron;</td>
+  </tr>
+  <tr>
+    <td>&#353;</td>
+    <td>&amp;#353;</td>
+    <td>&amp;scaron;</td>
+  </tr>
+  <tr>
+    <td>&#376;</td>
+    <td>&amp;#376;</td>
+    <td>&amp;Yuml;</td>
+  </tr>
+  <tr>
+    <td>&#402;</td>
+    <td>&amp;#402;</td>
+    <td>&amp;fnof;</td>
+  </tr>
+  <tr>
+    <td>&#710;</td>
+    <td>&amp;#710;</td>
+    <td>&amp;circ;</td>
+  </tr>
+  <tr>
+    <td>&#732;</td>
+    <td>&amp;#732;</td>
+    <td>&amp;tilde;</td>
+  </tr>
+  <tr>
+    <td>&#8194;</td>
+    <td>&amp;#8194;</td>
+    <td>&amp;ensp;</td>
+  </tr>
+  <tr>
+    <td>&#8195;</td>
+    <td>&amp;#8195;</td>
+    <td>&amp;emsp;</td>
+  </tr>
+  <tr>
+    <td>&#8201;</td>
+    <td>&amp;#8201;</td>
+    <td>&amp;thinsp;</td>
+  </tr>
+  <tr>
+    <td>&#8204;</td>
+    <td>&amp;#8204;</td>
+    <td>&amp;zwnj;</td>
+  </tr>
+  <tr>
+    <td>&#8205;</td>
+    <td>&amp;#8205;</td>
+    <td>&amp;zwj;</td>
+  </tr>
+  <tr>
+    <td>&#8206;</td>
+    <td>&amp;#8206;</td>
+    <td>&amp;lrm;</td>
+  </tr>
+  <tr>
+    <td>&#8207;</td>
+    <td>&amp;#8207;</td>
+    <td>&amp;rlm;</td>
+  </tr>
+  <tr>
+    <td>&#8211;</td>
+    <td>&amp;#8211;</td>
+    <td>&amp;ndash;</td>
+  </tr>
+  <tr>
+    <td>&#8212;</td>
+    <td>&amp;#8212;</td>
+    <td>&amp;mdash;</td>
+  </tr>
+  <tr>
+    <td>&#8216;</td>
+    <td>&amp;#8216;</td>
+    <td>&amp;lsquo;</td>
+  </tr>
+  <tr>
+    <td>&#8217;</td>
+    <td>&amp;#8217;</td>
+    <td>&amp;rsquo;</td>
+  </tr>
+  <tr>
+    <td>&#8218;</td>
+    <td>&amp;#8218;</td>
+    <td>&amp;sbquo;</td>
+  </tr>
+  <tr>
+    <td>&#8220;</td>
+    <td>&amp;#8220;</td>
+    <td>&amp;ldquo;</td>
+  </tr>
+  <tr>
+    <td>&#8221;</td>
+    <td>&amp;#8221;</td>
+    <td>&amp;rdquo;</td>
+  </tr>
+  <tr>
+    <td>&#8222;</td>
+    <td>&amp;#8222;</td>
+    <td>&amp;bdquo;</td>
+  </tr>
+  <tr>
+    <td>&#8224;</td>
+    <td>&amp;#8224;</td>
+    <td>&amp;dagger;</td>
+  </tr>
+  <tr>
+    <td>&#8225;</td>
+    <td>&amp;#8225;</td>
+    <td>&amp;Dagger;</td>
+  </tr>
+  <tr>
+    <td>&#8226;</td>
+    <td>&amp;#8226;</td>
+    <td>&amp;bull;</td>
+  </tr>
+  <tr>
+    <td>&#8230;</td>
+    <td>&amp;#8230;</td>
+    <td>&amp;hellip;</td>
+  </tr>
+  <tr>
+    <td>&#8240;</td>
+    <td>&amp;#8240;</td>
+    <td>&amp;permil;</td>
+  </tr>
+  <tr>
+    <td>&#8242;</td>
+    <td>&amp;#8242;</td>
+    <td>&amp;prime;</td>
+  </tr>
+  <tr>
+    <td>&#8243;</td>
+    <td>&amp;#8243;</td>
+    <td>&amp;Prime;</td>
+  </tr>
+  <tr>
+    <td>&#8249;</td>
+    <td>&amp;#8249;</td>
+    <td>&amp;lsaquo;</td>
+  </tr>
+  <tr>
+    <td>&#8250;</td>
+    <td>&amp;#8250;</td>
+    <td>&amp;rsaquo;</td>
+  </tr>
+  <tr>
+    <td>&#8254;</td>
+    <td>&amp;#8254;</td>
+    <td>&amp;oline;</td>
+  </tr>
+  <tr>
+    <td>&#8364;</td>
+    <td>&amp;#8364;</td>
+    <td>&amp;euro;</td>
+  </tr>
+  <tr>
+    <td>&#8482;</td>
+    <td>&amp;#8482; or &amp;#153;</td>
+    <td>&amp;trade;</td>
+  </tr>
+  <tr>
+    <td>&#8592;</td>
+    <td>&amp;#8592;</td>
+    <td>&amp;larr;</td>
+  </tr>
+  <tr>
+    <td>&#8593;</td>
+    <td>&amp;#8593;</td>
+    <td>&amp;uarr;</td>
+  </tr>
+  <tr>
+    <td>&#8594;</td>
+    <td>&amp;#8594;</td>
+    <td>&amp;rarr;</td>
+  </tr>
+  <tr>
+    <td>&#8595;</td>
+    <td>&amp;#8595;</td>
+    <td>&amp;darr;</td>
+  </tr>
+  <tr>
+    <td>&#8596;</td>
+    <td>&amp;#8596;</td>
+    <td>&amp;harr;</td>
+  </tr>
+  <tr>
+    <td>&#8629;</td>
+    <td>&amp;#8629;</td>
+    <td>&amp;crarr;</td>
+  </tr>
+  <tr>
+    <td>&#8968;</td>
+    <td>&amp;#8968;</td>
+    <td>&amp;lceil;</td>
+  </tr>
+  <tr>
+    <td>&#8969;</td>
+    <td>&amp;#8969;</td>
+    <td>&amp;rceil;</td>
+  </tr>
+  <tr>
+    <td>&#8970;</td>
+    <td>&amp;#8970;</td>
+    <td>&amp;lfloor;</td>
+  </tr>
+  <tr>
+    <td>&#8971;</td>
+    <td>&amp;#8971;</td>
+    <td>&amp;rfloor;</td>
+  </tr>
+  <tr>
+    <td>&#9674;</td>
+    <td>&amp;#9674;</td>
+    <td>&amp;loz;</td>
+  </tr>
+  <tr>
+    <td>&#9824;</td>
+    <td>&amp;#9824;</td>
+    <td>&amp;spades;</td>
+  </tr>
+  <tr>
+    <td>&#9827;</td>
+    <td>&amp;#9827;</td>
+    <td>&amp;clubs;</td>
+  </tr>
+  <tr>
+    <td>&#9829;</td>
+    <td>&amp;#9829;</td>
+    <td>&amp;hearts;</td>
+  </tr>
+  <tr>
+    <td>&#9830;</td>
+    <td>&amp;#9830;</td>
+    <td>&amp;diams;</td>
+  </tr>
+</table>
+	</p>
+	
+  </div>
+  <div class="modal-footer">
+    <button class="btn" id="modalenti_close" data-dismiss="modal" aria-hidden="true"></button>
+  </div>
+  </div>
+  <!--/MODALENTI-->
+  
+  
+  
+    <!--MODALCOLORS-->
+  <div id="modalcolors" class="modal hide fade" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3 id="modalcolors_title" class="muted"></h3>
+  </div>
+  <div class="modal-body">
+    
+    <p id="modalcolorscontent">
+	<table class="table table-condensed">
+  <tr>
+    <th id="modalcolors_color">Color</th>
+    <th id="modalcolors_name">Name</th>
+    <th id="modalcolors_hexvalue">Hex Value</th>
+  </tr>
+  <tr>
+    <td bgcolor="#F0F8FF">&nbsp;</td>
+    <td> AliceBlue&nbsp;</td>
+    <td>#F0F8FF</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FAEBD7">&nbsp;</td>
+    <td> AntiqueWhite&nbsp;</td>
+    <td>#FAEBD7</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">&nbsp;</td>
+    <td> Aqua&nbsp;</td>
+    <td>#00FFFF</td>
+  </tr>
+  <tr>
+    <td bgcolor="#7FFFD4">&nbsp;</td>
+    <td> Aquamarine&nbsp;</td>
+    <td>#7FFFD4</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F0FFFF">&nbsp;</td>
+    <td> Azure&nbsp;</td>
+    <td>#F0FFFF</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F5F5DC">&nbsp;</td>
+    <td> Beige&nbsp;</td>
+    <td>#F5F5DC</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFE4C4">&nbsp;</td>
+    <td> Bisque&nbsp;</td>
+    <td>#FFE4C4</td>
+  </tr>
+  <tr>
+    <td bgcolor="#000000">&nbsp;</td>
+    <td> Black&nbsp;</td>
+    <td>#000000</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFEBCD">&nbsp;</td>
+    <td> BlanchedAlmond&nbsp;</td>
+    <td>#FFEBCD</td>
+  </tr>
+  <tr>
+    <td bgcolor="#0000FF">&nbsp;</td>
+    <td> Blue&nbsp;</td>
+    <td>#0000FF</td>
+  </tr>
+  <tr>
+    <td bgcolor="#8A2BE2">&nbsp;</td>
+    <td> BlueViolet&nbsp;</td>
+    <td>#8A2BE2</td>
+  </tr>
+  <tr>
+    <td bgcolor="#A52A2A">&nbsp;</td>
+    <td> Brown&nbsp;</td>
+    <td>#A52A2A</td>
+  </tr>
+  <tr>
+    <td bgcolor="#DEB887">&nbsp;</td>
+    <td> BurlyWood&nbsp;</td>
+    <td>#DEB887</td>
+  </tr>
+  <tr>
+    <td bgcolor="#5F9EA0">&nbsp;</td>
+    <td> CadetBlue&nbsp;</td>
+    <td>#5F9EA0</td>
+  </tr>
+  <tr>
+    <td bgcolor="#7FFF00">&nbsp;</td>
+    <td> Chartreuse&nbsp;</td>
+    <td>#7FFF00</td>
+  </tr>
+  <tr>
+    <td bgcolor="#D2691E">&nbsp;</td>
+    <td> Chocolate&nbsp;</td>
+    <td>#D2691E</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FF7F50">&nbsp;</td>
+    <td> Coral&nbsp;</td>
+    <td>#FF7F50</td>
+  </tr>
+  <tr>
+    <td bgcolor="#6495ED">&nbsp;</td>
+    <td> CornflowerBlue&nbsp;</td>
+    <td>#6495ED</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFF8DC">&nbsp;</td>
+    <td> Cornsilk&nbsp;</td>
+    <td>#FFF8DC</td>
+  </tr>
+  <tr>
+    <td bgcolor="#DC143C">&nbsp;</td>
+    <td> Crimson&nbsp;</td>
+    <td>#DC143C</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">&nbsp;</td>
+    <td> Cyan&nbsp;</td>
+    <td>#00FFFF</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00008B">&nbsp;</td>
+    <td> DarkBlue&nbsp;</td>
+    <td>#00008B</td>
+  </tr>
+  <tr>
+    <td bgcolor="#008B8B">&nbsp;</td>
+    <td> DarkCyan&nbsp;</td>
+    <td>#008B8B</td>
+  </tr>
+  <tr>
+    <td bgcolor="#B8860B">&nbsp;</td>
+    <td> DarkGoldenRod&nbsp;</td>
+    <td>#B8860B</td>
+  </tr>
+  <tr>
+    <td bgcolor="#A9A9A9">&nbsp;</td>
+    <td> DarkGray&nbsp;</td>
+    <td>#A9A9A9</td>
+  </tr>
+  <tr>
+    <td bgcolor="#006400">&nbsp;</td>
+    <td> DarkGreen&nbsp;</td>
+    <td>#006400</td>
+  </tr>
+  <tr>
+    <td bgcolor="#BDB76B">&nbsp;</td>
+    <td> DarkKhaki&nbsp;</td>
+    <td>#BDB76B</td>
+  </tr>
+  <tr>
+    <td bgcolor="#8B008B">&nbsp;</td>
+    <td> DarkMagenta&nbsp;</td>
+    <td>#8B008B</td>
+  </tr>
+  <tr>
+    <td bgcolor="#556B2F">&nbsp;</td>
+    <td> DarkOliveGreen&nbsp;</td>
+    <td>#556B2F</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FF8C00">&nbsp;</td>
+    <td> Darkorange&nbsp;</td>
+    <td>#FF8C00</td>
+  </tr>
+  <tr>
+    <td bgcolor="#9932CC">&nbsp;</td>
+    <td> DarkOrchid&nbsp;</td>
+    <td>#9932CC</td>
+  </tr>
+  <tr>
+    <td bgcolor="#8B0000">&nbsp;</td>
+    <td> DarkRed&nbsp;</td>
+    <td>#8B0000</td>
+  </tr>
+  <tr>
+    <td bgcolor="#E9967A">&nbsp;</td>
+    <td> DarkSalmon&nbsp;</td>
+    <td>#E9967A</td>
+  </tr>
+  <tr>
+    <td bgcolor="#8FBC8F">&nbsp;</td>
+    <td> DarkSeaGreen&nbsp;</td>
+    <td>#8FBC8F</td>
+  </tr>
+  <tr>
+    <td bgcolor="#483D8B">&nbsp;</td>
+    <td> DarkSlateBlue&nbsp;</td>
+    <td>#483D8B</td>
+  </tr>
+  <tr>
+    <td bgcolor="#2F4F4F">&nbsp;</td>
+    <td> DarkSlateGray&nbsp;</td>
+    <td>#2F4F4F</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00CED1">&nbsp;</td>
+    <td> DarkTurquoise&nbsp;</td>
+    <td>#00CED1</td>
+  </tr>
+  <tr>
+    <td bgcolor="#9400D3">&nbsp;</td>
+    <td> DarkViolet&nbsp;</td>
+    <td>#9400D3</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FF1493">&nbsp;</td>
+    <td> DeepPink&nbsp;</td>
+    <td>#FF1493</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00BFFF">&nbsp;</td>
+    <td> DeepSkyBlue&nbsp;</td>
+    <td>#00BFFF</td>
+  </tr>
+  <tr>
+    <td bgcolor="#696969">&nbsp;</td>
+    <td> DimGrey&nbsp;</td>
+    <td>#696969</td>
+  </tr>
+  <tr>
+    <td bgcolor="#1E90FF">&nbsp;</td>
+    <td> DodgerBlue&nbsp;</td>
+    <td>#1E90FF</td>
+  </tr>
+  <tr>
+    <td bgcolor="#B22222">&nbsp;</td>
+    <td> FireBrick&nbsp;</td>
+    <td>#B22222</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFAF0">&nbsp;</td>
+    <td> FloralWhite&nbsp;</td>
+    <td>#FFFAF0</td>
+  </tr>
+  <tr>
+    <td bgcolor="#228B22">&nbsp;</td>
+    <td> ForestGreen&nbsp;</td>
+    <td>#228B22</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FF00FF">&nbsp;</td>
+    <td> Fuchsia&nbsp;</td>
+    <td>#FF00FF</td>
+  </tr>
+  <tr>
+    <td bgcolor="#DCDCDC">&nbsp;</td>
+    <td> Gainsboro&nbsp;</td>
+    <td>#DCDCDC</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F8F8FF">&nbsp;</td>
+    <td> GhostWhite&nbsp;</td>
+    <td>#F8F8FF</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFD700">&nbsp;</td>
+    <td> Gold&nbsp;</td>
+    <td>#FFD700</td>
+  </tr>
+  <tr>
+    <td bgcolor="#DAA520">&nbsp;</td>
+    <td> GoldenRod&nbsp;</td>
+    <td>#DAA520</td>
+  </tr>
+  <tr>
+    <td bgcolor="#808080">&nbsp;</td>
+    <td> Gray&nbsp;</td>
+    <td>#808080</td>
+  </tr>
+  <tr>
+    <td bgcolor="#008000">&nbsp;</td>
+    <td> Green&nbsp;</td>
+    <td>#008000</td>
+  </tr>
+  <tr>
+    <td bgcolor="#ADFF2F">&nbsp;</td>
+    <td> GreenYellow&nbsp;</td>
+    <td>#ADFF2F</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F0FFF0">&nbsp;</td>
+    <td> HoneyDew&nbsp;</td>
+    <td>#F0FFF0</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FF69B4">&nbsp;</td>
+    <td> HotPink&nbsp;</td>
+    <td>#FF69B4</td>
+  </tr>
+  <tr>
+    <td bgcolor="#CD5C5C">&nbsp;</td>
+    <td> IndianRed &nbsp;</td>
+    <td>#CD5C5C</td>
+  </tr>
+  <tr>
+    <td bgcolor="#4B0082">&nbsp;</td>
+    <td> Indigo &nbsp;</td>
+    <td>#4B0082</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFF0">&nbsp;</td>
+    <td> Ivory&nbsp;</td>
+    <td>#FFFFF0</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F0E68C">&nbsp;</td>
+    <td> Khaki&nbsp;</td>
+    <td>#F0E68C</td>
+  </tr>
+  <tr>
+    <td bgcolor="#E6E6FA">&nbsp;</td>
+    <td> Lavender&nbsp;</td>
+    <td>#E6E6FA</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFF0F5">&nbsp;</td>
+    <td> LavenderBlush&nbsp;</td>
+    <td>#FFF0F5</td>
+  </tr>
+  <tr>
+    <td bgcolor="#7CFC00">&nbsp;</td>
+    <td> LawnGreen&nbsp;</td>
+    <td>#7CFC00</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFACD">&nbsp;</td>
+    <td> LemonChiffon&nbsp;</td>
+    <td>#FFFACD</td>
+  </tr>
+  <tr>
+    <td bgcolor="#ADD8E6">&nbsp;</td>
+    <td> LightBlue&nbsp;</td>
+    <td>#ADD8E6</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F08080">&nbsp;</td>
+    <td> LightCoral&nbsp;</td>
+    <td>#F08080</td>
+  </tr>
+  <tr>
+    <td bgcolor="#E0FFFF">&nbsp;</td>
+    <td> LightCyan&nbsp;</td>
+    <td>#E0FFFF</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FAFAD2">&nbsp;</td>
+    <td> LightGoldenRodYellow&nbsp;</td>
+    <td>#FAFAD2</td>
+  </tr>
+  <tr>
+    <td bgcolor="#D3D3D3">&nbsp;</td>
+    <td> LightGray&nbsp;</td>
+    <td>#D3D3D3</td>
+  </tr>
+  <tr>
+    <td bgcolor="#90EE90">&nbsp;</td>
+    <td> LightGreen&nbsp;</td>
+    <td>#90EE90</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFB6C1">&nbsp;</td>
+    <td> LightPink&nbsp;</td>
+    <td>#FFB6C1</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFA07A">&nbsp;</td>
+    <td> LightSalmon&nbsp;</td>
+    <td>#FFA07A</td>
+  </tr>
+  <tr>
+    <td bgcolor="#20B2AA">&nbsp;</td>
+    <td> LightSeaGreen&nbsp;</td>
+    <td>#20B2AA</td>
+  </tr>
+  <tr>
+    <td bgcolor="#87CEFA">&nbsp;</td>
+    <td> LightSkyBlue&nbsp;</td>
+    <td>#87CEFA</td>
+  </tr>
+  <tr>
+    <td bgcolor="#778899">&nbsp;</td>
+    <td> LightSlateGray&nbsp;</td>
+    <td>#778899</td>
+  </tr>
+  <tr>
+    <td bgcolor="#B0C4DE">&nbsp;</td>
+    <td> LightSteelBlue&nbsp;</td>
+    <td>#B0C4DE</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFE0">&nbsp;</td>
+    <td> LightYellow&nbsp;</td>
+    <td>#FFFFE0</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FF00">&nbsp;</td>
+    <td> Lime&nbsp;</td>
+    <td>#00FF00</td>
+  </tr>
+  <tr>
+    <td bgcolor="#32CD32">&nbsp;</td>
+    <td> LimeGreen&nbsp;</td>
+    <td>#32CD32</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FAF0E6">&nbsp;</td>
+    <td> Linen&nbsp;</td>
+    <td>#FAF0E6</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FF00FF">&nbsp;</td>
+    <td> Magenta&nbsp;</td>
+    <td>#FF00FF</td>
+  </tr>
+  <tr>
+    <td bgcolor="#800000">&nbsp;</td>
+    <td> Maroon&nbsp;</td>
+    <td>#800000</td>
+  </tr>
+  <tr>
+    <td bgcolor="#66CDAA">&nbsp;</td>
+    <td> MediumAquaMarine&nbsp;</td>
+    <td>#66CDAA</td>
+  </tr>
+  <tr>
+    <td bgcolor="#0000CD">&nbsp;</td>
+    <td> MediumBlue&nbsp;</td>
+    <td>#0000CD</td>
+  </tr>
+  <tr>
+    <td bgcolor="#BA55D3">&nbsp;</td>
+    <td> MediumOrchid&nbsp;</td>
+    <td>#BA55D3</td>
+  </tr>
+  <tr>
+    <td bgcolor="#9370DB">&nbsp;</td>
+    <td> MediumPurple&nbsp;</td>
+    <td>#9370DB</td>
+  </tr>
+  <tr>
+    <td bgcolor="#3CB371">&nbsp;</td>
+    <td> MediumSeaGreen&nbsp;</td>
+    <td>#3CB371</td>
+  </tr>
+  <tr>
+    <td bgcolor="#7B68EE">&nbsp;</td>
+    <td> MediumSlateBlue&nbsp;</td>
+    <td>#7B68EE</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FA9A">&nbsp;</td>
+    <td> MediumSpringGreen&nbsp;</td>
+    <td>#00FA9A</td>
+  </tr>
+  <tr>
+    <td bgcolor="#48D1CC">&nbsp;</td>
+    <td> MediumTurquoise&nbsp;</td>
+    <td>#48D1CC</td>
+  </tr>
+  <tr>
+    <td bgcolor="#C71585">&nbsp;</td>
+    <td> MediumVioletRed&nbsp;</td>
+    <td>#C71585</td>
+  </tr>
+  <tr>
+    <td bgcolor="#191970">&nbsp;</td>
+    <td> MidnightBlue&nbsp;</td>
+    <td>#191970</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F5FFFA">&nbsp;</td>
+    <td> MintCream&nbsp;</td>
+    <td>#F5FFFA</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFE4E1">&nbsp;</td>
+    <td> MistyRose&nbsp;</td>
+    <td>#FFE4E1</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFE4B5">&nbsp;</td>
+    <td> Moccasin&nbsp;</td>
+    <td>#FFE4B5</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFDEAD">&nbsp;</td>
+    <td> NavajoWhite&nbsp;</td>
+    <td>#FFDEAD</td>
+  </tr>
+  <tr>
+    <td bgcolor="#000080">&nbsp;</td>
+    <td> Navy&nbsp;</td>
+    <td>#000080</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FDF5E6">&nbsp;</td>
+    <td> OldLace&nbsp;</td>
+    <td>#FDF5E6</td>
+  </tr>
+  <tr>
+    <td bgcolor="#808000">&nbsp;</td>
+    <td> Olive&nbsp;</td>
+    <td>#808000</td>
+  </tr>
+  <tr>
+    <td bgcolor="#6B8E23">&nbsp;</td>
+    <td> OliveDrab&nbsp;</td>
+    <td>#6B8E23</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFA500">&nbsp;</td>
+    <td> Orange&nbsp;</td>
+    <td>#FFA500</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FF4500">&nbsp;</td>
+    <td> OrangeRed&nbsp;</td>
+    <td>#FF4500</td>
+  </tr>
+  <tr>
+    <td bgcolor="#DA70D6">&nbsp;</td>
+    <td> Orchid&nbsp;</td>
+    <td>#DA70D6</td>
+  </tr>
+  <tr>
+    <td bgcolor="#EEE8AA">&nbsp;</td>
+    <td> PaleGoldenRod&nbsp;</td>
+    <td>#EEE8AA</td>
+  </tr>
+  <tr>
+    <td bgcolor="#98FB98">&nbsp;</td>
+    <td> PaleGreen&nbsp;</td>
+    <td>#98FB98</td>
+  </tr>
+  <tr>
+    <td bgcolor="#AFEEEE">&nbsp;</td>
+    <td> PaleTurquoise&nbsp;</td>
+    <td>#AFEEEE</td>
+  </tr>
+  <tr>
+    <td bgcolor="#DB7093">&nbsp;</td>
+    <td> PaleVioletRed&nbsp;</td>
+    <td>#DB7093</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFEFD5">&nbsp;</td>
+    <td> PapayaWhip&nbsp;</td>
+    <td>#FFEFD5</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFDAB9">&nbsp;</td>
+    <td> PeachPuff&nbsp;</td>
+    <td>#FFDAB9</td>
+  </tr>
+  <tr>
+    <td bgcolor="#CD853F">&nbsp;</td>
+    <td> Peru&nbsp;</td>
+    <td>#CD853F</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFC0CB">&nbsp;</td>
+    <td> Pink&nbsp;</td>
+    <td>#FFC0CB</td>
+  </tr>
+  <tr>
+    <td bgcolor="#DDA0DD">&nbsp;</td>
+    <td> Plum&nbsp;</td>
+    <td>#DDA0DD</td>
+  </tr>
+  <tr>
+    <td bgcolor="#B0E0E6">&nbsp;</td>
+    <td> PowderBlue&nbsp;</td>
+    <td>#B0E0E6</td>
+  </tr>
+  <tr>
+    <td bgcolor="#800080">&nbsp;</td>
+    <td> Purple&nbsp;</td>
+    <td>#800080</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FF0000">&nbsp;</td>
+    <td> Red&nbsp;</td>
+    <td>#FF0000</td>
+  </tr>
+  <tr>
+    <td bgcolor="#BC8F8F">&nbsp;</td>
+    <td> RosyBrown&nbsp;</td>
+    <td>#BC8F8F</td>
+  </tr>
+  <tr>
+    <td bgcolor="#4169E1">&nbsp;</td>
+    <td> RoyalBlue&nbsp;</td>
+    <td>#4169E1</td>
+  </tr>
+  <tr>
+    <td bgcolor="#8B4513">&nbsp;</td>
+    <td> SaddleBrown&nbsp;</td>
+    <td>#8B4513</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FA8072">&nbsp;</td>
+    <td> Salmon&nbsp;</td>
+    <td>#FA8072</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F4A460">&nbsp;</td>
+    <td> SandyBrown&nbsp;</td>
+    <td>#F4A460</td>
+  </tr>
+  <tr>
+    <td bgcolor="#2E8B57">&nbsp;</td>
+    <td> SeaGreen&nbsp;</td>
+    <td>#2E8B57</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFF5EE">&nbsp;</td>
+    <td> SeaShell&nbsp;</td>
+    <td>#FFF5EE</td>
+  </tr>
+  <tr>
+    <td bgcolor="#A0522D">&nbsp;</td>
+    <td> Sienna&nbsp;</td>
+    <td>#A0522D</td>
+  </tr>
+  <tr>
+    <td bgcolor="#C0C0C0">&nbsp;</td>
+    <td> Silver&nbsp;</td>
+    <td>#C0C0C0</td>
+  </tr>
+  <tr>
+    <td bgcolor="#87CEEB">&nbsp;</td>
+    <td> SkyBlue&nbsp;</td>
+    <td>#87CEEB</td>
+  </tr>
+  <tr>
+    <td bgcolor="#6A5ACD">&nbsp;</td>
+    <td> SlateBlue&nbsp;</td>
+    <td>#6A5ACD</td>
+  </tr>
+  <tr>
+    <td bgcolor="#708090">&nbsp;</td>
+    <td> SlateGray&nbsp;</td>
+    <td>#708090</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFAFA">&nbsp;</td>
+    <td> Snow&nbsp;</td>
+    <td>#FFFAFA</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FF7F">&nbsp;</td>
+    <td> SpringGreen&nbsp;</td>
+    <td>#00FF7F</td>
+  </tr>
+  <tr>
+    <td bgcolor="#4682B4">&nbsp;</td>
+    <td> SteelBlue&nbsp;</td>
+    <td>#4682B4</td>
+  </tr>
+  <tr>
+    <td bgcolor="#D2B48C">&nbsp;</td>
+    <td> Tan&nbsp;</td>
+    <td>#D2B48C</td>
+  </tr>
+  <tr>
+    <td bgcolor="#008080">&nbsp;</td>
+    <td> Teal&nbsp;</td>
+    <td>#008080</td>
+  </tr>
+  <tr>
+    <td bgcolor="#D8BFD8">&nbsp;</td>
+    <td> Thistle&nbsp;</td>
+    <td>#D8BFD8</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FF6347">&nbsp;</td>
+    <td> Tomato&nbsp;</td>
+    <td>#FF6347</td>
+  </tr>
+  <tr>
+    <td bgcolor="#40E0D0">&nbsp;</td>
+    <td> Turquoise&nbsp;</td>
+    <td>#40E0D0</td>
+  </tr>
+  <tr>
+    <td bgcolor="#EE82EE">&nbsp;</td>
+    <td> Violet&nbsp;</td>
+    <td>#EE82EE</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F5DEB3">&nbsp;</td>
+    <td> Wheat&nbsp;</td>
+    <td>#F5DEB3</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td> White&nbsp;</td>
+    <td>#FFFFFF</td>
+  </tr>
+  <tr>
+    <td bgcolor="#F5F5F5">&nbsp;</td>
+    <td> WhiteSmoke&nbsp;</td>
+    <td>#F5F5F5</td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFF00">&nbsp;</td>
+    <td> Yellow&nbsp;</td>
+    <td>#FFFF00</td>
+  </tr>
+  <tr>
+    <td bgcolor="#9ACD32">&nbsp;</td>
+    <td> YellowGreen&nbsp;</td>
+    <td>#9ACD32</td>
+  </tr>
+</table>
+	</p>
+	 </div>
+  <div class="modal-footer">
+    <button class="btn" id="modalcolors_close" data-dismiss="modal" aria-hidden="true"></button>
+  </div>
+  </div>
+  <!--/MODALCOLORS-->
 <!--/MODALS-->
 </body>
 </html>

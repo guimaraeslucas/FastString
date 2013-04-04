@@ -1,138 +1,185 @@
 {
-   "appdescription": {
-      "message": "Codifica y decodifica strings en base64, html, url, y realiza operaciones con string como MD5 y SHA. Trabaja offline."
-   },
-   "appname": {
-      "message": "FastString por .LG"
-   },
-   "shortappname": {
-      "message": "FastString"
-   },
-      "specialitem": {
-      "message": "Especial"
-   },
-   "copy": {
-      "message": "Copiar"
-   },
-      "paste": {
-      "message": "Pegar"
-   },
-  "b64e": {
-      "message": "codificar Base64"
-   },
-      "b64d": {
-      "message": "decodificar Base64"
-   },
-      "b64eu": {
-      "message": "codificar Base64 url amigable"
-   },
-      "b64du": {
-      "message": "decodificar Base64 url amigable"
-   },
-      "b64diu": {
-      "message": "mostrar imagen em Base64"
-   },
-      "urle": {
-      "message": "codificar url"
-   },
-      "urld": {
-      "message": "decodificar url"
-   },
-      "htmle": {
-      "message": "codificar html"
-   },
-      "htmld": {
-      "message": "decodificar html"
-   },
-      "about": {
-      "message": "acerca de este app"
-   },
-         "md5": {
-      "message": "md5"
-   },
-            "md5h": {
-      "message": "md5 Hex"
-   },
-            "md564": {
-      "message": "md5 Base64"
-   },
-         "sha": {
-      "message": "sha"
-   },
-            "sha1": {
-      "message": "sha-1"
-   },
-            "sha224": {
-      "message": "sha-224"
-   },
-            "sha256": {
-      "message": "sha-256"
-   },
-            "sha384": {
-      "message": "sha-384"
-   },
-            "sha512": {
-      "message": "sha-512"
-   },
-   
-         "rot13": {
-      "message": "rot13"
-   },
-         "mED": {
-      "message": "mED"
-   },
-            "reve": {
-      "message": "invertir string"
-   },
-            "emED": {
-      "message": "codificar mED"
-   },
-            "dmED": {
-      "message": "decodificar mED"
-   },
-   "welcome": {
-      "message": "Bienvenido a"
-   },
-   "selectoption": {
-      "message": "Elija una opción para comenzar"
-   },
-      "result": {
-      "message": "Resultado"
-   },
-      "doit": {
-      "message": "Hazlo!"
-   },
-      "modalabout_title": {
-      "message": "Acerca de este software"
-   },
-      "modalabout_license": {
-      "message": "Copyright © 2013 Lucas Guimarães<br>(lucas@lucasguimaraes.com)</p><p>Código fuente disponible utilizando licencia Eclipse en https://github.com/guimaraeslucas/FastString.git.</p><p>http://lucasguimaraes.com"
-   },
-      "modalabout_close": {
-      "message": "Close"
-   },
-      "others": {
-      "message": "otras acciones"
-   },
-   "sopt": {
-      "message": "operaciones con strings"
-   },
-      "c2d": {
-      "message": "comas para puntos"
-   },
-      "invalid": {
-      "message": "valor inválido o no admitido"
-   },
-      "crc32": {
-      "message": "CRC32"
-   },
-      "hashs": {
-      "message": "hashs"
-   },
-      "stgs": {
-      "message": "eliminar tags"
-   },
-      "view": {
-      "message": "HTML bruto"
-   }
+    "appdescription": {
+        "message": "Codifica y decodifica strings en base64, html, url, y realiza operaciones con string como MD5 y SHA. Trabaja offline."
+    },
+    "appname": {
+        "message": "FastString por .LG"
+    },
+    "shortappname": {
+        "message": "FastString"
+    },
+    "specialitem": {
+        "message": "Especial"
+    },
+    "copy": {
+        "message": "Copiar"
+    },
+    "paste": {
+        "message": "Pegar"
+    },
+    "b64e": {
+        "message": "codificar Base64"
+    },
+    "b64d": {
+        "message": "decodificar Base64"
+    },
+    "b64eu": {
+        "message": "codificar Base64 url amigable"
+    },
+    "b64du": {
+        "message": "decodificar Base64 url amigable"
+    },
+    "b64diu": {
+        "message": "mostrar imagen em Base64"
+    },
+    "urle": {
+        "message": "codificar url"
+    },
+    "urld": {
+        "message": "decodificar url"
+    },
+    "htmle": {
+        "message": "codificar html"
+    },
+    "htmld": {
+        "message": "decodificar html"
+    },
+    "about": {
+        "message": "acerca de este app"
+    },
+    "md5": {
+        "message": "md5"
+    },
+    "md5h": {
+        "message": "md5 Hex"
+    },
+    "md564": {
+        "message": "md5 Base64"
+    },
+    "sha": {
+        "message": "sha"
+    },
+    "sha1": {
+        "message": "sha-1"
+    },
+    "sha224": {
+        "message": "sha-224"
+    },
+    "sha256": {
+        "message": "sha-256"
+    },
+    "sha384": {
+        "message": "sha-384"
+    },
+    "sha512": {
+        "message": "sha-512"
+    },
+    "rot13": {
+        "message": "rot13"
+    },
+    "mED": {
+        "message": "mED"
+    },
+    "reve": {
+        "message": "invertir string"
+    },
+    "emED": {
+        "message": "codificar mED"
+    },
+    "dmED": {
+        "message": "decodificar mED"
+    },
+    "welcome": {
+        "message": "Bienvenido a"
+    },
+    "selectoption": {
+        "message": "Elija una opción para comenzar"
+    },
+    "result": {
+        "message": "Resultado"
+    },
+    "doit": {
+        "message": "Hazlo!"
+    },
+    "modalabout_title": {
+        "message": "Acerca de este software"
+    },
+    "modalabout_license": {
+        "message": "Copyright © 2013 Lucas Guimarães<br>(lucas@lucasguimaraes.com)</p><p>Código fuente disponible utilizando licencia Eclipse en https://github.com/guimaraeslucas/FastString.git.</p><p>http://lucasguimaraes.com"
+    },
+    "modalabout_close": {
+        "message": "Cerrar"
+    },
+    "others": {
+        "message": "otras acciones"
+    },
+    "sopt": {
+        "message": "operaciones con strings"
+    },
+    "c2d": {
+        "message": "comas para puntos"
+    },
+    "invalid": {
+        "message": "Lo sentimos, pero no se puede convertir la string insertada"
+    },
+    "crc32": {
+        "message": "CRC32"
+    },
+    "hashs": {
+        "message": "hashs"
+    },
+    "stgs": {
+        "message": "eliminar tags"
+    },
+    "view": {
+        "message": "HTML bruto"
+    },
+	"strlen":{
+		"message": "contar string"
+	},
+	"addslashes":{
+		"message": "agregar barras"
+	},
+	"stripslashes":{
+		"message": "quitar barras"
+	},
+		"convert":{
+		"message": "convertir"
+	},
+		"strtolower":{
+		"message":"string en minúsculas"
+		},
+		"strtoupper":{
+		"message":"string en mayúscula"
+		},
+				"ucwords":{
+		"message":"capitalizar string"
+		},
+		"str_shuffle":{
+		"message": "barajar string"
+		},
+				"htmlcolors":{
+		"message": "colores HTML"
+		},
+		"color":{
+		"message":"Color"
+		},
+		"name":{
+		"message":"Nombre"
+		},
+		"hexvalue":{
+		"message":"Hex"
+		},
+		"enti":{
+		"message":"símbolos HTML"
+		},
+		"character":{
+		"message":"Carácter"
+		},
+		"enumber":{
+		"message":"Entidad número"
+		},
+		"ename":{
+		"message": "Nombre de la entidad"
+		}
 }

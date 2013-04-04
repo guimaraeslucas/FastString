@@ -1,138 +1,186 @@
 {
-   "appdescription": {
-      "message": "Encodes and decodes strings in base64, html, url, generates MD5 ans SHA hashs, strip tags and others features. Works offline."
-   },
-   "appname": {
-      "message": "FastString by .LG"
-   },
-   "shortappname": {
-      "message": "FastString"
-   },
-      "specialitem": {
-      "message": "Special"
-   },
-   "copy": {
-      "message": "Copy"
-   },
+    "appdescription": {
+        "message": "Encode and decode strings in base64, html, url, generates MD5 ans SHA hashs, strip tags and others features. Works offline."
+    },
+    "appname": {
+        "message": "FastString by .LG"
+    },
+    "shortappname": {
+        "message": "FastString"
+    },
+    "specialitem": {
+        "message": "Special"
+    },
+    "copy": {
+        "message": "Copy"
+    },
     "paste": {
-      "message": "Paste"
-   },
-   "b64e": {
-      "message": "Base64 encode"
-   },
-      "b64d": {
-      "message": "Base64 decode"
-   },
-      "b64eu": {
-      "message": "Base64 encode url friendly"
-   },
-      "b64du": {
-      "message": "Base64 decode url friendly"
-   },
-      "b64diu": {
-      "message": "Base64 display image url"
-   },
-      "urle": {
-      "message": "url encode"
-   },
-      "urld": {
-      "message": "url decode"
-   },
-      "htmle": {
-      "message": "html encode"
-   },
-      "htmld": {
-      "message": "html decode"
-   },
-      "about": {
-      "message": "about"
-   },
-         "md5": {
-      "message": "md5"
-   },
-            "md5h": {
-      "message": "md5 Hex"
-   },
-            "md564": {
-      "message": "md5 Base64"
-   },
-         "sha": {
-      "message": "sha"
-   },
-            "sha1": {
-      "message": "sha-1"
-   },
-            "sha224": {
-      "message": "sha-224"
-   },
-            "sha256": {
-      "message": "sha-256"
-   },
-            "sha384": {
-      "message": "sha-384"
-   },
-            "sha512": {
-      "message": "sha-512"
-   },
-   
-         "rot13": {
-      "message": "rot13"
-   },
-         "mED": {
-      "message": "mED"
-   },
-            "reve": {
-      "message": "reverse string"
-   },
-            "emED": {
-      "message": "encode mED"
-   },
-            "dmED": {
-      "message": "decode mED"
-   },
-   "welcome": {
-      "message": "Welcome to"
-   },
-   "selectoption": {
-      "message": "Select an option to start"
-   },
-      "result": {
-      "message": "Result"
-   },
-      "doit": {
-      "message": "Do it!"
-   },
-      "modalabout_title": {
-      "message": "About this software"
-   },
-      "modalabout_license": {
-      "message": "Copyright © 2013 Lucas Guimarães<br>(lucas@lucasguimaraes.com)</p><p>Source code available under Eclipse license at https://github.com/guimaraeslucas/FastString.git</p><p>http://lucasguimaraes.com"
-   },
-      "modalabout_close": {
-      "message": "Close"
-   },
-      "others": {
-      "message": "others"
-   },
-   "sopt": {
-      "message": "strings actions"
-   },
-      "c2d": {
-      "message": "commas to dots"
-   },
-      "invalid": {
-      "message": "invalid value"
-   },
-      "crc32": {
-      "message": "CRC32"
-   },
-      "hashs": {
-      "message": "hashs"
-   },
-      "stgs": {
-      "message": "strip tags"
-   },
-      "view": {
-      "message": "raw HTML"
-   }
+        "message": "Paste"
+    },
+    "b64e": {
+        "message": "Base64 encode"
+    },
+    "b64d": {
+        "message": "Base64 decode"
+    },
+    "b64eu": {
+        "message": "Base64 encode url friendly"
+    },
+    "b64du": {
+        "message": "Base64 decode url friendly"
+    },
+    "b64diu": {
+        "message": "Base64 display image url"
+    },
+    "urle": {
+        "message": "url encode"
+    },
+    "urld": {
+        "message": "url decode"
+    },
+    "htmle": {
+        "message": "html encode"
+    },
+    "htmld": {
+        "message": "html decode"
+    },
+    "about": {
+        "message": "about"
+    },
+    "md5": {
+        "message": "md5"
+    },
+    "md5h": {
+        "message": "md5 Hex"
+    },
+    "md564": {
+        "message": "md5 Base64"
+    },
+    "sha": {
+        "message": "sha"
+    },
+    "sha1": {
+        "message": "sha-1"
+    },
+    "sha224": {
+        "message": "sha-224"
+    },
+    "sha256": {
+        "message": "sha-256"
+    },
+    "sha384": {
+        "message": "sha-384"
+    },
+    "sha512": {
+        "message": "sha-512"
+    },
+    "rot13": {
+        "message": "rot13"
+    },
+    "mED": {
+        "message": "mED"
+    },
+    "reve": {
+        "message": "reverse string"
+    },
+    "emED": {
+        "message": "encode mED"
+    },
+    "dmED": {
+        "message": "decode mED"
+    },
+    "welcome": {
+        "message": "Welcome to"
+    },
+    "selectoption": {
+        "message": "Select an option to start"
+    },
+    "result": {
+        "message": "Result"
+    },
+    "doit": {
+        "message": "Do it!"
+    },
+    "modalabout_title": {
+        "message": "About this software"
+    },
+    "modalabout_license": {
+        "message": "Copyright © 2013 Lucas Guimarães<br>(lucas@lucasguimaraes.com)</p><p>Source code available under Eclipse license at https://github.com/guimaraeslucas/FastString.git</p><p>http://lucasguimaraes.com"
+    },
+    "modalabout_close": {
+        "message": "Close"
+    },
+    "others": {
+        "message": "others"
+    },
+    "sopt": {
+        "message": "strings actions"
+    },
+    "c2d": {
+        "message": "commas to dots"
+    },
+    "invalid": {
+        "message": "Sorry, but it was not possible to convert the given string."
+    },
+    "crc32": {
+        "message": "CRC32"
+    },
+    "hashs": {
+        "message": "hashs"
+    },
+    "stgs": {
+        "message": "strip tags"
+    },
+    "view": {
+        "message": "raw HTML"
+    },
+	"strlen":{
+		"message": "string length"
+	},
+	"addslashes":{
+		"message": "add slashes"
+	},
+	"stripslashes":{
+		"message": "strip lashes"
+	},
+		"convert":{
+		"message": "convert"
+	},
+		"strtolower":{
+		"message":"string to lower"
+		},
+		"strtoupper":{
+		"message":"string to upper"
+		},
+				"ucwords":{
+		"message":"capitalize string"
+		},
+		"str_shuffle":{
+		"message": "string shuffle"
+		},
+		"htmlcolors":{
+		"message": "HTML colors"
+		},
+		"color":{
+		"message":"Color"
+		},
+		"name":{
+		"message":"Name"
+		},
+		"hexvalue":{
+		"message":"Hex Value"
+		},
+		"enti":{
+		"message":"HTML symbol entities"
+		},
+		"character":{
+		"message":"Character"
+		},
+		"enumber":{
+		"message":"Entity Number"
+		},
+		"ename":{
+		"message": "Entity Name"
+		}
+		
 }

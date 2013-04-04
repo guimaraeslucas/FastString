@@ -26,6 +26,7 @@ function lgte(elementId, txt) {
 
 function hero_hide(){
  $('#doit').unbind('click');
+ $("#shaopt").hide();
  $("#hero").fadeOut(100);
 }
 
@@ -45,13 +46,17 @@ function lgloadapp(){
  invalid = lgt('invalid');
  
  //Set submenus
- //B64
- lgtt(".specialitem","special");
+ //convert
+ lgtt("#convert","convert");//menu title
  lgtt("#b64e","b64e");
  lgtt("#b64d","b64d");
  lgtt("#b64eu","b64eu");
  lgtt("#b64du","b64du");
  lgtt("#b64diu","b64diu");
+ lgtt("#emED","emED");
+ lgtt("#dmED","dmED");
+
+ 
  
  //HASHS
  lgtt("#hashs","hashs");//menu title
@@ -64,22 +69,29 @@ function lgloadapp(){
  lgtt("#sha384","sha384");
  lgtt("#sha512","sha512");
   
- //URL
+ //WEB
  lgtt("#urle","urle");
  lgtt("#urld","urld");
- //HTML
  lgtt("#htmle","htmle");
  lgtt("#htmld","htmld");
+ lgtt("#htmlcolors","htmlcolors"); 
+ lgtt("#enti","enti"); 
   
- //Others
- lgtt("#others","others");
- lgtt("#emED","emED");
- lgtt("#dmED","dmED");
+ //String operations
+ lgtt("#others","others");//menu title
  lgtt("#c2d","c2d");
- lgtt("#sopt","sopt");
  lgtt("#reve","reve"); 
  lgtt("#rot13","rot13"); 
  lgtt("#stgs","stgs"); 
+ lgtt("#strlen","strlen"); 
+ lgtt("#strlen","strlen"); 
+ lgtt("#addslashes","addslashes"); 
+ lgtt("#stripslashes","stripslashes"); 
+ lgtt("#strtolower","strtolower"); 
+ lgtt("#strtoupper","strtoupper"); 
+ lgtt("#ucwords","ucwords");
+ lgtt("#str_shuffle","str_shuffle");
+  
   
  //ABOUT
  lgtt("#about","about");
@@ -101,8 +113,20 @@ function lgloadapp(){
  lgtt("#modalabout_eid","@@extension_id");
  lgtt("#modalabout_close","modalabout_close");
  
- 
  lgtt("#modalhtml_close","modalabout_close");
+ 
+ lgtt("#modalcolors_title","htmlcolors"); 
+ lgtt("#modalcolors_color","color");
+ lgtt("#modalcolors_name","name");
+ lgtt("#modalcolors_hexvalue","hexvalue");
+ lgtt("#modalcolors_close","modalabout_close");
+ 
+
+ lgtt("#modalenti_title","enti"); 
+ lgtt("#modalenti_character","character"); 
+ lgtt("#modalenti_enumber","enumber"); 
+ lgtt("#modalenti_ename","ename");  
+ lgtt("#modalenti_close","modalabout_close");
  
  //BUTTONS ACTIONS
 
@@ -277,19 +301,23 @@ $("#md564").click(function() {
 //SHA-1
 $("#sha1").click(function() {
   hero_hide();
+  
   //Defines action name
   lgtt("#action","sha1");
   //Defines click action
   $("#doit").click(function() {
    var eandd = $("#eandd").val();
    var shaObj = new jsSHA(eandd, "TEXT");
-   var hash = shaObj.getHash("SHA-1", "HEX");
+   
+   var opt = $("#shaopt").val();
+   var hash = shaObj.getHash("SHA-1", opt);
    
    $("#freturn").text(hash);
     return false;
   }); 
   //Show Dyn
   $("#dyn").fadeIn(900); 
+  $("#shaopt").show();
 }); 
 
 //SHA-224
@@ -301,12 +329,14 @@ $("#sha224").click(function() {
   $("#doit").click(function() {
    var eandd = $("#eandd").val();
    var shaObj = new jsSHA(eandd, "TEXT");
-   var hash = shaObj.getHash("SHA-224", "HEX");
+    var opt = $("#shaopt").val();
+   var hash = shaObj.getHash("SHA-224", opt);
    $("#freturn").text(hash);
     return false;
   }); 
   //Show Dyn
   $("#dyn").fadeIn(900); 
+  $("#shaopt").show();
 }); 
 
 //SHA-256
@@ -318,12 +348,14 @@ $("#sha256").click(function() {
   $("#doit").click(function() {
    var eandd = $("#eandd").val();
    var shaObj = new jsSHA(eandd, "TEXT");
-   var hash = shaObj.getHash("SHA-256", "HEX");   
+   var opt = $("#shaopt").val();
+   var hash = shaObj.getHash("SHA-256", opt);   
    $("#freturn").text(hash);
     return false;
   }); 
   //Show Dyn
   $("#dyn").fadeIn(900); 
+  $("#shaopt").show();
 }); 
 
 //SHA-384
@@ -335,12 +367,14 @@ $("#sha384").click(function() {
   $("#doit").click(function() {
    var eandd = $("#eandd").val();
    var shaObj = new jsSHA(eandd, "TEXT");
-   var hash = shaObj.getHash("SHA-384", "HEX");   
+   var opt = $("#shaopt").val();
+   var hash = shaObj.getHash("SHA-384", opt);   
    $("#freturn").text(hash);
     return false;
   }); 
   //Show Dyn
   $("#dyn").fadeIn(900); 
+  $("#shaopt").show();
 }); 
 
 
@@ -353,12 +387,14 @@ $("#sha512").click(function() {
   $("#doit").click(function() {
    var eandd = $("#eandd").val();
    var shaObj = new jsSHA(eandd, "TEXT");
-   var hash = shaObj.getHash("SHA-512", "HEX");   
+   var opt = $("#shaopt").val();
+   var hash = shaObj.getHash("SHA-512", opt);   
    $("#freturn").text(hash);
     return false;
   }); 
   //Show Dyn
   $("#dyn").fadeIn(900); 
+  $("#shaopt").show();
 }); 
 
 //URLE
@@ -429,7 +465,13 @@ $("#emED").click(function() {
   //Defines click action
   $("#doit").click(function() {
    var eandd = $("#eandd").val();
-   $("#freturn").text(femED(eandd));
+   try{
+   var dec=femED(eandd);
+   }catch(err){
+   var dec=invalid;
+   soundalert();
+   }
+   $("#freturn").text(dec);
     return false;
   }); 
   //Show Dyn
@@ -444,7 +486,13 @@ $("#dmED").click(function() {
   //Defines click action
   $("#doit").click(function() {
    var eandd = $("#eandd").val();
-   $("#freturn").text(fdmED(eandd));
+   try{
+   var dec=fdmED(eandd);
+   }catch(err){
+   var dec=invalid;
+   soundalert();
+   }
+   $("#freturn").text(dec);
     return false;
   }); 
   //Show Dyn
@@ -515,6 +563,116 @@ $("#stgs").click(function() {
   //Show Dyn
   $("#dyn").fadeIn(900); 
 }); 
+
+//STRLEN
+$("#strlen").click(function() {
+  hero_hide();
+  //Defines action name
+  lgtt("#action","strlen");
+  //Defines click action
+  $("#doit").click(function() {
+   var eandd = $("#eandd").val();
+   $("#freturn").text(lgstrlen(eandd));
+    return false;
+  }); 
+  //Show Dyn
+  $("#dyn").fadeIn(900); 
+}); 
+
+//ADDSLASHES
+$("#addslashes").click(function() {
+  hero_hide();
+  //Defines action name
+  lgtt("#action","addslashes");
+  //Defines click action
+  $("#doit").click(function() {
+   var eandd = $("#eandd").val();
+   $("#freturn").text(addslashes(eandd));
+    return false;
+  }); 
+  //Show Dyn
+  $("#dyn").fadeIn(900); 
+}); 
+ 
+//ADDSLASHES
+$("#stripslashes").click(function() {
+  hero_hide();
+  //Defines action name
+  lgtt("#action","stripslashes");
+  //Defines click action
+  $("#doit").click(function() {
+   var eandd = $("#eandd").val();
+   $("#freturn").text(stripslashes(eandd));
+    return false;
+  }); 
+  //Show Dyn
+  $("#dyn").fadeIn(900); 
+}); 
+ 
+
+//STRTOLOWER
+$("#strtolower").click(function() {
+  hero_hide();
+  //Defines action name
+  lgtt("#action","strtolower");
+  //Defines click action
+  $("#doit").click(function() {
+   var eandd = $("#eandd").val();
+   $("#freturn").text(strtolower(eandd));
+    return false;
+  }); 
+  //Show Dyn
+  $("#dyn").fadeIn(900); 
+}); 
+
+//STRTOUPPER
+$("#strtoupper").click(function() {
+  hero_hide();
+  //Defines action name
+  lgtt("#action","strtoupper");
+  //Defines click action
+  $("#doit").click(function() {
+   var eandd = $("#eandd").val();
+   $("#freturn").text(strtoupper(eandd));
+    return false;
+  }); 
+  //Show Dyn
+  $("#dyn").fadeIn(900); 
+}); 
+
+
+//UCWORDS
+$("#ucwords").click(function() {
+  hero_hide();
+  //Defines action name
+  lgtt("#action","ucwords");
+  //Defines click action
+  $("#doit").click(function() {
+   var eandd = $("#eandd").val();
+   $("#freturn").text(ucwords(eandd));
+    return false;
+  }); 
+  //Show Dyn
+  $("#dyn").fadeIn(900); 
+}); 
+ 
+//STR_SHUFFLE
+$("#str_shuffle").click(function() {
+  hero_hide();
+  //Defines action name
+  lgtt("#action","str_shuffle");
+  //Defines click action
+  $("#doit").click(function() {
+   var eandd = $("#eandd").val();
+   $("#freturn").text(str_shuffle(eandd));
+    return false;
+  }); 
+  //Show Dyn
+  $("#dyn").fadeIn(900); 
+}); 
+  
+ 
+ 
  
 }//END LOAD
  
