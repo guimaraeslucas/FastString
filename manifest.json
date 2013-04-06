@@ -1,15 +1,15 @@
 {
   "name": "__MSG_appname__",
   "description": "__MSG_appdescription__",
-  "version": "0.8.8.1",
+  "version": "0.9",
   "manifest_version":2,
   "default_locale":"en",
   "offline_enabled":true,
-  "permissions": [ "notifications", "clipboardRead", "clipboardWrite", "contextMenus"],
+  "permissions": ["notifications","clipboardRead","clipboardWrite","contextMenus"],
   "app": {
       "launch": {
          "local_path": "index.htm"
       }
    },
-  "icons": { "16": "res/images/png/fs16.png", "48": "res/images/png/fs48.png","128":"res/images/png/fs128.png", "96":"res/images/png/fs96.png", "256":"res/images/png/fs256.png" }
+  "icons": { "16": "res/images/png/fs16.png", "24": "res/images/png/fs24.png", "32": "res/images/png/fs32.png", "48": "res/images/png/fs48.png", "64": "res/images/png/fs64.png","96": "res/images/png/fs96.png", "128":"res/images/png/fs128.png", "256":"res/images/png/fs256.png","512": "res/images/png/fs512.png"}
 }

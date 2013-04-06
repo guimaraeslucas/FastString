@@ -108,9 +108,6 @@ function stripslashes(str) {
   });
 }
 
-
-
-
 function strtolower (str) {
   // http://kevin.vanzonneveld.net
   // +   original by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
@@ -169,11 +166,8 @@ function str_shuffle (str) {
     str = str.substring(0, rand) + str.substr(rand + 1);
     i--;
   }
-
   return newStr;
 }
-
-//NOT IMPLEMENTED YET
 
 function str_repeat (input, multiplier) {
   // http://kevin.vanzonneveld.net
@@ -198,7 +192,3 @@ function str_repeat (input, multiplier) {
   }
   return y;
 }
-
-
-
-

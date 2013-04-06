@@ -1,6 +1,6 @@
 {
     "appdescription": {
-        "message": "Codifica e decodifica strings em base64, html, url, gera hashs MD5 e SHA além de outras operações com strings. Funciona offline."
+        "message": "Codifica e decodifica strings em base64, html, url, javascript, gera hashs MD5 e SHA, analisa XML, além de outras operações com strings. Funciona offline."
     },
     "appname": {
         "message": "FastString por .LG"
@@ -111,7 +111,7 @@
         "message": "Fechar"
     },
     "others": {
-        "message": "outras ações"
+        "message": "strings"
     },
     "sopt": {
         "message": "operações com strings"
@@ -134,52 +134,106 @@
     "view": {
         "message": "HTML bruto"
     },
-	"strlen":{
-		"message": "contar string"
+    "strlen": {
+        "message": "contar string"
+    },
+    "addslashes": {
+        "message": "adicionar barras"
+    },
+    "stripslashes": {
+        "message": "retirar barras"
+    },
+    "convert": {
+        "message": "converter"
+    },
+    "strtolower": {
+        "message": "string em minúsculas"
+    },
+    "strtoupper": {
+        "message": "string em maiúsculas"
+    },
+    "ucwords": {
+        "message": "capitalizar string"
+    },
+    "str_shuffle": {
+        "message": "embaralhar string"
+    },
+    "htmlcolors": {
+        "message": "cores HTML"
+    },
+    "color": {
+        "message": "Cor"
+    },
+    "name": {
+        "message": "Nome"
+    },
+    "hexvalue": {
+        "message": "Hex"
+    },
+    "enti": {
+        "message": "símbolos HTML"
+    },
+    "character": {
+        "message": "Carácter"
+    },
+    "enumber": {
+        "message": "Entidade número"
+    },
+    "ename": {
+        "message": "Nome da entidade"
+    },
+    "validxml": {
+        "message": "Estrutura XML válida."
+    },
+    "noroot": {
+        "message": "Raíz não encontrada"
+    },
+    "unfinalizedcomment": {
+        "message": "Comentário não finalizado"
+    },
+    "unfinalizedcdata": {
+        "message": "CDATA não finalizado"
+    },
+    "unexpectedinstruction": {
+        "message": "Instrução inesperada"
+    },
+    "unexpecteddoctype": {
+        "message": "DocType inesperado"
+    },
+    "text1stag": {
+        "message": "Texto inesperado antes da primeira tag"
+    },
+    "textlastag": {
+        "message": "Texto inesperado após última tag"
+    },
+    "unexpectedentity": {
+        "message": "Entidade inesperada"
+    },
+    "morerootnode": {
+        "message": "Mais de uma raiz ou tag não esperada"
+    },
+    "unclodesdtag": {
+        "message": "Tag não finalizada"
+    },
+    "duplicatedattributes": {
+        "message": "Atributos duplicados"
+    },
+    "invalidxml": {
+        "message": "Estrutura XML inválida."
+    },
+    "checkxml": {
+        "message": "checar estrutura XML"
+    },
+    "rptinfo": {
+        "message": "Repetir"
+    },
+	"str_repeat":{
+		"message": "repetir string"
 	},
-	"addslashes":{
-		"message": "adicionar barras"
+	"escapejavas":{
+		"message": "codificar string javascript"
 	},
-	"stripslashes":{
-		"message": "retirar barras"
-	},
-		"convert":{
-		"message": "converter"
-	},
-		"strtolower":{
-		"message":"string em minúsculas"
-		},
-		"strtoupper":{
-		"message":"string em maiúsculas"
-		},
-				"ucwords":{
-		"message":"capitalizar string"
-		},
-		"str_shuffle":{
-		"message": "embaralhar string"
-		},
-				"htmlcolors":{
-		"message": "cores HTML"
-		},
-		"color":{
-		"message":"Cor"
-		},
-		"name":{
-		"message":"Nome"
-		},
-		"hexvalue":{
-		"message":"Hex"
-		},
-		"enti":{
-		"message":"símbolos HTML"
-		},
-		"character":{
-		"message":"Carácter"
-		},
-		"enumber":{
-		"message":"Entidade número"
-		},
-		"ename":{
-		"message": "Nome da entidade"
-		}
+	"html2js":{
+		"message": "HTML bruto para javascript"
+	}
 }

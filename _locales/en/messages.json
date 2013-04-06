@@ -1,6 +1,6 @@
 {
     "appdescription": {
-        "message": "Encode and decode strings in base64, html, url, generates MD5 ans SHA hashs, strip tags and others features. Works offline."
+        "message": "Encode and decode strings in base64, html, url, javascript, generates MD5 ans SHA hashs, strip tags, check xml and others features. Works offline."
     },
     "appname": {
         "message": "FastString by .LG"
@@ -111,7 +111,7 @@
         "message": "Close"
     },
     "others": {
-        "message": "others"
+        "message": "strings"
     },
     "sopt": {
         "message": "strings actions"
@@ -134,53 +134,106 @@
     "view": {
         "message": "raw HTML"
     },
-	"strlen":{
-		"message": "string length"
+    "strlen": {
+        "message": "string length"
+    },
+    "addslashes": {
+        "message": "add slashes"
+    },
+    "stripslashes": {
+        "message": "strip lashes"
+    },
+    "convert": {
+        "message": "convert"
+    },
+    "strtolower": {
+        "message": "string to lower"
+    },
+    "strtoupper": {
+        "message": "string to upper"
+    },
+    "ucwords": {
+        "message": "capitalize string"
+    },
+    "str_shuffle": {
+        "message": "string shuffle"
+    },
+    "htmlcolors": {
+        "message": "HTML colors"
+    },
+    "color": {
+        "message": "Color"
+    },
+    "name": {
+        "message": "Name"
+    },
+    "hexvalue": {
+        "message": "Hex Value"
+    },
+    "enti": {
+        "message": "HTML symbol entities"
+    },
+    "character": {
+        "message": "Character"
+    },
+    "enumber": {
+        "message": "Entity Number"
+    },
+    "ename": {
+        "message": "Entity Name"
+    },
+    "validxml": {
+        "message": "Valid XML structure."
+    },
+    "noroot": {
+        "message": "No root node"
+    },
+    "unfinalizedcomment": {
+        "message": "Unfinalized comment"
+    },
+    "unfinalizedcdata": {
+        "message": "Unfinalized CDATA"
+    },
+    "unexpectedinstruction": {
+        "message": "Unexpected instruction"
+    },
+    "unexpecteddoctype": {
+        "message": "Unexpected DocType"
+    },
+    "text1stag": {
+        "message": "Unexpected text before first tag"
+    },
+    "textlastag": {
+        "message": "Unexpected text after last tag"
+    },
+    "unexpectedentity": {
+        "message": "Unexpected entity"
+    },
+    "morerootnode": {
+        "message": "More than one root node or unexpected tag"
+    },
+    "unclodesdtag": {
+        "message": "Unclosed tag"
+    },
+    "duplicatedattributes": {
+        "message": "Duplicated attributes"
+    },
+    "invalidxml": {
+        "message": "Invalid XML structure."
+    },
+    "checkxml": {
+        "message": "check XML structure"
+    },
+    "rptinfo": {
+        "message": "Repeat"
+    },
+	"str_repeat":{
+		"message": "string repeat"
 	},
-	"addslashes":{
-		"message": "add slashes"
+	"escapejavas":{
+		"message": "escape javascript string"
 	},
-	"stripslashes":{
-		"message": "strip lashes"
-	},
-		"convert":{
-		"message": "convert"
-	},
-		"strtolower":{
-		"message":"string to lower"
-		},
-		"strtoupper":{
-		"message":"string to upper"
-		},
-				"ucwords":{
-		"message":"capitalize string"
-		},
-		"str_shuffle":{
-		"message": "string shuffle"
-		},
-		"htmlcolors":{
-		"message": "HTML colors"
-		},
-		"color":{
-		"message":"Color"
-		},
-		"name":{
-		"message":"Name"
-		},
-		"hexvalue":{
-		"message":"Hex Value"
-		},
-		"enti":{
-		"message":"HTML symbol entities"
-		},
-		"character":{
-		"message":"Character"
-		},
-		"enumber":{
-		"message":"Entity Number"
-		},
-		"ename":{
-		"message": "Entity Name"
-		}
-		
+	"html2js":{
+		"message": "raw HTML to javascript"
+	}
 }

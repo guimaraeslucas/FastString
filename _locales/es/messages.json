@@ -111,7 +111,7 @@
         "message": "Cerrar"
     },
     "others": {
-        "message": "otras acciones"
+        "message": "strings"
     },
     "sopt": {
         "message": "operaciones con strings"
@@ -134,52 +134,106 @@
     "view": {
         "message": "HTML bruto"
     },
-	"strlen":{
-		"message": "contar string"
+    "strlen": {
+        "message": "contar string"
+    },
+    "addslashes": {
+        "message": "agregar barras"
+    },
+    "stripslashes": {
+        "message": "quitar barras"
+    },
+    "convert": {
+        "message": "convertir"
+    },
+    "strtolower": {
+        "message": "string en minúsculas"
+    },
+    "strtoupper": {
+        "message": "string en mayúscula"
+    },
+    "ucwords": {
+        "message": "capitalizar string"
+    },
+    "str_shuffle": {
+        "message": "barajar string"
+    },
+    "htmlcolors": {
+        "message": "colores HTML"
+    },
+    "color": {
+        "message": "Color"
+    },
+    "name": {
+        "message": "Nombre"
+    },
+    "hexvalue": {
+        "message": "Hex"
+    },
+    "enti": {
+        "message": "símbolos HTML"
+    },
+    "character": {
+        "message": "Carácter"
+    },
+    "enumber": {
+        "message": "Entidad número"
+    },
+    "ename": {
+        "message": "Nombre de la entidad"
+    },
+    "validxml": {
+        "message": "Estrutura XML válida."
+    },
+    "noroot": {
+        "message": "Raíz no encontrada"
+    },
+    "unfinalizedcomment": {
+        "message": "Comentario inconcluso"
+    },
+    "unfinalizedcdata": {
+        "message": "CDATA inconcluso"
+    },
+    "unexpectedinstruction": {
+        "message": "Instrucción inesperada"
+    },
+    "unexpecteddoctype": {
+        "message": "DocType inesperado"
+    },
+    "text1stag": {
+        "message": "Texto inesperado antes de la primera tag"
+    },
+    "textlastag": {
+        "message": "Texto inesperado después de la última tag"
+    },
+    "unexpectedentity": {
+        "message": "Entidad inesperada"
+    },
+    "morerootnode": {
+        "message": "Más de una raíz o tag inesperada"
+    },
+    "unclodesdtag": {
+        "message": "Tag inconclusa"
+    },
+    "duplicatedattributes": {
+        "message": "Atributos duplicados"
+    },
+    "invalidxml": {
+        "message": "Estrutura XML no válida."
+    },
+    "checkxml": {
+        "message": "verificar la estructura XML"
+    },
+    "rptinfo": {
+        "message": "Repetir"
+    },
+	"str_repeat":{
+		"message": "repetir string"
 	},
-	"addslashes":{
-		"message": "agregar barras"
+	"escapejavas":{
+		"message": "codificar string javascript"
 	},
-	"stripslashes":{
-		"message": "quitar barras"
-	},
-		"convert":{
-		"message": "convertir"
-	},
-		"strtolower":{
-		"message":"string en minúsculas"
-		},
-		"strtoupper":{
-		"message":"string en mayúscula"
-		},
-				"ucwords":{
-		"message":"capitalizar string"
-		},
-		"str_shuffle":{
-		"message": "barajar string"
-		},
-				"htmlcolors":{
-		"message": "colores HTML"
-		},
-		"color":{
-		"message":"Color"
-		},
-		"name":{
-		"message":"Nombre"
-		},
-		"hexvalue":{
-		"message":"Hex"
-		},
-		"enti":{
-		"message":"símbolos HTML"
-		},
-		"character":{
-		"message":"Carácter"
-		},
-		"enumber":{
-		"message":"Entidad número"
-		},
-		"ename":{
-		"message": "Nombre de la entidad"
-		}
+	"html2js":{
+		"message": "HTML bruto para javascript"
+	}
 }

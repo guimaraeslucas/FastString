@@ -27,6 +27,7 @@ function lgte(elementId, txt) {
 function hero_hide(){
  $('#doit').unbind('click');
  $("#shaopt").hide();
+ $("#rptstr").hide(); 
  $("#hero").fadeOut(100);
 }
 
@@ -76,6 +77,9 @@ function lgloadapp(){
  lgtt("#htmld","htmld");
  lgtt("#htmlcolors","htmlcolors"); 
  lgtt("#enti","enti"); 
+ lgtt("#checkxml","checkxml"); 
+ lgtt("#escapejavas","escapejavas");  
+ lgtt("#html2js","html2js");  
   
  //String operations
  lgtt("#others","others");//menu title
@@ -91,7 +95,7 @@ function lgloadapp(){
  lgtt("#strtoupper","strtoupper"); 
  lgtt("#ucwords","ucwords");
  lgtt("#str_shuffle","str_shuffle");
-  
+ lgtt("#str_repeat","str_repeat");  
   
  //ABOUT
  lgtt("#about","about");
@@ -100,12 +104,13 @@ function lgloadapp(){
  lgte("#welcomemsg",lgt("welcome")+' <strong id="appname">'+lgshortappname+'</strong>'); 
  lgtt("#selectoption","selectoption");
  
- //Sets fields names
+ //Sets buttons and fields names
  lgtt("#doit","doit");
  lgtt("#result","result");
  lgtt("#copy","copy");
  lgtt("#paste","paste");
  lgtt("#view","view");
+ lgtt("#rptinfo","rptinfo");
  
  //Sets Modal
  lgtt("#modalabout_title","modalabout_title");
@@ -120,20 +125,21 @@ function lgloadapp(){
  lgtt("#modalcolors_name","name");
  lgtt("#modalcolors_hexvalue","hexvalue");
  lgtt("#modalcolors_close","modalabout_close");
+ $("#modalcolors_table").html(rmodalcolors_table());
  
-
  lgtt("#modalenti_title","enti"); 
  lgtt("#modalenti_character","character"); 
  lgtt("#modalenti_enumber","enumber"); 
  lgtt("#modalenti_ename","ename");  
  lgtt("#modalenti_close","modalabout_close");
+ $("#modalenti_table").html(rmodalenti_table());
  
  //BUTTONS ACTIONS
 
 //PASTE BUTTON
  $("#paste").click(function() {
  $("#eandd").val(pasteTextFromClipboard());
- return false; //Should be here as if we set type=button chrome ignores it
+ return false; //Should be here as if we set type=button chrome ignores it - why ?
  }); 
  
  
@@ -670,9 +676,88 @@ $("#str_shuffle").click(function() {
   //Show Dyn
   $("#dyn").fadeIn(900); 
 }); 
-  
- 
- 
+
+//CHECKXML
+$("#checkxml").click(function() {
+  hero_hide();
+  //Defines action name
+  lgtt("#action","checkxml");
+  //Defines click action
+  $("#doit").click(function() {
+     	var sMessage = [
+		lgt('validxml'), // 0
+		lgt('noroot'), // 1
+		lgt('unfinalizedcomment'), // 2
+		lgt('unfinalizedcdata'), // 3
+		lgt('unexpectedinstruction'), // 4
+		lgt('unexpecteddoctype'), // 5
+		lgt('text1stag'), // 6
+		lgt('textlastag'), // 7
+		lgt('unexpectedentity'), // 8
+		lgt('morerootnode'), // 9
+		lgt('unclodesdtag'), // 10
+		lgt('duplicatedattributes')]; // 11
+		
+   var eandd = $("#eandd").val();
+   var my_oXmlValidator = new oXmlValidator.Object(eandd);
+   my_oXmlValidator.hParams.bFragment = false;
+   if ( my_oXmlValidator.valid() ){
+   $("#freturn").text(lgt('validxml'));
+   }else{
+   $("#freturn").text(lgt('invalidxml') + ' ' + sMessage[my_oXmlValidator.nCode] + '.');
+   }
+   return false;
+  }); 
+  //Show Dyn
+  $("#dyn").fadeIn(900); 
+}); 
+
+//STR_REPEAT
+$("#str_repeat").click(function() {
+  hero_hide();
+  //Defines action name
+  lgtt("#action","str_repeat");
+  //Defines click action
+  $("#doit").click(function() {
+   var eandd = $("#eandd").val();
+   var t2r = $("#t2r").val();
+   $("#freturn").text(str_repeat(eandd,t2r));
+    return false;
+  }); 
+  //Show Dyn
+  $("#dyn").fadeIn(900); 
+  $("#rptstr").show(); 
+}); 
+
+//encodejavascript
+$("#escapejavas").click(function() {
+  hero_hide();
+  //Defines action name
+  lgtt("#action","escapejavas");
+  //Defines click action
+  $("#doit").click(function() {
+   var eandd = $("#eandd").val();
+   $("#freturn").text(JAVASstringEncode(eandd));
+    return false;
+  }); 
+  //Show Dyn
+  $("#dyn").fadeIn(900); 
+}); 
+
+//html2js
+$("#html2js").click(function() {
+  hero_hide();
+  //Defines action name
+  lgtt("#action","html2js");
+  //Defines click action
+  $("#doit").click(function() {
+   var eandd = $("#eandd").val();
+   $("#freturn").text(fhtml2js(eandd));
+    return false;
+  }); 
+  //Show Dyn
+  $("#dyn").fadeIn(900); 
+}); 
  
 }//END LOAD
  
