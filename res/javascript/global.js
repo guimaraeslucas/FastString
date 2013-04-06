@@ -34,7 +34,10 @@ function hero_hide() {
 }
 
 function soundalert() {
-    $("#sound").html('<audio autoplay="autoplay" preload="auto" src="res/sounds/mp3/timtum.mp3"></audio>');
+    $("#sound").html('<audio autoplay="autoplay" preload="auto" src="res/sounds/mp3/tumtum.mp3"></audio>');
+}
+function soundinvalid() {
+    $("#sound").html('<audio autoplay="autoplay" preload="auto" src="res/sounds/mp3/tum.mp3"></audio>');
 }
 
 function lgloadapp() {
@@ -99,6 +102,10 @@ function lgloadapp() {
     lgtt("#ucwords", "ucwords");
     lgtt("#str_shuffle", "str_shuffle");
     lgtt("#str_repeat", "str_repeat");
+    lgtt("#trim", "trim");
+    lgtt("#stripcomments","stripcomments")
+    lgtt("#checkUUID", "checkUUID");
+    lgtt("#generateUUID", "generateUUID");
 
     //ABOUT
     lgtt("#about", "about");
@@ -544,10 +551,6 @@ function lgloadapp() {
         $("#doit").click(function() {
             var eandd = $("#eandd").val();
             var check = lgcomma2dot(eandd);
-            if (check == 0) {
-                check = invalid;
-                soundalert();
-            }
             $("#freturn").text(check);
             return false;
         });
@@ -702,6 +705,7 @@ function lgloadapp() {
             if (my_oXmlValidator.valid()) {
                 $("#freturn").text(lgt('validxml'));
             } else {
+                soundinvalid();
                 $("#freturn").text(lgt('invalidxml') + ' ' + sMessage[my_oXmlValidator.nCode] + '.');
             }
             return false;
@@ -757,7 +761,7 @@ function lgloadapp() {
         $("#dyn").fadeIn(900);
     });
 
-        //checkUUID
+    //checkUUID
     $("#checkUUID").click(function() {
         hero_hide();
         //Defines action name
@@ -765,12 +769,59 @@ function lgloadapp() {
         //Defines click action
         $("#doit").click(function() {
             var eandd = $("#eandd").val();
-            if(checkUUID(eandd)){
+            if (checkUUID(eandd)) {
                 var result = lgt("validUUID");
-            }else{
+            } else {
                 var result = lgt("invalidUUID");
+                soundinvalid();
             }
             $("#freturn").text(result);
+            return false;
+        });
+        //Show Dyn
+        $("#dyn").fadeIn(900);
+    });
+
+    //generateUUID
+    $("#generateUUID").click(function() {
+        hero_hide();
+        //Defines action name
+        lgtt("#action", "generateUUID");
+        $("#eandd").val("xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx");
+        //Defines click action
+        $("#doit").click(function() {
+            var eandd = $("#eandd").val();
+            $("#freturn").text(generateUUID(eandd));
+            return false;
+        });
+        //Show Dyn
+        $("#dyn").fadeIn(900);
+    });
+
+    //TRIM
+    $("#trim").click(function() {
+        hero_hide();
+        //Defines action name
+        lgtt("#action", "trim");
+        //Defines click action
+        $("#doit").click(function() {
+            var eandd = $("#eandd").val();
+            $("#freturn").text(fulltrim(eandd));
+            return false;
+        });
+        //Show Dyn
+        $("#dyn").fadeIn(900);
+    });
+
+    //stripcomments
+    $("#stripcomments").click(function() {
+        hero_hide();
+        //Defines action name
+        lgtt("#action", "stripcomments");
+        //Defines click action
+        $("#doit").click(function() {
+            var eandd = $("#eandd").val();
+            $("#freturn").text(stripcomments(eandd));
             return false;
         });
         //Show Dyn

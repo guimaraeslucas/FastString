@@ -227,13 +227,31 @@
     "rptinfo": {
         "message": "Repetir"
     },
-	"str_repeat":{
-		"message": "repetir string"
-	},
-	"escapejavas":{
-		"message": "codificar string javascript"
-	},
-	"html2js":{
-		"message": "HTML bruto para javascript"
-	}
+    "str_repeat": {
+        "message": "repetir string"
+    },
+    "escapejavas": {
+        "message": "codificar string javascript"
+    },
+    "html2js": {
+        "message": "HTML bruto para javascript"
+    },
+    "checkUUID": {
+        "message": "verificar UUID"
+    },
+    "invalidUUID": {
+        "message": "UUID inválida"
+    },
+    "validUUID": {
+        "message": "UUID válida"
+    },
+    "generateUUID": {
+        "message": "gerar UUID/ID"
+    },
+    "trim": {
+        "message": "apagar espaços"
+    },
+    "stripcomments": {
+        "message": "limpar comentários"
+    }
 }

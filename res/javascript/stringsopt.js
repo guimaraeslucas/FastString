@@ -26,12 +26,7 @@ function rot13(rot13str) {
  * @param {str} str
  */
 function lgcomma2dot(str) {
-    if (str.indexOf(",") > -1) {
-        str = str.replace(/,/g, ".");
-        return str;
-    } else {
-        return 0;
-    }
+return str.replace(/,/g, ".");
 }
 
 /**
@@ -192,9 +187,9 @@ function str_repeat(input, multiplier) {
     return y;
 }
 
-function generateUUID() {
+function generateUUID(uuidt) {
     //Original by: http://stackoverflow.com/users/109538/broofa
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    return uuidt.replace(/[xy]/g, function(c) {
         var r = Math.random() * 16 | 0, v = c == 'x' ? r : r & 0x3 | 0x8;
         return v.toString(16);
     });
@@ -202,5 +197,13 @@ function generateUUID() {
 
 function checkUUID(uuid) {
     //Original by: http://stackoverflow.com/users/1014748/ryanb
-    return /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test();
+    return /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(uuid);
+}
+
+function fulltrim(str){
+    return str.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g,'').replace(/\s+/g,' ');
+}
+
+function stripcomments(str){
+    return str.replace(/(\/\*([\s\S]*?)\*\/)|(\/\/(.*)$)/gm, '').replace(/<!--.*?-->/g,'').replace("(?s)<!--\\[if(.*?)\\[endif\\] *-->",'');
 }

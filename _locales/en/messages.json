@@ -236,13 +236,22 @@
     "html2js": {
         "message": "raw HTML to javascript"
     },
-    "checkUUID":{
+    "checkUUID": {
         "message": "check UUID"
     },
-        "invalidUUID":{
+    "invalidUUID": {
         "message": "Invalid UUID"
     },
-        "validUUID":{
+    "validUUID": {
         "message": "Valid UUID"
+    },
+    "generateUUID": {
+        "message": "generate UUID4/ID"
+    },
+    "trim": {
+        "message": "trim string"
+    },
+    "stripcomments": {
+        "message": "strip comments"
     }
 }

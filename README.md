@@ -33,6 +33,9 @@ The .LG FastString is a powerful offline string encoder and decoder that allows 
  - string to lower/upper
  - capitalize string
  - shuffle string
+ - trim string
+ - strip comments
+ - generate and validade UUID and IDs
  - change commas to dots
  - view HTML colors name table
  - view HTML symbol entities table
