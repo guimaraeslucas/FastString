@@ -15,296 +15,403 @@
 *
 -->
 <html>
-<head>
-<meta charset="utf-8">
-<!-- Changed by global.js using chrome.i18n -->
-<title>LG FastString</title>
-<!--_LGGM-->
-<meta name="copyright" content="Copyright 2013 - LucasGuimaraes.com">
-<meta name="generator" content="LGPowerWeb/2.0.0 LGGM/6.0.2 (4.0.0)">
-<link rel="shortcut icon" type="image/png" href="res/images/png/fs16.png">
-<link rel="favicon" type="image/png" href="res/images/png/fs16.png">
-<link rel="icon" type="image/png" href="res/images/png/fs16.png">
-<link rel="icon" type="image/png" href="res/images/png/fs24.png" sizes="24x24">
-<link rel="icon" type="image/png" href="res/images/png/fs32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="res/images/png/fs48.png" sizes="48x48">
-<link rel="icon" type="image/png" href="res/images/png/fs64.png" sizes="64x64">
-<link rel="icon" type="image/png" href="res/images/png/fs96.png" sizes="96x96">
-<link rel="icon" type="image/png" href="res/images/png/fs128.png" sizes="128x128">
-<link rel="icon" type="image/png" href="res/images/png/fs256.png" sizes="256x256">
-<link rel="icon" type="image/png" href="res/images/png/fs512.png" sizes="512x512">
-<meta name="google" content="notranslate">
-<meta name="referrer" content="always">
-<meta name="viewport" content="width=device-width, user-scalable=1, minimum-scale=0.1, maximum-scale=1.0">
-<!--_/LGGM-->
-<!--_CSS-->
-<link rel="stylesheet" href="res/css/lg.css">
-<link rel="stylesheet" href="res/css/bootstrap.min.css">
-<link rel="stylesheet" href="res/css/darkstrap.css">
-<style>
-@media only screen and (min-width: 980px){
-body {padding-top: 60px;}
-}
-</style>
-<!--_/CSS-->
-<!--_SCRIPTS-->
-<!-- JQuery -->
-<script src="res/javascript/jquery-1.9.0.min.js"></script>
-<!-- UI Plugins -->
-<script src="res/javascript/bootstrap.min.js"></script>
-<!-- Encode/Decode Plugins -->
-<script src="res/javascript/jquery.base64.js"></script>
-<script src="res/javascript/md5.js"></script>
-<script src="res/javascript/sha.js"></script>
-<script src="res/javascript/stringsopt.js"></script>
-<script src="res/javascript/html.js"></script>
-<script src="res/javascript/mED.js"></script>
-<script src="res/javascript/crc32.js"></script>
-<script src="res/javascript/jxmlvali-min.js"></script>
-<!-- Initiate LGApp -->
-<script src="res/javascript/htmltables.js"></script>
-<script src="res/javascript/global.js"></script>
-<!--_/SCRIPTS-->
-</head>
-<body>
-  <!--NAVBAR-->
-  <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-		          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="#brand" id="brand">FastString</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-			<!--class="active"-->
-              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="convert">convert</span> <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-				  <li class="nav-header">Base64</li>	
-                  <li><a href="#" id="b64e"></a></li>
-                  <li><a href="#" id="b64d"></a></li>
-                  <li><a href="#" id="b64eu"></a></li>
-                  <li><a href="#" id="b64du"></a></li>
-				  <li><a href="#" id="b64diu"></a></li>
-				  <li class="divider"></li>
-				  <li class="nav-header">mED</li>	
-				  <li><a href="#" id="emED"></a></li>
-                  <li><a href="#" id="dmED"></a></li>	
-                </ul>
-			  </li>
-             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="hashs">hashs</span> <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-				  <li><a href="#" id="crc32"></a></li>
-				  <li class="divider"></li>
-				  <li class="nav-header">md5</li>	
-				  <li><a href="#" id="md5h"></a></li>
-                  <li><a href="#" id="md564"></a></li>
-				  <li class="divider"></li>
-				  <li class="nav-header">sha</li>	
-                  <li><a href="#" id="sha1"></a></li>
-				  <li><a href="#" id="sha224"></a></li>
-                  <li><a href="#" id="sha256"></a></li>
-				  <li><a href="#" id="sha384"></a></li>
-				  <li><a href="#" id="sha512"></a></li>
-                </ul>
-			  </li>
+	<head>
+		<meta charset="utf-8">
+		<!-- Changed by global.js using chrome.i18n -->
+		<title>LG FastString</title>
+		<!--_LGGM-->
+		<meta name="copyright" content="Copyright 2013 - LucasGuimaraes.com">
+		<meta name="generator" content="LGPowerWeb/2.0.0 LGGM/6.0.2 (4.0.0)">
+		<link rel="shortcut icon" type="image/png" href="res/images/png/fs16.png">
+		<link rel="favicon" type="image/png" href="res/images/png/fs16.png">
+		<link rel="icon" type="image/png" href="res/images/png/fs16.png">
+		<link rel="icon" type="image/png" href="res/images/png/fs24.png" sizes="24x24">
+		<link rel="icon" type="image/png" href="res/images/png/fs32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="res/images/png/fs48.png" sizes="48x48">
+		<link rel="icon" type="image/png" href="res/images/png/fs64.png" sizes="64x64">
+		<link rel="icon" type="image/png" href="res/images/png/fs96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="res/images/png/fs128.png" sizes="128x128">
+		<link rel="icon" type="image/png" href="res/images/png/fs256.png" sizes="256x256">
+		<link rel="icon" type="image/png" href="res/images/png/fs512.png" sizes="512x512">
+		<meta name="google" content="notranslate">
+		<meta name="referrer" content="always">
+		<meta name="viewport" content="width=device-width, user-scalable=1, minimum-scale=0.1, maximum-scale=1.0">
+		<!--_/LGGM-->
+		<!--_CSS-->
+		<link rel="stylesheet" href="res/css/lg.css">
+		<link rel="stylesheet" href="res/css/bootstrap.min.css">
+		<link rel="stylesheet" href="res/css/darkstrap.css">
+		<style>
+			@media only screen and (min-width: 980px) {
+				body {
+					padding-top: 60px;
+				}
+			}
+		</style>
+		<!--_/CSS-->
+		<!--_SCRIPTS-->
+		<!-- JQuery -->
+		<script src="res/javascript/jquery-1.9.0.min.js"></script>
+		<!-- UI Plugins -->
+		<script src="res/javascript/bootstrap.min.js"></script>
+		<!-- Encode/Decode Plugins -->
+		<script src="res/javascript/jquery.base64.js"></script>
+		<script src="res/javascript/md5.js"></script>
+		<script src="res/javascript/sha.js"></script>
+		<script src="res/javascript/stringsopt.js"></script>
+		<script src="res/javascript/html.js"></script>
+		<script src="res/javascript/mED.js"></script>
+		<script src="res/javascript/crc32.js"></script>
+		<script src="res/javascript/jxmlvali-min.js"></script>
+		<!-- Initiate LGApp -->
+		<script src="res/javascript/htmltables.js"></script>
+		<script src="res/javascript/global.js"></script>
+		<!--_/SCRIPTS-->
+	</head>
+	<body>
+		<!--NAVBAR-->
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="brand" href="#brand" id="brand">FastString</a>
+					<div class="nav-collapse collapse">
+						<ul class="nav">
+							<!--class="active"-->
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="convert">convert</span> <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li class="nav-header">
+										Base64
+									</li>
+									<li>
+										<a href="#" id="b64e"></a>
+									</li>
+									<li>
+										<a href="#" id="b64d"></a>
+									</li>
+									<li>
+										<a href="#" id="b64eu"></a>
+									</li>
+									<li>
+										<a href="#" id="b64du"></a>
+									</li>
+									<li>
+										<a href="#" id="b64diu"></a>
+									</li>
+									<li class="divider"></li>
+									<li class="nav-header">
+										mED
+									</li>
+									<li>
+										<a href="#" id="emED"></a>
+									</li>
+									<li>
+										<a href="#" id="dmED"></a>
+									</li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="hashs">hashs</span> <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#" id="crc32"></a>
+									</li>
+									<li class="divider"></li>
+									<li class="nav-header">
+										md5
+									</li>
+									<li>
+										<a href="#" id="md5h"></a>
+									</li>
+									<li>
+										<a href="#" id="md564"></a>
+									</li>
+									<li class="divider"></li>
+									<li class="nav-header">
+										sha
+									</li>
+									<li>
+										<a href="#" id="sha1"></a>
+									</li>
+									<li>
+										<a href="#" id="sha224"></a>
+									</li>
+									<li>
+										<a href="#" id="sha256"></a>
+									</li>
+									<li>
+										<a href="#" id="sha384"></a>
+									</li>
+									<li>
+										<a href="#" id="sha512"></a>
+									</li>
+								</ul>
+							</li>
 
-			  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="html">web</span> <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-				   <li class="nav-header">url</li>
-				  <li><a href="#" id="urle"></a></li>
-                  <li><a href="#" id="urld"></a></li>
-				  <li class="divider"></li>
-				   <li class="nav-header">html</li>
-                  <li><a href="#" id="htmle"></a></li>
-                  <li><a href="#" id="htmld"></a></li>
-				  <li><a href="#modalcolors" data-toggle="modal" id="htmlcolors"></a></li>
-				  <li><a href="#modalenti" data-toggle="modal" id="enti"></a></li>
-				  <li class="divider"></li>
-				  <li><a href="#" id="checkxml"></a></li>
-				   <li class="divider"></li>
-				   <li class="nav-header">javascript</li>
-				  <li><a href="#" id="escapejavas"></a></li>
-				  <li><a href="#" id="html2js"></a></li>
-                </ul>
-			  </li>			  			
-			  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="others">others</span> <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                  <li><a href="#" id="c2d"></a></li>		
-				  <li><a href="#" id="strlen"></a></li>				  
-				  <li><a href="#" id="reve"></a></li>
-				  <li><a href="#" id="rot13"></a></li>
-				  <li><a href="#" id="stgs"></a></li>
-				  <li><a href="#" id="addslashes"></a></li>
-				  <li><a href="#" id="stripslashes"></a></li>
-				  <li><a href="#" id="strtolower"></a></li>
-				  <li><a href="#" id="strtoupper"></a></li>
-				  <li><a href="#" id="ucwords"></a></li>
-				  <li><a href="#" id="str_shuffle"></a></li>
-				  <li><a href="#" id="str_repeat"></a></li>
-                </ul>
-			  </li>
-			 
-			  <li><a href="#modalabout" data-toggle="modal"><span id="about">Info</span> </a></li>
-			  
-			  
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div><!--/NAVBAR-->
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="html">web</span> <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li class="nav-header">
+										url
+									</li>
+									<li>
+										<a href="#" id="urle"></a>
+									</li>
+									<li>
+										<a href="#" id="urld"></a>
+									</li>
+									<li class="divider"></li>
+									<li class="nav-header">
+										html
+									</li>
+									<li>
+										<a href="#" id="htmle"></a>
+									</li>
+									<li>
+										<a href="#" id="htmld"></a>
+									</li>
+									<li>
+										<a href="#modalcolors" data-toggle="modal" id="htmlcolors"></a>
+									</li>
+									<li>
+										<a href="#modalenti" data-toggle="modal" id="enti"></a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="#" id="checkxml"></a>
+									</li>
+									<li class="divider"></li>
+									<li class="nav-header">
+										javascript
+									</li>
+									<li>
+										<a href="#" id="escapejavas"></a>
+									</li>
+									<li>
+										<a href="#" id="html2js"></a>
+									</li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="others">others</span> <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#" id="c2d"></a>
+									</li>
+									<li>
+										<a href="#" id="strlen"></a>
+									</li>
+									<li>
+										<a href="#" id="reve"></a>
+									</li>
+									<li>
+										<a href="#" id="rot13"></a>
+									</li>
+									<li>
+										<a href="#" id="stgs"></a>
+									</li>
+									<li>
+										<a href="#" id="addslashes"></a>
+									</li>
+									<li>
+										<a href="#" id="stripslashes"></a>
+									</li>
+									<li>
+										<a href="#" id="strtolower"></a>
+									</li>
+									<li>
+										<a href="#" id="strtoupper"></a>
+									</li>
+									<li>
+										<a href="#" id="ucwords"></a>
+									</li>
+									<li>
+										<a href="#" id="str_shuffle"></a>
+									</li>
+									<li>
+										<a href="#" id="str_repeat"></a>
+									</li>
+									<li>
+										<a href="#" id="checkUUID"></a>
+									</li>
+								</ul>
+							</li>
 
-    <!--CONTAINER--><div class="container-fluid">
-	<!--ROW-FLUID-->
-	<div class="row-fluid">
-    <div class="span12">
-    <!--HERO-->
-    <div class="hero-unit textoback" id="hero">
-    <h1 id="welcomemsg"></h1>
-	<h3 id="selectoption"></h3>
-	</div>
-	<!--/HERO-->
-	
-	 <!--NRF-->
-	<div class="row-fluid">
-	<div id="dyn" style="display:none;">
-          <div class="span6">
-<form>
-  <fieldset>
-    <legend id="action"></legend>
-    <textarea style="width:100%;min-height:129px;" id="eandd" class="span6 ucode" autofocus></textarea> <br>
-	<!--<input style="width:98%;" type="text" id="parameters" name="parameters">-->
-	
-	<!--STR_RPT-->
-	<div class="input-prepend input-block-level" id="rptstr" style="display:none;">
-    <span class="add-on" id="rptinfo"></span>
-    <input class="span2" type="number" id="t2r" name="t2r" min="2" max="128000" step="1" value="2" maxlength="6">
-	<!-- 12800 runs smoothly in Core I7, but higher numbers can crash the browser, maybe implement WebWorkers in future? -->
-    </div><!--/STR_RPT-->
+							<li>
+								<a href="#modalabout" data-toggle="modal"><span id="about">Info</span> </a>
+							</li>
 
-    <!--SHAOPTIONS-->
-	<select style="width:100%; display:none;" id="shaopt"><option value="HEX">Hex</option><option value="B64">Base64</option></select><!--/SHAOPTIONS-->
-	
-    <button class="btn btn-inverse" id="doit" type="button"></button> <button class="btn btn-inverse" id="paste"></button>
-  </fieldset>
-</form>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div><!--/NAVBAR-->
 
-		  </div>
-		  <div class="span6">
-		    <fieldset>
-			    <legend id="result"></legend>
-		  <pre class="pre-scrollable" style="min-height:113px;" class="span6" id="freturn"></pre>
-		  <button class="btn btn-inverse" id="copy" style="margin-top:-2px;" type="button"></button> <button class="btn btn-inverse" id="view" style="margin-top:-2px;" type="button"></button>
-		  
-		  </fieldset>
-		  </div>
-        </div><!--/NRF-->
-		 </div><!--/DYN-->
-		 
-		<div>
-    <!--NRF-->
-	<div class="row-fluid">
-          <div class="span6">
-		  <p class="muted"><a href="http://lucasguimaraes.com" class="muted">
-		  <span id="lucaslogo"></span><small>© 2013 LucasGuimaraes.com</small></a>
-		  <div id="sound"></div>
-		  </p>
-		  </div>
-        </div><!--/NRF-->
-  </div>
+		<!--CONTAINER-->
+		<div class="container-fluid">
+			<!--ROW-FLUID-->
+			<div class="row-fluid">
+				<div class="span12">
+					<!--HERO-->
+					<div class="hero-unit textoback" id="hero">
+						<h1 id="welcomemsg"></h1>
+						<h3 id="selectoption"></h3>
+					</div>
+					<!--/HERO-->
 
- </div><!--/SPAN12-->
- </div><!--/ROW-FLUID-->
-	
-    </div><!--/CONTAINER-->
-	
-	<!--MODALS-->
-  <!--MODALABOUT-->
-  <div id="modalabout" class="modal hide fade" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <h3 id="modalabout_title" class="muted"></h3>
-  </div>
-  <div class="modal-body">
-    
-    <p id="modalabout_license" class="muted">© 2013 LucasGuimaraes.com</p>
-	<p>EID: <span id="modalabout_eid"></span></p>
-  </div>
-  <div class="modal-footer">
-    <button class="btn" id="modalabout_close" data-dismiss="modal" aria-hidden="true"></button>
-  </div>
-  </div>
-  <!--/MODALABOUT-->
-  
-  
-  <!--MODALHTML-->
-  <div id="modalhtml" class="modal hide fade" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal">×</button>
-    <h3 id="modalhtml_title" class="muted">Viewer</h3>
-  </div>
-  <div class="modal-body">    
-    <p id="modalhtmlcontent">	
-	</p>	
-  </div>
-  <div class="modal-footer">
-    <button class="btn" id="modalhtml_close" data-dismiss="modal" aria-hidden="true"></button>
-  </div>
-  </div>
-  <!--/MODALHTML-->
-  
-  
-  
-    <!--MODALENTI-->
-  <div id="modalenti" class="modal hide fade" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal">×</button>
-    <h3 id="modalenti_title" class="muted"></h3>
-  </div>
-  <div class="modal-body">
-	<table class="table table-condensed table-hover">
-	<thead>
-  <tr>
-    <th id="modalenti_character"></th>
-    <th id="modalenti_enumber"></th>
-    <th id="modalenti_ename"></th>
-  </tr>
-  </thead>
-  <tbody id="modalenti_table">
-  </tbody>
-</table>
-  </div>
-  <div class="modal-footer">
-    <button class="btn" id="modalenti_close" data-dismiss="modal" aria-hidden="true"></button>
-  </div>
-  </div>
-  <!--/MODALENTI-->
-    
-    <!--MODALCOLORS-->
-  <div id="modalcolors" class="modal hide fade" tabindex="-1" role="dialog">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal">×</button>
-    <h3 id="modalcolors_title" class="muted"></h3>
-  </div>
-  <div class="modal-body">
-    <table class="table table-condensed">
-	<thead>
-  <tr>
-    <th id="modalcolors_color"></th>
-    <th id="modalcolors_name"></th>
-    <th id="modalcolors_hexvalue"></th>
-  </tr>
-  </thead>
-  <tbody id="modalcolors_table">
-  </tbody>
-</table>
-	 </div>
-  <div class="modal-footer">
-    <button class="btn" id="modalcolors_close" data-dismiss="modal" aria-hidden="true"></button>
-  </div>
-  </div>
-  <!--/MODALCOLORS-->
-<!--/MODALS-->
-</body>
+					<!--NRF-->
+					<div class="row-fluid">
+						<div id="dyn" style="display:none;">
+							<div class="span6">
+								<form>
+									<fieldset>
+										<legend id="action"></legend>
+										<textarea style="width:100%;min-height:129px;" id="eandd" class="span6 ucode" autofocus></textarea>
+										<br>
+										<!--<input style="width:98%;" type="text" id="parameters" name="parameters">-->
+
+										<!--STR_RPT-->
+										<div class="input-prepend input-block-level" id="rptstr" style="display:none;">
+											<span class="add-on" id="rptinfo"></span>
+											<input class="span2" type="number" id="t2r" name="t2r" min="2" max="128000" step="1" value="2" maxlength="6">
+											<!-- 12800 runs smoothly in Core I7, but higher numbers can crash the browser,
+											maybe implement WebWorkers in future? -->
+										</div><!--/STR_RPT-->
+
+										<!--SHAOPTIONS-->
+										<select style="width:100%; display:none;" id="shaopt">
+											<option value="HEX">Hex</option><option value="B64">Base64</option>
+										</select><!--/SHAOPTIONS-->
+
+										<button class="btn btn-inverse" id="doit" type="button"></button>
+										<button class="btn btn-inverse" id="paste"></button>
+									</fieldset>
+								</form>
+
+							</div>
+							<div class="span6">
+								<fieldset>
+									<legend id="result"></legend>
+									<pre class="pre-scrollable" style="min-height:113px;" class="span6" id="freturn"></pre>
+									<button class="btn btn-inverse" id="copy" style="margin-top:-2px;" type="button"></button>
+									<button class="btn btn-inverse" id="view" style="margin-top:-2px;" type="button"></button>
+
+								</fieldset>
+							</div>
+						</div><!--/NRF-->
+					</div><!--/DYN-->
+
+					<div>
+						<!--NRF-->
+						<div class="row-fluid">
+							<div class="span6">
+								<p class="muted">
+									<a href="http://lucasguimaraes.com" class="muted"> <span id="lucaslogo"></span><small>© 2013 LucasGuimaraes.com</small></a>
+									<div id="sound"></div>
+								</p>
+							</div>
+						</div><!--/NRF-->
+					</div>
+
+				</div><!--/SPAN12-->
+			</div><!--/ROW-FLUID-->
+
+		</div><!--/CONTAINER-->
+
+		<!--MODALS-->
+		<!--MODALABOUT-->
+		<div id="modalabout" class="modal hide fade" tabindex="-1" role="dialog">
+			<div class="modal-header">
+				<h3 id="modalabout_title" class="muted"></h3>
+			</div>
+			<div class="modal-body">
+
+				<p id="modalabout_license" class="muted">
+					© 2013 LucasGuimaraes.com
+				</p>
+				<p>
+					EID: <span id="modalabout_eid"></span>
+				</p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn" id="modalabout_close" data-dismiss="modal" aria-hidden="true"></button>
+			</div>
+		</div>
+		<!--/MODALABOUT-->
+
+		<!--MODALHTML-->
+		<div id="modalhtml" class="modal hide fade" tabindex="-1" role="dialog">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					×
+				</button>
+				<h3 id="modalhtml_title" class="muted">Viewer</h3>
+			</div>
+			<div class="modal-body">
+				<p id="modalhtmlcontent"></p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn" id="modalhtml_close" data-dismiss="modal" aria-hidden="true"></button>
+			</div>
+		</div>
+		<!--/MODALHTML-->
+
+		<!--MODALENTI-->
+		<div id="modalenti" class="modal hide fade" tabindex="-1" role="dialog">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					×
+				</button>
+				<h3 id="modalenti_title" class="muted"></h3>
+			</div>
+			<div class="modal-body">
+				<table class="table table-condensed table-hover">
+					<thead>
+						<tr>
+							<th id="modalenti_character"></th>
+							<th id="modalenti_enumber"></th>
+							<th id="modalenti_ename"></th>
+						</tr>
+					</thead>
+					<tbody id="modalenti_table"></tbody>
+				</table>
+			</div>
+			<div class="modal-footer">
+				<button class="btn" id="modalenti_close" data-dismiss="modal" aria-hidden="true"></button>
+			</div>
+		</div>
+		<!--/MODALENTI-->
+
+		<!--MODALCOLORS-->
+		<div id="modalcolors" class="modal hide fade" tabindex="-1" role="dialog">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					×
+				</button>
+				<h3 id="modalcolors_title" class="muted"></h3>
+			</div>
+			<div class="modal-body">
+				<table class="table table-condensed">
+					<thead>
+						<tr>
+							<th id="modalcolors_color"></th>
+							<th id="modalcolors_name"></th>
+							<th id="modalcolors_hexvalue"></th>
+						</tr>
+					</thead>
+					<tbody id="modalcolors_table"></tbody>
+				</table>
+			</div>
+			<div class="modal-footer">
+				<button class="btn" id="modalcolors_close" data-dismiss="modal" aria-hidden="true"></button>
+			</div>
+		</div>
+		<!--/MODALCOLORS-->
+		<!--/MODALS-->
+	</body>
 </html>

@@ -1,5 +1,5 @@
-a,input,textarea,button,div {
-outline:0;
+a, input, textarea, button, div {
+	outline: 0;
 }
 
 #lucaslogo {
@@ -12,26 +12,28 @@ outline:0;
 	filter: gray; /* IE6-9 */
 	-webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
 	margin-right: 3px;
-	margin-top:3px;
+	margin-top: 3px;
 }
 #lucaslogo:hover {
-	filter:none;
+	filter: none;
 	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
 	-webkit-filter: grayscale(0%);
 }
-.ucode{font-family:Consolas,"Lucida Console","OCR A Extended",Terminal,"Andale Mono","Courier New",Courier,Fixed,monospace;}
-
-.textoback{
-background-image: url('../images/png/textofundo.png')!important;
-background-repeat:no-repeat!important;
-background-position:right center!important; 
+.ucode {
+	font-family: Consolas, "Lucida Console", "OCR A Extended", Terminal, "Andale Mono", "Courier New", Courier, Fixed, monospace;
 }
 
-#sound{
-width:1px;
-height:1px;
-background-color:transparent;
-position:absolute;
-top:0px;
-left:0px;
+.textoback {
+	background-image: url('../images/png/textofundo.png') !important;
+	background-repeat: no-repeat !important;
+	background-position: right center !important;
+}
+
+#sound {
+	width: 1px;
+	height: 1px;
+	background-color: transparent;
+	position: absolute;
+	top: 0px;
+	left: 0px;
 }

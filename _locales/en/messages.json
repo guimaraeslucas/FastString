@@ -227,13 +227,22 @@
     "rptinfo": {
         "message": "Repeat"
     },
-	"str_repeat":{
-		"message": "string repeat"
-	},
-	"escapejavas":{
-		"message": "escape javascript string"
-	},
-	"html2js":{
-		"message": "raw HTML to javascript"
-	}
+    "str_repeat": {
+        "message": "string repeat"
+    },
+    "escapejavas": {
+        "message": "escape javascript string"
+    },
+    "html2js": {
+        "message": "raw HTML to javascript"
+    },
+    "checkUUID":{
+        "message": "check UUID"
+    },
+        "invalidUUID":{
+        "message": "Invalid UUID"
+    },
+        "validUUID":{
+        "message": "Valid UUID"
+    }
 }
