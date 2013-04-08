@@ -1,6 +1,6 @@
 {
     "appdescription": {
-        "message": "Encode and decode strings in base64, html, url, javascript, generates MD5 ans SHA hashs, strip tags, check xml and others features. Works offline."
+        "message": "Encode and decode strings in base64, html, url, javascript, generate MD5 and SHA hashs, strip tags, check xml and others features. Works offline."
     },
     "appname": {
         "message": "FastString by .LG"
@@ -103,9 +103,6 @@
     },
     "modalabout_title": {
         "message": "About this software"
-    },
-    "modalabout_license": {
-        "message": "Copyright © 2013 Lucas Guimarães<br>(lucas@lucasguimaraes.com)</p><p>Source code available under Eclipse license at https://github.com/guimaraeslucas/FastString.git</p><p>http://lucasguimaraes.com"
     },
     "modalabout_close": {
         "message": "Close"
@@ -253,5 +250,11 @@
     },
     "stripcomments": {
         "message": "strip comments"
+    },
+    "chromebanner": {
+        "message": "Or if you want, you can download our offline app. Just "
+    },
+    "clickhere": {
+        "message": "click here"
     }
 }

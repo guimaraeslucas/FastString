@@ -1,21 +1,40 @@
 /*!
- ##############################################################
- #. . . . . . . . . . LUCASGUIMARAES.COM. . . . . . . . . . . #
- #. . . . . . . . . . (C) COPYRIGHT 2013. . . . . . . . . . . #
- ##############################################################
- *
- * @copyright 2012-2013 LucasGuimaraes.com
- * @link <contato@lucasguimaraes.com>
- * @link http://www.lucasguimaraes.com
- * @generator LGPowerWeb/2.0.0 LGGM/6.0.2 (4.0.0)
- *
- * The above copyright notice shall be included in all
- * copies or substantial portions of the Software.
- *
- */
+##############################################################
+#. . . . . . . . . . LUCASGUIMARAES.COM. . . . . . . . . . . #
+#. . . . . . . . . . (C) COPYRIGHT 2013. . . . . . . . . . . #
+##############################################################
+*
+* @copyright 2012-2013 LucasGuimaraes.com
+* @link <contato@lucasguimaraes.com>
+* @link http://www.lucasguimaraes.com
+* @generator LGPowerWeb/2.0.0 LGGM/6.0.2 (4.0.0)
+*
+* The above copyright notice shall be included in all
+* copies or substantial portions of the Software.
+*
+*/
+
+//Set true if running as chrome app
+var chromeapp = false;
 
 function lgt(line) {
-    return chrome.i18n.getMessage(line);
+    if (chromeapp) {
+        return chrome.i18n.getMessage(line);
+    } else {
+
+        if (line == "@@extension_id") {
+            return 'WebApp@' + document.domain;
+        }
+
+        //Try to get key or return empty
+        try {
+            gett = window.translationfile;
+            t = gett[line].message;
+        } catch(e) {
+            t = '';
+        }
+        return t;
+    }
 }
 
 function lgtt(elementId, txt) {
@@ -30,17 +49,32 @@ function hero_hide() {
     $('#doit').unbind('click');
     $("#shaopt").hide();
     $("#rptstr").hide();
-    $("#hero").fadeOut(100);
+    //$("#hero").fadeOut(100);
+    $("#hero").slideUp();
 }
 
 function soundalert() {
     $("#sound").html('<audio autoplay="autoplay" preload="auto" src="res/sounds/mp3/tumtum.mp3"></audio>');
 }
+
 function soundinvalid() {
     $("#sound").html('<audio autoplay="autoplay" preload="auto" src="res/sounds/mp3/tum.mp3"></audio>');
 }
 
 function lgloadapp() {
+
+    //Hides loader
+    $(".loader").fadeOut();
+
+    if (!chromeapp) {
+        //If is Chrome offers the app
+        var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+        if (is_chrome) {
+            lgte("#ischrome",lgt('chromebanner')+' <a href="https://chrome.google.com/webstore/detail/faststring-by-lg/gpknmoniniacaobkeclmiiaekniaddnd" id="clickhere">'+lgt('clickhere')+'</a>.</p>');
+            $("#ischrome").show();
+        }
+    }
+
     //Sets <title> appname
     var lgappname = lgt("appname");
     document.title = lgappname;
@@ -103,7 +137,7 @@ function lgloadapp() {
     lgtt("#str_shuffle", "str_shuffle");
     lgtt("#str_repeat", "str_repeat");
     lgtt("#trim", "trim");
-    lgtt("#stripcomments","stripcomments")
+    lgtt("#stripcomments", "stripcomments")
     lgtt("#checkUUID", "checkUUID");
     lgtt("#generateUUID", "generateUUID");
 
@@ -124,7 +158,6 @@ function lgloadapp() {
 
     //Sets Modal
     lgtt("#modalabout_title", "modalabout_title");
-    lgtt("#modalabout_license", "modalabout_license");
     lgtt("#modalabout_eid", "@@extension_id");
     lgtt("#modalabout_close", "modalabout_close");
 
@@ -146,18 +179,24 @@ function lgloadapp() {
 
     //BUTTONS ACTIONS
 
-    //PASTE BUTTON
-    $("#paste").click(function() {
-        $("#eandd").val(pasteTextFromClipboard());
-        return false;
-        //Should be here as if we set type=button chrome ignores it - why ?
-    });
+    if (chromeapp) {
+        //PASTE BUTTON
+        $("#paste").click(function() {
+            $("#eandd").val(pasteTextFromClipboard());
+            return false;
+            //Should be here as if we set type=button chrome ignores it - why ?
+        });
 
-    //COPY BUTTON
-    $("#copy").click(function() {
-        var freturn = $("#freturn").text();
-        copyTextToClipboard(freturn);
-    });
+        //COPY BUTTON
+        $("#copy").click(function() {
+            var freturn = $("#freturn").text();
+            copyTextToClipboard(freturn);
+        });
+    } else {
+        //Hide buttons if not in chrome
+        $("#paste").hide();
+        $("#copy").hide();
+    }
 
     //VIEW BUTTON
     $("#view").click(function() {
@@ -166,10 +205,17 @@ function lgloadapp() {
         $('#modalhtml').modal('show');
     });
 
+    //ABOUT BUTTON
+    $("#about").click(function() {
+        var freturn = $("#freturn").html();
+        $("#modalabout_license").html(iabout());
+        $('#modalabout').modal('show');
+    });
+
     //BRAND
     $("#brand").click(function() {
-        $("#hero").fadeIn(900);
-        $("#dyn").hide();
+        $("#hero").delay(300).fadeIn();
+        $("#dyn").slideUp(300);
         $("#eandd").val('');
         $("#freturn").text('');
     });
@@ -830,6 +876,7 @@ function lgloadapp() {
 
 }//END LOAD
 
+//only for chrome
 // Copy provided text to the clipboard.
 //From:
 function copyTextToClipboard(text) {
@@ -859,5 +906,44 @@ function pasteTextFromClipboard() {
 
 //Starts app
 $(document).ready(function() {
-    lgloadapp();
+    //If is chrome, we already have the localization files loaded
+    if (chromeapp) {
+        lgloadapp();
+        //Hide Ads we don't want them on chromeapp
+        $("#ads").html('').hide();
+    } else {
+        //We should load the localization files first ! =)
+        //Check user language
+        try {
+            var userlanguage = window.navigator.userLanguage || window.navigator.language;
+            userlanguage = userlanguage.substring(0, 2).toLowerCase();
+            var ula = ['en', 'es', 'pt'];
+            if ($.inArray(userlanguage, ula) > -1) {
+                if (userlanguage == 'pt') {
+                    userlanguage = 'pt_BR'
+                }
+                ulocal = userlanguage;
+            } else {
+                ulocal = 'en';
+            }
+        } catch(e) {
+            ulocal = 'en';
+        }
+
+        $.ajax({
+            url : '_locales/' + ulocal + '/messages.json',
+            cache : true,
+            success : function(data) {
+                window.translationfile = data;
+                lgloadapp();
+            },
+            error : function() {
+                alert("Fatal Error: Can't load or parse localization file for " + ulocal + ".");
+            },
+            headers : {
+                "X-LGApps" : "true"
+            }
+        });
+    }
+
 });

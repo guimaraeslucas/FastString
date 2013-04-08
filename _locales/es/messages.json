@@ -104,9 +104,6 @@
     "modalabout_title": {
         "message": "Acerca de este software"
     },
-    "modalabout_license": {
-        "message": "Copyright © 2013 Lucas Guimarães<br>(lucas@lucasguimaraes.com)</p><p>Código fuente disponible utilizando licencia Eclipse en https://github.com/guimaraeslucas/FastString.git.</p><p>http://lucasguimaraes.com"
-    },
     "modalabout_close": {
         "message": "Cerrar"
     },
@@ -253,5 +250,11 @@
     },
     "stripcomments": {
         "message": "limpiar comentarios"
+    },
+    "chromebanner": {
+        "message": "O si lo desea, puede descargar nuestra aplicación offline disponible en Chrome App Store. Para más información "
+    },
+    "clickhere": {
+        "message": "haga clic aquí"
     }
 }

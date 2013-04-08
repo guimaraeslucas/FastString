@@ -45,14 +45,14 @@ The .LG FastString is a powerful offline string encoder and decoder that allows 
  - A touch compatible UI
  - A beautiful black interface so you can keep programming even in the dark
 
-
-License
----
-This App is licensed under the Eclipse license terms.
-
 About
 ---
 *Designed by Lucas Guimarães.
 *Web-site: http://lucasguimaraes.com.
 
 *Please report bugs at ChromeStore
+
+License
+---
+FastString. Copyright © 2013 Lucas Guimarães (lucas@lucasguimaraes.com). All rights reserved. LucasGuimarães.com, LucasGuimaraes.com, the LucasGuimarães logo and .LG logo are trademarks of Lucas Guimarães.
+FastString is licensed under the terms of the Eclipse Public License with some additions.
