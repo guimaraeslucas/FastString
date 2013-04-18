@@ -47,10 +47,9 @@ The .LG FastString is a powerful offline string encoder and decoder that allows 
 
 About
 ---
-*Designed by Lucas Guimarães.
-*Web-site: http://lucasguimaraes.com.
-
-*Please report bugs at ChromeStore
+ - Designed by Lucas Guimarães.
+ - Web-site: http://lucasguimaraes.com.
+ - Please report bugs at ChromeStore
 
 License
 ---
