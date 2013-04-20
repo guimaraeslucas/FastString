@@ -41,7 +41,7 @@ The .LG FastString is a powerful offline string encoder and decoder that allows 
  - view HTML symbol entities table
  - get RGB and HEX value in a color picker
 
-The app also has some features like:
+The app also have some features like:
 
  - A flexible layout that adapts itself to small window sizes
  - A touch compatible UI
