@@ -215,6 +215,9 @@
 									<li>
 										<a href="#modalenti" data-toggle="modal" id="enti"></a>
 									</li>
+									<li>
+										<a href="#modalScolors" data-toggle="modal" id="Scolors"></a>
+									</li>
 									<li class="divider"></li>
 									<li>
 										<a href="#" id="checkxml"></a>
@@ -472,6 +475,33 @@
 			</div>
 		</div>
 		<!--/MODALCOLORS-->
+
+		<!--MODALSCOLORS-->
+		<div id="modalScolors" class="modal hide fade" tabindex="-1" role="dialog">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					×
+				</button>
+				<h3 id="modalScolors_title" class="muted"></h3>
+			</div>
+			<div class="modal-body">
+
+						<input class="minicolors" data-control="wheel" type="text" value="#ffffff" style="float:right;">
+
+
+						<h4 id="minicolorsvalue" class="muted">
+							HEX: #ffffff
+							<br>
+							RGBA: rgba(255, 255, 255, 1)
+						</h4>
+
+			</div>
+			<div class="modal-footer">
+				<button class="btn" id="modalScolors_close" data-dismiss="modal" aria-hidden="true"></button>
+			</div>
+		</div>
+		<!--/MODALSCOLORS-->
+
 		<!--/MODALS-->
 
 		<!--_SCRIPTS-->
@@ -488,10 +518,15 @@
 		<script src="res/javascript/mED.js"></script>
 		<script src="res/javascript/crc32.js"></script>
 		<script src="res/javascript/jxmlvali-min.js"></script>
+		<script src="res/javascript/jquery.minicolors.js"></script>
 		<!-- Initiate LGApp -->
 		<script src="res/javascript/htmltables.js"></script>
 		<script src="res/javascript/about.js"></script>
 		<script src="res/javascript/global.js"></script>
 		<!--_/SCRIPTS-->
+
+		<!--_CSS-->
+		<link rel="stylesheet" href="res/css/jquery.minicolors.css">
+		<!--_/CSS-->
 	</body>
 </html>

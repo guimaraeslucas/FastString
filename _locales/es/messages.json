@@ -3,7 +3,7 @@
         "message": "Codifica y decodifica strings en base64, html, url, y realiza operaciones con string como MD5 y SHA. Trabaja offline."
     },
     "appname": {
-        "message": "FastString por .LG"
+        "message": "FastString"
     },
     "shortappname": {
         "message": "FastString"
@@ -256,5 +256,8 @@
     },
     "clickhere": {
         "message": "haga clic aquí"
+    },
+    "Scolors": {
+        "message": "selector de colores"
     }
 }

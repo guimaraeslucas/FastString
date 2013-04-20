@@ -70,7 +70,7 @@ function lgloadapp() {
         //If is Chrome offers the app
         var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
         if (is_chrome) {
-            lgte("#ischrome",lgt('chromebanner')+' <a href="https://chrome.google.com/webstore/detail/faststring-by-lg/gpknmoniniacaobkeclmiiaekniaddnd" id="clickhere">'+lgt('clickhere')+'</a>.</p>');
+            lgte("#ischrome", lgt('chromebanner') + ' <a href="https://chrome.google.com/webstore/detail/faststring-by-lg/gpknmoniniacaobkeclmiiaekniaddnd" id="clickhere">' + lgt('clickhere') + '</a>.</p>');
             $("#ischrome").show();
         }
     }
@@ -119,6 +119,7 @@ function lgloadapp() {
     lgtt("#checkxml", "checkxml");
     lgtt("#escapejavas", "escapejavas");
     lgtt("#html2js", "html2js");
+    lgtt("#Scolors", "Scolors");
 
     //String operations
     lgtt("#others", "others");
@@ -176,6 +177,27 @@ function lgloadapp() {
     lgtt("#modalenti_ename", "ename");
     lgtt("#modalenti_close", "modalabout_close");
     $("#modalenti_table").html(rmodalenti_table());
+
+    lgtt("#modalScolors_title", "Scolors");
+    lgtt("#modalScolors_close", "modalabout_close");
+
+    $(".minicolors").minicolors({
+        control : 'brightness',
+        swatchPosition : 'right',
+        textfield : false,
+        inline : true,
+        change : function(hex, opacity) {
+            text = "HEX: "
+            text += hex ? hex : 'transparent';
+            if (opacity)
+                text += ', ' + opacity;
+            text += ' <br> RGBA: ' + $(this).minicolors('rgbaString');
+
+            // Show text in console; disappear after a few seconds
+            $('#minicolorsvalue').html(text);
+
+        }
+    });
 
     //BUTTONS ACTIONS
 

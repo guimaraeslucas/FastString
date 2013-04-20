@@ -39,6 +39,7 @@ The .LG FastString is a powerful offline string encoder and decoder that allows 
  - change commas to dots
  - view HTML colors name table
  - view HTML symbol entities table
+ - get RGB and HEX value in a color picker
 
  The app also has some features like:
  - A flexible layout that adapts itself to small window sizes
@@ -49,9 +50,13 @@ About
 ---
  - Designed by Lucas Guimarães.
  - Web-site: http://lucasguimaraes.com.
+<<<<<<< HEAD
  - Please report bugs at ChromeStore
+=======
+ - Please report bugs at ChromeStore or lucas@lucasguimaraes.com
+>>>>>>> New info
 
 License
 ---
-FastString. Copyright © 2013 Lucas Guimarães (lucas@lucasguimaraes.com). All rights reserved. LucasGuimarães.com, LucasGuimaraes.com, the LucasGuimarães logo and .LG logo are trademarks of Lucas Guimarães.
+FastString. Copyright © 2013 Lucas Guimarães (contato@lucasguimaraes.com). All rights reserved. LucasGuimarães.com, LucasGuimaraes.com, the LucasGuimarães logo and .LG logo are trademarks of Lucas Guimarães.
 FastString is licensed under the terms of the Eclipse Public License with some additions.

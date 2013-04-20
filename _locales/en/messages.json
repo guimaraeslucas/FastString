@@ -3,7 +3,7 @@
         "message": "Encode and decode strings in base64, html, url, javascript, generate MD5 and SHA hashs, strip tags, check xml and others features. Works offline."
     },
     "appname": {
-        "message": "FastString by .LG"
+        "message": "FastString"
     },
     "shortappname": {
         "message": "FastString"
@@ -256,5 +256,8 @@
     },
     "clickhere": {
         "message": "click here"
+    },
+    "Scolors": {
+        "message": "color picker"
     }
 }
