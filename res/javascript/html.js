@@ -108,7 +108,7 @@ function JAVASencodeCharx(original) {
 
 function fhtml2js(data) {
     var randomname = Math.floor((Math.random() * 1000) + 1);
-    var comment = "JQuery example: $('#div').html(fshtml_" + randomname + "());";
+    var comment = "JQuery example: $('#divname').html(fshtml_" + randomname + "());";
     var br = "%0D%0A";
     var dataArr = JAVASstringEncode(data).split(br);
     var retvar = "";

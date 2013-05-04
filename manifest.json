@@ -1,11 +1,11 @@
 {
     "name": "__MSG_appname__",
     "description": "__MSG_appdescription__",
-    "version": "0.9.5",
+    "version": "1.0.0.0",
     "manifest_version": 2,
     "default_locale": "en",
     "offline_enabled": true,
-    "permissions": ["notifications", "clipboardRead", "clipboardWrite", "contextMenus"],
+    "permissions": ["notifications", "clipboardRead", "clipboardWrite", "contextMenus", "storage"],
     "app": {
         "launch": {
             "local_path": "index.htm"

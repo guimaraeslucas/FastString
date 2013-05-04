@@ -78,6 +78,7 @@ jQuery.base64 = ( function($) {
             }
             return x.join("")
         }
+
         return {
             decode : _decode,
             encode : _encode,
@@ -108,4 +109,78 @@ function hide64(str) {
 
 function show64(str) {
     return str.replace(/_/g, "=").replace(/,/g, "/").replace(/-/g, "+");
+}
+
+//Base64 encode image
+//<input id="base64File" type="file" />
+//<button id="base64Button">blah</button>
+
+//IT HAS PROBLEMS AS CHROME REFUSES TO DISPLAY URL IN APPS, IT SHOWS "BLOB"
+//SO WE NEED TO USE CANVAS AND CONVERT IT TO PNG
+
+//$("#base64Button").on("click", function() {
+
+function encodeimgbase64() {
+    var file = $("#base64File")[0].files[0]
+    var fileknd = $("#base64File")[0].files[0].name.toLowerCase().slice(-3);
+    var reader = new FileReader();
+    var ftype = 0;
+
+    switch(fileknd) {
+        case 'gif':
+            ftype:"image/gif";
+            break;
+        case 'pge':
+            ftype:"image/jpge";
+            break;
+        case 'jpg':
+            ftype:"image/jpge";
+            break;
+        case 'png':
+            ftype:"image/png";
+            break;
+        default:
+            ftype:"image/png";
+    }
+
+    // callback for readAsDataURL
+    reader.onload = function(encodedFile) {
+        console.log("reader.onload");
+        base64Image = encodedFile.srcElement.result;
+        var binaryImg = atob(base64Image);
+        var length = binaryImg.length;
+        var ab = new ArrayBuffer(length);
+        var ua = new Uint8Array(ab);
+        for (var i = 0; i < length; i++) {
+            ua[i] = binaryImg.charCodeAt(i);
+        }
+        var blob = new Blob([ab], {
+            type : ftype
+        });
+        URL.createObjectURL(blob);
+    };
+
+    reader.readAsDataURL(file);
+
+    reader.onloadend = function() {
+        $("#freturn").html('<img src="' + URL.createObjectURL(file) + '" id="generatedimage">');
+        $("#generatedimage").on("load", function() {
+            $("#freturn").text(getBase64ImageById('generatedimage', ftype));
+        });
+
+    }
+}
+
+function getBase64ImageById(id, ftype) {
+    return getBase64Image(document.getElementById(id, ftype));
+}
+
+function getBase64Image(img, ftype) {
+    var canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+    var dataURL = canvas.toDataURL(ftype);
+    return dataURL;
 }

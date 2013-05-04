@@ -15,8 +15,12 @@
 */
 
 //Set true if running as chrome app
-var chromeapp = false;
+var chromeapp = true;
 
+//Stores the active function
+activefunction = '?';
+
+//Read JSON file and make translation
 function lgt(line) {
     if (chromeapp) {
         return chrome.i18n.getMessage(line);
@@ -46,23 +50,192 @@ function lgte(elementId, txt) {
 }
 
 function hero_hide() {
+
+    $("#pophelp").popover('destroy');
+    //We destroy any previus popover
     $('#doit').unbind('click');
+    //We unbind any functions Do It button has
     $("#shaopt").hide();
+    //We make sure SHA options field is hidden
     $("#rptstr").hide();
-    //$("#hero").fadeOut(100);
+    //We make sure file field is hidden
+    $("#encodeimgbase64f").hide();
+    //We make sure repeat_srt field is hidden
     $("#hero").slideUp();
+    //hide hero!
+    $("#eandd").slideDown();
+    //Show eandd that can be hidden because of base64 image encoder
+
+    //Get the code that called hero_hide, so we know what to show in help button
+    //ATTENTION: lgtt must always be on line number 4.
+    activefunction = arguments.callee.caller.toString().split(/\r\n|\r|\n/)[3].replace('       lgtt("#action', '').replace('");', '').replace(' ", "', '').replace('lgtt("#action', '').replace(/\r\n|\r|\n/, '');
+    //Sets help popover
+    $("#pophelp").popover({
+        title : lgt('htw'),
+        html : true,
+        content : returnafhelp(),
+        trigger : 'click',
+        placement : 'bottom'
+    });
+
+    //Store the number of times a function is used
+    if (chromeapp) {
+        chrome.storage.sync.get('mostusedfunctions', function(result) {
+            var getfunctionsjson = result.mostusedfunctions;
+            try {//Sometimes UNDEFINED alone just doesn't work on chrome -- ?
+                if (getfunctionsjson == "" || getfunctionsjson === undefined || getfunctionsjson == 'undefined') {
+                    getfunctionsjson = '{}';
+                }
+            } catch(e) {
+            };
+
+            var parsed = JSON.parse(getfunctionsjson);
+
+            if ( typeof parsed[activefunction] === 'undefined') {
+                parsed[activefunction] = 1;
+            } else {
+                parsed[activefunction] = parsed[activefunction] + 1;
+            }
+            var storejson = JSON.stringify(parsed);
+
+            chrome.storage.sync.set({
+                'mostusedfunctions' : storejson
+            });
+        });
+    }
+
+    //Total Chars in ResultBox - we must set the timeout to prevent it from
+    // executing before the encode function
+    $("#doit").click(function() {
+        setTimeout(function() {
+            countdatainfields("#freturn", "#frchartotal", 0);
+        }, 50);
+    });
 }
 
+//Play double beep
 function soundalert() {
-    $("#sound").html('<audio autoplay="autoplay" preload="auto" src="res/sounds/mp3/tumtum.mp3"></audio>');
+    $("#sound").html('<audio autoplay="autoplay" preload="auto" src="res/sounds/mp3/tumtum.mp3" id="sndc"></audio>');
+    try {
+        window.sndc.play();
+    } catch(err) {
+        console.log('SNDC not avaliable')
+    };
 }
 
+//Play only one beep
 function soundinvalid() {
-    $("#sound").html('<audio autoplay="autoplay" preload="auto" src="res/sounds/mp3/tum.mp3"></audio>');
+    $("#sound").html('<audio autoplay="autoplay" preload="auto" src="res/sounds/mp3/tum.mp3" id="sndc"></audio>');
+    try {
+        window.sndc.play();
+    } catch(err) {
+        console.log('SNDC not avaliable')
+    };
+}
+
+//Get the help for function
+function returnafhelp() {
+    try {//As in WebApp this returns an error if not avaliable
+        var returnfhelp = lgt(activefunction + '_h');
+        if (returnfhelp == '') {
+            returnfhelp = lgt('helpnotfound');
+        }
+    } catch(e) {
+        return lgt('helpnotfound');
+    }
+    return returnfhelp;
+}
+
+//Provide statistics about fields
+function countdatainfields(who, where, ttype) {
+    if (ttype == 'val') {
+        var frtn = $(who).val();
+    } else {
+        var frtn = $(who).text();
+    }
+    var lines = frtn.split("\n");
+    var totalchar = lgstrlen(frtn);
+    var words = vcountWords(frtn);
+    var totalcharswithoutspace = vcountChars(frtn);
+
+    if (totalchar == 0) {
+        $(where).text('');
+    } else {
+        $(where).html(' ' + lgt('charscount') + ': ' + totalchar + ' | ' + lgt('charswocount') + ': ' + totalcharswithoutspace + ' | ' + lgt('linescount') + ': ' + lines.length + ' | ' + lgt('wordscount') + ': ' + words);
+    }
+}
+
+//Sort Object as Array so we can order its values
+function sortObject(obj) {
+    var arr = [];
+    for (var prop in obj) {
+        if (obj.hasOwnProperty(prop)) {
+            arr.push({
+                'key' : prop,
+                'value' : obj[prop]
+            });
+        }
+    }
+    arr.sort(function(a, b) {
+        return a.value - b.value;
+    });
+    return arr;
+    // returns array
+}
+
+//Creates hero buttons
+function herobuttons() {
+    if (chromeapp) {
+
+        chrome.storage.sync.get('mostusedfunctions', function(result) {
+            var getfunctionsjson = result.mostusedfunctions;
+
+            try {//Sometimes UNDEFINED alone just doesn't work on chrome -- ?
+                if (getfunctionsjson != "" || getfunctionsjson !== undefined || getfunctionsjson != 'undefined') {
+
+                    var parsed = JSON.parse(getfunctionsjson);
+                    var i = 1;
+                    var h = window.innerHeight;
+                    var w = window.innerWidth;
+                    if (h >= 910 && h <= 940) {
+                        var totaltoshow = 16;
+                    } else if (w >= 1400 && h >= 700) {
+                        var totaltoshow = 20;
+                    } else {
+                        var totaltoshow = 10;
+                    }
+                    //Clean div so we don't keep adding buttons to it
+                    $("#mostusedbuttons").html('');
+
+                    var startanimation = 100;
+
+                    $.each(sortObject(parsed).reverse(), function(key, value) {
+
+                        var ch = this.key;
+
+                        $("#mostusedbuttons").append('<button class="btn btn-inverse hidebt" id="' + ch + '_sp" type="button" style="margin-top:8px; height: 120px;width: 120px;">' + lgt(ch) + ' (' + this.value + ')</button> ');
+
+                        $("#" + ch + "_sp").delay(startanimation).fadeIn();
+                        startanimation = startanimation + 80;
+
+                        $("#" + ch + "_sp").on('click', function() {
+                            $("#" + ch).click();
+                        });
+
+                        i = i + 1;
+                        if (i > totaltoshow) {
+                            return false;
+                        }
+                    });
+
+                }
+            } catch(e) {
+            };
+        });
+    }
 }
 
 function lgloadapp() {
-
     //Hides loader
     $(".loader").fadeOut();
 
@@ -73,7 +246,16 @@ function lgloadapp() {
             lgte("#ischrome", lgt('chromebanner') + ' <a href="https://chrome.google.com/webstore/detail/faststring-by-lg/gpknmoniniacaobkeclmiiaekniaddnd" id="clickhere">' + lgt('clickhere') + '</a>.</p>');
             $("#ischrome").show();
         }
+        var is_firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+        if (is_firefox) {
+            lgte("#ischrome", lgt('chromebanner') + ' <a href="https://addons.mozilla.org/en-US/firefox/addon/faststring/" id="clickhere">' + lgt('clickhere') + '</a>.</p>');
+            $("#ischrome").show();
+        }
     }
+
+    $(window).resize(function() {
+        herobuttons();
+    });
 
     //Sets <title> appname
     var lgappname = lgt("appname");
@@ -94,11 +276,21 @@ function lgloadapp() {
     lgtt("#b64eu", "b64eu");
     lgtt("#b64du", "b64du");
     lgtt("#b64diu", "b64diu");
+    lgtt("#encodeimgbase64", "encodeimgbase64");
+
+    lgtt("#doascii", "doascii");
+    lgtt("#dohex", "dohex");
+    lgtt("#ascii2bin", "ascii2bin");
+    lgtt("#bin2ascii", "bin2ascii");
+
+    lgtt("#morsee", "morsee");
+    lgtt("#morsed", "morsed");
+
     lgtt("#emED", "emED");
     lgtt("#dmED", "dmED");
 
     //HASHS
-    lgtt("#hashs", "hashs");
+    lgtt("#hashs", "hashes");
     //menu title
     lgtt("#crc32", "crc32");
     lgtt("#md5h", "md5h");
@@ -118,6 +310,7 @@ function lgloadapp() {
     lgtt("#enti", "enti");
     lgtt("#checkxml", "checkxml");
     lgtt("#escapejavas", "escapejavas");
+    lgtt("#javascript_escape", "javascript_escape");
     lgtt("#html2js", "html2js");
     lgtt("#Scolors", "Scolors");
 
@@ -138,6 +331,8 @@ function lgloadapp() {
     lgtt("#str_shuffle", "str_shuffle");
     lgtt("#str_repeat", "str_repeat");
     lgtt("#trim", "trim");
+    lgtt("#stripsc", "stripsc");
+    lgtt("#latin2e", "latin2e");
     lgtt("#stripcomments", "stripcomments")
     lgtt("#checkUUID", "checkUUID");
     lgtt("#generateUUID", "generateUUID");
@@ -148,6 +343,8 @@ function lgloadapp() {
     //Sets Welcome message
     lgte("#welcomemsg", lgt("welcome") + ' <strong id="appname">' + lgshortappname + '</strong>');
     lgtt("#selectoption", "selectoption");
+    //Set MostUsed in hero
+    lgtt("#mufunctions", "mufunctions");
 
     //Sets buttons and fields names
     lgtt("#doit", "doit");
@@ -181,6 +378,7 @@ function lgloadapp() {
     lgtt("#modalScolors_title", "Scolors");
     lgtt("#modalScolors_close", "modalabout_close");
 
+    //Configure Minicolors
     $(".minicolors").minicolors({
         control : 'brightness',
         swatchPosition : 'right',
@@ -199,8 +397,10 @@ function lgloadapp() {
         }
     });
 
-    //BUTTONS ACTIONS
+    //Set HeroButtons
+    herobuttons();
 
+    //BUTTONS ACTIONS
     if (chromeapp) {
         //PASTE BUTTON
         $("#paste").click(function() {
@@ -223,7 +423,7 @@ function lgloadapp() {
     //VIEW BUTTON
     $("#view").click(function() {
         var freturn = $("#freturn").html();
-        $("#modalhtmlcontent").html(htmlUnescape(freturn));
+        $("#modalhtmlcontent").html('<span class="htmlrender">' + htmlUnescape(freturn) + '</span>');
         $('#modalhtml').modal('show');
     });
 
@@ -234,12 +434,18 @@ function lgloadapp() {
         $('#modalabout').modal('show');
     });
 
+    //Total Chars in TextBox
+    $("#eandd").keyup(function() {
+        countdatainfields("#eandd", "#tbchartotal", 'val');
+    });
+
     //BRAND
     $("#brand").click(function() {
         $("#hero").delay(300).fadeIn();
         $("#dyn").slideUp(300);
         $("#eandd").val('');
         $("#freturn").text('');
+        herobuttons();
     });
 
     //B64E
@@ -250,10 +456,13 @@ function lgloadapp() {
         //Defines click action
         $("#doit").click(function() {
             var eandd = $("#eandd").val();
-            var enc = $.base64.encode(eandd);
-            if (enc) {
-                $("#freturn").text(enc);
-            }
+            try {
+                var enc = $.base64.encode(eandd);
+            } catch(err) {
+                var enc = invalid;
+                soundalert();
+            };
+            $("#freturn").text(enc);
             return false;
         });
         //Show Dyn
@@ -335,6 +544,113 @@ function lgloadapp() {
         $("#dyn").fadeIn(900);
     });
 
+    //ENCODEIMGBASE64
+    $("#encodeimgbase64").click(function() {
+        hero_hide();
+        //Defines action name
+        lgtt("#action", "encodeimgbase64");
+        //Defines click action
+        $("#doit").click(function() {
+            $("#freturn").text(encodeimgbase64());
+            return false;
+        });
+        //Show Dyn
+        $("#dyn").fadeIn(900);
+        $("#eandd").slideUp();
+        $("#tbchartotal").text('');
+        $("#encodeimgbase64f").show();
+    });
+
+    //DOASCII
+    $("#doascii").click(function() {
+        hero_hide();
+        //Defines action name
+        lgtt("#action", "doascii");
+        //Defines click action
+        $("#doit").click(function() {
+            var eandd = $("#eandd").val();
+            $("#freturn").text(DoAsciiHex(eandd, 'A2H'));
+            return false;
+        });
+        //Show Dyn
+        $("#dyn").fadeIn(900);
+    });
+
+    //DOHEX
+    $("#dohex").click(function() {
+        hero_hide();
+        //Defines action name
+        lgtt("#action", "dohex");
+        //Defines click action
+        $("#doit").click(function() {
+            var eandd = $("#eandd").val();
+            $("#freturn").text(DoAsciiHex(eandd, 'H2A'));
+            return false;
+        });
+        //Show Dyn
+        $("#dyn").fadeIn(900);
+    });
+
+    //ASCII2BIN
+    $("#ascii2bin").click(function() {
+        hero_hide();
+        //Defines action name
+        lgtt("#action", "ascii2bin");
+        //Defines click action
+        $("#doit").click(function() {
+            var eandd = $("#eandd").val();
+            $("#freturn").text(toBinary(eandd));
+            return false;
+        });
+        //Show Dyn
+        $("#dyn").fadeIn(900);
+    });
+
+    //BIN2ASCII
+    $("#bin2ascii").click(function() {
+        hero_hide();
+        //Defines action name
+        lgtt("#action", "bin2ascii");
+        //Defines click action
+        $("#doit").click(function() {
+            var eandd = $("#eandd").val();
+            $("#freturn").text(toASCII(eandd));
+            return false;
+        });
+        //Show Dyn
+        $("#dyn").fadeIn(900);
+    });
+
+    //MORSEE
+    $("#morsee").click(function() {
+        hero_hide();
+        //Defines action name
+        lgtt("#action", "morsee");
+        //Defines click action
+        $("#doit").click(function() {
+            var eandd = $("#eandd").val();
+            $("#freturn").text(DoMorseEncrypt(eandd));
+            return false;
+        });
+        //Show Dyn
+        $("#dyn").fadeIn(900);
+    });
+
+    //MORSED
+    $("#morsed").click(function() {
+        hero_hide();
+        //Defines action name
+        lgtt("#action", "morsed");
+        //Defines click action
+        $("#doit").click(function() {
+            var eandd = $("#eandd").val();
+            $("#freturn").text(DoMorseDecrypt(eandd));
+            return false;
+        });
+        //Show Dyn
+        $("#dyn").fadeIn(900);
+    });
+
     //CRC32
     $("#crc32").click(function() {
         hero_hide();
@@ -383,7 +699,6 @@ function lgloadapp() {
     //SHA-1
     $("#sha1").click(function() {
         hero_hide();
-
         //Defines action name
         lgtt("#action", "sha1");
         //Defines click action
@@ -829,6 +1144,21 @@ function lgloadapp() {
         $("#dyn").fadeIn(900);
     });
 
+    //HTML2JS
+    $("#javascript_escape").click(function() {
+        hero_hide();
+        //Defines action name
+        lgtt("#action", "javascript_escape");
+        //Defines click action
+        $("#doit").click(function() {
+            var eandd = $("#eandd").val();
+            $("#freturn").text(javascript_escape(eandd));
+            return false;
+        });
+        //Show Dyn
+        $("#dyn").fadeIn(900);
+    });
+
     //checkUUID
     $("#checkUUID").click(function() {
         hero_hide();
@@ -875,6 +1205,42 @@ function lgloadapp() {
         $("#doit").click(function() {
             var eandd = $("#eandd").val();
             $("#freturn").text(fulltrim(eandd));
+            return false;
+        });
+        //Show Dyn
+        $("#dyn").fadeIn(900);
+    });
+
+    //STRIPSC
+    $("#stripsc").click(function() {
+        hero_hide();
+        //Defines action name
+        lgtt("#action", "stripsc");
+        //Defines click action
+        $("#doit").click(function() {
+            var eandd = $("#eandd").val();
+            $("#freturn").text(lgstripnonenglish(eandd));
+            return false;
+        });
+        //Show Dyn
+        $("#dyn").fadeIn(900);
+    });
+
+    //LATIN2E
+    $("#latin2e").click(function() {
+        hero_hide();
+        //Defines action name
+        lgtt("#action", "latin2e");
+        //Defines click action
+        $("#doit").click(function() {
+            var eandd = $("#eandd").val();
+            try {
+                var dec = latin2e(eandd);
+            } catch(err) {
+                var dec = invalid;
+                soundalert();
+            }
+            $("#freturn").text(dec);
             return false;
         });
         //Show Dyn
@@ -931,8 +1297,20 @@ $(document).ready(function() {
     //If is chrome, we already have the localization files loaded
     if (chromeapp) {
         lgloadapp();
-        //Hide Ads we don't want them on chromeapp
+        //Hide Ads as we don't want them on chromeapp
         $("#ads").html('').hide();
+
+        //Let's store how many time user uses the app so we can show it in the
+        // future.
+
+        chrome.storage.local.get('ua', function(result) {
+            var ua = result.ua;
+            var addua = ua + 1;
+            chrome.storage.local.set({
+                'ua' : addua
+            });
+        });
+
     } else {
         //We should load the localization files first ! =)
         //Check user language
@@ -944,6 +1322,10 @@ $(document).ready(function() {
                 if (userlanguage == 'pt') {
                     userlanguage = 'pt_BR'
                 }
+                if (userlanguage == 'es') {
+                    //Let's hide help button as is not avaliable in this idiom
+                    $("#pophelp").hide();
+                }
                 ulocal = userlanguage;
             } else {
                 ulocal = 'en';
@@ -951,16 +1333,16 @@ $(document).ready(function() {
         } catch(e) {
             ulocal = 'en';
         }
-
+        //Load the localization files and on success start the app
         $.ajax({
             url : '_locales/' + ulocal + '/messages.json',
-            cache : true,
+            cache : false,
             success : function(data) {
                 window.translationfile = data;
                 lgloadapp();
             },
             error : function() {
-                alert("Fatal Error: Can't load or parse localization file for " + ulocal + ".");
+                alert("FastString\r\nFatal Error: Can't load or parse localization file for " + ulocal + ".");
             },
             headers : {
                 "X-LGApps" : "true"

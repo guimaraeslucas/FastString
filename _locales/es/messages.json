@@ -1,6 +1,6 @@
 {
     "appdescription": {
-        "message": "Codifica y decodifica strings en base64, html, url, y realiza operaciones con string como MD5 y SHA. Trabaja offline."
+        "message": "Codifica y decodifica strings en base64, hex, html, codifica imágenes en PNG Base64 y realiza operaciones con strings. Trabaja offline."
     },
     "appname": {
         "message": "FastString"
@@ -122,8 +122,8 @@
     "crc32": {
         "message": "CRC32"
     },
-    "hashs": {
-        "message": "hashs"
+    "hashes": {
+        "message": "hashes"
     },
     "stgs": {
         "message": "eliminar tags"
@@ -228,7 +228,7 @@
         "message": "repetir string"
     },
     "escapejavas": {
-        "message": "codificar string javascript"
+        "message": "codificar caracteres especiales"
     },
     "html2js": {
         "message": "HTML bruto para javascript"
@@ -252,12 +252,69 @@
         "message": "limpiar comentarios"
     },
     "chromebanner": {
-        "message": "O si lo desea, puede descargar nuestra aplicación offline disponible en Chrome App Store. Para más información "
+        "message": "o si lo desea, puede descargar nuestro App offline. Para más información "
     },
     "clickhere": {
         "message": "haga clic aquí"
     },
     "Scolors": {
         "message": "selector de colores"
+    },
+    "dohex": {
+        "message": "hex para ascii"
+    },
+    "doascii": {
+        "message": "ascii para hex"
+    },
+    "stripsc": {
+        "message": "eliminar caracteres especiales"
+    },
+    "latin2e": {
+        "message": "convertir caracteres especiales"
+    },
+    "morsee": {
+        "message": "codificar morse"
+    },
+    "morsed": {
+        "message": "decodificar morse"
+    },
+    "ascii2bin": {
+        "message": "ascii para bin"
+    },
+    "bin2ascii": {
+        "message": "bin para ascii"
+    },
+    "htw": {
+        "message": "Acerca de esta función"
+    },
+    "helpnotfound": {
+        "message": "Información no disponible."
+    },
+    "javascript_escape": {
+        "message": "convertir todos los caracteres"
+    },
+    "javascript_escape_h": {
+        "message": "Escapar string usando hex"
+    },
+    "encodeimgbase64": {
+        "message": "codificar imagen en png Base64"
+    },
+    "encodeimgbase64_h": {
+        "message": "Encode image in Base64 png so it can be embedded in html and css. Currently is only possible the conversion to PNG format."
+    },
+    "wordscount": {
+        "message": "Palabras"
+    },
+    "charscount": {
+        "message": "Caracteres"
+    },
+    "charswocount": {
+        "message": "Caracteres sin espacio"
+    },
+    "linescount": {
+        "message": "Líneas"
+    },
+    "mufunctions": {
+        "message": "Funciones más utilizadas"
     }
 }

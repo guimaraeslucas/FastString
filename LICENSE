@@ -84,3 +84,13 @@ Everyone is permitted to copy and distribute copies of this Agreement, but in or
 8. In addition, the following conditions apply: 1. Any software that incorporates LucasGuimaraes.com codes or technology is requested to display the following acknowlegment: "This product uses technology from Lucas Guimarães (http://LucasGuimaraes.com)".
 
 This Agreement is governed by the laws of the State of New York and the intellectual property laws of the United States of America. No party to this Agreement will bring a legal action under this Agreement more than one year after the cause of action arose. Each party waives its rights to a jury trial in any resulting litigation.
+
+Some help files may uses adapted material from Wikipedias articles, which are released under the Creative Commons Attribution-Share-Alike License 3.0 (http://creativecommons.org/licenses/by-sa/3.0/) or under GNU Free Documentation License.
+The Articles from Wikipedia are avaliable at:
+http://en.wikipedia.org/wiki/Secure_Hash_Algorithm
+http://en.wikipedia.org/wiki/MD5
+http://en.wikipedia.org/wiki/Base64
+http://en.wikipedia.org/wiki/CRC32
+http://en.wikipedia.org/wiki/Morse_Code
+
+Some help files may uses adapted material from PHP Manual avaliable at: http://php.net/manual/en/. Copyright © 2001-2013 The PHP Group. All rights reserved.

@@ -1,6 +1,6 @@
 {
     "appdescription": {
-        "message": "Codifica e decodifica strings em base64, html, url, javascript, gera hashs MD5 e SHA, analisa XML, além de outras operações com strings. Funciona offline."
+        "message": "Codifique e decodifique em base64, hex, html, hashes MD5 e SHA, PNG em Base64 entre outras funções com strings. Funciona offline."
     },
     "appname": {
         "message": "FastString"
@@ -20,17 +20,32 @@
     "b64e": {
         "message": "codificar Base64"
     },
+    "b64e_h": {
+        "message": "Codifica uma string Base64 usando o padrão definido em RFC 3548 ou RFC 4648. <br>Base64 é um esquema de codificação binário-texto que representa dados binários em ASCII através de uma representação radix-64. Base64 é comumente utilizada quando existe a necessidade de codificar dados binários que precisam ser transportados em meios de dados textuais, garantindo que eles não sejam modificados durante a transmissão."
+    },
     "b64d": {
         "message": "decodificar Base64"
+    },
+    "b64d_h": {
+        "message": "Decodifica uma string Base64 no padrão (RFC 3548 ou RFC4648). <br>Base64 é um esquema de codificação binário-texto que representa dados binários em ASCII através de uma representação radix-64. "
     },
     "b64eu": {
         "message": "codificar Base64 compatível com URL"
     },
+    "b64eu_h": {
+        "message": "Base64 codificada de forma a ser compatível com nomes de arquivos e URL. <br> Substitui:<br> '=' com '_'<br> '\/' com ','<br> '+' com '-'"
+    },
     "b64du": {
         "message": "decodificar Base64 compatível com URL"
     },
+    "b64du_h": {
+        "message": "Base64 decodificada de forma a ser compatível com nomes de arquivos e URL.<br> Substitui:<br> '_' com '='<br> ',' com '\/'<br> '-' com '+'"
+    },
     "b64diu": {
         "message": "mostrar imagem em Base64"
+    },
+    "b64diu_h": {
+        "message": "Mostra uma imagem codificada em Base64. <br>Exemplo: data:image\/png;base64,\/9j\/4AAQSgA=="
     },
     "urle": {
         "message": "codificar url"
@@ -86,8 +101,14 @@
     "emED": {
         "message": "codificar mED"
     },
+    "emED_h": {
+        "message": "Oculta uma string convertendo-a para base64 então aplica-se rot13 e codifica-se como URL, revertendo-a e codificando-a como base64 novamente."
+    },
     "dmED": {
         "message": "decodificar mED"
+    },
+    "dmED_h": {
+        "message": "Revela uma string decodificando-a da Base64, revertendo-a, decodificando como URL e decodificando-a novamente da Base64."
     },
     "welcome": {
         "message": "Bem-vindo ao"
@@ -122,8 +143,8 @@
     "crc32": {
         "message": "CRC32"
     },
-    "hashs": {
-        "message": "hashs"
+    "hashes": {
+        "message": "hashes"
     },
     "stgs": {
         "message": "eliminar tags"
@@ -171,7 +192,7 @@
         "message": "símbolos HTML"
     },
     "character": {
-        "message": "Carácter"
+        "message": "Símbolo"
     },
     "enumber": {
         "message": "Entidade número"
@@ -228,7 +249,7 @@
         "message": "repetir string"
     },
     "escapejavas": {
-        "message": "codificar string javascript"
+        "message": "codificar caracteres especiais"
     },
     "html2js": {
         "message": "HTML bruto para javascript"
@@ -252,12 +273,69 @@
         "message": "limpar comentários"
     },
     "chromebanner": {
-        "message": "Ou se desejar, pode trabalhar mais tarde através do aplicativo off-line disponível na Chrome App Store. Para mais informações "
+        "message": "ou se desejar, pode trabalhar mais tarde através do App off-line. Para mais informações "
     },
     "clickhere": {
         "message": "clique aqui"
     },
     "Scolors": {
         "message": "seletor de cores"
+    },
+    "dohex": {
+        "message": "hex para ascii"
+    },
+    "doascii": {
+        "message": "ascii para hex"
+    },
+    "stripsc": {
+        "message": "retirar caracteres especiais"
+    },
+    "latin2e": {
+        "message": "converter caracteres especiais"
+    },
+    "morsee": {
+        "message": "codificar morse"
+    },
+    "morsed": {
+        "message": "decodificar morse"
+    },
+    "ascii2bin": {
+        "message": "ascii para bin"
+    },
+    "bin2ascii": {
+        "message": "bin para ascii"
+    },
+    "htw": {
+        "message": "Sobre está função"
+    },
+    "helpnotfound": {
+        "message": "Informação não disponível."
+    },
+    "javascript_escape": {
+        "message": "codificar todos os caracteres"
+    },
+    "javascript_escape_h": {
+        "message": "Codifica a string usando hex. Pode ser utilizada para codificar código, para isso utilize a função eval."
+    },
+    "encodeimgbase64": {
+        "message": "codificar imagem em png Base64"
+    },
+    "encodeimgbase64_h": {
+        "message": "Codifica um arquivo de imagem em PNG Base64 de modo que possa ser adicionado a páginas web e folhas de estilo css. Atualmente só é possível a conversão para o formato PNG. Está função ainda é experimental, apreciaríamos seu feedback."
+    },
+    "wordscount": {
+        "message": "Palavras"
+    },
+    "charscount": {
+        "message": "Caracteres"
+    },
+    "charswocount": {
+        "message": "Caracteres sem espaço"
+    },
+    "linescount": {
+        "message": "Linhas"
+    },
+    "mufunctions": {
+        "message": "Funções mais utilizadas"
     }
 }

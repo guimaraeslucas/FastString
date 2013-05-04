@@ -23,10 +23,56 @@ a, input, textarea, button, div {
 	font-family: Consolas, "Lucida Console", "OCR A Extended", Terminal, "Andale Mono", "Courier New", Courier, Fixed, monospace;
 }
 
+.aboutinfo {
+	font-family: Consolas, "Lucida Console", "OCR A Extended", Terminal, "Andale Mono", "Courier New", Courier, Fixed, monospace;
+}
+
+
+.hidebt {
+	display:none;
+}
+
+@media only screen and (max-height: 630px) and (max-width: 756px) {
+	#mostusedbuttons,#mufunctions{display:none;}
+}
+
+@media (min-height: 630px) and (min-width: 980px) {/*1024x768*/
+	.ucode {
+		height: 450px;
+	}
+	.freturn {
+		height: 434px;
+		max-height: 434px;
+	}
+	.hero-unit {
+		height: 434px;
+		overflow: hidden;
+	}
+	html {
+		overflow: hidden;
+	}
+}
+
+@media only screen and (min-height: 910px) {/*HD*/
+	.ucode {
+		height: 680px;
+	}
+	.freturn {
+		height: 664px;
+		max-height: 664px;
+	}
+	.hero-unit {
+		height: 664px;
+	}
+	html {
+		overflow: hidden;
+	}
+}
+
 .textoback {
 	background-image: url('../images/png/textofundo.png') !important;
 	background-repeat: no-repeat !important;
-	background-position: right center !important;
+	background-position: right bottom !important;
 }
 
 #sound {
@@ -36,4 +82,14 @@ a, input, textarea, button, div {
 	position: absolute;
 	top: 0px;
 	left: 0px;
+}
+.htmlrender {
+	max-height: 250px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	text-wrap: unrestricted;
+	word-wrap: break-word;
+	-ms-word-break: break-all;
+	word-break: break-all;
+	word-break: break-word;
 }
