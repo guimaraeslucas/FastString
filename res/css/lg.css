@@ -32,25 +32,37 @@ a, input, textarea, button, div {
 	display:none;
 }
 
-@media only screen and (max-height: 630px) and (max-width: 756px) {
+@media only screen and (max-height: 635px) and (max-width: 756px) {
 	#mostusedbuttons,#mufunctions{display:none;}
 }
 
-@media (min-height: 630px) and (min-width: 980px) {/*1024x768*/
+@media (min-height: 635px) and (min-width: 980px) {/*1024x768*/
 	.ucode {
 		height: 450px;
 	}
+	
 	.freturn {
 		height: 434px;
 		max-height: 434px;
 	}
 	.hero-unit {
-		height: 434px;
-		overflow: hidden;
+		height: 424px;
 	}
 	html {
 		overflow: hidden;
 	}
+	
+	.ucode_web{
+	height: 380px;
+	}
+	.freturn_web{
+			height: 364px;
+		max-height: 364px;
+	}
+	.hero-unit_web {
+		height: 354px;
+		overflow: hidden;
+	}	
 }
 
 @media only screen and (min-height: 910px) {/*HD*/
@@ -62,11 +74,22 @@ a, input, textarea, button, div {
 		max-height: 664px;
 	}
 	.hero-unit {
-		height: 664px;
+		height: 654px;
 	}
 	html {
 		overflow: hidden;
 	}
+	
+	.ucode_web {
+		height: 610px;
+	}
+	.freturn_web {
+		height: 594px;
+		max-height: 594px;
+	}
+	.hero-unit_web {
+		height: 594px;
+	}	
 }
 
 .textoback {
@@ -92,4 +115,16 @@ a, input, textarea, button, div {
 	-ms-word-break: break-all;
 	word-break: break-all;
 	word-break: break-word;
+}
+.popover-content {
+	font-size: 14px;
+	line-height: 15px;
+}
+.popover-content h1{
+	font-size: 17px !important;
+	line-height: 16px !important;
+}
+.popover-title {
+	font-size: 14px;
+	line-height: 14px;
 }

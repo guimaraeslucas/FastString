@@ -25,6 +25,11 @@
 		<meta name="author" content="Lucas Guimarães">
 		<link rel="shortcut icon" type="image/png" href="res/images/png/fs16.png">
 		<link rel="favicon" type="image/png" href="res/images/png/fs16.png">
+		<!-- Windows taskbar icons - Sent by Andreas Linnert - Thanks =) -->
+		<link rel="shortcut icon" href="res/images/png/fs32.png" sizes="32x32">
+		<link rel="shortcut icon" href="res/images/png/fs48.png" sizes="48x48">
+		<link rel="shortcut icon" href="res/images/png/fs48.png" sizes="64x64">
+		<!-- Mobile icons and chrome icons-->
 		<link rel="icon" type="image/png" href="res/images/png/fs16.png">
 		<link rel="icon" type="image/png" href="res/images/png/fs24.png" sizes="24x24">
 		<link rel="icon" type="image/png" href="res/images/png/fs32.png" sizes="32x32">
@@ -437,11 +442,16 @@
 			</div>
 			<div class="modal-body">
 				<p id="modalabout_license" class="muted aboutinfo"></p>
-				<p>
+				<p><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="form-inline pull-right">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="SYA6223V22H9Y">
+<button type="submit" class="btn btn-small btn-warning" border="0" name="paylink" id="paylink" title="Donate"> Donate (PayPal)</button> <a href="https://chrome.google.com/webstore/detail/faststring/gpknmoniniacaobkeclmiiaekniaddnd/reviews?utm_source=chrome-ntp-icon" class="btn btn-small btn-success" id="reviewlink">Review</a>
+ <a href="https://chrome.google.com/webstore/support/gpknmoniniacaobkeclmiiaekniaddnd?hl=en&gl=BR#bug"  class="btn btn-small btn-danger" id="bugslink">Bugs</a>
+</form>
 					<a href="http://lucasguimaraes.com" class="muted"> © 2013 LucasGuimaraes.com</a>
 					<br>
-					EID: <span id="modalabout_eid"></span>
-				</p>
+					EID: <span id="modalabout_eid"></span> <br>
+	</p>
 			</div>
 			<div class="modal-footer">
 				<button class="btn btn-inverse" id="modalabout_close" data-dismiss="modal" aria-hidden="true"></button>
@@ -543,8 +553,8 @@
 		<!--/MODALS-->
 
 		<!--_CSS-->
-		<link rel="stylesheet" href="res/css/bootstrap.min.css">
-		<link rel="stylesheet" href="res/css/darkstrap.css">
+		<link rel="stylesheet" href="res/css/bootstrap.min.css" id="bootstrapcss">
+		<link rel="stylesheet" href="res/css/darkstrap.css" id="darkstrapcss">
 		<link rel="stylesheet" href="res/css/jquery.minicolors.css">
 		<link rel="stylesheet" href="res/css/lg.css">
 		<!--_/CSS-->

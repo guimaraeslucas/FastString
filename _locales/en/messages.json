@@ -454,5 +454,14 @@
     },
     "mufunctions": {
         "message": "Most used functions"
+    },
+    "paylink": {
+        "message": "Donate (PayPal)"
+    },
+    "bugslink": {
+        "message": "Bugs"
+    },
+    "reviewlink": {
+        "message": "Review"
     }
 }

@@ -316,5 +316,14 @@
     },
     "mufunctions": {
         "message": "Funciones más utilizadas"
+    },
+    "paylink": {
+        "message": "Donar (PayPal)"
+    },
+    "bugslink": {
+        "message": "Bugs"
+    },
+    "reviewlink": {
+        "message": "Crítica"
     }
 }

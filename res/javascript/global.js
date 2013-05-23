@@ -119,8 +119,8 @@ function soundalert() {
     try {
         window.sndc.play();
     } catch(err) {
-        console.log('SNDC not avaliable')
-    };
+        console.log('sna');
+    }
 }
 
 //Play only one beep
@@ -129,8 +129,8 @@ function soundinvalid() {
     try {
         window.sndc.play();
     } catch(err) {
-        console.log('SNDC not avaliable')
-    };
+       console.log('sna');
+    }
 }
 
 //Get the help for function
@@ -232,7 +232,14 @@ function herobuttons() {
             } catch(e) {
             };
         });
-    }
+    }else{
+	//If not chrome, lets hide the most used functions buttons and make content small so we can show publicity
+	$("#mufunctions").hide();
+		$(".ucode").addClass('ucode_web');
+	$(".freturn").addClass('freturn_web');
+	$(".hero-unit").addClass('hero-unit_web');
+
+	}
 }
 
 function lgloadapp() {
@@ -246,12 +253,7 @@ function lgloadapp() {
             lgte("#ischrome", lgt('chromebanner') + ' <a href="https://chrome.google.com/webstore/detail/faststring-by-lg/gpknmoniniacaobkeclmiiaekniaddnd" id="clickhere">' + lgt('clickhere') + '</a>.</p>');
             $("#ischrome").show();
         }
-        var is_firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
-        if (is_firefox) {
-            lgte("#ischrome", lgt('chromebanner') + ' <a href="https://addons.mozilla.org/en-US/firefox/addon/faststring/" id="clickhere">' + lgt('clickhere') + '</a>.</p>');
-            $("#ischrome").show();
-        }
-    }
+            }
 
     $(window).resize(function() {
         herobuttons();
@@ -333,12 +335,15 @@ function lgloadapp() {
     lgtt("#trim", "trim");
     lgtt("#stripsc", "stripsc");
     lgtt("#latin2e", "latin2e");
-    lgtt("#stripcomments", "stripcomments")
+    lgtt("#stripcomments", "stripcomments");
     lgtt("#checkUUID", "checkUUID");
     lgtt("#generateUUID", "generateUUID");
 
     //ABOUT
     lgtt("#about", "about");
+    lgtt("#paylink", "paylink");
+    lgtt("#reviewlink", "reviewlink");
+    lgtt("#bugslink", "bugslink");
 
     //Sets Welcome message
     lgte("#welcomemsg", lgt("welcome") + ' <strong id="appname">' + lgshortappname + '</strong>');
@@ -385,7 +390,7 @@ function lgloadapp() {
         textfield : false,
         inline : true,
         change : function(hex, opacity) {
-            text = "HEX: "
+            text = "HEX: ";
             text += hex ? hex : 'transparent';
             if (opacity)
                 text += ', ' + opacity;
@@ -1302,14 +1307,28 @@ $(document).ready(function() {
 
         //Let's store how many time user uses the app so we can show it in the
         // future.
-
-        chrome.storage.local.get('ua', function(result) {
+		 chrome.storage.local.get('ua', function(result) {
             var ua = result.ua;
             var addua = ua + 1;
-            chrome.storage.local.set({
+			chrome.storage.local.set({
                 'ua' : addua
             });
         });
+
+		/* chrome.storage.local.get('alerta', function(result) {
+            var alerta = result.alerta;
+            var addua = 11;
+			if  (alerta != 11){
+					var notification = webkitNotifications.createNotification(
+  'res/images/png/fs48.png',  // icon url - can be relative
+  'Update info',  // notification title
+  'Next FastString version will require you to reactivate extension. We will ask for your permission' // notification body text
+); notification.show();}
+            chrome.storage.local.set({
+                'alerta' : addua
+            });
+        });*/
+
 
     } else {
         //We should load the localization files first ! =)

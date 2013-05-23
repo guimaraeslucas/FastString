@@ -337,5 +337,14 @@
     },
     "mufunctions": {
         "message": "Funções mais utilizadas"
+    },
+    "paylink": {
+        "message": "Doar (PayPal)"
+    },
+    "bugslink": {
+        "message": "Bugs"
+    },
+    "reviewlink": {
+        "message": "Avaliar"
     }
 }
