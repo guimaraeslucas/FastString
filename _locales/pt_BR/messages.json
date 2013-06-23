@@ -346,5 +346,17 @@
     },
     "reviewlink": {
         "message": "Avaliar"
+    },
+    "ipde": {
+        "message": "IP/decimal"
+    },
+    "ipde_h": {
+        "message": "Automaticamente detecta e converte Decimal para IP ou IP para Decimal."
+    },
+    "xls2html": {
+        "message": "tabela excel para HTML"
+    },
+    "xls2html_h": {
+        "message": "Converte uma tabela Excel para o formato HTML."
     }
 }

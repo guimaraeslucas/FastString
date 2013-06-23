@@ -438,7 +438,7 @@
         "message": "encode image in Base64 png"
     },
     "encodeimgbase64_h": {
-        "message": "Encode image in Base64 png so it can be embedded in html and css. Currently is only possible the conversion to PNG format. This feature is still experimental, we would appreciate your feedback."
+        "message": "Encode image in Base64 png so it can be embedded into html and css. Currently is only possible the conversion to the PNG format. This feature is still experimental, we would appreciate your feedback."
     },
     "wordscount": {
         "message": "Words"
@@ -463,5 +463,17 @@
     },
     "reviewlink": {
         "message": "Review"
+    },
+    "ipde": {
+        "message": "IP/decimal"
+    },
+    "ipde_h": {
+        "message": "Automatically detect and convert IP to Decimal or Decimal to IP."
+    },
+    "xls2html": {
+        "message": "excel table to HTML"
+    },
+    "xls2html_h": {
+        "message": "Converts a Excel table to HTML table."
     }
 }

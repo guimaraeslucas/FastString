@@ -129,7 +129,7 @@ function soundinvalid() {
     try {
         window.sndc.play();
     } catch(err) {
-       console.log('sna');
+        console.log('sna');
     }
 }
 
@@ -213,7 +213,7 @@ function herobuttons() {
 
                         var ch = this.key;
 
-                        $("#mostusedbuttons").append('<button class="btn btn-inverse hidebt" id="' + ch + '_sp" type="button" style="margin-top:8px; height: 120px;width: 120px;">' + lgt(ch) + ' (' + this.value + ')</button> ');
+                        $("#mostusedbuttons").append('<button class="btn btn-inverse hidebt" id="' + ch + '_sp" type="button" style="margin-top:8px; height: 110px;width: 110px;">' + lgt(ch) + ' (' + this.value + ')</button> ');
 
                         $("#" + ch + "_sp").delay(startanimation).fadeIn();
                         startanimation = startanimation + 80;
@@ -232,14 +232,15 @@ function herobuttons() {
             } catch(e) {
             };
         });
-    }else{
-	//If not chrome, lets hide the most used functions buttons and make content small so we can show publicity
-	$("#mufunctions").hide();
-		$(".ucode").addClass('ucode_web');
-	$(".freturn").addClass('freturn_web');
-	$(".hero-unit").addClass('hero-unit_web');
+    } else {
+        //If not chrome, lets hide the most used functions buttons and make
+        // content small so we can show publicity
+        $("#mufunctions").hide();
+        $(".ucode").addClass('ucode_web');
+        $(".freturn").addClass('freturn_web');
+        $(".hero-unit").addClass('hero-unit_web');
 
-	}
+    }
 }
 
 function lgloadapp() {
@@ -253,7 +254,7 @@ function lgloadapp() {
             lgte("#ischrome", lgt('chromebanner') + ' <a href="https://chrome.google.com/webstore/detail/faststring-by-lg/gpknmoniniacaobkeclmiiaekniaddnd" id="clickhere">' + lgt('clickhere') + '</a>.</p>');
             $("#ischrome").show();
         }
-            }
+    }
 
     $(window).resize(function() {
         herobuttons();
@@ -304,6 +305,8 @@ function lgloadapp() {
     lgtt("#sha512", "sha512");
 
     //WEB
+
+    lgtt("#ipde", "ipde");
     lgtt("#urle", "urle");
     lgtt("#urld", "urld");
     lgtt("#htmle", "htmle");
@@ -315,6 +318,8 @@ function lgloadapp() {
     lgtt("#javascript_escape", "javascript_escape");
     lgtt("#html2js", "html2js");
     lgtt("#Scolors", "Scolors");
+    lgtt("#xls2html", "xls2html");
+
 
     //String operations
     lgtt("#others", "others");
@@ -411,7 +416,7 @@ function lgloadapp() {
         $("#paste").click(function() {
             $("#eandd").val(pasteTextFromClipboard());
             return false;
-            //Should be here as if we set type=button chrome ignores it - why ?
+            //Should be here as if we set type=button chrome ignores it don't know why ?
         });
 
         //COPY BUTTON
@@ -813,6 +818,21 @@ function lgloadapp() {
         $("#dyn").fadeIn(900);
     });
 
+    //IPDE
+    $("#ipde").click(function() {
+        hero_hide();
+        //Defines action name
+        lgtt("#action", "ipde");
+        //Defines click action
+        $("#doit").click(function() {
+            var eandd = $("#eandd").val();
+            $("#freturn").text(IPconvert(eandd));
+            return false;
+        });
+        //Show Dyn
+        $("#dyn").fadeIn(900);
+    });
+
     //URLD
     $("#urld").click(function() {
         hero_hide();
@@ -852,6 +872,21 @@ function lgloadapp() {
         $("#doit").click(function() {
             var eandd = $("#eandd").val();
             $("#freturn").text(htmlUnescape(eandd));
+            return false;
+        });
+        //Show Dyn
+        $("#dyn").fadeIn(900);
+    });
+
+    //XLS2HTML
+    $("#xls2html").click(function() {
+        hero_hide();
+        //Defines action name
+        lgtt("#action", "xls2html");
+        //Defines click action
+        $("#doit").click(function() {
+            var eandd = $("#eandd").val();
+            $("#freturn").text(xls2html(eandd));
             return false;
         });
         //Show Dyn
@@ -1307,28 +1342,28 @@ $(document).ready(function() {
 
         //Let's store how many time user uses the app so we can show it in the
         // future.
-		 chrome.storage.local.get('ua', function(result) {
+        chrome.storage.local.get('ua', function(result) {
             var ua = result.ua;
             var addua = ua + 1;
-			chrome.storage.local.set({
+            chrome.storage.local.set({
                 'ua' : addua
             });
         });
 
-		/* chrome.storage.local.get('alerta', function(result) {
-            var alerta = result.alerta;
-            var addua = 11;
-			if  (alerta != 11){
-					var notification = webkitNotifications.createNotification(
-  'res/images/png/fs48.png',  // icon url - can be relative
-  'Update info',  // notification title
-  'Next FastString version will require you to reactivate extension. We will ask for your permission' // notification body text
-); notification.show();}
-            chrome.storage.local.set({
-                'alerta' : addua
-            });
-        });*/
-
+        /* chrome.storage.local.get('alerta', function(result) {
+         var alerta = result.alerta;
+         var addua = 11;
+         if  (alerta != 11){
+         var notification = webkitNotifications.createNotification(
+         'res/images/png/fs48.png',  // icon url - can be relative
+         'Update info',  // notification title
+         'Next FastString version will require you to reactivate extension. We
+        will ask for your permission' // notification body text
+         ); notification.show();}
+         chrome.storage.local.set({
+         'alerta' : addua
+         });
+         });*/
 
     } else {
         //We should load the localization files first ! =)

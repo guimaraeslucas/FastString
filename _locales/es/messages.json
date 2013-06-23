@@ -325,5 +325,17 @@
     },
     "reviewlink": {
         "message": "Crítica"
+    },
+    "ipde": {
+        "message": "IP/decimal"
+    },
+    "ipde_h": {
+        "message": "IP a Decimal o Decimal a IP."
+    },
+    "xls2html": {
+        "message": "tabla de excel a HTML"
+    },
+    "xls2html_h": {
+        "message": "Convierte una tabla de Excel a formato HTML."
     }
 }

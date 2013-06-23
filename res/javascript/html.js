@@ -120,3 +120,75 @@ function fhtml2js(data) {
     retvar += "return fs_s;\n}\n<\/script>";
     return retvar;
 }
+
+//Original by:
+//About.com - http://javascript.about.com/library/blipconvert.htm
+//Adapted by: LucasGuimaraes(http://lucasguimaraes.com)
+
+function Kdot2num(dot) {
+    try {
+        var d = dot.split('.');
+        return ((((((+d[0]) * 256) + (+d[1])) * 256) + (+d[2])) * 256) + (+d[3]);
+    } catch(e) {
+    }
+}
+
+function Knum2dot(num) {
+    var d = num % 256;
+    ;
+    for (var i = 3; i > 0; i--) {
+        num = Math.floor(num / 256);
+        d = num % 256 + '.' + d;
+    }
+    return d;
+}
+
+function IPconvert(ip) {
+    try {
+        var dotted = /^(\d|[01]?\d\d|2[0-4]\d|25[0-5])\.(\d|[01]?\d\d|2[0-4]\d|25[0-5])\.(\d|[01]?\d\d|2[0-4]\d|25[0-5])\.(\d|[01]?\d\d|2[0-4]\d|25[0-5])$/;
+        var num = /^\d+$/;
+        if (ip.match(dotted))
+            ip = Kdot2num(ip);
+        else if (ip.match(num) && +ip < 4294967296)
+            ip = Knum2dot(ip);
+        return ip;
+    } catch(e) {
+    };
+}
+
+//Original by:
+//http://linnertmedia.de/
+//Adapted by: LucasGuimaraes(http://lucasguimaraes.com)
+
+// XLS HTML TABLE CONVERTER
+function xls2html(xlscontent) {
+
+            var inputText = xlscontent,  inputLineArray = inputText.split('\n'), inputCellsArray = [], maxColumns = 0, currentColumns = 0, outputText = "";
+
+            for (var i in inputLineArray) {
+                inputCellsArray[i] = inputLineArray[i].split('\t');
+            }
+
+            for (var i in inputCellsArray) {
+                currentColumns = inputCellsArray[i].length;
+                maxColumns = currentColumns > maxColumns ? currentColumns : maxColumns;
+            }
+
+            for (var i in inputCellsArray) {
+                outputText += "<tr>\n";
+                for (var j = 0; j < maxColumns; j++) {
+                    if ( typeof inputCellsArray[i][j] !== "undefined" && inputCellsArray[i][j] !== "") {
+                        outputText += "<td>" + inputCellsArray[i][j] + "</td>";
+                    } else {
+                        outputText += "<td>&nbsp;</td>";
+                    }
+                }
+                outputText += "</tr>\n";
+            }
+
+            return "<table>\n"+outputText+"</table>";
+
+
+
+    // XLS HTML TABLE CONVERTER END
+}
