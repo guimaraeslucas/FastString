@@ -1,9 +1,9 @@
 {
     "appdescription": {
-        "message": "Codifica y decodifica strings en base64, hex, html, codifica imágenes en PNG Base64 y realiza operaciones con strings. Trabaja offline."
+        "message": "Codifica y decodifica strings offline en base64, hex, html, codifica imágenes en Base64 y realiza 39 otras operaciones con strings."
     },
     "appname": {
-        "message": "FastString"
+        "message": "FastString - Operaciones con Strings"
     },
     "shortappname": {
         "message": "FastString"
@@ -45,7 +45,7 @@
         "message": "decodificar html"
     },
     "about": {
-        "message": "acerca de este app"
+        "message": "Acerca FS"
     },
     "md5": {
         "message": "md5"
@@ -337,5 +337,56 @@
     },
     "xls2html_h": {
         "message": "Convierte una tabla de Excel a formato HTML."
+    },
+    "imgB64Alert": {
+        "message": "Advertencia: Esta operación es experimental. Los archivos grandes pueden generar contenido parcial o crear inestabilidad en el navegador si el equipo no tiene suficiente memoria. Caso necesario, haga clic en el spinner para cancelar."
+    },
+    "alert_Title_Review": {
+        "message": "Revise FastString"
+    },
+    "alert_Message_Review": {
+        "message": "Parece que usted está disfrutando de FastString, ¿te importaría ayudarnos? Sólo te llevará un minuto. Haga clic en 'Acerca de' y después en el botón Evaluar. Siempre valoramos tus comentarios. Gracias =)"
+    },
+    "lichars": {
+        "message": "Letras"
+    },
+    "lipar": {
+        "message": "Párrafos"
+    },
+    "liwds": {
+        "message": "Palabras"
+    },
+    "lipt": {
+        "message": "Agregar p tag"
+    },
+    "lipf": {
+        "message": "No agregar p tag"
+    },
+    "loremipsun": {
+        "message": "generador lorem ipsum"
+    },
+    "updated_b": {
+        "message": "FastString actualizado a la versión: "
+    },
+    "updated_a": {
+        "message": ". "
+    },
+    "replaceinfo": {
+        "message": "RegExp"
+    },
+    "replaceflaginfo": {
+        "message": "Flag (g,i,m)"
+    },
+    "replaceforinfo": {
+        "message": "Nuevo valor"
+    },
+    "str_replace": {
+        "message": "substituir string"
+    },
+    "invalidstr": {
+        "message": "String Invalida"
+    },
+    "str_replace_h": {
+        "message": "Sustituye una string según informó la RegExp expresión. No utilice la inicial y la puntuación final."
     }
 }

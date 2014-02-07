@@ -1,9 +1,9 @@
 {
     "appdescription": {
-        "message": "Encode and decode base64, hex, html, generate hashes (MD5/SHA), check xml, Base64 images and other string operations. Works offline."
+        "message": "Encode and decode base64, hex, html, generate hashes, check xml, Base64 images and 39 string operations. Works offline."
     },
     "appname": {
-        "message": "FastString"
+        "message": "FastString - String Operations"
     },
     "shortappname": {
         "message": "FastString"
@@ -378,7 +378,7 @@
         "message": "hex to ascii"
     },
     "dohex_h": {
-        "message": "Convert hexadecimal code to ASCII code. Each hexadecimal digit represents four binary digits (bits), and the primary use of hexadecimal notation is a human-friendly representation of binary-coded values in computing and digital electronics. One hexadecimal digit represents a nibble, which is half of an octet or byte (8 bits). ASCII codes represent text in computers, communications equipment, and other devices that use text."
+        "message": "Convert hexadecimal code to ASCII code. This function doesn't consider whitespaces. Each hexadecimal digit represents four binary digits (bits), and the primary use of hexadecimal notation is a human-friendly representation of binary-coded values in computing and digital electronics. One hexadecimal digit represents a nibble, which is half of an octet or byte (8 bits). ASCII codes represent text in computers, communications equipment, and other devices that use text."
     },
     "doascii": {
         "message": "ascii to hex"
@@ -475,5 +475,59 @@
     },
     "xls2html_h": {
         "message": "Converts a Excel table to HTML table."
+    },
+    "imgB64Alert": {
+        "message": "Warning: This function is still experimental. Large files may generate partial content or make your browser become unresponsive if your computer has insufficient memory. If necessary, click the loader to cancel. We would appreciate your feedback if something goes wrong."
+    },
+    "alert_Title_Review": {
+        "message": "Review FastString"
+    },
+    "alert_Message_Review": {
+        "message": "It seems that you're enjoing FastString, would you mind helping us ? It'll just take a minute. Go to 'About' and then click the Review button. We always appreciate your feedback. Thank you. =)"
+    },
+    "lichars": {
+        "message": "Characters"
+    },
+    "lipar": {
+        "message": "Paragraphs"
+    },
+    "liwds": {
+        "message": "Words"
+    },
+    "lipt": {
+        "message": "Add p tag"
+    },
+    "lipf": {
+        "message": "Don't add p tag"
+    },
+    "loremipsun": {
+        "message": "lorem ipsum generator"
+    },
+    "loremipsun_h": {
+        "message": "Generates a lorem ipsum string."
+    },
+    "updated_b": {
+        "message": "FastString updated to version: "
+    },
+    "updated_a": {
+        "message": ". "
+    },
+    "replaceinfo": {
+        "message": "RegExp"
+    },
+    "replaceflaginfo": {
+        "message": "Flag (g,i,m)"
+    },
+    "replaceforinfo": {
+        "message": "New value"
+    },
+    "str_replace": {
+        "message": "string replace"
+    },
+    "invalidstr": {
+        "message": "Invalid string"
+    },
+    "str_replace_h": {
+        "message": "Replaces a string according to the RegExp expression informed. Do not use the initial and the final marker   i.e. not /foo[123]/, but foo[123]."
     }
 }

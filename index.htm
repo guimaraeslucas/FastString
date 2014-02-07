@@ -25,10 +25,11 @@
 		<meta name="author" content="Lucas Guimarães">
 		<link rel="shortcut icon" type="image/png" href="res/images/png/fs16.png">
 		<link rel="favicon" type="image/png" href="res/images/png/fs16.png">
-		<!-- Windows taskbar icons - Sent by Andreas Linnert - Thanks =) -->
 		<link rel="shortcut icon" href="res/images/png/fs32.png" sizes="32x32">
 		<link rel="shortcut icon" href="res/images/png/fs48.png" sizes="48x48">
-		<link rel="shortcut icon" href="res/images/png/fs48.png" sizes="64x64">
+		<link rel="shortcut icon" href="res/images/png/fs64.png" sizes="64x64">
+		<link rel="shortcut icon" href="res/images/png/fs96.png" sizes="96x96">
+		<link rel="shortcut icon" href="res/images/png/fs128.png" sizes="128x128">
 		<!-- Mobile icons and chrome icons-->
 		<link rel="icon" type="image/png" href="res/images/png/fs16.png">
 		<link rel="icon" type="image/png" href="res/images/png/fs24.png" sizes="24x24">
@@ -63,7 +64,7 @@
 		<meta name="msapplication-tooltip" content="FastString">
 		<meta name="msapplication-starturl" content="http://faststring.lgvirtual.com">
 		<meta name="msapplication-navbutton-color" content="#F9F9F9">
-		<meta name="msapplication-task" content="name=LucasGuimaraes.com;action-uri=http://lucasguimaraes.com;icon-uri=http://lucasguimaraes.com/favicon.ico">
+		<meta name="msapplication-task" content="name=LucasGuimaraes.com;action-uri=http://lgvirtual.com;icon-uri=http://lgvirtual.com/favicon.ico">
 		<meta name="msapplication-window" content="width=1024;height=768">
 		<meta http-equiv="imagetoolbar" content="false">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -96,6 +97,9 @@
 				left: 0px;
 				background-color: #2f2f2f;
 				overflow: hidden;
+			}
+
+			#loadingImage64, .loader {
 				background-position: center center;
 				background-repeat: no-repeat;
 				background-image: url('data:image/gif;base64,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');
@@ -104,9 +108,11 @@
 		<!--_/CSS-->
 	</head>
 	<body id="body">
+
+		<div id="generateImage64"></div>
 		<div class="loader"></div>
 		<!--NAVBAR-->
-		<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar navbar-inverse navbar-fixed-top" id="navmenutop" style="display:none;">
 			<div class="navbar-inner">
 				<div class="container-fluid">
 					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -119,8 +125,9 @@
 						<ul class="nav">
 							<!--class="active"-->
 							<li class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="convert"></span> <b class="caret"></b></a>
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="convert"></span><b class="caret"></b></a>
 								<ul class="dropdown-menu">
+
 									<li class="nav-header">
 										Base64
 									</li>
@@ -253,7 +260,7 @@
 									<li>
 										<a href="#modalScolors" data-toggle="modal" id="Scolors"></a>
 									</li>
-																		<li>
+									<li>
 										<a href="#" id="xls2html"></a>
 									</li>
 									<li class="divider"></li>
@@ -316,6 +323,9 @@
 										<a href="#" id="str_repeat"></a>
 									</li>
 									<li>
+										<a href="#" id="str_replace"></a>
+									</li>
+									<li>
 										<a href="#" id="trim"></a>
 									</li>
 									<li>
@@ -333,6 +343,9 @@
 									<li>
 										<a href="#" id="generateUUID"></a>
 									</li>
+									<li>
+										<a href="#" id="loremipsun"></a>
+									</li>
 								</ul>
 							</li>
 
@@ -347,7 +360,7 @@
 		</div><!--/NAVBAR-->
 
 		<!--CONTAINER-->
-		<div class="container-fluid">
+		<div class="container-fluid" id="cfluid" style="display:none;">
 
 			<!--HERO-->
 			<div class="row-fluid">
@@ -387,8 +400,12 @@
 											<span id="action"></span> <a href="#"  data-toggle="popover" rel="popover" id="pophelp" class="btn btn-inverse btn-small"><i class="icon-book icon-white"></i></a>
 										</legend>
 										<textarea style="width:100%;min-height:129px;" id="eandd" class="span6 ucode" autofocus></textarea>
+										<div id="imgB64Alert" class="span6"></div>
 										<br>
 										<div class="input-prepend input-block-level" id="encodeimgbase64f" style="display:none;">
+
+											<br>
+											<br>
 											<input id="base64File" name="base64File" accept="image/*"  class="span6" type="file">
 										</div>
 
@@ -404,6 +421,34 @@
 										<select style="width:100%; display:none;" id="shaopt">
 											<option value="HEX">Hex</option><option value="B64">Base64</option>
 										</select><!--/SHAOPTIONS-->
+
+										<!--STR_REPLACE-->
+										<div class="input-prepend input-block-level" id="strrep" style="display:none;">
+											<span class="add-on" id="replaceinfo"></span>
+											<input class="span7" type="text" id="strreplace" name="strreplace">
+
+											<span class="add-on" id="replaceflaginfo"></span>
+											<input class="span1" style="width:93px;" type="text" id="strflag" name="strflag">
+<br>
+											<span class="add-on" id="replaceforinfo"></span>
+											<input class="span9" type="text" id="strfor" name="strfor">
+										</div>
+										<!--/STR_REPLACE-->
+
+										<!-- LIMP -->
+										<div class="input-prepend input-block-level" id="liopts" style="display:none;">
+											<input class="span2" type="number" id="lir" name="lir" max="128000" step="10" value="50" maxlength="6">
+											<select id="liopt">
+												<option value="words" id="liwds" selected="true"></option>
+												<option value="characters" id="lichars"></option>
+												<option value="paragraphs" id="lipar"></option>
+											</select>
+
+											<select id="lipsel">
+												<option value="true" id="lipt"></option>
+												<option value="false" id="lipf" selected="true"></option>
+											</select>
+										</div><!--/LIMP-->
 
 										<button class="btn btn-inverse" id="doit" type="button"></button>
 										<button class="btn btn-inverse" id="paste"></button>
@@ -432,7 +477,7 @@
 
 							<div class="span6">
 								<p class="muted">
-									<a href="http://lucasguimaraes.com" class="muted"> <span id="lucaslogo"></span><small>© 2013 LucasGuimaraes.com</small></a>
+									<a href="http://lucasguimaraes.com" class="muted"> <span id="lucaslogo"></span><small>© 2013-2014 LucasGuimaraes.com</small></a>
 									<div id="sound"></div>
 								</p>
 							</div>
@@ -588,6 +633,7 @@
 		<script src="res/javascript/crc32.js"></script>
 		<script src="res/javascript/jxmlvali-min.js"></script>
 		<script src="res/javascript/jquery.minicolors.js"></script>
+		<script src="res/javascript/jquery.lorem.js"></script>
 		<!-- Initiate LGApp -->
 		<script src="res/javascript/htmltables.js"></script>
 		<script src="res/javascript/about.js"></script>

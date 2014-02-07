@@ -145,8 +145,8 @@ function encodeimgbase64() {
 
     // callback for readAsDataURL
     reader.onload = function(encodedFile) {
-        console.log("reader.onload");
-        base64Image = encodedFile.srcElement.result;
+         try{
+            base64Image = encodedFile.srcElement.result;
         var binaryImg = atob(base64Image);
         var length = binaryImg.length;
         var ab = new ArrayBuffer(length);
@@ -158,16 +158,35 @@ function encodeimgbase64() {
             type : ftype
         });
         URL.createObjectURL(blob);
+        } catch (err){
+             throw "IMG_ERROR_ELEMENT: RESOURCE NOT AVALIABLE"
+        }
     };
 
     reader.readAsDataURL(file);
 
     reader.onloadend = function() {
-        $("#freturn").html('<img src="' + URL.createObjectURL(file) + '" id="generatedimage">');
+        // $("#freturn").html('<img src="' + URL.createObjectURL(file) + '" id="generatedimage">');
+
+        $("#generateImage64").html('<div id="loadingImage64"></div><img src="' + URL.createObjectURL(file) + '" id="generatedimage">').show();
+
         $("#generatedimage").on("load", function() {
             $("#freturn").text(getBase64ImageById('generatedimage', ftype));
+            $("#generateImage64").fadeOut('slow');
         });
 
+        $("#loadingImage64").on("click", function() {
+
+            $("#generateImage64").fadeOut('slow');
+            $("#freturn").text('User aborted.');
+            soundalert();
+
+        });
+            $("#generatedimage").on("error", function() {
+            $("#generateImage64").fadeOut('fast');
+            $("#freturn").text('Invalid image.');
+            soundalert();
+            });
     }
 }
 

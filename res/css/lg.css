@@ -27,20 +27,21 @@ a, input, textarea, button, div {
 	font-family: Consolas, "Lucida Console", "OCR A Extended", Terminal, "Andale Mono", "Courier New", Courier, Fixed, monospace;
 }
 
-
 .hidebt {
-	display:none;
+	display: none;
 }
 
 @media only screen and (max-height: 635px) and (max-width: 756px) {
-	#mostusedbuttons,#mufunctions{display:none;}
+	#mostusedbuttons, #mufunctions {
+		display: none;
+	}
 }
 
 @media (min-height: 635px) and (min-width: 980px) {/*1024x768*/
 	.ucode {
 		height: 450px;
 	}
-	
+
 	.freturn {
 		height: 434px;
 		max-height: 434px;
@@ -51,18 +52,18 @@ a, input, textarea, button, div {
 	html {
 		overflow: hidden;
 	}
-	
-	.ucode_web{
-	height: 380px;
+
+	.ucode_web {
+		height: 380px;
 	}
-	.freturn_web{
-			height: 364px;
+	.freturn_web {
+		height: 364px;
 		max-height: 364px;
 	}
 	.hero-unit_web {
 		height: 354px;
 		overflow: hidden;
-	}	
+	}
 }
 
 @media only screen and (min-height: 910px) {/*HD*/
@@ -79,7 +80,7 @@ a, input, textarea, button, div {
 	html {
 		overflow: hidden;
 	}
-	
+
 	.ucode_web {
 		height: 610px;
 	}
@@ -89,7 +90,7 @@ a, input, textarea, button, div {
 	}
 	.hero-unit_web {
 		height: 594px;
-	}	
+	}
 }
 
 .textoback {
@@ -120,11 +121,42 @@ a, input, textarea, button, div {
 	font-size: 14px;
 	line-height: 15px;
 }
-.popover-content h1{
+.popover-content h1 {
 	font-size: 17px !important;
 	line-height: 16px !important;
 }
 .popover-title {
 	font-size: 14px;
 	line-height: 14px;
+}
+
+#imgB64Alert {
+	display: none;
+}
+
+#generateImage64 {
+	width: 3500px;
+	height: 3500px;
+	position: absolute;
+	z-index: 10000;
+	top: 0px;
+	left: 0px;
+	background-color: #2f2f2f;
+	overflow: visible;
+	display: none;
+}
+
+#loadingImage64 {
+	top: 70px;
+	width: 250px;
+	height: 250px;
+	position: absolute;
+	z-index: 200000;
+	margin-left: 25px;
+	margin-right: auto;
+	background-color: #2f2f2f;
+}
+.brand span{
+	top: 1px;
+	color: #FF0000;
 }

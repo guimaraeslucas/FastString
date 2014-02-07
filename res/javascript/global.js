@@ -51,6 +51,7 @@ function lgte(elementId, txt) {
 
 function hero_hide() {
 
+    $("#imgB64Alert").hide();
     $("#pophelp").popover('destroy');
     //We destroy any previus popover
     $('#doit').unbind('click');
@@ -58,6 +59,10 @@ function hero_hide() {
     $("#shaopt").hide();
     //We make sure SHA options field is hidden
     $("#rptstr").hide();
+    //We make sure LoremImpsun options field is hidden
+    $("#liopts").hide();
+    //We make sure StringReplace options field is hidden
+    $("#strrep").hide();
     //We make sure file field is hidden
     $("#encodeimgbase64f").hide();
     //We make sure repeat_srt field is hidden
@@ -126,6 +131,16 @@ function soundalert() {
 //Play only one beep
 function soundinvalid() {
     $("#sound").html('<audio autoplay="autoplay" preload="auto" src="res/sounds/mp3/tum.mp3" id="sndc"></audio>');
+    try {
+        window.sndc.play();
+    } catch(err) {
+        console.log('sna');
+    }
+}
+
+//Play happy beep
+function soundhappy() {
+    $("#sound").html('<audio autoplay="autoplay" preload="auto" src="res/sounds/mp3/timtum.mp3" id="sndc"></audio>');
     try {
         window.sndc.play();
     } catch(err) {
@@ -243,9 +258,19 @@ function herobuttons() {
     }
 }
 
+//Configure Alerts
+bootstrap_alert = function() {
+};
+bootstrap_alert.success = function(message) {
+    $('#navmenutop').after('<div class="alert alert-success"><a class="close" data-dismiss="alert">×</a><span>' + message + '</span></div>');
+};
+//Start to render the App
 function lgloadapp() {
-    //Hides loader
+    //Hide loader
     $(".loader").fadeOut();
+    //Show menu and container
+    $("#navmenutop").fadeIn();
+    $("#cfluid").slideDown('slow');
 
     if (!chromeapp) {
         //If is Chrome offers the app
@@ -320,7 +345,6 @@ function lgloadapp() {
     lgtt("#Scolors", "Scolors");
     lgtt("#xls2html", "xls2html");
 
-
     //String operations
     lgtt("#others", "others");
     //menu title
@@ -334,6 +358,7 @@ function lgloadapp() {
     lgtt("#stripslashes", "stripslashes");
     lgtt("#strtolower", "strtolower");
     lgtt("#strtoupper", "strtoupper");
+    lgtt("#str_replace", "str_replace");
     lgtt("#ucwords", "ucwords");
     lgtt("#str_shuffle", "str_shuffle");
     lgtt("#str_repeat", "str_repeat");
@@ -343,7 +368,7 @@ function lgloadapp() {
     lgtt("#stripcomments", "stripcomments");
     lgtt("#checkUUID", "checkUUID");
     lgtt("#generateUUID", "generateUUID");
-
+    lgtt("#loremipsun", "loremipsun");
     //ABOUT
     lgtt("#about", "about");
     lgtt("#paylink", "paylink");
@@ -363,6 +388,12 @@ function lgloadapp() {
     lgtt("#paste", "paste");
     lgtt("#view", "view");
     lgtt("#rptinfo", "rptinfo");
+
+    lgtt("#lichars", "lichars");
+    lgtt("#lipar", "lipar");
+    lgtt("#liwds", "liwds");
+    lgtt("#lipt", "lipt");
+    lgtt("#lipf", "lipf");
 
     //Sets Modal
     lgtt("#modalabout_title", "modalabout_title");
@@ -387,6 +418,12 @@ function lgloadapp() {
 
     lgtt("#modalScolors_title", "Scolors");
     lgtt("#modalScolors_close", "modalabout_close");
+
+    lgtt("#imgB64Alert", "imgB64Alert");
+
+    lgtt("#replaceinfo", "replaceinfo");
+    lgtt("#replaceflaginfo", "replaceflaginfo");
+    lgtt("#replaceforinfo", "replaceforinfo");
 
     //Configure Minicolors
     $(".minicolors").minicolors({
@@ -416,7 +453,8 @@ function lgloadapp() {
         $("#paste").click(function() {
             $("#eandd").val(pasteTextFromClipboard());
             return false;
-            //Should be here as if we set type=button chrome ignores it don't know why ?
+            //Should be here as if we set type=button chrome ignores it don't
+            // know why ?
         });
 
         //COPY BUTTON
@@ -469,7 +507,7 @@ function lgloadapp() {
             try {
                 var enc = $.base64.encode(eandd);
             } catch(err) {
-                var enc = invalid;
+                var enc = invalid + " - " + err;
                 soundalert();
             };
             $("#freturn").text(enc);
@@ -491,7 +529,7 @@ function lgloadapp() {
             try {
                 var dec = $.base64.decode(eandd);
             } catch(err) {
-                var dec = invalid;
+                var dec = invalid + " - " + err;
                 soundalert();
             };
             $("#freturn").text(dec);
@@ -529,7 +567,7 @@ function lgloadapp() {
                 var dec = show64(eandd);
                 var dec2 = $.base64.decode(dec);
             } catch(err) {
-                var dec2 = invalid;
+                var dec2 = invalid + " - " + err;
                 soundalert();
             };
             $("#freturn").text(dec2);
@@ -561,7 +599,13 @@ function lgloadapp() {
         lgtt("#action", "encodeimgbase64");
         //Defines click action
         $("#doit").click(function() {
-            $("#freturn").text(encodeimgbase64());
+            try {
+                var dec2 = encodeimgbase64();
+            } catch (err) {
+                var dec2 = invalid + " - " + err;
+                soundalert();
+            }
+            $("#freturn").text(dec2);
             return false;
         });
         //Show Dyn
@@ -569,6 +613,7 @@ function lgloadapp() {
         $("#eandd").slideUp();
         $("#tbchartotal").text('');
         $("#encodeimgbase64f").show();
+        $("#imgB64Alert").fadeIn();
     });
 
     //DOASCII
@@ -594,6 +639,7 @@ function lgloadapp() {
         //Defines click action
         $("#doit").click(function() {
             var eandd = $("#eandd").val();
+            eandd = eandd.replace(/\s/g, "");
             $("#freturn").text(DoAsciiHex(eandd, 'H2A'));
             return false;
         });
@@ -1154,6 +1200,31 @@ function lgloadapp() {
         $("#rptstr").show();
     });
 
+    //STR_REPLACE
+    $("#str_replace").click(function() {
+        hero_hide();
+        //Defines action name
+        lgtt("#action", "str_replace");
+        //Defines click action
+        $("#doit").click(function() {
+            var eandd = $("#eandd").val();
+            var s2r = $("#strreplace").val();
+            var s2f = $("#strflag").val();
+            var s2s = $("#strfor").val();
+            try {
+                var myRegExp = new RegExp(s2r, s2f);
+                $("#freturn").text(eandd.replace(myRegExp, s2s));
+            } catch(e) {
+                $("#freturn").text(lgt('invalidstr'));
+            }
+
+            return false;
+        });
+        //Show Dyn
+        $("#dyn").fadeIn(900);
+        $("#strrep").show();
+    });
+
     //encodejavascript
     $("#escapejavas").click(function() {
         hero_hide();
@@ -1302,6 +1373,30 @@ function lgloadapp() {
         $("#dyn").fadeIn(900);
     });
 
+    //LOREMIPSUN
+    $("#loremipsun").click(function() {
+        hero_hide();
+        //Defines action name
+        lgtt("#action", "loremipsun");
+        //Defines click action
+        $("#doit").click(function() {
+            var lir = $("#lir").val();
+            var lip = $("#lipsel").val();
+            var liopt = $("#liopt").val();
+            $('#freturn').lorem({
+                type : liopt,
+                amount : lir,
+                ptags : lip
+            });
+            return false;
+        });
+        //Show Dyn
+        $("#dyn").fadeIn(900);
+        $("#eandd").slideUp();
+        $("#tbchartotal").text('');
+        $("#liopts").show();
+    });
+
 }//END LOAD
 
 //only for chrome
@@ -1342,28 +1437,37 @@ $(document).ready(function() {
 
         //Let's store how many time user uses the app so we can show it in the
         // future.
-        chrome.storage.local.get('ua', function(result) {
-            var ua = result.ua;
-            var addua = ua + 1;
+        chrome.storage.local.get('hmt', function(result) {
+            var hmt = result.hmt;
+            var addua = hmt + 1;
+            if (hmt == 10 || hmt == 100) {
+                var notification = webkitNotifications.createNotification('res/images/png/fs48.png',
+                // // icon url - can be relative
+                lgt("alert_Title_Review"), // notification title
+                lgt("alert_Message_Review") // notification body text
+                );
+                notification.show();
+            }
             chrome.storage.local.set({
-                'ua' : addua
+                'hmt' : addua
             });
         });
 
-        /* chrome.storage.local.get('alerta', function(result) {
-         var alerta = result.alerta;
-         var addua = 11;
-         if  (alerta != 11){
-         var notification = webkitNotifications.createNotification(
-         'res/images/png/fs48.png',  // icon url - can be relative
-         'Update info',  // notification title
-         'Next FastString version will require you to reactivate extension. We
-        will ask for your permission' // notification body text
-         ); notification.show();}
-         chrome.storage.local.set({
-         'alerta' : addua
-         });
-         });*/
+        // Check whether new version is installed
+
+        //Let's store how many time user uses the app so we can show it in the
+        // future.
+        chrome.storage.local.get('pvs', function(result) {
+            var pvs = result.pvs;
+            var thisVersion = chrome.runtime.getManifest().version;
+            if (pvs !== thisVersion) {
+                soundhappy();
+                bootstrap_alert.success('<img src="res/images/gif/cat.gif"> ' + lgt("updated_b") + thisVersion + lgt("updated_a"));
+            }
+            chrome.storage.local.set({
+                'pvs' : thisVersion
+            });
+        });
 
     } else {
         //We should load the localization files first ! =)
@@ -1374,7 +1478,7 @@ $(document).ready(function() {
             var ula = ['en', 'es', 'pt'];
             if ($.inArray(userlanguage, ula) > -1) {
                 if (userlanguage == 'pt') {
-                    userlanguage = 'pt_BR'
+                    userlanguage = 'pt_BR';
                 }
                 if (userlanguage == 'es') {
                     //Let's hide help button as is not avaliable in this idiom
@@ -1403,5 +1507,4 @@ $(document).ready(function() {
             }
         });
     }
-
 });

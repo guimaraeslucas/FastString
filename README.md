@@ -1,6 +1,6 @@
 .LG FastString
 ==========
-(C) Copyright 2013 - Lucas Guimarães
+(C) Copyright 2013-2014 - Lucas Guimarães
 
 .LG FastString is an Offline Chrome App/Online WebApp that using only javascript code can encode and decode various formats
 and can perform strings operations like striptags and rot13.
@@ -33,13 +33,14 @@ The .LG FastString is a powerful offline string encoder and decoder that allows 
  - reverse a string
  - remove tags
  - get string length
- - repeat a string 
+ - repeat a string
  - add and remove slashes
  - string to lower/upper
  - capitalize string
- - shuffle string 
+ - shuffle string
  - trim string
  - strip comments
+ - string replace (RegExp)
  - strip special characters
  - convert latin characters to english
  - generate and validate UUID and IDs
