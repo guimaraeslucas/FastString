@@ -1,15 +1,13 @@
 {
     "name": "__MSG_appname__",
     "description": "__MSG_appdescription__",
-    "version": "1.0.1.7",
+    "version": "1.5.0.5",
     "manifest_version": 2,
     "default_locale": "en",
     "offline_enabled": true,
     "permissions": ["notifications", "clipboardRead", "clipboardWrite", "contextMenus", "storage"],
-	 "web_accessible_resources": [
-    "res/images/png/fs48.png"],
     "app": {
-        "launch": {
+"launch": {
             "local_path": "index.htm"
         }
     },
@@ -23,5 +21,6 @@
         "128": "res/images/png/fs128.png",
         "256": "res/images/png/fs256.png",
         "512": "res/images/png/fs512.png"
-    }
+    },
+    "short_name": "FastString"
 }

@@ -33,13 +33,13 @@
         "message": "codificar Base64 compatível com URL"
     },
     "b64eu_h": {
-        "message": "Base64 codificada de forma a ser compatível com nomes de arquivos e URL. <br> Substitui:<br> '=' com '_'<br> '\/' com ','<br> '+' com '-'"
+        "message": "Base64 codificada de forma a ser compatível com nomes de ficheiros e URL. <br> Substitui:<br> '=' com '_'<br> '\/' com ','<br> '+' com '-'"
     },
     "b64du": {
         "message": "decodificar Base64 compatível com URL"
     },
     "b64du_h": {
-        "message": "Base64 decodificada de forma a ser compatível com nomes de arquivos e URL.<br> Substitui:<br> '_' com '='<br> ',' com '\/'<br> '-' com '+'"
+        "message": "Base64 decodificada de forma a ser compatível com nomes de ficheiros e URL.<br> Substitui:<br> '_' com '='<br> ',' com '\/'<br> '-' com '+'"
     },
     "b64diu": {
         "message": "mostrar imagem em Base64"
@@ -111,16 +111,16 @@
         "message": "Revela uma string decodificando-a da Base64, revertendo-a, decodificando como URL e decodificando-a novamente da Base64."
     },
     "welcome": {
-        "message": "Bem-vindo ao"
+        "message": "Bem-vindo a"
     },
     "selectoption": {
-        "message": "Selecione uma opção para começar"
+        "message": "seleccione uma opção para começar"
     },
     "result": {
         "message": "Resultado"
     },
     "doit": {
-        "message": "Execute"
+        "message": "Faça"
     },
     "modalabout_title": {
         "message": "Sobre este software"
@@ -321,7 +321,7 @@
         "message": "codificar imagem em png Base64"
     },
     "encodeimgbase64_h": {
-        "message": "Codifica um arquivo de imagem em PNG Base64 de modo que possa ser adicionado a páginas web e folhas de estilo css. Atualmente só é possível a conversão para o formato PNG. Está função ainda é experimental, apreciaríamos seu feedback."
+        "message": "Codifica um ficheiro de imagem em PNG Base64 de modo que possa ser adicionado a páginas web e folhas de estilo css. Atualmente só é possível a conversão para o formato PNG. Está função ainda é experimental, apreciaríamos seu feedback."
     },
     "wordscount": {
         "message": "Palavras"
@@ -360,13 +360,13 @@
         "message": "Converte uma tabela Excel para o formato HTML."
     },
     "imgB64Alert": {
-        "message": "Atenção: Essa operação ainda é experimental. Arquivos de grandes dimensões podem gerar conteúdo parcial ou gerar instabilidade em seu navegador se seu computador não tiver memória suficiente. Se necessário, clique no spinner para cancelar. Apreciaríamos seu feedback em caso de erros."
+        "message": "Atenção: Essa operação é experimental. Ficheiros de grandes dimensões podem gerar conteúdo parcial ou gerar instabilidade em seu navegador se seu computador não tiver memória suficiente. Se necessário, clique no spinner para recusar. Apreciaríamos seu feedback em caso de erros."
     },
     "alert_Title_Review": {
         "message": "Avalie o FastString"
     },
     "alert_Message_Review": {
-        "message": "Parece que você está gostando de usar o FastString, você se importaria de nos ajudar ? Vai tomar apenas um minuto. Vá para 'Sobre' e clique no botão Avaliar. Nós sempre apreciamos seu Feedback. Obrigado =)"
+        "message": "Parece que você gosta de usar o FastString, você se importaria de nos ajudar ? Vai tomar apenas um minuto. Vá para 'Sobre' e clique no botão Avaliar. Nós sempre apreciamos seu Feedback. Obrigado =)"
     },
     "lichars": {
         "message": "Caracteres"
@@ -387,16 +387,16 @@
         "message": "gerador lorem ipsum"
     },
     "updated_b": {
-        "message": "O FastString foi atualizado para a versão: "
+        "message": "O FastString foi actualizado para a versão: "
     },
     "updated_a": {
-        "message": ". <br>Agora você pode expandir a área do editor e de resultados clicando simultaneamente com os botões direito e esquerdo do mouse."
+        "message": ". "
     },
     "replaceinfo": {
         "message": "RegExp"
     },
     "replaceflaginfo": {
-        "message": "Opções (g,i,m)"
+        "message": "Flag (g,i,m)"
     },
     "replaceforinfo": {
         "message": "Novo valor"
@@ -414,19 +414,19 @@
         "message": "Salvar"
     },
     "qrCode": {
-        "message": "gerar QR Code"
+        "message": "criar QR Code"
     },
     "userAbort": {
         "message": "Operação abortada"
     },
     "errorReading": {
-        "message": "Desculpe, não consigo ler este arquivo."
+        "message": "Não consigo ler este ficheiro."
     },
     "modalfile_info": {
-        "message": "Atenção: abrir arquivos muito grandes ou binários podem travar seu navegador."
+        "message": "Atenção: abrir ficheiros muito grandes ou binários podem travar seu navegador."
     },
     "modalfiles_title": {
-        "message": "Abrir arquivo UTF-8"
+        "message": "Abrir ficheiro UTF-8"
     },
     "modalfiles_open": {
         "message": "Abrir"

@@ -15,7 +15,7 @@
 */
 
 //Set true if running as chrome app
-var chromeapp = true;
+var chromeapp = false;
 
 //Stores the active function
 activefunction = '?';
@@ -63,12 +63,15 @@ function hero_hide() {
     $("#liopts").hide();
     //We make sure StringReplace options field is hidden
     $("#strrep").hide();
+    //Hide bCrypt options
+    $("#bCryptDiv").hide();
     //We make sure file field is hidden
     $("#encodeimgbase64f").hide();
     //We make sure repeat_srt field is hidden
     $("#hero").slideUp();
     //hide hero!
     $("#eandd").slideDown();
+    $("#btns").show();
     //Show eandd that can be hidden because of base64 image encoder
 
     //Get the code that called hero_hide, so we know what to show in help button
@@ -369,6 +372,8 @@ function lgloadapp() {
     lgtt("#checkUUID", "checkUUID");
     lgtt("#generateUUID", "generateUUID");
     lgtt("#loremipsun", "loremipsun");
+    lgtt("#bCrypt", "bCrypt");
+
     //ABOUT
     lgtt("#about", "about");
     lgtt("#paylink", "paylink");
@@ -419,11 +424,19 @@ function lgloadapp() {
     lgtt("#modalScolors_title", "Scolors");
     lgtt("#modalScolors_close", "modalabout_close");
 
+    lgtt("#modalfile_info", "modalfile_info");
+    lgtt("#modalfiles_title", "modalfiles_title");
+    lgtt("#modalfiles_open", "modalfiles_open");
+
     lgtt("#imgB64Alert", "imgB64Alert");
 
     lgtt("#replaceinfo", "replaceinfo");
     lgtt("#replaceflaginfo", "replaceflaginfo");
     lgtt("#replaceforinfo", "replaceforinfo");
+
+    lgtt("#savebtn", "savebtn");
+    lgtt("#btnAbort", "btnAbort");
+    lgtt("#btnOpenFile", "modalfiles_open");
 
     //Configure Minicolors
     $(".minicolors").minicolors({
@@ -473,6 +486,25 @@ function lgloadapp() {
         var freturn = $("#freturn").html();
         $("#modalhtmlcontent").html('<span class="htmlrender">' + htmlUnescape(freturn) + '</span>');
         $('#modalhtml').modal('show');
+    });
+
+    //SAVE BUTTON
+    $("#savebtn").click(function() {
+        saveFS();
+    });
+
+    //ABORT BUTTON
+    $("#btnAbort").click(function() {
+        aabortRead();
+    });
+
+    //Start to load file from Open File Modal
+    $("#modalfiles_open").click(function() {
+        setTimeout(function() {
+            $("#btnAbort").show();
+            handleFileSelect();
+        }, 390);
+
     });
 
     //ABOUT BUTTON
@@ -614,6 +646,7 @@ function lgloadapp() {
         $("#tbchartotal").text('');
         $("#encodeimgbase64f").show();
         $("#imgB64Alert").fadeIn();
+        $("#btns").hide();
     });
 
     //DOASCII
@@ -720,6 +753,23 @@ function lgloadapp() {
         });
         //Show Dyn
         $("#dyn").fadeIn(900);
+    });
+
+    //bCrypt
+    $("#bCrypt").click(function() {
+        hero_hide();
+        //Defines action name
+        lgtt("#action", "bCrypt");
+        //Defines click action
+        $("#doit").click(function() {
+            cryptB();
+            return false;
+        });
+        //Show Dyn
+        $("#dyn").fadeIn(900);
+        $("#bCryptDiv").show();
+        $("#eandd").hide();
+        $("#btns").hide();
     });
 
     //MD5H
@@ -1216,6 +1266,7 @@ function lgloadapp() {
                 $("#freturn").text(eandd.replace(myRegExp, s2s));
             } catch(e) {
                 $("#freturn").text(lgt('invalidstr'));
+                soundinvalid();
             }
 
             return false;
@@ -1395,6 +1446,7 @@ function lgloadapp() {
         $("#eandd").slideUp();
         $("#tbchartotal").text('');
         $("#liopts").show();
+        $("#btns").hide();
     });
 
 }//END LOAD

@@ -193,6 +193,9 @@
 									<li>
 										<a href="#" id="crc32"></a>
 									</li>
+									<li>
+										<a href="#" id="bCrypt"></a>
+									</li>
 									<li class="divider"></li>
 									<li class="nav-header">
 										md5
@@ -397,7 +400,7 @@
 								<form >
 									<fieldset >
 										<legend>
-											<span id="action"></span> <a href="#"  data-toggle="popover" rel="popover" id="pophelp" class="btn btn-inverse btn-small"><i class="icon-book icon-white"></i></a>
+											<span id="action"></span><a href="#"  data-toggle="popover" rel="popover" id="pophelp" class="btn btn-inverse btn-small"><i class="icon-book icon-white"></i></a>
 										</legend>
 										<textarea style="width:100%;min-height:129px;" id="eandd" class="span6 ucode" autofocus></textarea>
 										<div id="imgB64Alert" class="span6"></div>
@@ -429,29 +432,56 @@
 
 											<span class="add-on" id="replaceflaginfo"></span>
 											<input class="span1" style="width:93px;" type="text" id="strflag" name="strflag">
-<br>
+											<br>
 											<span class="add-on" id="replaceforinfo"></span>
 											<input class="span9" type="text" id="strfor" name="strfor">
 										</div>
 										<!--/STR_REPLACE-->
 
+										<!--bCrypt-->
+										<div class="input-prepend input-block-level" id="bCryptDiv" style="display:none;">
+											<span class="add-on" id="LbCPass">Password</span>
+											<input class="span9" type="text" id="bcPass">
+											<br>
+
+											<span class="add-on" id="lbCSalt">Salt</span>
+											<input class="span9" type="text" id="bcSalt">
+											<br>
+											<span class="add-on" id="replaceforinfo">Rounds</span>
+											<select class="span2" id="rounds" name="rounds">
+												<option value=5>5</option>
+												<option value=6>6</option>
+												<option value=7>7</option>
+												<option value=8>8</option>
+												<option value=9>9</option>
+												<option value=10>10</option>
+												<option value=11>11</option>
+												<option value=12>12</option>
+											</select>
+
+										</div>
+										<!--/bCrypt-->
+
 										<!-- LIMP -->
 										<div class="input-prepend input-block-level" id="liopts" style="display:none;">
 											<input class="span2" type="number" id="lir" name="lir" max="128000" step="10" value="50" maxlength="6">
+											<br>
 											<select id="liopt">
 												<option value="words" id="liwds" selected="true"></option>
 												<option value="characters" id="lichars"></option>
 												<option value="paragraphs" id="lipar"></option>
 											</select>
-
+											<br>
 											<select id="lipsel">
 												<option value="true" id="lipt"></option>
 												<option value="false" id="lipf" selected="true"></option>
 											</select>
 										</div><!--/LIMP-->
 
-										<button class="btn btn-inverse" id="doit" type="button"></button>
-										<button class="btn btn-inverse" id="paste"></button>
+										<button class="btn btn-inverse" id="doit" type="button">Do It!</button>
+										<span id="btns"><button class="btn btn-inverse" id="paste">Paste</button>
+										<a class="btn btn-inverse" id="btnOpenFile" href="#modalfiles" data-toggle="modal" style="font-weight: normal;">Open</a>
+										<button class="btn btn-inverse" id="btnAbort" style="display:none;">Abort</button></span>
 										<span id="tbchartotal"></span>
 									</fieldset>
 								</form>
@@ -461,8 +491,15 @@
 								<fieldset>
 									<legend id="result"></legend>
 									<pre class="pre-scrollable freturn" style="min-height:113px;margin-top:0px;" class="span6" id="freturn"></pre>
-									<button class="btn btn-inverse" id="copy" style="margin-top:-2px;" type="button"></button>
-									<button class="btn btn-inverse" id="view" style="margin-top:-2px;" type="button"></button>
+									<button class="btn btn-inverse" id="copy" style="margin-top:-2px;" type="button">
+										Copy
+									</button>
+									<button class="btn btn-inverse" id="view" style="margin-top:-2px;" type="button">
+										RAW HTML
+									</button>
+									<button class="btn btn-inverse" id="savebtn" style="margin-top:-2px;" type="button">
+										Save
+									</button>
 									<span id="frchartotal"></span>
 
 								</fieldset>
@@ -583,7 +620,7 @@
 				</table>
 			</div>
 			<div class="modal-footer">
-				<button class="btn btn-inverse" id="modalcolors_close" data-dismiss="modal" aria-hidden="true"></button>
+				<button class="btn btn-inverse" id="modalcolors_close" data-dismiss="modal" aria-hidden="true">Close</button>
 			</div>
 		</div>
 		<!--/MODALCOLORS-->
@@ -602,13 +639,36 @@
 
 				<h4 id="minicolorsvalue" class="muted"> HEX: #ffffff
 				<br>
-				RGBA: rgba(255, 255, 255, 1) </h4>
+				RGB: rgb(255, 255, 255) </h4>
 			</div>
 			<div class="modal-footer">
-				<button class="btn btn-inverse" id="modalScolors_close" data-dismiss="modal" aria-hidden="true"></button>
+				<button class="btn btn-inverse" id="modalScolors_close" data-dismiss="modal" aria-hidden="true">Close</button>
 			</div>
 		</div>
 		<!--/MODALSCOLORS-->
+
+				<!--MODALFILES-->
+		<div id="modalfiles" class="modal hide fade" tabindex="-1" role="dialog">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					×
+				</button>
+				<h3 id="modalfiles_title">Open file</h3>
+			</div>
+			<div class="modal-body">
+				<h5 id="modalfile_info" class="muted">Warning: Opening large or binary files may crash your browser.</h5>
+
+			<input type="file" id="openfilefield" name="openfilefield" />
+
+
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-inverse" id="modalfiles_open" data-dismiss="modal" aria-hidden="true">Open</button>
+				<button class="btn btn-inverse" id="modalfiles_close" data-dismiss="modal" aria-hidden="true">Close</button>
+			</div>
+		</div>
+		<!--/MODALSCOLORS-->
+
 
 		<!--/MODALS-->
 
@@ -634,10 +694,26 @@
 		<script src="res/javascript/jxmlvali-min.js"></script>
 		<script src="res/javascript/jquery.minicolors.js"></script>
 		<script src="res/javascript/jquery.lorem.js"></script>
+		<script src="res/javascript/isaac.js"></script>
+		<script src="res/javascript/bCrypt.js"></script>
 		<!-- Initiate LGApp -->
 		<script src="res/javascript/htmltables.js"></script>
 		<script src="res/javascript/about.js"></script>
+		<script src="res/javascript/texteditor.js"></script>
 		<script src="res/javascript/global.js"></script>
+		<!-- Open/Save Plugin requires global.js -->
+		<script src="res/javascript/save.js"></script>
+		<!--ANALYTICS-->
+		<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48444735-1', 'lgvirtual.com');
+  ga('send', 'pageview');
+
+</script>
 		<!--_/SCRIPTS-->
 	</body>
 </html>

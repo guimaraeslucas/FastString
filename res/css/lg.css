@@ -1,9 +1,17 @@
+/*
+   lg.css
+   FastString
+
+   Created by LucasGuimaraes.
+   Copyright 2014 LucasGuimaraes. All rights reserved.
+*/
+
 a, input, textarea, button, div {
 	outline: 0;
 }
 
 #lucaslogo {
-	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAK8AAACvABQqw0mAAAABh0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzT7MfTgAAAZ5JREFUOI2Nk01O21AUhb/rBkFEXoSEysALSMd2GLfJAtJ50zHxBrKMeN6UMYE5CyALYAMvQ6xGake0QVDJUW8H7/nZUAX1eGLdv3fu0blSpIkqHgoICBCC8iLuQ1V5VAUEEKkToaqKa9UsaJ2i1ShDUQR4E8ccjkaA8Gs+R1HPQKhnu6lRYK8aHhVjaA+GdCeTMFT8A+4LPInCXg3KW2u5n80ar7mGsGpDnlZNrLnZv+hmGZ3xZwAeFhd0J5nToCIkO1vhcPSR7iTj4XJBaVd0xmMA7vNZU8TdOBgMKFersNafzYbjPKe0q1rE1xAZszsnSFDhaDrl7ddzImPYe9cDYL9/yuP1NXu9HkfTqVsny+oJRZroXZpokSb6+/ZWVVV/nJ1pE98+vNef8y+6Xa9VVXWzuAh1cpcm+pqAFVpxzHa9BqA9GHKc53wff/o/ESNjOLm8AqC0lv1+n6flktJapEiTZwaobkPDjzOZdAzt4ZBWHFNay+PyxpmqSFNVfykirvHZUXkEu6n6vL8F53UJThIRVP0gXhpMGwFH8S/Dc7YLcB6VwQAAAABJRU5ErkJggg==') !important;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA6UlEQVQ4T2P8GBLyn4ECwEgTA9hjYxn+3r3L8OfYMYJuw+qCwWUAW1AQA4uJCdwrjFxcDF8LChB8bIEI88K/p08ZONLTGb5VVYE1MOvqMnCVljJ8josjzgBmZWWGfy9fMvzetQuugautDW4gSBBvIIIMQI8NkgwA2cDq5MTwvaUF7gXuujqGT6Gh2L3AM3MmwzegE1nt7OA2g8KDxdiY4f+3bwz/Hj1iYJKTI+wFfKmHe8IEwrGAbACrmxs4EBkFBBjYIyLAUj9mzMAfC8gGgLzArKkJFvp7/TrDz8WLURxIm8xEMAchKQAAaaWSkUuQI1UAAAAASUVORK5CYII=') !important;
 	width: 16px !important;
 	height: 16px !important;
 	display: inline-block;
@@ -159,4 +167,20 @@ a, input, textarea, button, div {
 .brand span{
 	top: 1px;
 	color: #FF0000;
+}
+
+.fullTextE{
+top:0px;
+left:0px;
+width:100%;
+height:100%;
+z-index: 1000000;
+position:absolute;
+background-color:#202020;
+padding-top:2px;
+padding-left:10px;
+
+font-size: 18px;
+-webkit-user-select: text;
+max-height: 100%;
 }

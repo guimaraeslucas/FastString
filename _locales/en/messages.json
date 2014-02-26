@@ -510,7 +510,7 @@
         "message": "FastString updated to version: "
     },
     "updated_a": {
-        "message": ". "
+        "message": ". <br>Now you can expand the editor/result area by clicking on it with both mouse buttons."
     },
     "replaceinfo": {
         "message": "RegExp"
@@ -525,9 +525,39 @@
         "message": "string replace"
     },
     "invalidstr": {
-        "message": "Invalid string"
+        "message": "Invalid RegExp or global value"
     },
     "str_replace_h": {
         "message": "Replaces a string according to the RegExp expression informed. Do not use the initial and the final marker   i.e. not /foo[123]/, but foo[123]."
+    },
+    "savebtn": {
+        "message": "Save"
+    },
+    "qrCode": {
+        "message": "generate QR Code"
+    },
+    "bCrypt": {
+        "message": "bCrypt"
+    },
+    "bCrypt_h": {
+        "message": "bcrypt is a key derivation function for passwords designed by Niels Provos and David Mazières, based on the Blowfish cipher, and presented at USENIX in 1999.[1] Besides incorporating a salt to protect against rainbow table attacks, bcrypt is an adaptive function: over time, the iteration count can be increased to make it slower, so it remains resistant to brute-force search attacks even with increasing computation power."
+    },
+    "userAbort": {
+        "message": "User aborted"
+    },
+    "errorReading": {
+        "message": "Sorry, I can't read this file."
+    },
+    "modalfile_info": {
+        "message": "Warning: Opening large or binary files may crash your browser."
+    },
+    "modalfiles_title": {
+        "message": "Open UTF-8 file"
+    },
+    "modalfiles_open": {
+        "message": "Open"
+    },
+    "btnAbort": {
+        "message": "Abort"
     }
 }

@@ -1,0 +1,11 @@
+{
+"appdescription": {
+        "message": "Codage et de décodage base64, hex, html, générer des hashs, vérifier xml, images Base64 et 39 opérations de chaîne."
+    },
+    "appname": {
+        "message": "FastString - Opérations de chaînes"
+    },
+    "shortappname": {
+        "message": "FastString"
+    }
+}

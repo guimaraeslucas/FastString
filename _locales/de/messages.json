@@ -1,0 +1,11 @@
+{
+    "appdescription": {
+        "message": "Kodierung und-Dekodierung base64, hex, Hashes erzeugen, prüfen xml, Base64 Bilder und 39 String Operationen. Funktioniert offline."
+    },
+    "appname": {
+        "message": "FastString - String Operationen"
+    },
+    "shortappname": {
+        "message": "FastString"
+    }
+}

@@ -388,5 +388,29 @@
     },
     "str_replace_h": {
         "message": "Sustituye una string según informó la RegExp expresión. No utilice la inicial y la puntuación final."
+    },
+    "savebtn": {
+        "message": "Guardar"
+    },
+    "qrCode": {
+        "message": "generador QR Code"
+    },
+    "userAbort": {
+        "message": "Operación anulada"
+    },
+    "errorReading": {
+        "message": "Desculpe, não consigo ler este arquivo."
+    },
+    "modalfile_info": {
+        "message": "Atención: Los archivos grandes o binario se bloqueará su navegador."
+    },
+    "modalfiles_title": {
+        "message": "Abrir archivo UTF-8"
+    },
+    "modalfiles_open": {
+        "message": "Abrir"
+    },
+    "btnAbort": {
+        "message": "Anular"
     }
 }
