@@ -15,7 +15,7 @@
 */
 
 //Set true if running as chrome app
-var chromeapp = false;
+var chromeapp = true;
 
 //Stores the active function
 activefunction = '?';
@@ -1484,15 +1484,14 @@ $(document).ready(function() {
     //If is chrome, we already have the localization files loaded
     if (chromeapp) {
         lgloadapp();
-        //Hide Ads as we don't want them on chromeapp
+        //Clear and hide Ads div as we don't want them on chromeapp
         $("#ads").html('').hide();
 
-        //Let's store how many time user uses the app so we can show it in the
-        // future.
+        //Check the number of access to the application. If =10 or =100 or =500 then we display a message asking for a review.
         chrome.storage.local.get('hmt', function(result) {
             var hmt = result.hmt;
             var addua = hmt + 1;
-            if (hmt == 10 || hmt == 100) {
+            if (hmt == 10 || hmt == 100 || hmt == 500) {
                 var notification = webkitNotifications.createNotification('res/images/png/fs48.png',
                 // // icon url - can be relative
                 lgt("alert_Title_Review"), // notification title
@@ -1505,10 +1504,8 @@ $(document).ready(function() {
             });
         });
 
-        // Check whether new version is installed
-
-        //Let's store how many time user uses the app so we can show it in the
-        // future.
+        // Check if a new version is installed
+        // Stores actual version
         chrome.storage.local.get('pvs', function(result) {
             var pvs = result.pvs;
             var thisVersion = chrome.runtime.getManifest().version;
@@ -1543,7 +1540,7 @@ $(document).ready(function() {
         } catch(e) {
             ulocal = 'en';
         }
-        //Load the localization files and on success start the app
+        //Load the localization files and if everything ok, start the app
         $.ajax({
             url : '_locales/' + ulocal + '/messages.json',
             cache : false,
