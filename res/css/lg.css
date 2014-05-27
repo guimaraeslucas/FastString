@@ -125,18 +125,6 @@ a, input, textarea, button, div {
 	word-break: break-all;
 	word-break: break-word;
 }
-.popover-content {
-	font-size: 14px;
-	line-height: 15px;
-}
-.popover-content h1 {
-	font-size: 17px !important;
-	line-height: 16px !important;
-}
-.popover-title {
-	font-size: 14px;
-	line-height: 14px;
-}
 
 #imgB64Alert {
 	display: none;

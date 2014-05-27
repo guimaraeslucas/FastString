@@ -5,7 +5,7 @@
 #. . . . . . . . . . (C) COPYRIGHT 2013. . . . . . . . . . . #
 ##############################################################
 *
-* @copyright 2012-2013 LucasGuimaraes.com
+* @copyright 2012-2014 LucasGuimaraes.com
 * @link <contato@lucasguimaraes.com>
 * @link http://www.lucasguimaraes.com
 * @generator LGPowerWeb/2.0.0 LGGM/6.0.2 (4.0.0)
@@ -49,7 +49,7 @@
 		<meta property="og:locale:alternate" content="es_ES">
 		<meta property="og:locale:alternate" content="pt_BR">
 		<meta property="og:url" content="http://faststring.lgvirtual.com">
-		<meta property="og:image" content="http://faststring.lgvirtual.com/res/images/png/fs256.png">
+		<meta property="og:image" content="http://faststring.lgvirtual.com/res/images/png/fs512.png">
 		<meta name="title" content="FastString by .LG">
 		<meta name="language" content="en">
 		<meta name="robots" content="index,follow">
@@ -369,12 +369,12 @@
 			<div class="row-fluid">
 				<div class="span12">
 					<!--HERO-->
-					<div class="hero-unit textoback" id="hero">
-						<h1 id="welcomemsg"></h1>
-						<h3 id="selectoption"></h3>
+					<div class="hero-unit" id="hero">
+						<h1 id="welcomemsg">Welcome to FastString</h1>
+						<h3 id="selectoption">Select an option to start</h3>
 						<p id="ischrome" style="display:none;"></p>
 						<br>
-						<h4 id="mufunctions" class="hidden-phone"></h4>
+						<h4 id="mufunctions" class="hidden-phone">Most used functions</h4>
 						<div id="mostusedbuttons" class="hidden-phone"></div>
 					</div>
 					<!--/HERO-->
@@ -400,7 +400,7 @@
 								<form >
 									<fieldset >
 										<legend>
-											<span id="action"></span><a href="#"  data-toggle="popover" rel="popover" id="pophelp" class="btn btn-inverse btn-small"><i class="icon-book icon-white"></i></a>
+											<span id="action"></span><a href="#" data-placement="right" data-toggle="popover" rel="popover" id="pophelp" style="float: right;" class="btn btn-inverse btn-small"><i class="icon-book icon-white"></i></a>
 										</legend>
 										<textarea style="width:100%;min-height:129px;" id="eandd" class="span6 ucode" autofocus></textarea>
 										<div id="imgB64Alert" class="span6"></div>
@@ -431,7 +431,7 @@
 											<input class="span7" type="text" id="strreplace" name="strreplace">
 
 											<span class="add-on" id="replaceflaginfo"></span>
-											<input class="span1" style="width:93px;" type="text" id="strflag" name="strflag">
+											<input class="span1" style="width:31px;" type="text" id="strflag" name="strflag">
 											<br>
 											<span class="add-on" id="replaceforinfo"></span>
 											<input class="span9" type="text" id="strfor" name="strfor">
@@ -466,6 +466,7 @@
 										<div class="input-prepend input-block-level" id="liopts" style="display:none;">
 											<input class="span2" type="number" id="lir" name="lir" max="128000" step="10" value="50" maxlength="6">
 											<br>
+											
 											<select id="liopt">
 												<option value="words" id="liwds" selected="true"></option>
 												<option value="characters" id="lichars"></option>
@@ -482,7 +483,7 @@
 										<span id="btns"><button class="btn btn-inverse" id="paste">Paste</button>
 										<a class="btn btn-inverse" id="btnOpenFile" href="#modalfiles" data-toggle="modal" style="font-weight: normal;">Open</a>
 										<button class="btn btn-inverse" id="btnAbort" style="display:none;">Abort</button></span>
-										<span id="tbchartotal"></span>
+										<br><span id="tbchartotal"></span>
 									</fieldset>
 								</form>
 
@@ -500,7 +501,7 @@
 									<button class="btn btn-inverse" id="savebtn" style="margin-top:-2px;" type="button">
 										Save
 									</button>
-									<span id="frchartotal"></span>
+									<br><span id="frchartotal"></span>
 
 								</fieldset>
 							</div>
@@ -514,7 +515,7 @@
 
 							<div class="span6">
 								<p class="muted">
-									<a href="http://lucasguimaraes.com" class="muted"> <span id="lucaslogo"></span><small>© 2013-2014 LucasGuimaraes.com</small></a>
+									<a href="http://lucasguimaraes.com" class="muted"> <span id="lucaslogo"></span><small>© 2012-2014 LucasGuimaraes.com</small></a>
 									<div id="sound"></div>
 								</p>
 							</div>

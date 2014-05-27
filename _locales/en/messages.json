@@ -510,7 +510,7 @@
         "message": "FastString updated to version: "
     },
     "updated_a": {
-        "message": ". <br>Now you can expand the editor/result area by clicking on it with both mouse buttons."
+        "message": ". <br>New cleaner style."
     },
     "replaceinfo": {
         "message": "RegExp"

@@ -390,7 +390,7 @@
         "message": "O FastString foi atualizado para a versão: "
     },
     "updated_a": {
-        "message": ". <br>Agora você pode expandir a área do editor e de resultados clicando simultaneamente com os botões direito e esquerdo do mouse."
+        "message": ". <br>Nova aparência mais limpa."
     },
     "replaceinfo": {
         "message": "RegExp"

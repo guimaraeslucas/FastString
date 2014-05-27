@@ -1,12 +1,11 @@
+/* line 53, ../darkstrap.scss */
 tr.warning, tr.success, tr.error, tr.info {
 	color: #fff;
 }
+
 body {
 	color: #c6c6c6;
 	background-color: #2f2f2f;
-	background-image: url('../images/png/textofundo.png') !important;
-	background-repeat: no-repeat !important;
-	background-position: right bottom !important;
 }
 
 a:hover {
@@ -787,12 +786,8 @@ input:focus:invalid:focus, textarea:focus:invalid:focus, select:focus:invalid:fo
 
 /* line 547, ../darkstrap.scss */
 .hero-unit {
-	background: transparent!important;
+	background: #111;
 	color: #ccc;
-	webkit-box-shadow: none!important;
--moz-box-shadow: none!important;
- box-shadow: none!important;
-border: 0;
 }
 
 /* line 553, ../darkstrap.scss */
@@ -886,120 +881,4 @@ border: 0;
 }
 .modal-body{
 	border-bottom: 0px solid #444444;
-}
-html{
-height:99%;
-}
-
-.navbar-inverse .navbar-inner {
-background-image: none!important;
-filter: none!important;
-background-color: #181818 !important;
-}
-
-.hero-unit h1 {
-font-size: 49px;
-color: #fff;
-font-family: 'Segoe UI', "Helvetica Neue",Ubuntu,Helvetica,Arial,"Lucida Sans Unicode",sans-serif;
-}
-
-.btn-inverse{
-background-image: none!important;
-filter: none!important;
-box-shadow: none;
-min-width: 134px;
-padding-bottom: 5px;
-padding-top: 3px;
-background-color: #464646;
-}
-.btn-inverse:hover, .btn-inverse:focus, .btn-inverse:active, .btn-inverse.active, .btn-inverse.disabled, .btn-inverse[disabled] {
-color: #ffffff;
-background-color: #646464;
-}
-.darkwell, .breadcrumb, code, pre, select, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input, textarea, .hero-unit, .progress{
- -webkit-box-shadow: none!important;
--moz-box-shadow: none!important;
- box-shadow: none!important;
-}
-.input-append input[class*="span"], .input-append .uneditable-input[class*="span"], .input-prepend input[class*="span"], .input-prepend .uneditable-input[class*="span"], .row-fluid input[class*="span"], .row-fluid select[class*="span"], .row-fluid textarea[class*="span"], .row-fluid .uneditable-input[class*="span"], .row-fluid .input-prepend [class*="span"], .row-fluid .input-append [class*="span"] {
-display: inline-block;
-margin-bottom: 4px;
-}
-.input-prepend .add-on, .input-append .add-on {
-border-color: #2B2828;
-}
-#pophelp{
-min-width: 0px!important;
-margin-left: 5px;
-}
-body{
--webkit-touch-callout: none;
--webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
-}
-.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus, .dropdown-submenu:hover>a, .dropdown-submenu:focus>a{
-background-image: none!important; 
-background-color: #B8B8B8;
-}
-.freturn,.input,input,.modal-body{
--webkit-touch-callout: text;
--webkit-user-select: text;
--khtml-user-select: text;
--moz-user-select: text;
--ms-user-select: text;
-user-select: text;
-}
-*:focus ,.brand,.brand:focus,.brand:active,.btn-inverse:focus,.btn-invese:active{
-    outline: none;
-}
-input::selection {
-	background:#5F5F5F; /* Safari */
-	}
-input::-moz-selection {
-	background: #5F5F5F; /* Firefox */
-}
-legend{
-	padding-bottom:1px;
-	border-bottom: 1px solid #2C2C2C;
-}
-#frchartotal,#tbchartotal{
-font-size: 11px;
-text-shadow: 0 1px 0 #000;
-}
-.popover-title {
-background: #444;
-color: #fff;
-font-size: 14px;
-line-height: 14px;
-border-bottom: 1px solid #5F5F5F;
-}
-.popover{
-	border: 0px;
-	background-color: transparent;
-	max-width: 311px;
-}
-
-.popover-title{
-	-webkit-border-radius: 2px 2px 0 0;
-	-moz-border-radius: 2px 2px 0 0;
-	border-radius: 2px 2px 0 0;
-}
-.popover-content {
-font-size: 12px;
-line-height: 17px;
-}
-.popover-content h1 {
-	font-size: 17px !important;
-	line-height: 16px !important;
-}
-.popover-title {
-	font-size: 14px;
-	line-height: 14px;
-}
-
-.dropdown-menu{
-	border-radius: 3px;
 }
