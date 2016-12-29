@@ -304,6 +304,8 @@ function lgloadapp() {
     //menu title
     lgtt("#b64e", "b64e");
     lgtt("#b64d", "b64d");
+    lgtt("#gzb64e", "gzb64e");
+    lgtt("#gzb64d", "gzb64d");
     lgtt("#b64eu", "b64eu");
     lgtt("#b64du", "b64du");
     lgtt("#b64diu", "b64diu");
@@ -550,6 +552,51 @@ function lgloadapp() {
 
     });
 
+    //GZB64E
+    $("#gzb64e").click(function() {
+        hero_hide();
+        //Defines action name
+        lgtt("#action", "gzb64e");
+        //Defines click action
+        $("#doit").click(function() {
+            var eandd = $("#eandd").val();
+            try {
+                var utf8Str = stringToUtf8ByteArray(eandd);
+                var byteAr = pako.deflate(utf8Str);
+                var enc = arrayBufferToBase64(byteAr);
+            } catch(err) {
+                var enc = invalid + " - " + err;
+                soundalert();
+            };
+            $("#freturn").text(enc);
+            return false;
+        });
+        //Show Dyn
+        $("#dyn").fadeIn(900);
+
+    });
+    //GZB64D
+    $("#gzb64d").click(function() {
+        hero_hide();
+        //Defines action name
+        lgtt("#action", "gzb64d");
+        //Defines click action
+        $("#doit").click(function() {
+            var eandd = $("#eandd").val();
+            try {
+                var base64Cmp = $.base64.decode(eandd);
+                var base64DecmpAr = pako.inflate(base64Cmp);
+                var dec = utf8ByteArrayToString(base64DecmpAr);
+            } catch(err) {
+                var dec = invalid + " - " + err;
+                soundalert();
+            };
+            $("#freturn").text(dec);
+            return false;
+        });
+        //Show Dyn
+        $("#dyn").fadeIn(900);
+    });
     //B64D
     $("#b64d").click(function() {
         hero_hide();
@@ -559,6 +606,7 @@ function lgloadapp() {
         $("#doit").click(function() {
             var eandd = $("#eandd").val();
             try {
+            	eandd = eandd.replace(/ /g,'').replace(/(\r\n|\n|\r)/gm,'');
                 var dec = $.base64.decode(eandd);
             } catch(err) {
                 var dec = invalid + " - " + err;
@@ -1479,6 +1527,69 @@ function pasteTextFromClipboard() {
     return result;
 }
 
+stringToUtf8ByteArray = function(str) {
+  var out = [], p = 0;
+  for (var i = 0; i < str.length; i++) {
+    var c = str.charCodeAt(i);
+    if (c < 128) {
+      out[p++] = c;
+    } else if (c < 2048) {
+      out[p++] = (c >> 6) | 192;
+      out[p++] = (c & 63) | 128;
+    } else if (
+        ((c & 0xFC00) == 0xD800) && (i + 1) < str.length &&
+        ((str.charCodeAt(i + 1) & 0xFC00) == 0xDC00)) {
+      c = 0x10000 + ((c & 0x03FF) << 10) + (str.charCodeAt(++i) & 0x03FF);
+      out[p++] = (c >> 18) | 240;
+      out[p++] = ((c >> 12) & 63) | 128;
+      out[p++] = ((c >> 6) & 63) | 128;
+      out[p++] = (c & 63) | 128;
+    } else {
+      out[p++] = (c >> 12) | 224;
+      out[p++] = ((c >> 6) & 63) | 128;
+      out[p++] = (c & 63) | 128;
+    }
+  }
+  return out;
+}
+
+utf8ByteArrayToString = function(bytes) {
+  var out = [], pos = 0, c = 0;
+  while (pos < bytes.length) {
+    var c1 = bytes[pos++];
+    if (c1 < 128) {
+      out[c++] = String.fromCharCode(c1);
+    } else if (c1 > 191 && c1 < 224) {
+      var c2 = bytes[pos++];
+      out[c++] = String.fromCharCode((c1 & 31) << 6 | c2 & 63);
+    } else if (c1 > 239 && c1 < 365) {
+      var c2 = bytes[pos++];
+      var c3 = bytes[pos++];
+      var c4 = bytes[pos++];
+      var u = ((c1 & 7) << 18 | (c2 & 63) << 12 | (c3 & 63) << 6 | c4 & 63) -
+          0x10000;
+      out[c++] = String.fromCharCode(0xD800 + (u >> 10));
+      out[c++] = String.fromCharCode(0xDC00 + (u & 1023));
+    } else {
+      var c2 = bytes[pos++];
+      var c3 = bytes[pos++];
+      out[c++] =
+          String.fromCharCode((c1 & 15) << 12 | (c2 & 63) << 6 | c3 & 63);
+    }
+  }
+  return out.join('');
+}
+
+function arrayBufferToBase64( buffer ) {
+    var binary = '';
+    var bytes = new Uint8Array( buffer );
+    var len = bytes.byteLength;
+    for (var i = 0; i < len; i++) {
+        binary += String.fromCharCode( bytes[ i ] );
+    }
+    return window.btoa( binary );
+}
+
 //Starts app
 $(document).ready(function() {
     //If is chrome, we already have the localization files loaded
@@ -1549,7 +1660,7 @@ $(document).ready(function() {
                 lgloadapp();
             },
             error : function() {
-                alert("FastString\r\nFatal Error: Can't load or parse localization file for " + ulocal + ".");
+                alert("FastString\r\nFatal Error: I can't load or parse localization file for " + ulocal + ".");
             },
             headers : {
                 "X-LGApps" : "true"

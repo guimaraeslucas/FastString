@@ -2,10 +2,10 @@
 <!--
 ##############################################################
 #. . . . . . . . . . LUCASGUIMARAES.COM. . . . . . . . . . . #
-#. . . . . . . . . . (C) COPYRIGHT 2013. . . . . . . . . . . #
+#. . . . . . . . . . (C) COPYRIGHT 2015. . . . . . . . . . . #
 ##############################################################
 *
-* @copyright 2012-2014 LucasGuimaraes.com
+* @copyright 2012-2015 LucasGuimaraes.com
 * @link <contato@lucasguimaraes.com>
 * @link http://www.lucasguimaraes.com
 * @generator LGPowerWeb/2.0.0 LGGM/6.0.2 (4.0.0)
@@ -15,706 +15,674 @@
 *
 -->
 <html>
-	<head>
-		<meta charset="utf-8">
-		<!-- Changed by global.js using chrome.i18n -->
-		<title>FastString by .LG</title>
-		<!--_LGGM-->
-		<meta name="copyright" content="Copyright 2013 - LucasGuimaraes.com">
-		<meta name="generator" content="LGPowerWeb/2.0.0 LGGM/6.0.2 (4.0.0)">
-		<meta name="author" content="Lucas Guimarães">
-		<link rel="shortcut icon" type="image/png" href="res/images/png/fs16.png">
-		<link rel="favicon" type="image/png" href="res/images/png/fs16.png">
-		<link rel="shortcut icon" href="res/images/png/fs32.png" sizes="32x32">
-		<link rel="shortcut icon" href="res/images/png/fs48.png" sizes="48x48">
-		<link rel="shortcut icon" href="res/images/png/fs64.png" sizes="64x64">
-		<link rel="shortcut icon" href="res/images/png/fs96.png" sizes="96x96">
-		<link rel="shortcut icon" href="res/images/png/fs128.png" sizes="128x128">
-		<!-- Mobile icons and chrome icons-->
-		<link rel="icon" type="image/png" href="res/images/png/fs16.png">
-		<link rel="icon" type="image/png" href="res/images/png/fs24.png" sizes="24x24">
-		<link rel="icon" type="image/png" href="res/images/png/fs32.png" sizes="32x32">
-		<link rel="icon" type="image/png" href="res/images/png/fs48.png" sizes="48x48">
-		<link rel="icon" type="image/png" href="res/images/png/fs64.png" sizes="64x64">
-		<link rel="icon" type="image/png" href="res/images/png/fs96.png" sizes="96x96">
-		<link rel="icon" type="image/png" href="res/images/png/fs128.png" sizes="128x128">
-		<link rel="icon" type="image/png" href="res/images/png/fs256.png" sizes="256x256">
-		<link rel="icon" type="image/png" href="res/images/png/fs512.png" sizes="512x512">
-		<!--Let's make sure Google and Facebook can find us-->
-		<meta property="og:title" content="FastString by .LG">
-		<meta property="og:site_name" content="FastString">
-		<meta property="og:description" content="FastString is a powerful offline string encoder and decoder that allows you to easily encode and decode base64, html, url and javascript, check xml, generate MD5 and SHA hashes, strip tags and others features.">
-		<meta property="og:type" content="website">
-		<meta property="og:locale:alternate" content="en_US">
-		<meta property="og:locale:alternate" content="es_ES">
-		<meta property="og:locale:alternate" content="pt_BR">
-		<meta property="og:url" content="http://faststring.lgvirtual.com">
-		<meta property="og:image" content="http://faststring.lgvirtual.com/res/images/png/fs512.png">
-		<meta name="title" content="FastString by .LG">
-		<meta name="language" content="en">
-		<meta name="robots" content="index,follow">
-		<meta name="rating" content="general">
-		<meta name="distribution" content="global">
-		<meta http-equiv="imagetoolbar" content="no">
-		<meta name="application-name" content="FastString by .LG">
-		<meta name="description" content="FastString is a powerful offline string encoder and decoder that allows you to easily encode and decode base64, html, url and javascript, check xml, generate MD5 and SHA hashes, strip tags and others features.">
-		<meta name="google" content="notranslate">
-		<meta name="referrer" content="always">
-		<!--IE-->
-		<meta name="msapplication-tooltip" content="FastString">
-		<meta name="msapplication-starturl" content="http://faststring.lgvirtual.com">
-		<meta name="msapplication-navbutton-color" content="#F9F9F9">
-		<meta name="msapplication-task" content="name=LucasGuimaraes.com;action-uri=http://lgvirtual.com;icon-uri=http://lgvirtual.com/favicon.ico">
-		<meta name="msapplication-window" content="width=1024;height=768">
-		<meta http-equiv="imagetoolbar" content="false">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="msapplication-tileimage" content="res/images/png/fs128.png">
-		<meta name="msapplication-tilecolor" content="#CCCCCC">
-		<!--APPLE-->
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-title" content="FastString">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta name="format-detection" content="telephone=no">
-		<meta name="HandheldFriendly" content="1">
-		<meta name="MobileOptimized" content="1">
-		<link href="res/images/png/fsios.png" rel="apple-touch-icon">
-		<meta name="viewport" content="width=device-width, user-scalable=1, minimum-scale=0.1, maximum-scale=1.0">
-		<!--_/LGGM-->
-		<!--_CSS-->
-		<style>
-			@media only screen and (min-width: 980px) {
-				body {
-					padding-top: 60px;
-				}
+
+<head>
+	<meta charset="utf-8">
+	<!-- Changed by global.js using chrome.i18n -->
+	<title>FastString by .LG</title>
+	<!--_LGGM-->
+	<meta name="copyright" content="Copyright 2014 - LucasGuimaraes.com">
+	<meta name="generator" content="LGPowerWeb/2.0.0 LGGM/6.0.2 (4.0.0)">
+	<meta name="author" content="Lucas Guimarães">
+	<link rel="shortcut icon" type="image/png" href="res/images/png/fs16.png">
+	<link rel="favicon" type="image/png" href="res/images/png/fs16.png">
+	<link rel="shortcut icon" href="res/images/png/fs32.png" sizes="32x32">
+	<link rel="shortcut icon" href="res/images/png/fs48.png" sizes="48x48">
+	<link rel="shortcut icon" href="res/images/png/fs64.png" sizes="64x64">
+	<link rel="shortcut icon" href="res/images/png/fs96.png" sizes="96x96">
+	<link rel="shortcut icon" href="res/images/png/fs128.png" sizes="128x128">
+	<!-- Mobile icons and chrome icons-->
+	<link rel="icon" type="image/png" href="res/images/png/fs16.png">
+	<link rel="icon" type="image/png" href="res/images/png/fs24.png" sizes="24x24">
+	<link rel="icon" type="image/png" href="res/images/png/fs32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="res/images/png/fs48.png" sizes="48x48">
+	<link rel="icon" type="image/png" href="res/images/png/fs64.png" sizes="64x64">
+	<link rel="icon" type="image/png" href="res/images/png/fs96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="res/images/png/fs128.png" sizes="128x128">
+	<link rel="icon" type="image/png" href="res/images/png/fs256.png" sizes="256x256">
+	<link rel="icon" type="image/png" href="res/images/png/fs512.png" sizes="512x512">
+	<!--Let's make sure Google and Facebook can find us-->
+	<meta property="og:title" content="FastString by .LG">
+	<meta property="og:site_name" content="FastString">
+	<meta property="og:description" content="FastString is a powerful offline string encoder and decoder that allows you to easily encode and decode base64, html, url and javascript, check xml, generate MD5 and SHA hashes, strip tags and others features.">
+	<meta property="og:type" content="website">
+	<meta property="og:locale:alternate" content="en_US">
+	<meta property="og:locale:alternate" content="es_ES">
+	<meta property="og:locale:alternate" content="pt_BR">
+	<meta property="og:url" content="http://faststring.lgvirtual.com">
+	<meta property="og:image" content="http://faststring.lgvirtual.com/res/images/png/fs512.png">
+	<meta name="title" content="FastString by .LG">
+	<meta name="language" content="en">
+	<meta name="robots" content="index,follow">
+	<meta name="rating" content="general">
+	<meta name="distribution" content="global">
+	<meta http-equiv="imagetoolbar" content="no">
+	<meta name="application-name" content="FastString by .LG">
+	<meta name="description" content="FastString is a powerful offline string encoder and decoder that allows you to easily encode and decode base64, html, url and javascript, check xml, generate MD5 and SHA hashes, strip tags and others features.">
+	<meta name="google" content="notranslate">
+	<meta name="referrer" content="always">
+	<!--IE-->
+	<meta name="msapplication-tooltip" content="FastString">
+	<meta name="msapplication-starturl" content="http://faststring.lgvirtual.com">
+	<meta name="msapplication-navbutton-color" content="#F9F9F9">
+	<meta name="msapplication-task" content="name=LucasGuimaraes.com;action-uri=http://lgvirtual.com;icon-uri=http://lgvirtual.com/favicon.ico">
+	<meta name="msapplication-window" content="width=1024;height=768">
+	<meta http-equiv="imagetoolbar" content="false">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="msapplication-tileimage" content="res/images/png/fs128.png">
+	<meta name="msapplication-tilecolor" content="#CCCCCC">
+	<!--APPLE-->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title" content="FastString">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="HandheldFriendly" content="1">
+	<meta name="MobileOptimized" content="1">
+	<link href="res/images/png/fsios.png" rel="apple-touch-icon">
+	<meta name="viewport" content="width=device-width, user-scalable=1, minimum-scale=0.1, maximum-scale=1.0">
+	<!--_/LGGM-->
+	<!--_CSS-->
+	<style>
+		@media only screen and (min-width: 980px) {
+			body {
+				padding-top: 60px;
 			}
+		}
+		
+		.loader {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			z-index: 10000;
+			top: 0px;
+			left: 0px;
+			background-color: #2f2f2f;
+			overflow: hidden;
+		}
+		
+		#loadingImage64,
+		.loader {
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-image: url('data:image/gif;base64,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');
+		}
+	</style>
+	<!--_/CSS-->
+</head>
 
-			.loader {
-				width: 100%;
-				height: 100%;
-				position: absolute;
-				z-index: 10000;
-				top: 0px;
-				left: 0px;
-				background-color: #2f2f2f;
-				overflow: hidden;
-			}
-
-			#loadingImage64, .loader {
-				background-position: center center;
-				background-repeat: no-repeat;
-				background-image: url('data:image/gif;base64,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');
-			}
-		</style>
-		<!--_/CSS-->
-	</head>
-	<body id="body">
-
-		<div id="generateImage64"></div>
-		<div class="loader"></div>
-		<!--NAVBAR-->
-		<div class="navbar navbar-inverse navbar-fixed-top" id="navmenutop" style="display:none;">
-			<div class="navbar-inner">
-				<div class="container-fluid">
-					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="brand" href="#brand" id="brand">FastString</a>
-					<div class="nav-collapse collapse">
-						<ul class="nav">
-							<!--class="active"-->
-							<li class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="convert"></span><b class="caret"></b></a>
-								<ul class="dropdown-menu">
-
-									<li class="nav-header">
-										Base64
-									</li>
-									<li>
-										<a href="#" id="b64e"></a>
-									</li>
-									<li>
-										<a href="#" id="b64d"></a>
-									</li>
-									<li>
-										<a href="#" id="b64eu"></a>
-									</li>
-									<li>
-										<a href="#" id="b64du"></a>
-									</li>
-									<li>
-										<a href="#" id="b64diu"></a>
-									</li>
-									<li>
-										<a href="#" id="encodeimgbase64"></a>
-									</li>
-									<li class="divider"></li>
-									<li class="nav-header">
-										ascii/hex/bin
-									</li>
-									<li>
-										<a href="#" id="doascii"></a>
-									</li>
-									<li>
-										<a href="#" id="dohex"></a>
-									</li>
-									<li>
-										<a href="#" id="ascii2bin"></a>
-									</li>
-									<li>
-										<a href="#" id="bin2ascii"></a>
-									</li>
-									<li class="divider"></li>
-									<li class="nav-header">
-										morse
-									</li>
-									<li>
-										<a href="#" id="morsee"></a>
-									</li>
-									<li>
-										<a href="#" id="morsed"></a>
-									</li>
-									<li class="divider"></li>
-									<li class="nav-header">
-										mED
-									</li>
-									<li>
-										<a href="#" id="emED"></a>
-									</li>
-									<li>
-										<a href="#" id="dmED"></a>
-									</li>
-								</ul>
-							</li>
-							<li class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="hashs"></span> <b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li>
-										<a href="#" id="crc32"></a>
-									</li>
-									<li>
-										<a href="#" id="bCrypt"></a>
-									</li>
-									<li class="divider"></li>
-									<li class="nav-header">
-										md5
-									</li>
-									<li>
-										<a href="#" id="md5h"></a>
-									</li>
-									<li>
-										<a href="#" id="md564"></a>
-									</li>
-									<li class="divider"></li>
-									<li class="nav-header">
-										sha
-									</li>
-									<li>
-										<a href="#" id="sha1"></a>
-									</li>
-									<li>
-										<a href="#" id="sha224"></a>
-									</li>
-									<li>
-										<a href="#" id="sha256"></a>
-									</li>
-									<li>
-										<a href="#" id="sha384"></a>
-									</li>
-									<li>
-										<a href="#" id="sha512"></a>
-									</li>
-								</ul>
-							</li>
-
-							<li class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="html">web</span> <b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li class="nav-header">
-										url
-									</li>
-									<li>
-										<a href="#" id="urle"></a>
-									</li>
-									<li>
-										<a href="#" id="urld"></a>
-									</li>
-									<li>
-										<a href="#" id="ipde"></a>
-									</li>
-
-									<li class="divider"></li>
-									<li class="nav-header">
-										html
-									</li>
-									<li>
-										<a href="#" id="htmle"></a>
-									</li>
-									<li>
-										<a href="#" id="htmld"></a>
-									</li>
-									<li>
-										<a href="#modalcolors" data-toggle="modal" id="htmlcolors"></a>
-									</li>
-									<li>
-										<a href="#modalenti" data-toggle="modal" id="enti"></a>
-									</li>
-									<li>
-										<a href="#modalScolors" data-toggle="modal" id="Scolors"></a>
-									</li>
-									<li>
-										<a href="#" id="xls2html"></a>
-									</li>
-									<li class="divider"></li>
-									<li>
-										<a href="#" id="checkxml"></a>
-									</li>
-									<li class="divider"></li>
-									<li class="nav-header">
-										javascript
-									</li>
-									<li>
-										<a href="#" id="escapejavas"></a>
-									</li>
-									<li>
-										<a href="#" id="javascript_escape"></a>
-									</li>
-									<li>
-										<a href="#" id="html2js"></a>
-									</li>
-
-								</ul>
-							</li>
-							<li class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="others"></span> <b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li>
-										<a href="#" id="c2d"></a>
-									</li>
-									<li>
-										<a href="#" id="strlen"></a>
-									</li>
-									<li>
-										<a href="#" id="reve"></a>
-									</li>
-									<li>
-										<a href="#" id="rot13"></a>
-									</li>
-									<li>
-										<a href="#" id="stgs"></a>
-									</li>
-									<li>
-										<a href="#" id="addslashes"></a>
-									</li>
-									<li>
-										<a href="#" id="stripslashes"></a>
-									</li>
-									<li>
-										<a href="#" id="strtolower"></a>
-									</li>
-									<li>
-										<a href="#" id="strtoupper"></a>
-									</li>
-									<li>
-										<a href="#" id="ucwords"></a>
-									</li>
-									<li>
-										<a href="#" id="str_shuffle"></a>
-									</li>
-									<li>
-										<a href="#" id="str_repeat"></a>
-									</li>
-									<li>
-										<a href="#" id="str_replace"></a>
-									</li>
-									<li>
-										<a href="#" id="trim"></a>
-									</li>
-									<li>
-										<a href="#" id="stripsc"></a>
-									</li>
-									<li>
-										<a href="#" id="latin2e"></a>
-									</li>
-									<li>
-										<a href="#" id="stripcomments"></a>
-									</li>
-									<li>
-										<a href="#" id="checkUUID"></a>
-									</li>
-									<li>
-										<a href="#" id="generateUUID"></a>
-									</li>
-									<li>
-										<a href="#" id="loremipsun"></a>
-									</li>
-								</ul>
-							</li>
-
-							<li>
-								<a href="#" id="about"></a>
-							</li>
-
-						</ul>
-					</div>
+<body id="body">
+	<div id="generateImage64"></div>
+	<div class="loader"></div>
+	<!--NAVBAR-->
+	<div class="navbar navbar-inverse navbar-fixed-top" id="navmenutop" style="display:none;">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="brand" href="#brand" id="brand">FastString</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<!--class="active"-->
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="convert"></span><b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li class="nav-header">
+									Base64
+								</li>
+								<li>
+									<a href="#" id="b64e"></a>
+								</li>
+								<li>
+									<a href="#" id="b64d"></a>
+								</li>
+								<li>
+									<a href="#" id="gzb64e"></a>
+								</li>
+								<li>
+									<a href="#" id="gzb64d"></a>
+								</li>
+								<li>
+									<a href="#" id="b64eu"></a>
+								</li>
+								<li>
+									<a href="#" id="b64du"></a>
+								</li>
+								<li>
+									<a href="#" id="b64diu"></a>
+								</li>
+								<li>
+									<a href="#" id="encodeimgbase64"></a>
+								</li>
+								<li class="divider"></li>
+								<li class="nav-header">
+									ascii/hex/bin
+								</li>
+								<li>
+									<a href="#" id="doascii"></a>
+								</li>
+								<li>
+									<a href="#" id="dohex"></a>
+								</li>
+								<li>
+									<a href="#" id="ascii2bin"></a>
+								</li>
+								<li>
+									<a href="#" id="bin2ascii"></a>
+								</li>
+								<li class="divider"></li>
+								<li class="nav-header">
+									morse
+								</li>
+								<li>
+									<a href="#" id="morsee"></a>
+								</li>
+								<li>
+									<a href="#" id="morsed"></a>
+								</li>
+								<li class="divider"></li>
+								<li class="nav-header">
+									mED
+								</li>
+								<li>
+									<a href="#" id="emED"></a>
+								</li>
+								<li>
+									<a href="#" id="dmED"></a>
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="hashs"></span> <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#" id="crc32"></a>
+								</li>
+								<li>
+									<a href="#" id="bCrypt"></a>
+								</li>
+								<li class="divider"></li>
+								<li class="nav-header">
+									md5
+								</li>
+								<li>
+									<a href="#" id="md5h"></a>
+								</li>
+								<li>
+									<a href="#" id="md564"></a>
+								</li>
+								<li class="divider"></li>
+								<li class="nav-header">
+									sha
+								</li>
+								<li>
+									<a href="#" id="sha1"></a>
+								</li>
+								<li>
+									<a href="#" id="sha224"></a>
+								</li>
+								<li>
+									<a href="#" id="sha256"></a>
+								</li>
+								<li>
+									<a href="#" id="sha384"></a>
+								</li>
+								<li>
+									<a href="#" id="sha512"></a>
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="html">web</span> <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li class="nav-header">
+									url
+								</li>
+								<li>
+									<a href="#" id="urle"></a>
+								</li>
+								<li>
+									<a href="#" id="urld"></a>
+								</li>
+								<li>
+									<a href="#" id="ipde"></a>
+								</li>
+								<li class="divider"></li>
+								<li class="nav-header">
+									html
+								</li>
+								<li>
+									<a href="#" id="htmle"></a>
+								</li>
+								<li>
+									<a href="#" id="htmld"></a>
+								</li>
+								<li>
+									<a href="#modalcolors" data-toggle="modal" id="htmlcolors"></a>
+								</li>
+								<li>
+									<a href="#modalenti" data-toggle="modal" id="enti"></a>
+								</li>
+								<li>
+									<a href="#modalScolors" data-toggle="modal" id="Scolors"></a>
+								</li>
+								<li>
+									<a href="#" id="xls2html"></a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="#" id="checkxml"></a>
+								</li>
+								<li class="divider"></li>
+								<li class="nav-header">
+									javascript
+								</li>
+								<li>
+									<a href="#" id="escapejavas"></a>
+								</li>
+								<li>
+									<a href="#" id="javascript_escape"></a>
+								</li>
+								<li>
+									<a href="#" id="html2js"></a>
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="others"></span> <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#" id="c2d"></a>
+								</li>
+								<li>
+									<a href="#" id="strlen"></a>
+								</li>
+								<li>
+									<a href="#" id="reve"></a>
+								</li>
+								<li>
+									<a href="#" id="rot13"></a>
+								</li>
+								<li>
+									<a href="#" id="stgs"></a>
+								</li>
+								<li>
+									<a href="#" id="addslashes"></a>
+								</li>
+								<li>
+									<a href="#" id="stripslashes"></a>
+								</li>
+								<li>
+									<a href="#" id="strtolower"></a>
+								</li>
+								<li>
+									<a href="#" id="strtoupper"></a>
+								</li>
+								<li>
+									<a href="#" id="ucwords"></a>
+								</li>
+								<li>
+									<a href="#" id="str_shuffle"></a>
+								</li>
+								<li>
+									<a href="#" id="str_repeat"></a>
+								</li>
+								<li>
+									<a href="#" id="str_replace"></a>
+								</li>
+								<li>
+									<a href="#" id="trim"></a>
+								</li>
+								<li>
+									<a href="#" id="stripsc"></a>
+								</li>
+								<li>
+									<a href="#" id="latin2e"></a>
+								</li>
+								<li>
+									<a href="#" id="stripcomments"></a>
+								</li>
+								<li>
+									<a href="#" id="checkUUID"></a>
+								</li>
+								<li>
+									<a href="#" id="generateUUID"></a>
+								</li>
+								<li>
+									<a href="#" id="loremipsun"></a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#" id="about"></a>
+						</li>
+					</ul>
 				</div>
 			</div>
-		</div><!--/NAVBAR-->
-
-		<!--CONTAINER-->
-		<div class="container-fluid" id="cfluid" style="display:none;">
-
-			<!--HERO-->
-			<div class="row-fluid">
-				<div class="span12">
-					<!--HERO-->
-					<div class="hero-unit" id="hero">
-						<h1 id="welcomemsg">Welcome to FastString</h1>
-						<h3 id="selectoption">Select an option to start</h3>
-						<p id="ischrome" style="display:none;"></p>
-						<br>
-						<h4 id="mufunctions" class="hidden-phone">Most used functions</h4>
-						<div id="mostusedbuttons" class="hidden-phone"></div>
+		</div>
+	</div>
+	<!--/NAVBAR-->
+	<!--CONTAINER-->
+	<div class="container-fluid" id="cfluid" style="display:none;">
+		<!--HERO-->
+		<div class="row-fluid">
+			<div class="span12">
+				<!--HERO-->
+				<div class="hero-unit" id="hero">
+					<h1 id="welcomemsg">Welcome to FastString</h1>
+					<h3 id="selectoption">Select an option to start</h3>
+					<p id="ischrome" style="display:none;"></p>
+					<br>
+					<h4 id="mufunctions" class="hidden-phone">Most used functions</h4>
+					<div id="mostusedbuttons" class="hidden-phone"></div>
+				</div>
+				<!--/HERO-->
+				<!--ADS-->
+				<div class="row-fluid" id="ads">
+					<div class="span12" style="text-align: center;">
+						<script type="text/javascript">
+							google_ad_client = "ca-pub-7956964609366888";
+							/* FastStringBanner */
+							google_ad_slot = "9028362743";
+							google_ad_width = 728;
+							google_ad_height = 90;
+						</script>
+						<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
 					</div>
-					<!--/HERO-->
-
-					<!--ADS-->
-					<div class="row-fluid" id="ads">
-						<div class="span12" style="text-align: center;">
-							<script type="text/javascript">
-                                google_ad_client = "ca-pub-7956964609366888";
-                                /* FastStringBanner */
-                                google_ad_slot = "9028362743";
-                                google_ad_width = 728;
-                                google_ad_height = 90;
-							</script>
-							<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-						</div>
-					</div><!--/ADS-->
-
-					<!--NRF-->
-					<div class="row-fluid">
-						<div id="dyn" style="display:none;">
-							<div class="span6">
-								<form >
-									<fieldset >
-										<legend>
-											<span id="action"></span><a href="#" data-placement="right" data-toggle="popover" rel="popover" id="pophelp" style="float: right;" class="btn btn-inverse btn-small"><i class="icon-book icon-white"></i></a>
-										</legend>
-										<textarea style="width:100%;min-height:129px;" id="eandd" class="span6 ucode" autofocus></textarea>
-										<div id="imgB64Alert" class="span6"></div>
-										<br>
-										<div class="input-prepend input-block-level" id="encodeimgbase64f" style="display:none;">
-
-											<br>
-											<br>
-											<input id="base64File" name="base64File" accept="image/*"  class="span6" type="file">
-										</div>
-
-										<!--STR_RPT-->
-										<div class="input-prepend input-block-level" id="rptstr" style="display:none;">
-											<span class="add-on" id="rptinfo"></span>
-											<input class="span2" type="number" id="t2r" name="t2r" min="2" max="128000" step="1" value="2" maxlength="6">
-											<!-- 12800 runs smoothly in Core I7, but higher numbers can crash the browser,
-											maybe implement WebWorkers in future? -->
-										</div><!--/STR_RPT-->
-
-										<!--SHAOPTIONS-->
-										<select style="width:100%; display:none;" id="shaopt">
-											<option value="HEX">Hex</option><option value="B64">Base64</option>
-										</select><!--/SHAOPTIONS-->
-
-										<!--STR_REPLACE-->
-										<div class="input-prepend input-block-level" id="strrep" style="display:none;">
-											<span class="add-on" id="replaceinfo"></span>
-											<input class="span7" type="text" id="strreplace" name="strreplace">
-
-											<span class="add-on" id="replaceflaginfo"></span>
-											<input class="span1" style="width:31px;" type="text" id="strflag" name="strflag">
-											<br>
-											<span class="add-on" id="replaceforinfo"></span>
-											<input class="span9" type="text" id="strfor" name="strfor">
-										</div>
-										<!--/STR_REPLACE-->
-
-										<!--bCrypt-->
-										<div class="input-prepend input-block-level" id="bCryptDiv" style="display:none;">
-											<span class="add-on" id="LbCPass">Password</span>
-											<input class="span9" type="text" id="bcPass">
-											<br>
-
-											<span class="add-on" id="lbCSalt">Salt</span>
-											<input class="span9" type="text" id="bcSalt">
-											<br>
-											<span class="add-on" id="replaceforinfo">Rounds</span>
-											<select class="span2" id="rounds" name="rounds">
-												<option value=5>5</option>
-												<option value=6>6</option>
-												<option value=7>7</option>
-												<option value=8>8</option>
-												<option value=9>9</option>
-												<option value=10>10</option>
-												<option value=11>11</option>
-												<option value=12>12</option>
-											</select>
-
-										</div>
-										<!--/bCrypt-->
-
-										<!-- LIMP -->
-										<div class="input-prepend input-block-level" id="liopts" style="display:none;">
-											<input class="span2" type="number" id="lir" name="lir" max="128000" step="10" value="50" maxlength="6">
-											<br>
-											
-											<select id="liopt">
-												<option value="words" id="liwds" selected="true"></option>
-												<option value="characters" id="lichars"></option>
-												<option value="paragraphs" id="lipar"></option>
-											</select>
-											<br>
-											<select id="lipsel">
-												<option value="true" id="lipt"></option>
-												<option value="false" id="lipf" selected="true"></option>
-											</select>
-										</div><!--/LIMP-->
-
-										<button class="btn btn-inverse" id="doit" type="button">Do It!</button>
-										<span id="btns"><button class="btn btn-inverse" id="paste">Paste</button>
-										<a class="btn btn-inverse" id="btnOpenFile" href="#modalfiles" data-toggle="modal" style="font-weight: normal;">Open</a>
-										<button class="btn btn-inverse" id="btnAbort" style="display:none;">Abort</button></span>
-										<br><span id="tbchartotal"></span>
-									</fieldset>
-								</form>
-
-							</div>
-							<div class="span6">
+				</div>
+				<!--/ADS-->
+				<!--NRF-->
+				<div class="row-fluid">
+					<div id="dyn" style="display:none;">
+						<div class="span6">
+							<form>
 								<fieldset>
-									<legend id="result"></legend>
-									<pre class="pre-scrollable freturn" style="min-height:113px;margin-top:0px;" class="span6" id="freturn"></pre>
-									<button class="btn btn-inverse" id="copy" style="margin-top:-2px;" type="button">
-										Copy
-									</button>
-									<button class="btn btn-inverse" id="view" style="margin-top:-2px;" type="button">
-										RAW HTML
-									</button>
-									<button class="btn btn-inverse" id="savebtn" style="margin-top:-2px;" type="button">
-										Save
-									</button>
-									<br><span id="frchartotal"></span>
-
+									<legend>
+										<span id="action"></span><a href="#" data-placement="right" data-toggle="popover" rel="popover" id="pophelp" style="float: right;"
+														class="btn btn-inverse btn-small"><i class="icon-book icon-white"></i></a>
+									</legend>
+									<textarea style="width:100%;min-height:129px;" id="eandd" class="span6 ucode" autofocus></textarea>
+									<div id="imgB64Alert" class="span6"></div>
+									<br>
+									<div class="input-prepend input-block-level" id="encodeimgbase64f" style="display:none;">
+										<br>
+										<br>
+										<input id="base64File" name="base64File" accept="image/*" class="span6" type="file">
+									</div>
+									<!--STR_RPT-->
+									<div class="input-prepend input-block-level" id="rptstr" style="display:none;">
+										<span class="add-on" id="rptinfo"></span>
+										<input class="span2" type="number" id="t2r" name="t2r" min="2" max="128000" step="1" value="2" maxlength="6">
+										<!-- 12800 runs smoothly in Core I7, but higher numbers can crash the browser, maybe implement WebWorkers in future? -->
+									</div>
+									<!--/STR_RPT-->
+									<!--SHAOPTIONS-->
+									<select style="width:100%; display:none;" id="shaopt">
+											<option value="HEX">Hex</option><option value="B64">Base64</option>
+									</select>
+									<!--/SHAOPTIONS-->
+									<!--STR_REPLACE-->
+									<div class="input-prepend input-block-level" id="strrep" style="display:none;">
+										<span class="add-on" id="replaceinfo"></span>
+										<input class="span7" type="text" id="strreplace" name="strreplace">
+										<span class="add-on" id="replaceflaginfo"></span>
+										<input class="span1" style="width:31px;" type="text" id="strflag" name="strflag">
+										<br>
+										<span class="add-on" id="replaceforinfo"></span>
+										<input class="span9" type="text" id="strfor" name="strfor">
+									</div>
+									<!--/STR_REPLACE-->
+									<!--bCrypt-->
+									<div class="input-prepend input-block-level" id="bCryptDiv" style="display:none;">
+										<span class="add-on" id="LbCPass">Password</span>
+										<input class="span9" type="text" id="bcPass">
+										<br>
+										<span class="add-on" id="lbCSalt">Salt</span>
+										<input class="span9" type="text" id="bcSalt">
+										<br>
+										<span class="add-on" id="replaceforinfo">Rounds</span>
+										<select class="span2" id="rounds" name="rounds">
+											<option value=5>5</option>
+											<option value=6>6</option>
+											<option value=7>7</option>
+											<option value=8>8</option>
+											<option value=9>9</option>
+											<option value=10>10</option>
+											<option value=11>11</option>
+											<option value=12>12</option>
+										</select>
+									</div>
+									<!--/bCrypt-->
+									<!-- LIMP -->
+									<div class="input-prepend input-block-level" id="liopts" style="display:none;">
+										<input class="span2" type="number" id="lir" name="lir" max="128000" step="10" value="50" maxlength="6">
+										<br>
+										<select id="liopt">
+											<option value="words" id="liwds" selected="true"></option>
+											<option value="characters" id="lichars"></option>
+											<option value="paragraphs" id="lipar"></option>
+										</select>
+										<br>
+										<select id="lipsel">
+											<option value="true" id="lipt"></option>
+											<option value="false" id="lipf" selected="true"></option>
+										</select>
+									</div>
+									<!--/LIMP-->
+									<button class="btn btn-inverse" id="doit" type="button">Do It!</button>
+									<span id="btns"><button class="btn btn-inverse" id="paste">Paste</button>
+									<a class="btn btn-inverse" id="btnOpenFile" href="#modalfiles" data-toggle="modal" style="font-weight: normal;">Open</a>
+									<button class="btn btn-inverse" id="btnAbort" style="display:none;">Abort</button></span>
+									<br><span id="tbchartotal"></span>
 								</fieldset>
-							</div>
-						</div><!--/NRF-->
-					</div><!--/DYN-->
-
-					<div>
-
-						<!--NRF-->
-						<div class="row-fluid" id="alginfo">
-
-							<div class="span6">
-								<p class="muted">
-									<a href="http://lucasguimaraes.com" class="muted"> <span id="lucaslogo"></span><small>© 2012-2014 LucasGuimaraes.com</small></a>
-									<div id="sound"></div>
-								</p>
-							</div>
-
-						</div><!--/NRF-->
+							</form>
+						</div>
+						<div class="span6">
+							<fieldset>
+								<legend id="result"></legend>
+								<pre class="pre-scrollable freturn" style="min-height:113px;margin-top:0px;" class="span6" id="freturn"></pre>
+								<button class="btn btn-inverse" id="copy" style="margin-top:-2px;" type="button">
+									Copy
+								</button>
+								<button class="btn btn-inverse" id="view" style="margin-top:-2px;" type="button">
+									RAW HTML
+								</button>
+								<button class="btn btn-inverse" id="savebtn" style="margin-top:-2px;" type="button">
+									Save
+								</button>
+								<br><span id="frchartotal"></span>
+							</fieldset>
+						</div>
 					</div>
-
-				</div><!--/SPAN12-->
-			</div><!--/ROW-FLUID-->
-		</div><!--/CONTAINER-->
-
-		<!--MODALS-->
-		<!--MODALABOUT-->
-		<div id="modalabout" class="modal hide fade" tabindex="-1" role="dialog">
-			<div class="modal-header">
-				<h3 id="modalabout_title"></h3>
+					<!--/NRF-->
+				</div>
+				<!--/DYN-->
+				<div>
+					<!--NRF-->
+					<div class="row-fluid" id="alginfo">
+						<div class="span6">
+							<p class="muted">
+								<a href="http://lucasguimaraes.com" class="muted"> <span id="lucaslogo"></span><small>© 2012-2015 LucasGuimaraes.com</small></a>
+								<div id="sound"></div>
+							</p>
+						</div>
+					</div>
+					<!--/NRF-->
+				</div>
 			</div>
-			<div class="modal-body">
-				<p id="modalabout_license" class="muted aboutinfo"></p>
-				<p>
-					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="form-inline pull-right">
-						<input type="hidden" name="cmd" value="_s-xclick">
-						<input type="hidden" name="hosted_button_id" value="SYA6223V22H9Y">
-						<button type="submit" class="btn btn-small btn-warning" border="0" name="paylink" id="paylink" title="Donate">
-							Donate (PayPal)
-						</button>
-						<a href="https://chrome.google.com/webstore/detail/faststring/gpknmoniniacaobkeclmiiaekniaddnd/reviews?utm_source=chrome-ntp-icon" class="btn btn-small btn-success" id="reviewlink">Review</a>
-						<a href="https://chrome.google.com/webstore/support/gpknmoniniacaobkeclmiiaekniaddnd?hl=en&gl=BR#bug"  class="btn btn-small btn-danger" id="bugslink">Bugs</a>
-					</form>
-					<a href="http://lucasguimaraes.com" class="muted"> © 2013 LucasGuimaraes.com</a>
-					<br>
-					EID: <span id="modalabout_eid"></span>
-					<br>
-				</p>
-			</div>
-			<div class="modal-footer">
-				<button class="btn btn-inverse" id="modalabout_close" data-dismiss="modal" aria-hidden="true"></button>
-			</div>
+			<!--/SPAN12-->
 		</div>
-		<!--/MODALABOUT-->
-
-		<!--MODALHTML-->
-		<div id="modalhtml" class="modal hide fade" tabindex="-1" role="dialog">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">
-					×
-				</button>
-				<h3 id="modalhtml_title">Viewer</h3>
-			</div>
-			<div class="modal-body">
-				<p id="modalhtmlcontent"></p>
-			</div>
-			<div class="modal-footer">
-				<button class="btn btn-inverse" id="modalhtml_close" data-dismiss="modal" aria-hidden="true"></button>
-			</div>
+		<!--/ROW-FLUID-->
+	</div>
+	<!--/CONTAINER-->
+	<!--MODALS-->
+	<!--MODALABOUT-->
+	<div id="modalabout" class="modal hide fade" tabindex="-1" role="dialog">
+		<div class="modal-header">
+			<h3 id="modalabout_title"></h3>
 		</div>
-		<!--/MODALHTML-->
-
-		<!--MODALENTI-->
-		<div id="modalenti" class="modal hide fade" tabindex="-1" role="dialog">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">
-					×
-				</button>
-				<h3 id="modalenti_title"></h3>
-			</div>
-			<div class="modal-body">
-				<table class="table table-condensed table-hover">
-					<thead>
-						<tr>
-							<th id="modalenti_character"></th>
-							<th id="modalenti_enumber"></th>
-							<th id="modalenti_ename"></th>
-						</tr>
-					</thead>
-					<tbody id="modalenti_table"></tbody>
-				</table>
-			</div>
-			<div class="modal-footer">
-				<button class="btn btn-inverse" id="modalenti_close" data-dismiss="modal" aria-hidden="true"></button>
-			</div>
-		</div>
-		<!--/MODALENTI-->
-
-		<!--MODALCOLORS-->
-		<div id="modalcolors" class="modal hide fade" tabindex="-1" role="dialog">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">
-					×
-				</button>
-				<h3 id="modalcolors_title"></h3>
-			</div>
-			<div class="modal-body">
-				<table class="table table-condensed">
-					<thead>
-						<tr>
-							<th id="modalcolors_color"></th>
-							<th id="modalcolors_name"></th>
-							<th id="modalcolors_hexvalue"></th>
-						</tr>
-					</thead>
-					<tbody id="modalcolors_table"></tbody>
-				</table>
-			</div>
-			<div class="modal-footer">
-				<button class="btn btn-inverse" id="modalcolors_close" data-dismiss="modal" aria-hidden="true">Close</button>
-			</div>
-		</div>
-		<!--/MODALCOLORS-->
-
-		<!--MODALSCOLORS-->
-		<div id="modalScolors" class="modal hide fade" tabindex="-1" role="dialog">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">
-					×
-				</button>
-				<h3 id="modalScolors_title"></h3>
-			</div>
-			<div class="modal-body">
-
-				<input class="minicolors" data-control="wheel" type="text" value="#ffffff" style="float:right;">
-
-				<h4 id="minicolorsvalue" class="muted"> HEX: #ffffff
+		<div class="modal-body">
+			<p id="modalabout_license" class="muted aboutinfo"></p>
+			<p>
+				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="form-inline pull-right">
+					<input type="hidden" name="cmd" value="_s-xclick">
+					<input type="hidden" name="hosted_button_id" value="SYA6223V22H9Y">
+					<button type="submit" class="btn btn-small btn-warning" border="0" name="paylink" id="paylink" title="Donate">
+						Donate (PayPal)
+					</button>
+					<a href="https://chrome.google.com/webstore/detail/faststring/gpknmoniniacaobkeclmiiaekniaddnd/reviews?utm_source=chrome-ntp-icon"
+									class="btn btn-small btn-success" id="reviewlink">Review</a>
+					<a href="https://chrome.google.com/webstore/support/gpknmoniniacaobkeclmiiaekniaddnd?hl=en&gl=BR#bug" class="btn btn-small btn-danger"
+									id="bugslink">Bugs</a>
+				</form>
+				<a href="http://lucasguimaraes.com" class="muted"> © 2013 LucasGuimaraes.com</a>
+				<br> EID: <span id="modalabout_eid"></span>
 				<br>
-				RGB: rgb(255, 255, 255) </h4>
-			</div>
-			<div class="modal-footer">
-				<button class="btn btn-inverse" id="modalScolors_close" data-dismiss="modal" aria-hidden="true">Close</button>
-			</div>
+			</p>
 		</div>
-		<!--/MODALSCOLORS-->
-
-				<!--MODALFILES-->
-		<div id="modalfiles" class="modal hide fade" tabindex="-1" role="dialog">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">
-					×
-				</button>
-				<h3 id="modalfiles_title">Open file</h3>
-			</div>
-			<div class="modal-body">
-				<h5 id="modalfile_info" class="muted">Warning: Opening large or binary files may crash your browser.</h5>
-
+		<div class="modal-footer">
+			<button class="btn btn-inverse" id="modalabout_close" data-dismiss="modal" aria-hidden="true"></button>
+		</div>
+	</div>
+	<!--/MODALABOUT-->
+	<!--MODALHTML-->
+	<div id="modalhtml" class="modal hide fade" tabindex="-1" role="dialog">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">×</button>
+			<h3 id="modalhtml_title">Viewer</h3>
+		</div>
+		<div class="modal-body">
+			<p id="modalhtmlcontent"></p>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-inverse" id="modalhtml_close" data-dismiss="modal" aria-hidden="true"></button>
+		</div>
+	</div>
+	<!--/MODALHTML-->
+	<!--MODALENTI-->
+	<div id="modalenti" class="modal hide fade" tabindex="-1" role="dialog">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">×</button>
+			<h3 id="modalenti_title"></h3>
+		</div>
+		<div class="modal-body">
+			<table class="table table-condensed table-hover">
+				<thead>
+					<tr>
+						<th id="modalenti_character"></th>
+						<th id="modalenti_enumber"></th>
+						<th id="modalenti_ename"></th>
+					</tr>
+				</thead>
+				<tbody id="modalenti_table"></tbody>
+			</table>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-inverse" id="modalenti_close" data-dismiss="modal" aria-hidden="true"></button>
+		</div>
+	</div>
+	<!--/MODALENTI-->
+	<!--MODALCOLORS-->
+	<div id="modalcolors" class="modal hide fade" tabindex="-1" role="dialog">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">×</button>
+			<h3 id="modalcolors_title"></h3>
+		</div>
+		<div class="modal-body">
+			<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th id="modalcolors_color"></th>
+						<th id="modalcolors_name"></th>
+						<th id="modalcolors_hexvalue"></th>
+					</tr>
+				</thead>
+				<tbody id="modalcolors_table"></tbody>
+			</table>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-inverse" id="modalcolors_close" data-dismiss="modal" aria-hidden="true">Close</button>
+		</div>
+	</div>
+	<!--/MODALCOLORS-->
+	<!--MODALSCOLORS-->
+	<div id="modalScolors" class="modal hide fade" tabindex="-1" role="dialog">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">×</button>
+			<h3 id="modalScolors_title"></h3>
+		</div>
+		<div class="modal-body">
+			<input class="minicolors" data-control="wheel" type="text" value="#ffffff" style="float:right;">
+			<h4 id="minicolorsvalue" class="muted"> HEX: #ffffff
+				<br> RGB: rgb(255, 255, 255) </h4>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-inverse" id="modalScolors_close" data-dismiss="modal" aria-hidden="true">Close</button>
+		</div>
+	</div>
+	<!--/MODALSCOLORS-->
+	<!--MODALFILES-->
+	<div id="modalfiles" class="modal hide fade" tabindex="-1" role="dialog">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">×</button>
+			<h3 id="modalfiles_title">Open file</h3>
+		</div>
+		<div class="modal-body">
+			<h5 id="modalfile_info" class="muted">Warning: Opening large or binary files may crash your browser.</h5>
 			<input type="file" id="openfilefield" name="openfilefield" />
-
-
-			</div>
-			<div class="modal-footer">
-				<button class="btn btn-inverse" id="modalfiles_open" data-dismiss="modal" aria-hidden="true">Open</button>
-				<button class="btn btn-inverse" id="modalfiles_close" data-dismiss="modal" aria-hidden="true">Close</button>
-			</div>
 		</div>
-		<!--/MODALSCOLORS-->
-
-
-		<!--/MODALS-->
-
-		<!--_CSS-->
-		<link rel="stylesheet" href="res/css/bootstrap.min.css" id="bootstrapcss">
-		<link rel="stylesheet" href="res/css/darkstrap.css" id="darkstrapcss">
-		<link rel="stylesheet" href="res/css/jquery.minicolors.css">
-		<link rel="stylesheet" href="res/css/lg.css">
-		<!--_/CSS-->
-		<!--_SCRIPTS-->
-		<!-- JQuery -->
-		<script src="res/javascript/jquery-1.9.0.min.js"></script>
-		<!-- UI Plugins -->
-		<script src="res/javascript/bootstrap.min.js"></script>
-		<!-- Encode/Decode Plugins -->
-		<script src="res/javascript/jquery.base64.js"></script>
-		<script src="res/javascript/md5.js"></script>
-		<script src="res/javascript/sha.js"></script>
-		<script src="res/javascript/stringsopt.js"></script>
-		<script src="res/javascript/html.js"></script>
-		<script src="res/javascript/mED.js"></script>
-		<script src="res/javascript/crc32.js"></script>
-		<script src="res/javascript/jxmlvali-min.js"></script>
-		<script src="res/javascript/jquery.minicolors.js"></script>
-		<script src="res/javascript/jquery.lorem.js"></script>
-		<script src="res/javascript/isaac.js"></script>
-		<script src="res/javascript/bCrypt.js"></script>
-		<!-- Initiate LGApp -->
-		<script src="res/javascript/htmltables.js"></script>
-		<script src="res/javascript/about.js"></script>
-		<script src="res/javascript/texteditor.js"></script>
-		<script src="res/javascript/global.js"></script>
-		<!-- Open/Save Plugin requires global.js -->
-		<script src="res/javascript/save.js"></script>
-		<!--ANALYTICS-->
-		<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-48444735-1', 'lgvirtual.com');
-  ga('send', 'pageview');
-
+		<div class="modal-footer">
+			<button class="btn btn-inverse" id="modalfiles_open" data-dismiss="modal" aria-hidden="true">Open</button>
+			<button class="btn btn-inverse" id="modalfiles_close" data-dismiss="modal" aria-hidden="true">Close</button>
+		</div>
+	</div>
+	<!--/MODALSCOLORS-->
+	<!--/MODALS-->
+	<!--_CSS-->
+	<link rel="stylesheet" href="res/css/bootstrap.min.css" id="bootstrapcss">
+	<link rel="stylesheet" href="res/css/darkstrap.css" id="darkstrapcss">
+	<link rel="stylesheet" href="res/css/jquery.minicolors.css">
+	<link rel="stylesheet" href="res/css/lg.css">
+	<!--_/CSS-->
+	<!--_SCRIPTS-->
+	<!-- JQuery -->
+	<script src="res/javascript/jquery-1.9.0.min.js"></script>
+	<!-- UI Plugins -->
+	<script src="res/javascript/bootstrap.min.js"></script>
+	<!-- Encode/Decode Plugins -->
+	<script src="res/javascript/jquery.base64.js"></script>
+	<script src="res/javascript/md5.js"></script>
+	<script src="res/javascript/sha.js"></script>
+	<script src="res/javascript/stringsopt.js"></script>
+	<script src="res/javascript/html.js"></script>
+	<script src="res/javascript/mED.js"></script>
+	<script src="res/javascript/crc32.js"></script>
+	<script src="res/javascript/jxmlvali-min.js"></script>
+	<script src="res/javascript/jquery.minicolors.js"></script>
+	<script src="res/javascript/jquery.lorem.js"></script>
+	<script src="res/javascript/isaac.js"></script>
+	<script src="res/javascript/bCrypt.js"></script>
+	<script src="res/javascript/pako.min.js"></script>
+	<!-- Initiate LGApp -->
+	<script src="res/javascript/htmltables.js"></script>
+	<script src="res/javascript/about.js"></script>
+	<script src="res/javascript/texteditor.js"></script>
+	<script src="res/javascript/global.js"></script>
+	<!-- Open/Save Plugin requires global.js -->
+	<script src="res/javascript/save.js"></script>
+	<!--ANALYTICS-->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-48444735-1', 'lgvirtual.com');
+	ga('require', 'displayfeatures');
+	ga('send', 'pageview');
 </script>
-		<!--_/SCRIPTS-->
-	</body>
+	<!--_/SCRIPTS-->
+</body>
+
 </html>
