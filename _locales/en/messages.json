@@ -1,563 +1,569 @@
 {
-    "appdescription": {
-        "message": "Encode and decode base64, hex, html, generate hashes, check xml, Base64 images and 39 string operations. Works offline."
-    },
-    "appname": {
-        "message": "FastString - String Operations"
-    },
-    "shortappname": {
-        "message": "FastString"
-    },
-    "specialitem": {
-        "message": "Special"
-    },
-    "copy": {
-        "message": "Copy"
-    },
-    "paste": {
-        "message": "Paste"
-    },
-    "b64e": {
-        "message": "Base64 encode"
-    },
-    "b64e_h": {
-        "message": "Encode a Base64 string using standard Base64 encoding (RFC 3548 or RFC 4648).<br>Base64 is a group of similar binary-to-text encoding schemes that represent binary data in an ASCII string format by translating it into a radix-64 representation. Base64 encoding schemes are commonly used when there is a need to encode binary data that needs to be stored and transferred over media that are designed to deal with textual data. This is to ensure that the data remain intact without modification during transport."
-    },
-    "b64d": {
-        "message": "Base64 decode"
-    },
-    "b64d_h": {
-        "message": "Decode a Base64 string (RFC 3548 or RFC 4648). <br>Base64 is a group of similar binary-to-text encoding schemes that represent binary data in an ASCII string format by translating it into a radix-64 representation."
-    },
-    "b64eu": {
-        "message": "Base64 encode url friendly"
-    },
-    "b64eu_h": {
-        "message": "Base64 encode with URL and Filename Safe Alphabet. <br> Replaces:<br> '=' with '_'<br> '\/' with ','<br> '+' with '-'"
-    },
-    "b64du": {
-        "message": "Base64 decode url friendly"
-    },
-    "b64du_h": {
-        "message": "Base64 decode with URL and filename safe alphabet. <br> Replaces:<br> '_' with '='<br> ',' with '\/'<br> '-' with '+'"
-    },
-    "b64diu": {
-        "message": "Base64 image url display"
-    },
-    "b64diu_h": {
-        "message": "Displays a Base64 encoded image. <br>Example: data:image\/png;base64,\/9j\/4AAQSgA=="
-    },
-    "urle": {
-        "message": "url encode"
-    },
-    "urle_h": {
-        "message": "Encode chars that would normally be recognized as special chars for URLs. This method does not encode the ' char. Uses javascript encodeURIComponent() function."
-    },
-    "urld": {
-        "message": "url decode"
-    },
-    "urld_h": {
-        "message": "Decode special chars in URLs. Uses javascript decodeURIComponent() function."
-    },
-    "htmle": {
-        "message": "html encode"
-    },
-    "htmle_h": {
-        "message": "Encode chars that would normally be recognized as special chars in HTML. Replace &amp;,&quot;,&#39;,&lt;,&gt;"
-    },
-    "htmld": {
-        "message": "html decode"
-    },
-    "htmld_h": {
-        "message": "Decode chars that would normally be recognized as special chars in HTML. Replace &amp;amp;,&amp;quot;,&amp;#39;,&amp;lt;,&amp;gt;"
-    },
-    "about": {
-        "message": "about"
-    },
-    "md5": {
-        "message": "md5"
-    },
-    "md5h": {
-        "message": "md5 Hex"
-    },
-    "md5h_h": {
-        "message": "The MD5 Message-Digest Algorithm is a widely used cryptographic hash function that produces a 128-bit (16-byte) hash value. An MD5 hash is typically expressed as a hexadecimal number, 32 digits long."
-    },
-    "md564": {
-        "message": "md5 Base64"
-    },
-    "md564_h": {
-        "message": "The MD5 Message-Digest Algorithm is a widely used cryptographic hash function that produces a 128-bit (16-byte) hash value. This function returns the value as Base64."
-    },
-    "sha": {
-        "message": "sha"
-    },
-    "sha1": {
-        "message": "sha-1"
-    },
-    "sha1_h": {
-        "message": "A 160-bit hash function which resembles the earlier MD5 algorithm. This was designed by the National Security Agency (NSA) to be part of the Digital Signature Algorithm. Cryptographic weaknesses were discovered in SHA-1, and the standard was no longer approved for most cryptographic uses after 2010."
-    },
-    "sha224": {
-        "message": "sha-224"
-    },
-    "sha224_h": {
-        "message": "A family of two similar hash functions, with different block sizes, known as SHA-256 and SHA-512. They differ in the word size; SHA-256 uses 32-bit words where SHA-512 uses 64-bit words. There are also truncated versions of each standardized, known as SHA-224 and SHA-384. These were also designed by the NSA."
-    },
-    "sha256": {
-        "message": "sha-256"
-    },
-    "sha256_h": {
-        "message": "A family of two similar hash functions, with different block sizes, known as SHA-256 and SHA-512. They differ in the word size; SHA-256 uses 32-bit words where SHA-512 uses 64-bit words. There are also truncated versions of each standardized, known as SHA-224 and SHA-384. These were also designed by the NSA."
-    },
-    "sha384": {
-        "message": "sha-384"
-    },
-    "sha384_h": {
-        "message": "A family of two similar hash functions, with different block sizes, known as SHA-256 and SHA-512. They differ in the word size; SHA-256 uses 32-bit words where SHA-512 uses 64-bit words. There are also truncated versions of each standardized, known as SHA-224 and SHA-384. These were also designed by the NSA."
-    },
-    "sha512": {
-        "message": "sha-512"
-    },
-    "sha512_h": {
-        "message": "A family of two similar hash functions, with different block sizes, known as SHA-256 and SHA-512. They differ in the word size; SHA-256 uses 32-bit words where SHA-512 uses 64-bit words. There are also truncated versions of each standardized, known as SHA-224 and SHA-384. These were also designed by the NSA."
-    },
-    "rot13": {
-        "message": "rot13"
-    },
-    "rot13_h": {
-        "message": "ROT13 shifts every alpha characters by 13 places in the alphabet. This function decodes and encodes ROT13."
-    },
-    "mED": {
-        "message": "mED"
-    },
-    "reve": {
-        "message": "reverse string"
-    },
-    "reve_h": {
-        "message": "Reverse a string"
-    },
-    "emED": {
-        "message": "encode mED"
-    },
-    "emED_h": {
-        "message": "Obfuscate a string by converting it to base64 then rot13 it, urlencode it, reverse it and base64 encode it again. "
-    },
-    "dmED": {
-        "message": "decode mED"
-    },
-    "dmED_h": {
-        "message": "Deobfuscate a string by Base64 decoding it then reversing it, urldecoding it, rot13 it and Base64 decoding it again."
-    },
-    "welcome": {
-        "message": "Welcome to"
-    },
-    "selectoption": {
-        "message": "Select an option to start"
-    },
-    "result": {
-        "message": "Result"
-    },
-    "doit": {
-        "message": "Do it!"
-    },
-    "modalabout_title": {
-        "message": "About this software"
-    },
-    "modalabout_close": {
-        "message": "Close"
-    },
-    "others": {
-        "message": "strings"
-    },
-    "sopt": {
-        "message": "strings actions"
-    },
-    "c2d": {
-        "message": "commas to periods"
-    },
-    "c2d_h": {
-        "message": "Replaces all commas in string with a period."
-    },
-    "invalid": {
-        "message": "Sorry, but it was not possible to convert the given string."
-    },
-    "crc32": {
-        "message": "CRC32"
-    },
-    "crc32_h": {
-        "message": "A cyclic redundancy check (CRC) is an error-detecting code commonly used in digital networks and storage devices to detect accidental changes to raw data. Uses 33 bits polynomial."
-    },
-    "hashes": {
-        "message": "hashes"
-    },
-    "stgs": {
-        "message": "strip tags"
-    },
-    "stgs_h": {
-        "message": "Strip HTML, comments and PHP tags from a string"
-    },
-    "view": {
-        "message": "raw HTML"
-    },
-    "strlen": {
-        "message": "string length"
-    },
-    "strlen_h": {
-        "message": "Return the string length"
-    },
-    "addslashes": {
-        "message": "add slashes"
-    },
-    "addslashes_h": {
-        "message": "Returns a string with backslashes before characters that need to be quoted in database queries etc. These characters are single quote ('), double quote (\") and backslash (\\)."
-    },
-    "stripslashes": {
-        "message": "strip slashes"
-    },
-    "stripslashes_h": {
-        "message": "Un-quotes a quoted string."
-    },
-    "convert": {
-        "message": "convert"
-    },
-    "strtolower": {
-        "message": "string to lower"
-    },
-    "strtolower_h": {
-        "message": "Make a string lowercase"
-    },
-    "strtoupper": {
-        "message": "string to upper"
-    },
-    "strtoupper_h": {
-        "message": "Make a string uppercase"
-    },
-    "ucwords": {
-        "message": "capitalize string"
-    },
-    "ucwords_h": {
-        "message": "Uppercase the first character of each word in a string"
-    },
-    "str_shuffle": {
-        "message": "string shuffle"
-    },
-    "str_shuffle_h": {
-        "message": "Randomly shuffles a string"
-    },
-    "htmlcolors": {
-        "message": "HTML colors"
-    },
-    "color": {
-        "message": "Color"
-    },
-    "name": {
-        "message": "Name"
-    },
-    "hexvalue": {
-        "message": "Hex Value"
-    },
-    "enti": {
-        "message": "HTML symbol entities"
-    },
-    "character": {
-        "message": "Character"
-    },
-    "enumber": {
-        "message": "Entity Number"
-    },
-    "ename": {
-        "message": "Entity Name"
-    },
-    "validxml": {
-        "message": "Valid XML structure."
-    },
-    "noroot": {
-        "message": "No root node"
-    },
-    "unfinalizedcomment": {
-        "message": "Unfinalized comment"
-    },
-    "unfinalizedcdata": {
-        "message": "Unfinalized CDATA"
-    },
-    "unexpectedinstruction": {
-        "message": "Unexpected instruction"
-    },
-    "unexpecteddoctype": {
-        "message": "Unexpected DocType"
-    },
-    "text1stag": {
-        "message": "Unexpected text before first tag"
-    },
-    "textlastag": {
-        "message": "Unexpected text after last tag"
-    },
-    "unexpectedentity": {
-        "message": "Unexpected entity"
-    },
-    "morerootnode": {
-        "message": "More than one root node or unexpected tag"
-    },
-    "unclodesdtag": {
-        "message": "Unclosed tag"
-    },
-    "duplicatedattributes": {
-        "message": "Duplicated attributes"
-    },
-    "invalidxml": {
-        "message": "Invalid XML structure."
-    },
-    "checkxml": {
-        "message": "check XML structure"
-    },
-    "checkxml_h": {
-        "message": "Check if string has a valid XML structure"
-    },
-    "rptinfo": {
-        "message": "Repeat"
-    },
-    "str_repeat": {
-        "message": "string repeat"
-    },
-    "str_repeat_h": {
-        "message": "Repeat a string n times. You should avoid large strings and/or larger repeat values as it can crash your browser."
-    },
-    "escapejavas": {
-        "message": "escape special chars"
-    },
-    "escapejavas_h": {
-        "message": "Escape chars that would normally be recognized as special chars in javascript."
-    },
-    "html2js": {
-        "message": "raw HTML to javascript"
-    },
-    "html2js_h": {
-        "message": "Escape chars that would normally be recognized as special chars in javascript and create a javascript function with the content."
-    },
-    "checkUUID": {
-        "message": "check UUID"
-    },
-    "checkUUID_h": {
-        "message": "Check if a universally unique identifier (UUID) v4 is valid."
-    },
-    "invalidUUID": {
-        "message": "Invalid UUID"
-    },
-    "validUUID": {
-        "message": "Valid UUID"
-    },
-    "generateUUID": {
-        "message": "generate UUID4/ID"
-    },
-    "generateUUID_h": {
-        "message": "A universally unique identifier (UUID) is an identifier standard used in software construction, standardized by the Open Software Foundation (OSF) as part of the Distributed Computing Environment (DCE). Using the default mask generates an UUID v4. You can generate random IDs by changing the mask using x(hex) and y (ab89) as the random chars."
-    },
-    "trim": {
-        "message": "trim string"
-    },
-    "trim_h": {
-        "message": "Strip whitespace (or other characters) from the beginning and end of a string."
-    },
-    "stripcomments": {
-        "message": "strip comments"
-    },
-    "stripcomments_h": {
-        "message": "Strip html and javascript comments"
-    },
-    "chromebanner": {
-        "message": "or if you wish, you can download our offline app. Just "
-    },
-    "clickhere": {
-        "message": "click here"
-    },
-    "Scolors": {
-        "message": "color picker"
-    },
-    "dohex": {
-        "message": "hex to ascii"
-    },
-    "dohex_h": {
-        "message": "Convert hexadecimal code to ASCII code. This function doesn't consider whitespaces. Each hexadecimal digit represents four binary digits (bits), and the primary use of hexadecimal notation is a human-friendly representation of binary-coded values in computing and digital electronics. One hexadecimal digit represents a nibble, which is half of an octet or byte (8 bits). ASCII codes represent text in computers, communications equipment, and other devices that use text."
-    },
-    "doascii": {
-        "message": "ascii to hex"
-    },
-    "doascii_h": {
-        "message": "Convert ASCII to hexadecimal code. ASCII codes represent text in computers, communications equipment, and other devices that use text. Each hexadecimal digit represents four binary digits (bits), and the primary use of hexadecimal notation is a human-friendly representation of binary-coded values in computing and digital electronics. One hexadecimal digit represents a nibble, which is half of an octet or byte (8 bits)."
-    },
-    "stripsc": {
-        "message": "strip special characters"
-    },
-    "stripsc_h": {
-        "message": "Strip any special characters that are not in ASCII range"
-    },
-    "latin2e": {
-        "message": "latin chars to english"
-    },
-    "latin2e_h": {
-        "message": "Convert latin special chars to english chars."
-    },
-    "morsee": {
-        "message": "encode morse"
-    },
-    "morsee_h": {
-        "message": "Encode english string to Morse Code. Morse code is a method of transmitting text information as a series of on-off tones, lights, or clicks. Each character (letter or numeral) is represented by a unique sequence of dots and dashes."
-    },
-    "morsed": {
-        "message": "decode morse"
-    },
-    "morsed_h": {
-        "message": "Decode english morse code string."
-    },
-    "ascii2bin": {
-        "message": "ascii to bin"
-    },
-    "ascii2bin_h": {
-        "message": "Convert ASCII to binary code. ASCII codes represent text in computers, communications equipment, and other devices that use text. A Binary code is a way of representing text or computer processor instructions by the use of the binary number system's two-binary digits 0 and 1. This is accomplished by assigning a bit string to each particular symbol or instruction. "
-    },
-    "bin2ascii": {
-        "message": "bin to ascii"
-    },
-    "bin2ascii_h": {
-        "message": "Convert binary code to ASCII. A Binary code is a way of representing text or computer processor instructions by the use of the binary number system's two-binary digits 0 and 1. This is accomplished by assigning a bit string to each particular symbol or instruction. ASCII codes represent text in computers, communications equipment, and other devices that use text."
-    },
-    "htw": {
-        "message": "About this function"
-    },
-    "helpnotfound": {
-        "message": "No information available."
-    },
-    "javascript_escape": {
-        "message": "escape all string chars"
-    },
-    "javascript_escape_h": {
-        "message": "Escape string using hex values. Can be used for code, in this case use the eval function."
-    },
-    "encodeimgbase64": {
-        "message": "encode image in Base64 png"
-    },
-    "encodeimgbase64_h": {
-        "message": "Encode image in Base64 png so it can be embedded into html and css. Currently is only possible the conversion to the PNG format. This feature is still experimental, we would appreciate your feedback."
-    },
-    "wordscount": {
-        "message": "Words"
-    },
-    "charscount": {
-        "message": "Chars"
-    },
-    "charswocount": {
-        "message": "Chars w\/o space"
-    },
-    "linescount": {
-        "message": "Lines"
-    },
-    "mufunctions": {
-        "message": "Most used functions"
-    },
-    "paylink": {
-        "message": "Donate (PayPal)"
-    },
-    "bugslink": {
-        "message": "Bugs"
-    },
-    "reviewlink": {
-        "message": "Review"
-    },
-    "ipde": {
-        "message": "IP/decimal"
-    },
-    "ipde_h": {
-        "message": "Automatically detect and convert IP to Decimal or Decimal to IP."
-    },
-    "xls2html": {
-        "message": "excel table to HTML"
-    },
-    "xls2html_h": {
-        "message": "Converts a Excel table to HTML table."
-    },
-    "imgB64Alert": {
-        "message": "Warning: This function is still experimental. Large files may generate partial content or make your browser become unresponsive if your computer has insufficient memory. If necessary, click the loader to cancel. We would appreciate your feedback if something goes wrong."
-    },
-    "alert_Title_Review": {
-        "message": "Review FastString"
-    },
-    "alert_Message_Review": {
-        "message": "It seems that you're enjoing FastString, would you mind helping us ? It'll just take a minute. Go to 'About' and then click the Review button. We always appreciate your feedback. Thank you. =)"
-    },
-    "lichars": {
-        "message": "Characters"
-    },
-    "lipar": {
-        "message": "Paragraphs"
-    },
-    "liwds": {
-        "message": "Words"
-    },
-    "lipt": {
-        "message": "Add p tag"
-    },
-    "lipf": {
-        "message": "Don't add p tag"
-    },
-    "loremipsun": {
-        "message": "lorem ipsum generator"
-    },
-    "loremipsun_h": {
-        "message": "Generates a lorem ipsum string."
-    },
-    "updated_b": {
-        "message": "FastString updated to version: "
-    },
-    "updated_a": {
-        "message": ". <br>New cleaner style."
-    },
-    "replaceinfo": {
-        "message": "RegExp"
-    },
-    "replaceflaginfo": {
-        "message": "Flag (g,i,m)"
-    },
-    "replaceforinfo": {
-        "message": "New value"
-    },
-    "str_replace": {
-        "message": "string replace"
-    },
-    "invalidstr": {
-        "message": "Invalid RegExp or global value"
-    },
-    "str_replace_h": {
-        "message": "Replaces a string according to the RegExp expression informed. Do not use the initial and the final marker   i.e. not /foo[123]/, but foo[123]."
-    },
-    "savebtn": {
-        "message": "Save"
-    },
-    "qrCode": {
-        "message": "generate QR Code"
-    },
-    "bCrypt": {
-        "message": "bCrypt"
-    },
-    "bCrypt_h": {
-        "message": "bcrypt is a key derivation function for passwords designed by Niels Provos and David Mazières, based on the Blowfish cipher, and presented at USENIX in 1999.[1] Besides incorporating a salt to protect against rainbow table attacks, bcrypt is an adaptive function: over time, the iteration count can be increased to make it slower, so it remains resistant to brute-force search attacks even with increasing computation power."
-    },
-    "userAbort": {
-        "message": "User aborted"
-    },
-    "errorReading": {
-        "message": "Sorry, I can't read this file."
-    },
-    "modalfile_info": {
-        "message": "Warning: Opening large or binary files may crash your browser."
-    },
-    "modalfiles_title": {
-        "message": "Open UTF-8 file"
-    },
-    "modalfiles_open": {
-        "message": "Open"
-    },
-    "btnAbort": {
-        "message": "Abort"
-    }
+   "Scolors": {
+      "message": "color picker"
+   },
+   "about": {
+      "message": "about"
+   },
+   "addslashes": {
+      "message": "add slashes"
+   },
+   "addslashes_h": {
+      "message": "Returns a string with backslashes before characters that need to be quoted in database queries etc. These characters are single quote ('), double quote (\") and backslash (\\)."
+   },
+   "alert_Message_Review": {
+      "message": "It seems that you're enjoing FastString, would you mind helping us ? It'll just take a minute. Go to 'About' and then click the Review button. We always appreciate your feedback. Thank you. =)"
+   },
+   "alert_Title_Review": {
+      "message": "Review FastString"
+   },
+   "appdescription": {
+      "message": "Encode and decode base64, hex, html, generate hashes, check xml, Base64 images and 39 string operations. Works offline."
+   },
+   "appname": {
+      "message": "FastString - String Operations"
+   },
+   "ascii2bin": {
+      "message": "ascii to bin"
+   },
+   "ascii2bin_h": {
+      "message": "Convert ASCII to binary code. ASCII codes represent text in computers, communications equipment, and other devices that use text. A Binary code is a way of representing text or computer processor instructions by the use of the binary number system's two-binary digits 0 and 1. This is accomplished by assigning a bit string to each particular symbol or instruction. "
+   },
+   "b64d": {
+      "message": "Base64 decode"
+   },
+   "b64d_h": {
+      "message": "Decode a Base64 string (RFC 3548 or RFC 4648). \u003Cbr>Base64 is a group of similar binary-to-text encoding schemes that represent binary data in an ASCII string format by translating it into a radix-64 representation."
+   },
+   "b64diu": {
+      "message": "Base64 image url display"
+   },
+   "b64diu_h": {
+      "message": "Displays a Base64 encoded image. \u003Cbr>Example: data:image/png;base64,/9j/4AAQSgA=="
+   },
+   "b64du": {
+      "message": "Base64 decode url friendly"
+   },
+   "b64du_h": {
+      "message": "Base64 decode with URL and filename safe alphabet. \u003Cbr> Replaces:\u003Cbr> '_' with '='\u003Cbr> ',' with '/'\u003Cbr> '-' with '+'"
+   },
+   "b64e": {
+      "message": "Base64 encode"
+   },
+   "b64e_h": {
+      "message": "Encode a Base64 string using standard Base64 encoding (RFC 3548 or RFC 4648).\u003Cbr>Base64 is a group of similar binary-to-text encoding schemes that represent binary data in an ASCII string format by translating it into a radix-64 representation. Base64 encoding schemes are commonly used when there is a need to encode binary data that needs to be stored and transferred over media that are designed to deal with textual data. This is to ensure that the data remain intact without modification during transport."
+   },
+   "b64eu": {
+      "message": "Base64 encode url friendly"
+   },
+   "b64eu_h": {
+      "message": "Base64 encode with URL and Filename Safe Alphabet. \u003Cbr> Replaces:\u003Cbr> '=' with '_'\u003Cbr> '/' with ','\u003Cbr> '+' with '-'"
+   },
+    "gzb64e": {
+        "message": "GZip compress (Base64 encoded)"
+    },
+    "gzb64d": {
+        "message": "GZip decompress (Base64 decoded)"
+    },
+   "bCrypt": {
+      "message": "bCrypt"
+   },
+   "bCrypt_h": {
+      "message": "bcrypt is a key derivation function for passwords designed by Niels Provos and David Mazières, based on the Blowfish cipher, and presented at USENIX in 1999.[1] Besides incorporating a salt to protect against rainbow table attacks, bcrypt is an adaptive function: over time, the iteration count can be increased to make it slower, so it remains resistant to brute-force search attacks even with increasing computation power."
+   },
+   "bin2ascii": {
+      "message": "bin to ascii"
+   },
+   "bin2ascii_h": {
+      "message": "Convert binary code to ASCII. A Binary code is a way of representing text or computer processor instructions by the use of the binary number system's two-binary digits 0 and 1. This is accomplished by assigning a bit string to each particular symbol or instruction. ASCII codes represent text in computers, communications equipment, and other devices that use text."
+   },
+   "btnAbort": {
+      "message": "Abort"
+   },
+   "bugslink": {
+      "message": "Bugs"
+   },
+   "c2d": {
+      "message": "commas to periods"
+   },
+   "c2d_h": {
+      "message": "Replaces all commas in string with a period."
+   },
+   "character": {
+      "message": "Character"
+   },
+   "charscount": {
+      "message": "Chars"
+   },
+   "charswocount": {
+      "message": "Chars w/o space"
+   },
+   "checkUUID": {
+      "message": "check UUID"
+   },
+   "checkUUID_h": {
+      "message": "Check if a universally unique identifier (UUID) v4 is valid."
+   },
+   "checkxml": {
+      "message": "check XML structure"
+   },
+   "checkxml_h": {
+      "message": "Check if string has a valid XML structure"
+   },
+   "chromebanner": {
+      "message": "or if you wish, you can download our offline app. Just "
+   },
+   "clickhere": {
+      "message": "click here"
+   },
+   "color": {
+      "message": "Color"
+   },
+   "convert": {
+      "message": "convert"
+   },
+   "copy": {
+      "message": "Copy"
+   },
+   "crc32": {
+      "message": "CRC32"
+   },
+   "crc32_h": {
+      "message": "A cyclic redundancy check (CRC) is an error-detecting code commonly used in digital networks and storage devices to detect accidental changes to raw data. Uses 33 bits polynomial."
+   },
+   "dmED": {
+      "message": "decode mED"
+   },
+   "dmED_h": {
+      "message": "Deobfuscate a string by Base64 decoding it then reversing it, urldecoding it, rot13 it and Base64 decoding it again."
+   },
+   "doascii": {
+      "message": "ascii to hex"
+   },
+   "doascii_h": {
+      "message": "Convert ASCII to hexadecimal code. ASCII codes represent text in computers, communications equipment, and other devices that use text. Each hexadecimal digit represents four binary digits (bits), and the primary use of hexadecimal notation is a human-friendly representation of binary-coded values in computing and digital electronics. One hexadecimal digit represents a nibble, which is half of an octet or byte (8 bits)."
+   },
+   "dohex": {
+      "message": "hex to ascii"
+   },
+   "dohex_h": {
+      "message": "Convert hexadecimal code to ASCII code. This function doesn't consider whitespaces. Each hexadecimal digit represents four binary digits (bits), and the primary use of hexadecimal notation is a human-friendly representation of binary-coded values in computing and digital electronics. One hexadecimal digit represents a nibble, which is half of an octet or byte (8 bits). ASCII codes represent text in computers, communications equipment, and other devices that use text."
+   },
+   "doit": {
+      "message": "Do it!"
+   },
+   "duplicatedattributes": {
+      "message": "Duplicated attributes"
+   },
+   "emED": {
+      "message": "encode mED"
+   },
+   "emED_h": {
+      "message": "Obfuscate a string by converting it to base64 then rot13 it, urlencode it, reverse it and base64 encode it again. "
+   },
+   "ename": {
+      "message": "Entity Name"
+   },
+   "encodeimgbase64": {
+      "message": "encode image in Base64 png"
+   },
+   "encodeimgbase64_h": {
+      "message": "Encode image in Base64 png so it can be embedded into html and css. Currently is only possible the conversion to the PNG format. This feature is still experimental, we would appreciate your feedback."
+   },
+   "enti": {
+      "message": "HTML symbol entities"
+   },
+   "enumber": {
+      "message": "Entity Number"
+   },
+   "errorReading": {
+      "message": "Sorry, I can't read this file."
+   },
+   "escapejavas": {
+      "message": "escape special chars"
+   },
+   "escapejavas_h": {
+      "message": "Escape chars that would normally be recognized as special chars in javascript."
+   },
+   "generateUUID": {
+      "message": "generate UUID4/ID"
+   },
+   "generateUUID_h": {
+      "message": "A universally unique identifier (UUID) is an identifier standard used in software construction, standardized by the Open Software Foundation (OSF) as part of the Distributed Computing Environment (DCE). Using the default mask generates an UUID v4. You can generate random IDs by changing the mask using x(hex) and y (ab89) as the random chars."
+   },
+   "hashes": {
+      "message": "hashes"
+   },
+   "helpnotfound": {
+      "message": "No information available."
+   },
+   "hexvalue": {
+      "message": "Hex Value"
+   },
+   "html2js": {
+      "message": "raw HTML to javascript"
+   },
+   "html2js_h": {
+      "message": "Escape chars that would normally be recognized as special chars in javascript and create a javascript function with the content."
+   },
+   "htmlcolors": {
+      "message": "HTML colors"
+   },
+   "htmld": {
+      "message": "html decode"
+   },
+   "htmld_h": {
+      "message": "Decode chars that would normally be recognized as special chars in HTML. Replace &amp;amp;,&amp;quot;,&amp;#39;,&amp;lt;,&amp;gt;"
+   },
+   "htmle": {
+      "message": "html encode"
+   },
+   "htmle_h": {
+      "message": "Encode chars that would normally be recognized as special chars in HTML. Replace &amp;,&quot;,&#39;,&lt;,&gt;"
+   },
+   "htw": {
+      "message": "About this function"
+   },
+   "imgB64Alert": {
+      "message": "Warning: This function is still experimental. Large files may generate partial content or make your browser become unresponsive if your computer has insufficient memory. If necessary, click the loader to cancel. We would appreciate your feedback if something goes wrong."
+   },
+   "invalid": {
+      "message": "Sorry, but it was not possible to convert the given string."
+   },
+   "invalidUUID": {
+      "message": "Invalid UUID"
+   },
+   "invalidstr": {
+      "message": "Invalid RegExp or global value"
+   },
+   "invalidxml": {
+      "message": "Invalid XML structure."
+   },
+   "ipde": {
+      "message": "IP/decimal"
+   },
+   "ipde_h": {
+      "message": "Automatically detect and convert IP to Decimal or Decimal to IP."
+   },
+   "javascript_escape": {
+      "message": "escape all string chars"
+   },
+   "javascript_escape_h": {
+      "message": "Escape string using hex values. Can be used for code, in this case use the eval function."
+   },
+   "latin2e": {
+      "message": "latin chars to english"
+   },
+   "latin2e_h": {
+      "message": "Convert latin special chars to english chars."
+   },
+   "lichars": {
+      "message": "Characters"
+   },
+   "linescount": {
+      "message": "Lines"
+   },
+   "lipar": {
+      "message": "Paragraphs"
+   },
+   "lipf": {
+      "message": "Don't add p tag"
+   },
+   "lipt": {
+      "message": "Add p tag"
+   },
+   "liwds": {
+      "message": "Words"
+   },
+   "loremipsun": {
+      "message": "lorem ipsum generator"
+   },
+   "loremipsun_h": {
+      "message": "Generates a lorem ipsum string."
+   },
+   "mED": {
+      "message": "mED"
+   },
+   "md5": {
+      "message": "md5"
+   },
+   "md564": {
+      "message": "md5 Base64"
+   },
+   "md564_h": {
+      "message": "The MD5 Message-Digest Algorithm is a widely used cryptographic hash function that produces a 128-bit (16-byte) hash value. This function returns the value as Base64."
+   },
+   "md5h": {
+      "message": "md5 Hex"
+   },
+   "md5h_h": {
+      "message": "The MD5 Message-Digest Algorithm is a widely used cryptographic hash function that produces a 128-bit (16-byte) hash value. An MD5 hash is typically expressed as a hexadecimal number, 32 digits long."
+   },
+   "modalabout_close": {
+      "message": "Close"
+   },
+   "modalabout_title": {
+      "message": "About this software"
+   },
+   "modalfile_info": {
+      "message": "Warning: Opening large or binary files may crash your browser."
+   },
+   "modalfiles_open": {
+      "message": "Open"
+   },
+   "modalfiles_title": {
+      "message": "Open UTF-8 file"
+   },
+   "morerootnode": {
+      "message": "More than one root node or unexpected tag"
+   },
+   "morsed": {
+      "message": "decode morse"
+   },
+   "morsed_h": {
+      "message": "Decode english morse code string."
+   },
+   "morsee": {
+      "message": "encode morse"
+   },
+   "morsee_h": {
+      "message": "Encode english string to Morse Code. Morse code is a method of transmitting text information as a series of on-off tones, lights, or clicks. Each character (letter or numeral) is represented by a unique sequence of dots and dashes."
+   },
+   "mufunctions": {
+      "message": "Most used functions"
+   },
+   "name": {
+      "message": "Name"
+   },
+   "noroot": {
+      "message": "No root node"
+   },
+   "others": {
+      "message": "strings"
+   },
+   "paste": {
+      "message": "Paste"
+   },
+   "paylink": {
+      "message": "Donate (PayPal)"
+   },
+   "qrCode": {
+      "message": "generate QR Code"
+   },
+   "replaceflaginfo": {
+      "message": "Flag (g,i,m)"
+   },
+   "replaceforinfo": {
+      "message": "New value"
+   },
+   "replaceinfo": {
+      "message": "RegExp"
+   },
+   "result": {
+      "message": "Result"
+   },
+   "reve": {
+      "message": "reverse string"
+   },
+   "reve_h": {
+      "message": "Reverse a string"
+   },
+   "reviewlink": {
+      "message": "Review"
+   },
+   "rot13": {
+      "message": "rot13"
+   },
+   "rot13_h": {
+      "message": "ROT13 shifts every alpha characters by 13 places in the alphabet. This function decodes and encodes ROT13."
+   },
+   "rptinfo": {
+      "message": "Repeat"
+   },
+   "savebtn": {
+      "message": "Save"
+   },
+   "selectoption": {
+      "message": "Select an option to start"
+   },
+   "sha": {
+      "message": "sha"
+   },
+   "sha1": {
+      "message": "sha-1"
+   },
+   "sha1_h": {
+      "message": "A 160-bit hash function which resembles the earlier MD5 algorithm. This was designed by the National Security Agency (NSA) to be part of the Digital Signature Algorithm. Cryptographic weaknesses were discovered in SHA-1, and the standard was no longer approved for most cryptographic uses after 2010."
+   },
+   "sha224": {
+      "message": "sha-224"
+   },
+   "sha224_h": {
+      "message": "A family of two similar hash functions, with different block sizes, known as SHA-256 and SHA-512. They differ in the word size; SHA-256 uses 32-bit words where SHA-512 uses 64-bit words. There are also truncated versions of each standardized, known as SHA-224 and SHA-384. These were also designed by the NSA."
+   },
+   "sha256": {
+      "message": "sha-256"
+   },
+   "sha256_h": {
+      "message": "A family of two similar hash functions, with different block sizes, known as SHA-256 and SHA-512. They differ in the word size; SHA-256 uses 32-bit words where SHA-512 uses 64-bit words. There are also truncated versions of each standardized, known as SHA-224 and SHA-384. These were also designed by the NSA."
+   },
+   "sha384": {
+      "message": "sha-384"
+   },
+   "sha384_h": {
+      "message": "A family of two similar hash functions, with different block sizes, known as SHA-256 and SHA-512. They differ in the word size; SHA-256 uses 32-bit words where SHA-512 uses 64-bit words. There are also truncated versions of each standardized, known as SHA-224 and SHA-384. These were also designed by the NSA."
+   },
+   "sha512": {
+      "message": "sha-512"
+   },
+   "sha512_h": {
+      "message": "A family of two similar hash functions, with different block sizes, known as SHA-256 and SHA-512. They differ in the word size; SHA-256 uses 32-bit words where SHA-512 uses 64-bit words. There are also truncated versions of each standardized, known as SHA-224 and SHA-384. These were also designed by the NSA."
+   },
+   "shortappname": {
+      "message": "FastString"
+   },
+   "sopt": {
+      "message": "strings actions"
+   },
+   "specialitem": {
+      "message": "Special"
+   },
+   "stgs": {
+      "message": "strip tags"
+   },
+   "stgs_h": {
+      "message": "Strip HTML, comments and PHP tags from a string"
+   },
+   "str_repeat": {
+      "message": "string repeat"
+   },
+   "str_repeat_h": {
+      "message": "Repeat a string n times. You should avoid large strings and/or larger repeat values as it can crash your browser."
+   },
+   "str_replace": {
+      "message": "string replace"
+   },
+   "str_replace_h": {
+      "message": "Replaces a string according to the RegExp expression informed. Do not use the initial and the final marker   i.e. not /foo[123]/, but foo[123]."
+   },
+   "str_shuffle": {
+      "message": "string shuffle"
+   },
+   "str_shuffle_h": {
+      "message": "Randomly shuffles a string"
+   },
+   "stripcomments": {
+      "message": "strip comments"
+   },
+   "stripcomments_h": {
+      "message": "Strip html and javascript comments"
+   },
+   "stripsc": {
+      "message": "strip special characters"
+   },
+   "stripsc_h": {
+      "message": "Strip any special characters that are not in ASCII range"
+   },
+   "stripslashes": {
+      "message": "strip slashes"
+   },
+   "stripslashes_h": {
+      "message": "Un-quotes a quoted string."
+   },
+   "strlen": {
+      "message": "string length"
+   },
+   "strlen_h": {
+      "message": "Return the string length"
+   },
+   "strtolower": {
+      "message": "string to lower"
+   },
+   "strtolower_h": {
+      "message": "Make a string lowercase"
+   },
+   "strtoupper": {
+      "message": "string to upper"
+   },
+   "strtoupper_h": {
+      "message": "Make a string uppercase"
+   },
+   "text1stag": {
+      "message": "Unexpected text before first tag"
+   },
+   "textlastag": {
+      "message": "Unexpected text after last tag"
+   },
+   "trim": {
+      "message": "trim string"
+   },
+   "trim_h": {
+      "message": "Strip whitespace (or other characters) from the beginning and end of a string."
+   },
+   "ucwords": {
+      "message": "capitalize string"
+   },
+   "ucwords_h": {
+      "message": "Uppercase the first character of each word in a string"
+   },
+   "unclodesdtag": {
+      "message": "Unclosed tag"
+   },
+   "unexpecteddoctype": {
+      "message": "Unexpected DocType"
+   },
+   "unexpectedentity": {
+      "message": "Unexpected entity"
+   },
+   "unexpectedinstruction": {
+      "message": "Unexpected instruction"
+   },
+   "unfinalizedcdata": {
+      "message": "Unfinalized CDATA"
+   },
+   "unfinalizedcomment": {
+      "message": "Unfinalized comment"
+   },
+   "updated_a": {
+      "message": ". \u003Cbr>Now you can paste any Base64 string and we will strip spaces and new lines for you automaticaly. New font: Roboto."
+   },
+   "updated_b": {
+      "message": "FastString updated to version: "
+   },
+   "urld": {
+      "message": "url decode"
+   },
+   "urld_h": {
+      "message": "Decode special chars in URLs. Uses javascript decodeURIComponent() function."
+   },
+   "urle": {
+      "message": "url encode"
+   },
+   "urle_h": {
+      "message": "Encode chars that would normally be recognized as special chars for URLs. This method does not encode the ' char. Uses javascript encodeURIComponent() function."
+   },
+   "userAbort": {
+      "message": "User aborted"
+   },
+   "validUUID": {
+      "message": "Valid UUID"
+   },
+   "validxml": {
+      "message": "Valid XML structure."
+   },
+   "view": {
+      "message": "raw HTML"
+   },
+   "welcome": {
+      "message": "Welcome to"
+   },
+   "wordscount": {
+      "message": "Words"
+   },
+   "xls2html": {
+      "message": "excel table to HTML"
+   },
+   "xls2html_h": {
+      "message": "Converts a Excel table to HTML table."
+   }
 }

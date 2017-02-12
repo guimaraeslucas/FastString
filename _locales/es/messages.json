@@ -1,416 +1,416 @@
 {
-    "appdescription": {
-        "message": "Codifica y decodifica strings offline en base64, hex, html, codifica imágenes en Base64 y realiza 39 otras operaciones con strings."
-    },
-    "appname": {
-        "message": "FastString - Operaciones con Strings"
-    },
-    "shortappname": {
-        "message": "FastString"
-    },
-    "specialitem": {
-        "message": "Especial"
-    },
-    "copy": {
-        "message": "Copiar"
-    },
-    "paste": {
-        "message": "Pegar"
-    },
-    "b64e": {
-        "message": "codificar Base64"
-    },
-    "b64d": {
-        "message": "decodificar Base64"
-    },
-    "b64eu": {
-        "message": "codificar Base64 url amigable"
-    },
-    "b64du": {
-        "message": "decodificar Base64 url amigable"
-    },
-    "b64diu": {
-        "message": "mostrar imagen em Base64"
-    },
-    "urle": {
-        "message": "codificar url"
-    },
-    "urld": {
-        "message": "decodificar url"
-    },
-    "htmle": {
-        "message": "codificar html"
-    },
-    "htmld": {
-        "message": "decodificar html"
-    },
-    "about": {
-        "message": "Acerca FS"
-    },
-    "md5": {
-        "message": "md5"
-    },
-    "md5h": {
-        "message": "md5 Hex"
-    },
-    "md564": {
-        "message": "md5 Base64"
-    },
-    "sha": {
-        "message": "sha"
-    },
-    "sha1": {
-        "message": "sha-1"
-    },
-    "sha224": {
-        "message": "sha-224"
-    },
-    "sha256": {
-        "message": "sha-256"
-    },
-    "sha384": {
-        "message": "sha-384"
-    },
-    "sha512": {
-        "message": "sha-512"
-    },
-    "rot13": {
-        "message": "rot13"
-    },
-    "mED": {
-        "message": "mED"
-    },
-    "reve": {
-        "message": "invertir string"
-    },
-    "emED": {
-        "message": "codificar mED"
-    },
-    "dmED": {
-        "message": "decodificar mED"
-    },
-    "welcome": {
-        "message": "Bienvenido a"
-    },
-    "selectoption": {
-        "message": "Elija una opción para comenzar"
-    },
-    "result": {
-        "message": "Resultado"
-    },
-    "doit": {
-        "message": "Hazlo!"
-    },
-    "modalabout_title": {
-        "message": "Acerca de este software"
-    },
-    "modalabout_close": {
-        "message": "Cerrar"
-    },
-    "others": {
-        "message": "strings"
-    },
-    "sopt": {
-        "message": "operaciones con strings"
-    },
-    "c2d": {
-        "message": "comas para puntos"
-    },
-    "invalid": {
-        "message": "Lo sentimos, pero no se puede convertir la string insertada"
-    },
-    "crc32": {
-        "message": "CRC32"
-    },
-    "hashes": {
-        "message": "hashes"
-    },
-    "stgs": {
-        "message": "eliminar tags"
-    },
-    "view": {
-        "message": "HTML bruto"
-    },
-    "strlen": {
-        "message": "contar string"
-    },
-    "addslashes": {
-        "message": "agregar barras"
-    },
-    "stripslashes": {
-        "message": "quitar barras"
-    },
-    "convert": {
-        "message": "convertir"
-    },
-    "strtolower": {
-        "message": "string en minúsculas"
-    },
-    "strtoupper": {
-        "message": "string en mayúscula"
-    },
-    "ucwords": {
-        "message": "capitalizar string"
-    },
-    "str_shuffle": {
-        "message": "barajar string"
-    },
-    "htmlcolors": {
-        "message": "colores HTML"
-    },
-    "color": {
-        "message": "Color"
-    },
-    "name": {
-        "message": "Nombre"
-    },
-    "hexvalue": {
-        "message": "Hex"
-    },
-    "enti": {
-        "message": "símbolos HTML"
-    },
-    "character": {
-        "message": "Carácter"
-    },
-    "enumber": {
-        "message": "Entidad número"
-    },
-    "ename": {
-        "message": "Nombre de la entidad"
-    },
-    "validxml": {
-        "message": "Estrutura XML válida."
-    },
-    "noroot": {
-        "message": "Raíz no encontrada"
-    },
-    "unfinalizedcomment": {
-        "message": "Comentario inconcluso"
-    },
-    "unfinalizedcdata": {
-        "message": "CDATA inconcluso"
-    },
-    "unexpectedinstruction": {
-        "message": "Instrucción inesperada"
-    },
-    "unexpecteddoctype": {
-        "message": "DocType inesperado"
-    },
-    "text1stag": {
-        "message": "Texto inesperado antes de la primera tag"
-    },
-    "textlastag": {
-        "message": "Texto inesperado después de la última tag"
-    },
-    "unexpectedentity": {
-        "message": "Entidad inesperada"
-    },
-    "morerootnode": {
-        "message": "Más de una raíz o tag inesperada"
-    },
-    "unclodesdtag": {
-        "message": "Tag inconclusa"
-    },
-    "duplicatedattributes": {
-        "message": "Atributos duplicados"
-    },
-    "invalidxml": {
-        "message": "Estrutura XML no válida."
-    },
-    "checkxml": {
-        "message": "verificar la estructura XML"
-    },
-    "rptinfo": {
-        "message": "Repetir"
-    },
-    "str_repeat": {
-        "message": "repetir string"
-    },
-    "escapejavas": {
-        "message": "codificar caracteres especiales"
-    },
-    "html2js": {
-        "message": "HTML bruto para javascript"
-    },
-    "checkUUID": {
-        "message": "verificar UUID"
-    },
-    "invalidUUID": {
-        "message": "UUID no válida"
-    },
-    "validUUID": {
-        "message": "UUID válida"
-    },
-    "generateUUID": {
-        "message": "generar UUID/ID"
-    },
-    "trim": {
-        "message": "recortar string"
-    },
-    "stripcomments": {
-        "message": "limpiar comentarios"
-    },
-    "chromebanner": {
-        "message": "o si lo desea, puede descargar nuestro App offline. Para más información "
-    },
-    "clickhere": {
-        "message": "haga clic aquí"
-    },
-    "Scolors": {
-        "message": "selector de colores"
-    },
-    "dohex": {
-        "message": "hex para ascii"
-    },
-    "doascii": {
-        "message": "ascii para hex"
-    },
-    "stripsc": {
-        "message": "eliminar caracteres especiales"
-    },
-    "latin2e": {
-        "message": "convertir caracteres especiales"
-    },
-    "morsee": {
-        "message": "codificar morse"
-    },
-    "morsed": {
-        "message": "decodificar morse"
-    },
-    "ascii2bin": {
-        "message": "ascii para bin"
-    },
-    "bin2ascii": {
-        "message": "bin para ascii"
-    },
-    "htw": {
-        "message": "Acerca de esta función"
-    },
-    "helpnotfound": {
-        "message": "Información no disponible."
-    },
-    "javascript_escape": {
-        "message": "convertir todos los caracteres"
-    },
-    "javascript_escape_h": {
-        "message": "Escapar string usando hex"
-    },
-    "encodeimgbase64": {
-        "message": "codificar imagen en png Base64"
-    },
-    "encodeimgbase64_h": {
-        "message": "Encode image in Base64 png so it can be embedded in html and css. Currently is only possible the conversion to PNG format."
-    },
-    "wordscount": {
-        "message": "Palabras"
-    },
-    "charscount": {
-        "message": "Caracteres"
-    },
-    "charswocount": {
-        "message": "Caracteres sin espacio"
-    },
-    "linescount": {
-        "message": "Líneas"
-    },
-    "mufunctions": {
-        "message": "Funciones más utilizadas"
-    },
-    "paylink": {
-        "message": "Donar (PayPal)"
-    },
-    "bugslink": {
-        "message": "Bugs"
-    },
-    "reviewlink": {
-        "message": "Crítica"
-    },
-    "ipde": {
-        "message": "IP/decimal"
-    },
-    "ipde_h": {
-        "message": "IP a Decimal o Decimal a IP."
-    },
-    "xls2html": {
-        "message": "tabla de excel a HTML"
-    },
-    "xls2html_h": {
-        "message": "Convierte una tabla de Excel a formato HTML."
-    },
-    "imgB64Alert": {
-        "message": "Advertencia: Esta operación es experimental. Los archivos grandes pueden generar contenido parcial o crear inestabilidad en el navegador si el equipo no tiene suficiente memoria. Caso necesario, haga clic en el spinner para cancelar."
-    },
-    "alert_Title_Review": {
-        "message": "Revise FastString"
-    },
-    "alert_Message_Review": {
-        "message": "Parece que usted está disfrutando de FastString, ¿te importaría ayudarnos? Sólo te llevará un minuto. Haga clic en 'Acerca de' y después en el botón Evaluar. Siempre valoramos tus comentarios. Gracias =)"
-    },
-    "lichars": {
-        "message": "Letras"
-    },
-    "lipar": {
-        "message": "Párrafos"
-    },
-    "liwds": {
-        "message": "Palabras"
-    },
-    "lipt": {
-        "message": "Agregar p tag"
-    },
-    "lipf": {
-        "message": "No agregar p tag"
-    },
-    "loremipsun": {
-        "message": "generador lorem ipsum"
-    },
-    "updated_b": {
-        "message": "FastString actualizado a la versión: "
-    },
-    "updated_a": {
-        "message": ". "
-    },
-    "replaceinfo": {
-        "message": "RegExp"
-    },
-    "replaceflaginfo": {
-        "message": "Flag (g,i,m)"
-    },
-    "replaceforinfo": {
-        "message": "Nuevo valor"
-    },
-    "str_replace": {
-        "message": "substituir string"
-    },
-    "invalidstr": {
-        "message": "String Invalida"
-    },
-    "str_replace_h": {
-        "message": "Sustituye una string según informó la RegExp expresión. No utilice la inicial y la puntuación final."
-    },
-    "savebtn": {
-        "message": "Guardar"
-    },
-    "qrCode": {
-        "message": "generador QR Code"
-    },
-    "userAbort": {
-        "message": "Operación anulada"
-    },
-    "errorReading": {
-        "message": "Desculpe, não consigo ler este arquivo."
-    },
-    "modalfile_info": {
-        "message": "Atención: Los archivos grandes o binario se bloqueará su navegador."
-    },
-    "modalfiles_title": {
-        "message": "Abrir archivo UTF-8"
-    },
-    "modalfiles_open": {
-        "message": "Abrir"
-    },
-    "btnAbort": {
-        "message": "Anular"
-    }
+   "Scolors": {
+      "message": "selector de colores"
+   },
+   "about": {
+      "message": "Acerca FS"
+   },
+   "addslashes": {
+      "message": "agregar barras"
+   },
+   "alert_Message_Review": {
+      "message": "Parece que usted está disfrutando de FastString, ¿te importaría ayudarnos? Sólo te llevará un minuto. Haga clic en 'Acerca de' y después en el botón Evaluar. Siempre valoramos tus comentarios. Gracias =)"
+   },
+   "alert_Title_Review": {
+      "message": "Revise FastString"
+   },
+   "appdescription": {
+      "message": "Codifica y decodifica strings offline en base64, hex, html, codifica imágenes en Base64 y realiza 39 otras operaciones con strings."
+   },
+   "appname": {
+      "message": "FastString - Operaciones con Strings"
+   },
+   "ascii2bin": {
+      "message": "ascii para bin"
+   },
+   "b64d": {
+      "message": "decodificar Base64"
+   },
+   "b64diu": {
+      "message": "mostrar imagen em Base64"
+   },
+   "b64du": {
+      "message": "decodificar Base64 url amigable"
+   },
+   "b64e": {
+      "message": "codificar Base64"
+   },
+   "b64eu": {
+      "message": "codificar Base64 url amigable"
+   },
+   "bin2ascii": {
+      "message": "bin para ascii"
+   },
+   "btnAbort": {
+      "message": "Anular"
+   },
+   "bugslink": {
+      "message": "Bugs"
+   },
+   "c2d": {
+      "message": "comas para puntos"
+   },
+   "character": {
+      "message": "Carácter"
+   },
+   "charscount": {
+      "message": "Caracteres"
+   },
+   "charswocount": {
+      "message": "Caracteres sin espacio"
+   },
+   "checkUUID": {
+      "message": "verificar UUID"
+   },
+   "checkxml": {
+      "message": "verificar la estructura XML"
+   },
+   "chromebanner": {
+      "message": "o si lo desea, puede descargar nuestro App offline. Para más información "
+   },
+   "clickhere": {
+      "message": "haga clic aquí"
+   },
+   "color": {
+      "message": "Color"
+   },
+   "convert": {
+      "message": "convertir"
+   },
+   "copy": {
+      "message": "Copiar"
+   },
+   "crc32": {
+      "message": "CRC32"
+   },
+   "dmED": {
+      "message": "decodificar mED"
+   },
+   "doascii": {
+      "message": "ascii para hex"
+   },
+   "dohex": {
+      "message": "hex para ascii"
+   },
+   "doit": {
+      "message": "Hazlo!"
+   },
+   "duplicatedattributes": {
+      "message": "Atributos duplicados"
+   },
+   "emED": {
+      "message": "codificar mED"
+   },
+   "ename": {
+      "message": "Nombre de la entidad"
+   },
+   "encodeimgbase64": {
+      "message": "codificar imagen en png Base64"
+   },
+   "encodeimgbase64_h": {
+      "message": "Encode image in Base64 png so it can be embedded in html and css. Currently is only possible the conversion to PNG format."
+   },
+   "enti": {
+      "message": "símbolos HTML"
+   },
+   "enumber": {
+      "message": "Entidad número"
+   },
+   "errorReading": {
+      "message": "Desculpe, não consigo ler este arquivo."
+   },
+   "escapejavas": {
+      "message": "codificar caracteres especiales"
+   },
+   "generateUUID": {
+      "message": "generar UUID/ID"
+   },
+   "hashes": {
+      "message": "hashes"
+   },
+   "helpnotfound": {
+      "message": "Información no disponible."
+   },
+   "hexvalue": {
+      "message": "Hex"
+   },
+   "html2js": {
+      "message": "HTML bruto para javascript"
+   },
+   "htmlcolors": {
+      "message": "colores HTML"
+   },
+   "htmld": {
+      "message": "decodificar html"
+   },
+   "htmle": {
+      "message": "codificar html"
+   },
+   "htw": {
+      "message": "Acerca de esta función"
+   },
+   "imgB64Alert": {
+      "message": "Advertencia: Esta operación es experimental. Los archivos grandes pueden generar contenido parcial o crear inestabilidad en el navegador si el equipo no tiene suficiente memoria. Caso necesario, haga clic en el spinner para cancelar."
+   },
+   "invalid": {
+      "message": "Lo sentimos, pero no se puede convertir la string insertada"
+   },
+   "invalidUUID": {
+      "message": "UUID no válida"
+   },
+   "invalidstr": {
+      "message": "String Invalida"
+   },
+   "invalidxml": {
+      "message": "Estrutura XML no válida."
+   },
+   "ipde": {
+      "message": "IP/decimal"
+   },
+   "ipde_h": {
+      "message": "IP a Decimal o Decimal a IP."
+   },
+   "javascript_escape": {
+      "message": "convertir todos los caracteres"
+   },
+   "javascript_escape_h": {
+      "message": "Escapar string usando hex"
+   },
+   "latin2e": {
+      "message": "convertir caracteres especiales"
+   },
+   "lichars": {
+      "message": "Letras"
+   },
+   "linescount": {
+      "message": "Líneas"
+   },
+   "lipar": {
+      "message": "Párrafos"
+   },
+   "lipf": {
+      "message": "No agregar p tag"
+   },
+   "lipt": {
+      "message": "Agregar p tag"
+   },
+   "liwds": {
+      "message": "Palabras"
+   },
+   "loremipsun": {
+      "message": "generador lorem ipsum"
+   },
+   "mED": {
+      "message": "mED"
+   },
+   "md5": {
+      "message": "md5"
+   },
+   "md564": {
+      "message": "md5 Base64"
+   },
+   "md5h": {
+      "message": "md5 Hex"
+   },
+   "modalabout_close": {
+      "message": "Cerrar"
+   },
+   "modalabout_title": {
+      "message": "Acerca de este software"
+   },
+   "modalfile_info": {
+      "message": "Atención: Los archivos grandes o binario se bloqueará su navegador."
+   },
+   "modalfiles_open": {
+      "message": "Abrir"
+   },
+   "modalfiles_title": {
+      "message": "Abrir archivo UTF-8"
+   },
+   "morerootnode": {
+      "message": "Más de una raíz o tag inesperada"
+   },
+   "morsed": {
+      "message": "decodificar morse"
+   },
+   "morsee": {
+      "message": "codificar morse"
+   },
+   "mufunctions": {
+      "message": "Funciones más utilizadas"
+   },
+   "name": {
+      "message": "Nombre"
+   },
+   "noroot": {
+      "message": "Raíz no encontrada"
+   },
+   "others": {
+      "message": "strings"
+   },
+   "paste": {
+      "message": "Pegar"
+   },
+   "paylink": {
+      "message": "Donar (PayPal)"
+   },
+   "qrCode": {
+      "message": "generador QR Code"
+   },
+   "replaceflaginfo": {
+      "message": "Flag (g,i,m)"
+   },
+   "replaceforinfo": {
+      "message": "Nuevo valor"
+   },
+   "replaceinfo": {
+      "message": "RegExp"
+   },
+   "result": {
+      "message": "Resultado"
+   },
+   "reve": {
+      "message": "invertir string"
+   },
+   "reviewlink": {
+      "message": "Crítica"
+   },
+   "rot13": {
+      "message": "rot13"
+   },
+   "rptinfo": {
+      "message": "Repetir"
+   },
+   "savebtn": {
+      "message": "Guardar"
+   },
+   "selectoption": {
+      "message": "Elija una opción para comenzar"
+   },
+   "sha": {
+      "message": "sha"
+   },
+   "sha1": {
+      "message": "sha-1"
+   },
+   "sha224": {
+      "message": "sha-224"
+   },
+   "sha256": {
+      "message": "sha-256"
+   },
+   "sha384": {
+      "message": "sha-384"
+   },
+   "sha512": {
+      "message": "sha-512"
+   },
+   "shortappname": {
+      "message": "FastString"
+   },
+   "sopt": {
+      "message": "operaciones con strings"
+   },
+   "specialitem": {
+      "message": "Especial"
+   },
+   "stgs": {
+      "message": "eliminar tags"
+   },
+   "str_repeat": {
+      "message": "repetir string"
+   },
+   "str_replace": {
+      "message": "substituir string"
+   },
+   "str_replace_h": {
+      "message": "Sustituye una string según informó la RegExp expresión. No utilice la inicial y la puntuación final."
+   },
+   "str_shuffle": {
+      "message": "barajar string"
+   },
+   "stripcomments": {
+      "message": "limpiar comentarios"
+   },
+   "stripsc": {
+      "message": "eliminar caracteres especiales"
+   },
+   "stripslashes": {
+      "message": "quitar barras"
+   },
+   "strlen": {
+      "message": "contar string"
+   },
+   "strtolower": {
+      "message": "string en minúsculas"
+   },
+   "strtoupper": {
+      "message": "string en mayúscula"
+   },
+   "text1stag": {
+      "message": "Texto inesperado antes de la primera tag"
+   },
+   "textlastag": {
+      "message": "Texto inesperado después de la última tag"
+   },
+   "trim": {
+      "message": "recortar string"
+   },
+   "ucwords": {
+      "message": "capitalizar string"
+   },
+   "unclodesdtag": {
+      "message": "Tag inconclusa"
+   },
+   "unexpecteddoctype": {
+      "message": "DocType inesperado"
+   },
+   "unexpectedentity": {
+      "message": "Entidad inesperada"
+   },
+   "unexpectedinstruction": {
+      "message": "Instrucción inesperada"
+   },
+   "unfinalizedcdata": {
+      "message": "CDATA inconcluso"
+   },
+   "unfinalizedcomment": {
+      "message": "Comentario inconcluso"
+   },
+   "updated_a": {
+      "message": "."
+   },
+   "updated_b": {
+      "message": "FastString actualizado a la versión: "
+   },
+   "urld": {
+      "message": "decodificar url"
+   },
+   "urle": {
+      "message": "codificar url"
+   },
+   "userAbort": {
+      "message": "Operación anulada"
+   },
+   "validUUID": {
+      "message": "UUID válida"
+   },
+   "validxml": {
+      "message": "Estrutura XML válida."
+   },
+   "view": {
+      "message": "HTML bruto"
+   },
+   "welcome": {
+      "message": "Bienvenido a"
+   },
+   "wordscount": {
+      "message": "Palabras"
+   },
+   "xls2html": {
+      "message": "tabla de excel a HTML"
+   },
+   "xls2html_h": {
+      "message": "Convierte una tabla de Excel a formato HTML."
+   }
 }
